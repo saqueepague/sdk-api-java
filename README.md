@@ -1,5 +1,5 @@
 # sdk-java
-Repositório de SDKs de api Java da Saque e Pague para parceiros.
+Repositório de SDKs de API Java da Saque e Pague para parceiros.
 
 ## Swagger generated server
 
@@ -13,7 +13,7 @@ The underlying library integrating swagger to SpringBoot is [springfox](https://
 
 ### Server Port
 
-Change default server port value in `src/main/resources/application.properties`. By default the auto managed port uses the `8080` on server load.
+Change default server port value in `src/main/resources/application.properties`. By default the port is `-1`.
 
 ### Starting a local server
 
@@ -25,6 +25,6 @@ Then you can start your server as an simple java application:
 
 > java -jar target/swagger-spring-1.0.0.jar
 
-When the server is up and running, it allows the visualization of the api documentation in swagger-ui by pointing to (default port):
+When the server is up and running, it allows the visualization of the API documentation in swagger-ui by pointing to (default port):
 
 > http://localhost:8080/saqueepague/SepTransaction/1.17.0/
