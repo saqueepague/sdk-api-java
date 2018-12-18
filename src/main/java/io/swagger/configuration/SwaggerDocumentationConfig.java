@@ -23,7 +23,6 @@ public class SwaggerDocumentationConfig {
             .licenseUrl("http://unlicense.org")
             .termsOfServiceUrl("http://www.saqueepague.com.br")
             .version("1.17.0")
-            .contact(new Contact("","", "captura_atm@saqueepague.com.br"))
             .build();
     }
 
