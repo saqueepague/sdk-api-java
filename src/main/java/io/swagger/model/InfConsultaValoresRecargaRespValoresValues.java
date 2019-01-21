@@ -13,17 +13,38 @@ import javax.validation.constraints.*;
  * InfConsultaValoresRecargaRespValoresValues
  */
 @Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.SpringCodegen", date = "2018-12-05T18:08:56.087Z[GMT]")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2019-01-18T19:37:26.329Z")
 
 public class InfConsultaValoresRecargaRespValoresValues   {
+  @JsonProperty("fee")
+  private String fee = null;
+
   @JsonProperty("id")
   private String id = null;
 
   @JsonProperty("value")
   private String value = null;
 
-  @JsonProperty("fee")
-  private String fee = null;
+  public InfConsultaValoresRecargaRespValoresValues fee(String fee) {
+    this.fee = fee;
+    return this;
+  }
+
+  /**
+   * Taxa do valor.
+   * @return fee
+  **/
+  @ApiModelProperty(example = "200", required = true, value = "Taxa do valor.")
+  @NotNull
+
+@Pattern(regexp="^\\d+$") 
+  public String getFee() {
+    return fee;
+  }
+
+  public void setFee(String fee) {
+    this.fee = fee;
+  }
 
   public InfConsultaValoresRecargaRespValoresValues id(String id) {
     this.id = id;
@@ -34,7 +55,8 @@ public class InfConsultaValoresRecargaRespValoresValues   {
    * Identificador do valor.
    * @return id
   **/
-  @ApiModelProperty(example = "1", value = "Identificador do valor.")
+  @ApiModelProperty(example = "1", required = true, value = "Identificador do valor.")
+  @NotNull
 
 @Pattern(regexp="^\\d+$") 
   public String getId() {
@@ -54,7 +76,8 @@ public class InfConsultaValoresRecargaRespValoresValues   {
    * Identificador do valor.
    * @return value
   **/
-  @ApiModelProperty(example = "2000", value = "Identificador do valor.")
+  @ApiModelProperty(example = "2000", required = true, value = "Identificador do valor.")
+  @NotNull
 
 @Pattern(regexp="^\\d+$") 
   public String getValue() {
@@ -63,26 +86,6 @@ public class InfConsultaValoresRecargaRespValoresValues   {
 
   public void setValue(String value) {
     this.value = value;
-  }
-
-  public InfConsultaValoresRecargaRespValoresValues fee(String fee) {
-    this.fee = fee;
-    return this;
-  }
-
-  /**
-   * Taxa do valor.
-   * @return fee
-  **/
-  @ApiModelProperty(example = "200", value = "Taxa do valor.")
-
-@Pattern(regexp="^\\d+$") 
-  public String getFee() {
-    return fee;
-  }
-
-  public void setFee(String fee) {
-    this.fee = fee;
   }
 
 
@@ -95,14 +98,14 @@ public class InfConsultaValoresRecargaRespValoresValues   {
       return false;
     }
     InfConsultaValoresRecargaRespValoresValues infConsultaValoresRecargaRespValoresValues = (InfConsultaValoresRecargaRespValoresValues) o;
-    return Objects.equals(this.id, infConsultaValoresRecargaRespValoresValues.id) &&
-        Objects.equals(this.value, infConsultaValoresRecargaRespValoresValues.value) &&
-        Objects.equals(this.fee, infConsultaValoresRecargaRespValoresValues.fee);
+    return Objects.equals(this.fee, infConsultaValoresRecargaRespValoresValues.fee) &&
+        Objects.equals(this.id, infConsultaValoresRecargaRespValoresValues.id) &&
+        Objects.equals(this.value, infConsultaValoresRecargaRespValoresValues.value);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, value, fee);
+    return Objects.hash(fee, id, value);
   }
 
   @Override
@@ -110,9 +113,9 @@ public class InfConsultaValoresRecargaRespValoresValues   {
     StringBuilder sb = new StringBuilder();
     sb.append("class InfConsultaValoresRecargaRespValoresValues {\n");
     
+    sb.append("    fee: ").append(toIndentedString(fee)).append("\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    value: ").append(toIndentedString(value)).append("\n");
-    sb.append("    fee: ").append(toIndentedString(fee)).append("\n");
     sb.append("}");
     return sb.toString();
   }

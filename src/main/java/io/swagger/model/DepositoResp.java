@@ -17,62 +17,20 @@ import javax.validation.constraints.*;
  * DepositoResp
  */
 @Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.SpringCodegen", date = "2018-12-05T18:08:56.087Z[GMT]")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2019-01-18T19:37:26.329Z")
 
 public class DepositoResp   {
-  @JsonProperty("InfTransacao")
-  private InfTransacaoResp infTransacao = null;
-
-  @JsonProperty("Terminal")
-  private Terminal terminal = null;
-
   @JsonProperty("Cripto")
   private CriptoResp cripto = null;
 
   @JsonProperty("InfDeposito")
   private InfDepositoResp infDeposito = null;
 
-  public DepositoResp infTransacao(InfTransacaoResp infTransacao) {
-    this.infTransacao = infTransacao;
-    return this;
-  }
+  @JsonProperty("InfTransacao")
+  private InfTransacaoResp infTransacao = null;
 
-  /**
-   * Get infTransacao
-   * @return infTransacao
-  **/
-  @ApiModelProperty(value = "")
-
-  @Valid
-
-  public InfTransacaoResp getInfTransacao() {
-    return infTransacao;
-  }
-
-  public void setInfTransacao(InfTransacaoResp infTransacao) {
-    this.infTransacao = infTransacao;
-  }
-
-  public DepositoResp terminal(Terminal terminal) {
-    this.terminal = terminal;
-    return this;
-  }
-
-  /**
-   * Get terminal
-   * @return terminal
-  **/
-  @ApiModelProperty(value = "")
-
-  @Valid
-
-  public Terminal getTerminal() {
-    return terminal;
-  }
-
-  public void setTerminal(Terminal terminal) {
-    this.terminal = terminal;
-  }
+  @JsonProperty("Terminal")
+  private Terminal terminal = null;
 
   public DepositoResp cripto(CriptoResp cripto) {
     this.cripto = cripto;
@@ -104,7 +62,8 @@ public class DepositoResp   {
    * Get infDeposito
    * @return infDeposito
   **/
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(required = true, value = "")
+  @NotNull
 
   @Valid
 
@@ -114,6 +73,50 @@ public class DepositoResp   {
 
   public void setInfDeposito(InfDepositoResp infDeposito) {
     this.infDeposito = infDeposito;
+  }
+
+  public DepositoResp infTransacao(InfTransacaoResp infTransacao) {
+    this.infTransacao = infTransacao;
+    return this;
+  }
+
+  /**
+   * Get infTransacao
+   * @return infTransacao
+  **/
+  @ApiModelProperty(required = true, value = "")
+  @NotNull
+
+  @Valid
+
+  public InfTransacaoResp getInfTransacao() {
+    return infTransacao;
+  }
+
+  public void setInfTransacao(InfTransacaoResp infTransacao) {
+    this.infTransacao = infTransacao;
+  }
+
+  public DepositoResp terminal(Terminal terminal) {
+    this.terminal = terminal;
+    return this;
+  }
+
+  /**
+   * Get terminal
+   * @return terminal
+  **/
+  @ApiModelProperty(required = true, value = "")
+  @NotNull
+
+  @Valid
+
+  public Terminal getTerminal() {
+    return terminal;
+  }
+
+  public void setTerminal(Terminal terminal) {
+    this.terminal = terminal;
   }
 
 
@@ -126,15 +129,15 @@ public class DepositoResp   {
       return false;
     }
     DepositoResp depositoResp = (DepositoResp) o;
-    return Objects.equals(this.infTransacao, depositoResp.infTransacao) &&
-        Objects.equals(this.terminal, depositoResp.terminal) &&
-        Objects.equals(this.cripto, depositoResp.cripto) &&
-        Objects.equals(this.infDeposito, depositoResp.infDeposito);
+    return Objects.equals(this.cripto, depositoResp.cripto) &&
+        Objects.equals(this.infDeposito, depositoResp.infDeposito) &&
+        Objects.equals(this.infTransacao, depositoResp.infTransacao) &&
+        Objects.equals(this.terminal, depositoResp.terminal);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(infTransacao, terminal, cripto, infDeposito);
+    return Objects.hash(cripto, infDeposito, infTransacao, terminal);
   }
 
   @Override
@@ -142,10 +145,10 @@ public class DepositoResp   {
     StringBuilder sb = new StringBuilder();
     sb.append("class DepositoResp {\n");
     
-    sb.append("    infTransacao: ").append(toIndentedString(infTransacao)).append("\n");
-    sb.append("    terminal: ").append(toIndentedString(terminal)).append("\n");
     sb.append("    cripto: ").append(toIndentedString(cripto)).append("\n");
     sb.append("    infDeposito: ").append(toIndentedString(infDeposito)).append("\n");
+    sb.append("    infTransacao: ").append(toIndentedString(infTransacao)).append("\n");
+    sb.append("    terminal: ").append(toIndentedString(terminal)).append("\n");
     sb.append("}");
     return sb.toString();
   }

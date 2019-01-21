@@ -5,7 +5,6 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import io.swagger.model.CriptoResp;
 import io.swagger.model.InfConsultaProdutosRecargaResp;
 import io.swagger.model.InfTransacaoResp;
 import io.swagger.model.Terminal;
@@ -17,20 +16,39 @@ import javax.validation.constraints.*;
  * ConsultaProdutosRecargaResp
  */
 @Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.SpringCodegen", date = "2018-12-05T18:08:56.087Z[GMT]")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2019-01-18T19:37:26.329Z")
 
 public class ConsultaProdutosRecargaResp   {
+  @JsonProperty("InfConsultaProdutosRecarga")
+  private InfConsultaProdutosRecargaResp infConsultaProdutosRecarga = null;
+
   @JsonProperty("InfTransacao")
   private InfTransacaoResp infTransacao = null;
 
   @JsonProperty("Terminal")
   private Terminal terminal = null;
 
-  @JsonProperty("Cripto")
-  private CriptoResp cripto = null;
+  public ConsultaProdutosRecargaResp infConsultaProdutosRecarga(InfConsultaProdutosRecargaResp infConsultaProdutosRecarga) {
+    this.infConsultaProdutosRecarga = infConsultaProdutosRecarga;
+    return this;
+  }
 
-  @JsonProperty("InfConsultaProdutosRecarga")
-  private InfConsultaProdutosRecargaResp infConsultaProdutosRecarga = null;
+  /**
+   * Get infConsultaProdutosRecarga
+   * @return infConsultaProdutosRecarga
+  **/
+  @ApiModelProperty(required = true, value = "")
+  @NotNull
+
+  @Valid
+
+  public InfConsultaProdutosRecargaResp getInfConsultaProdutosRecarga() {
+    return infConsultaProdutosRecarga;
+  }
+
+  public void setInfConsultaProdutosRecarga(InfConsultaProdutosRecargaResp infConsultaProdutosRecarga) {
+    this.infConsultaProdutosRecarga = infConsultaProdutosRecarga;
+  }
 
   public ConsultaProdutosRecargaResp infTransacao(InfTransacaoResp infTransacao) {
     this.infTransacao = infTransacao;
@@ -41,7 +59,8 @@ public class ConsultaProdutosRecargaResp   {
    * Get infTransacao
    * @return infTransacao
   **/
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(required = true, value = "")
+  @NotNull
 
   @Valid
 
@@ -62,7 +81,8 @@ public class ConsultaProdutosRecargaResp   {
    * Get terminal
    * @return terminal
   **/
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(required = true, value = "")
+  @NotNull
 
   @Valid
 
@@ -72,48 +92,6 @@ public class ConsultaProdutosRecargaResp   {
 
   public void setTerminal(Terminal terminal) {
     this.terminal = terminal;
-  }
-
-  public ConsultaProdutosRecargaResp cripto(CriptoResp cripto) {
-    this.cripto = cripto;
-    return this;
-  }
-
-  /**
-   * Get cripto
-   * @return cripto
-  **/
-  @ApiModelProperty(value = "")
-
-  @Valid
-
-  public CriptoResp getCripto() {
-    return cripto;
-  }
-
-  public void setCripto(CriptoResp cripto) {
-    this.cripto = cripto;
-  }
-
-  public ConsultaProdutosRecargaResp infConsultaProdutosRecarga(InfConsultaProdutosRecargaResp infConsultaProdutosRecarga) {
-    this.infConsultaProdutosRecarga = infConsultaProdutosRecarga;
-    return this;
-  }
-
-  /**
-   * Get infConsultaProdutosRecarga
-   * @return infConsultaProdutosRecarga
-  **/
-  @ApiModelProperty(value = "")
-
-  @Valid
-
-  public InfConsultaProdutosRecargaResp getInfConsultaProdutosRecarga() {
-    return infConsultaProdutosRecarga;
-  }
-
-  public void setInfConsultaProdutosRecarga(InfConsultaProdutosRecargaResp infConsultaProdutosRecarga) {
-    this.infConsultaProdutosRecarga = infConsultaProdutosRecarga;
   }
 
 
@@ -126,15 +104,14 @@ public class ConsultaProdutosRecargaResp   {
       return false;
     }
     ConsultaProdutosRecargaResp consultaProdutosRecargaResp = (ConsultaProdutosRecargaResp) o;
-    return Objects.equals(this.infTransacao, consultaProdutosRecargaResp.infTransacao) &&
-        Objects.equals(this.terminal, consultaProdutosRecargaResp.terminal) &&
-        Objects.equals(this.cripto, consultaProdutosRecargaResp.cripto) &&
-        Objects.equals(this.infConsultaProdutosRecarga, consultaProdutosRecargaResp.infConsultaProdutosRecarga);
+    return Objects.equals(this.infConsultaProdutosRecarga, consultaProdutosRecargaResp.infConsultaProdutosRecarga) &&
+        Objects.equals(this.infTransacao, consultaProdutosRecargaResp.infTransacao) &&
+        Objects.equals(this.terminal, consultaProdutosRecargaResp.terminal);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(infTransacao, terminal, cripto, infConsultaProdutosRecarga);
+    return Objects.hash(infConsultaProdutosRecarga, infTransacao, terminal);
   }
 
   @Override
@@ -142,10 +119,9 @@ public class ConsultaProdutosRecargaResp   {
     StringBuilder sb = new StringBuilder();
     sb.append("class ConsultaProdutosRecargaResp {\n");
     
+    sb.append("    infConsultaProdutosRecarga: ").append(toIndentedString(infConsultaProdutosRecarga)).append("\n");
     sb.append("    infTransacao: ").append(toIndentedString(infTransacao)).append("\n");
     sb.append("    terminal: ").append(toIndentedString(terminal)).append("\n");
-    sb.append("    cripto: ").append(toIndentedString(cripto)).append("\n");
-    sb.append("    infConsultaProdutosRecarga: ").append(toIndentedString(infConsultaProdutosRecarga)).append("\n");
     sb.append("}");
     return sb.toString();
   }

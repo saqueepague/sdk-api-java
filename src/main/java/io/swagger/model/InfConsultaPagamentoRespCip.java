@@ -10,92 +10,53 @@ import javax.validation.Valid;
 import javax.validation.constraints.*;
 
 /**
- * Informações da CIP.
+ * Informações sobre o boleto da CIP.
  */
-@ApiModel(description = "Informações da CIP.")
+@ApiModel(description = "Informações sobre o boleto da CIP.")
 @Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.SpringCodegen", date = "2018-12-05T18:08:56.087Z[GMT]")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2019-01-18T19:37:26.329Z")
 
 public class InfConsultaPagamentoRespCip   {
-  @JsonProperty("valorJurosCalculado")
-  private String valorJurosCalculado = null;
-
-  @JsonProperty("valorMultaCalculadada")
-  private String valorMultaCalculadada = null;
-
-  @JsonProperty("valorAbatimento")
-  private String valorAbatimento = null;
+  @JsonProperty("NumeroIdentificacaoConsultaPagamento")
+  private String numeroIdentificacaoConsultaPagamento = null;
 
   @JsonProperty("tipoValorAceito")
   private String tipoValorAceito = null;
 
-  @JsonProperty("valorMinimoPermitidoPagamento")
-  private String valorMinimoPermitidoPagamento = null;
+  @JsonProperty("valorAbatimento")
+  private String valorAbatimento = null;
+
+  @JsonProperty("valorJurosCalculado")
+  private String valorJurosCalculado = null;
 
   @JsonProperty("valorMaximoPermitidoPagamento")
   private String valorMaximoPermitidoPagamento = null;
 
-  @JsonProperty("NumeroIdentificacaoConsultaPagamento")
-  private String numeroIdentificacaoConsultaPagamento = null;
+  @JsonProperty("valorMinimoPermitidoPagamento")
+  private String valorMinimoPermitidoPagamento = null;
 
-  public InfConsultaPagamentoRespCip valorJurosCalculado(String valorJurosCalculado) {
-    this.valorJurosCalculado = valorJurosCalculado;
+  @JsonProperty("valorMultaCalculadada")
+  private String valorMultaCalculadada = null;
+
+  public InfConsultaPagamentoRespCip numeroIdentificacaoConsultaPagamento(String numeroIdentificacaoConsultaPagamento) {
+    this.numeroIdentificacaoConsultaPagamento = numeroIdentificacaoConsultaPagamento;
     return this;
   }
 
   /**
-   * Valor dos juros calculados (12 dígitos, incluindo centavos).
-   * @return valorJurosCalculado
+   * Número de identificação da consulta.
+   * @return numeroIdentificacaoConsultaPagamento
   **/
-  @ApiModelProperty(example = "000000000499", value = "Valor dos juros calculados (12 dígitos, incluindo centavos).")
+  @ApiModelProperty(required = true, value = "Número de identificação da consulta.")
+  @NotNull
 
-@Pattern(regexp="^\\d{12}$") 
-  public String getValorJurosCalculado() {
-    return valorJurosCalculado;
+@Pattern(regexp="^\\d+$") 
+  public String getNumeroIdentificacaoConsultaPagamento() {
+    return numeroIdentificacaoConsultaPagamento;
   }
 
-  public void setValorJurosCalculado(String valorJurosCalculado) {
-    this.valorJurosCalculado = valorJurosCalculado;
-  }
-
-  public InfConsultaPagamentoRespCip valorMultaCalculadada(String valorMultaCalculadada) {
-    this.valorMultaCalculadada = valorMultaCalculadada;
-    return this;
-  }
-
-  /**
-   * Valor da multa calculada (12 dígitos, incluindo centavos).
-   * @return valorMultaCalculadada
-  **/
-  @ApiModelProperty(example = "000000000499", value = "Valor da multa calculada (12 dígitos, incluindo centavos).")
-
-@Pattern(regexp="^\\d{12}$") 
-  public String getValorMultaCalculadada() {
-    return valorMultaCalculadada;
-  }
-
-  public void setValorMultaCalculadada(String valorMultaCalculadada) {
-    this.valorMultaCalculadada = valorMultaCalculadada;
-  }
-
-  public InfConsultaPagamentoRespCip valorAbatimento(String valorAbatimento) {
-    this.valorAbatimento = valorAbatimento;
-    return this;
-  }
-
-  /**
-   * Valor do abatimento calculado (12 dígitos, incluindo centavos).
-   * @return valorAbatimento
-  **/
-  @ApiModelProperty(example = "000000000499", value = "Valor do abatimento calculado (12 dígitos, incluindo centavos).")
-
-@Pattern(regexp="^\\d{12}$") 
-  public String getValorAbatimento() {
-    return valorAbatimento;
-  }
-
-  public void setValorAbatimento(String valorAbatimento) {
-    this.valorAbatimento = valorAbatimento;
+  public void setNumeroIdentificacaoConsultaPagamento(String numeroIdentificacaoConsultaPagamento) {
+    this.numeroIdentificacaoConsultaPagamento = numeroIdentificacaoConsultaPagamento;
   }
 
   public InfConsultaPagamentoRespCip tipoValorAceito(String tipoValorAceito) {
@@ -107,7 +68,8 @@ public class InfConsultaPagamentoRespCip   {
    * Tipo de valor aceito.
    * @return tipoValorAceito
   **/
-  @ApiModelProperty(value = "Tipo de valor aceito.")
+  @ApiModelProperty(required = true, value = "Tipo de valor aceito.")
+  @NotNull
 
 
   public String getTipoValorAceito() {
@@ -118,24 +80,46 @@ public class InfConsultaPagamentoRespCip   {
     this.tipoValorAceito = tipoValorAceito;
   }
 
-  public InfConsultaPagamentoRespCip valorMinimoPermitidoPagamento(String valorMinimoPermitidoPagamento) {
-    this.valorMinimoPermitidoPagamento = valorMinimoPermitidoPagamento;
+  public InfConsultaPagamentoRespCip valorAbatimento(String valorAbatimento) {
+    this.valorAbatimento = valorAbatimento;
     return this;
   }
 
   /**
-   * Valor mínimo de pagamento (12 dígitos, incluindo centavos).
-   * @return valorMinimoPermitidoPagamento
+   * Valor do abatimento calculado (12 dígitos, incluindo centavos).
+   * @return valorAbatimento
   **/
-  @ApiModelProperty(example = "000000000500", value = "Valor mínimo de pagamento (12 dígitos, incluindo centavos).")
+  @ApiModelProperty(example = "000000000499", required = true, value = "Valor do abatimento calculado (12 dígitos, incluindo centavos).")
+  @NotNull
 
 @Pattern(regexp="^\\d{12}$") 
-  public String getValorMinimoPermitidoPagamento() {
-    return valorMinimoPermitidoPagamento;
+  public String getValorAbatimento() {
+    return valorAbatimento;
   }
 
-  public void setValorMinimoPermitidoPagamento(String valorMinimoPermitidoPagamento) {
-    this.valorMinimoPermitidoPagamento = valorMinimoPermitidoPagamento;
+  public void setValorAbatimento(String valorAbatimento) {
+    this.valorAbatimento = valorAbatimento;
+  }
+
+  public InfConsultaPagamentoRespCip valorJurosCalculado(String valorJurosCalculado) {
+    this.valorJurosCalculado = valorJurosCalculado;
+    return this;
+  }
+
+  /**
+   * Valor dos juros calculados (12 dígitos, incluindo centavos).
+   * @return valorJurosCalculado
+  **/
+  @ApiModelProperty(example = "000000000499", required = true, value = "Valor dos juros calculados (12 dígitos, incluindo centavos).")
+  @NotNull
+
+@Pattern(regexp="^\\d{12}$") 
+  public String getValorJurosCalculado() {
+    return valorJurosCalculado;
+  }
+
+  public void setValorJurosCalculado(String valorJurosCalculado) {
+    this.valorJurosCalculado = valorJurosCalculado;
   }
 
   public InfConsultaPagamentoRespCip valorMaximoPermitidoPagamento(String valorMaximoPermitidoPagamento) {
@@ -147,7 +131,8 @@ public class InfConsultaPagamentoRespCip   {
    * Valor máximo de pagamento (12 dígitos, incluindo centavos).
    * @return valorMaximoPermitidoPagamento
   **/
-  @ApiModelProperty(example = "000000050000", value = "Valor máximo de pagamento (12 dígitos, incluindo centavos).")
+  @ApiModelProperty(example = "000000050000", required = true, value = "Valor máximo de pagamento (12 dígitos, incluindo centavos).")
+  @NotNull
 
 @Pattern(regexp="^\\d{12}$") 
   public String getValorMaximoPermitidoPagamento() {
@@ -158,24 +143,46 @@ public class InfConsultaPagamentoRespCip   {
     this.valorMaximoPermitidoPagamento = valorMaximoPermitidoPagamento;
   }
 
-  public InfConsultaPagamentoRespCip numeroIdentificacaoConsultaPagamento(String numeroIdentificacaoConsultaPagamento) {
-    this.numeroIdentificacaoConsultaPagamento = numeroIdentificacaoConsultaPagamento;
+  public InfConsultaPagamentoRespCip valorMinimoPermitidoPagamento(String valorMinimoPermitidoPagamento) {
+    this.valorMinimoPermitidoPagamento = valorMinimoPermitidoPagamento;
     return this;
   }
 
   /**
-   * Número de identificação da consulta.
-   * @return numeroIdentificacaoConsultaPagamento
+   * Valor mínimo de pagamento (12 dígitos, incluindo centavos).
+   * @return valorMinimoPermitidoPagamento
   **/
-  @ApiModelProperty(value = "Número de identificação da consulta.")
+  @ApiModelProperty(example = "000000000500", required = true, value = "Valor mínimo de pagamento (12 dígitos, incluindo centavos).")
+  @NotNull
 
-@Pattern(regexp="^\\d+$") 
-  public String getNumeroIdentificacaoConsultaPagamento() {
-    return numeroIdentificacaoConsultaPagamento;
+@Pattern(regexp="^\\d{12}$") 
+  public String getValorMinimoPermitidoPagamento() {
+    return valorMinimoPermitidoPagamento;
   }
 
-  public void setNumeroIdentificacaoConsultaPagamento(String numeroIdentificacaoConsultaPagamento) {
-    this.numeroIdentificacaoConsultaPagamento = numeroIdentificacaoConsultaPagamento;
+  public void setValorMinimoPermitidoPagamento(String valorMinimoPermitidoPagamento) {
+    this.valorMinimoPermitidoPagamento = valorMinimoPermitidoPagamento;
+  }
+
+  public InfConsultaPagamentoRespCip valorMultaCalculadada(String valorMultaCalculadada) {
+    this.valorMultaCalculadada = valorMultaCalculadada;
+    return this;
+  }
+
+  /**
+   * Valor da multa calculada (12 dígitos, incluindo centavos).
+   * @return valorMultaCalculadada
+  **/
+  @ApiModelProperty(example = "000000000499", required = true, value = "Valor da multa calculada (12 dígitos, incluindo centavos).")
+  @NotNull
+
+@Pattern(regexp="^\\d{12}$") 
+  public String getValorMultaCalculadada() {
+    return valorMultaCalculadada;
+  }
+
+  public void setValorMultaCalculadada(String valorMultaCalculadada) {
+    this.valorMultaCalculadada = valorMultaCalculadada;
   }
 
 
@@ -188,18 +195,18 @@ public class InfConsultaPagamentoRespCip   {
       return false;
     }
     InfConsultaPagamentoRespCip infConsultaPagamentoRespCip = (InfConsultaPagamentoRespCip) o;
-    return Objects.equals(this.valorJurosCalculado, infConsultaPagamentoRespCip.valorJurosCalculado) &&
-        Objects.equals(this.valorMultaCalculadada, infConsultaPagamentoRespCip.valorMultaCalculadada) &&
-        Objects.equals(this.valorAbatimento, infConsultaPagamentoRespCip.valorAbatimento) &&
+    return Objects.equals(this.numeroIdentificacaoConsultaPagamento, infConsultaPagamentoRespCip.numeroIdentificacaoConsultaPagamento) &&
         Objects.equals(this.tipoValorAceito, infConsultaPagamentoRespCip.tipoValorAceito) &&
-        Objects.equals(this.valorMinimoPermitidoPagamento, infConsultaPagamentoRespCip.valorMinimoPermitidoPagamento) &&
+        Objects.equals(this.valorAbatimento, infConsultaPagamentoRespCip.valorAbatimento) &&
+        Objects.equals(this.valorJurosCalculado, infConsultaPagamentoRespCip.valorJurosCalculado) &&
         Objects.equals(this.valorMaximoPermitidoPagamento, infConsultaPagamentoRespCip.valorMaximoPermitidoPagamento) &&
-        Objects.equals(this.numeroIdentificacaoConsultaPagamento, infConsultaPagamentoRespCip.numeroIdentificacaoConsultaPagamento);
+        Objects.equals(this.valorMinimoPermitidoPagamento, infConsultaPagamentoRespCip.valorMinimoPermitidoPagamento) &&
+        Objects.equals(this.valorMultaCalculadada, infConsultaPagamentoRespCip.valorMultaCalculadada);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(valorJurosCalculado, valorMultaCalculadada, valorAbatimento, tipoValorAceito, valorMinimoPermitidoPagamento, valorMaximoPermitidoPagamento, numeroIdentificacaoConsultaPagamento);
+    return Objects.hash(numeroIdentificacaoConsultaPagamento, tipoValorAceito, valorAbatimento, valorJurosCalculado, valorMaximoPermitidoPagamento, valorMinimoPermitidoPagamento, valorMultaCalculadada);
   }
 
   @Override
@@ -207,13 +214,13 @@ public class InfConsultaPagamentoRespCip   {
     StringBuilder sb = new StringBuilder();
     sb.append("class InfConsultaPagamentoRespCip {\n");
     
-    sb.append("    valorJurosCalculado: ").append(toIndentedString(valorJurosCalculado)).append("\n");
-    sb.append("    valorMultaCalculadada: ").append(toIndentedString(valorMultaCalculadada)).append("\n");
-    sb.append("    valorAbatimento: ").append(toIndentedString(valorAbatimento)).append("\n");
-    sb.append("    tipoValorAceito: ").append(toIndentedString(tipoValorAceito)).append("\n");
-    sb.append("    valorMinimoPermitidoPagamento: ").append(toIndentedString(valorMinimoPermitidoPagamento)).append("\n");
-    sb.append("    valorMaximoPermitidoPagamento: ").append(toIndentedString(valorMaximoPermitidoPagamento)).append("\n");
     sb.append("    numeroIdentificacaoConsultaPagamento: ").append(toIndentedString(numeroIdentificacaoConsultaPagamento)).append("\n");
+    sb.append("    tipoValorAceito: ").append(toIndentedString(tipoValorAceito)).append("\n");
+    sb.append("    valorAbatimento: ").append(toIndentedString(valorAbatimento)).append("\n");
+    sb.append("    valorJurosCalculado: ").append(toIndentedString(valorJurosCalculado)).append("\n");
+    sb.append("    valorMaximoPermitidoPagamento: ").append(toIndentedString(valorMaximoPermitidoPagamento)).append("\n");
+    sb.append("    valorMinimoPermitidoPagamento: ").append(toIndentedString(valorMinimoPermitidoPagamento)).append("\n");
+    sb.append("    valorMultaCalculadada: ").append(toIndentedString(valorMultaCalculadada)).append("\n");
     sb.append("}");
     return sb.toString();
   }

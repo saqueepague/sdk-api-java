@@ -16,27 +16,48 @@ import javax.validation.constraints.*;
  * InfConsultaValoresRecargaRespValoresProducts
  */
 @Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.SpringCodegen", date = "2018-12-05T18:08:56.087Z[GMT]")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2019-01-18T19:37:26.329Z")
 
 public class InfConsultaValoresRecargaRespValoresProducts   {
+  @JsonProperty("fee")
+  private String fee = null;
+
   @JsonProperty("id")
   private String id = null;
-
-  @JsonProperty("name")
-  private String name = null;
-
-  @JsonProperty("min_value")
-  private String minValue = null;
 
   @JsonProperty("max_value")
   private String maxValue = null;
 
-  @JsonProperty("fee")
-  private String fee = null;
+  @JsonProperty("min_value")
+  private String minValue = null;
+
+  @JsonProperty("name")
+  private String name = null;
 
   @JsonProperty("values")
   @Valid
   private List<InfConsultaValoresRecargaRespValoresValues> values = null;
+
+  public InfConsultaValoresRecargaRespValoresProducts fee(String fee) {
+    this.fee = fee;
+    return this;
+  }
+
+  /**
+   * Taxa da recarga.
+   * @return fee
+  **/
+  @ApiModelProperty(example = "200", required = true, value = "Taxa da recarga.")
+  @NotNull
+
+@Pattern(regexp="^\\d+$") 
+  public String getFee() {
+    return fee;
+  }
+
+  public void setFee(String fee) {
+    this.fee = fee;
+  }
 
   public InfConsultaValoresRecargaRespValoresProducts id(String id) {
     this.id = id;
@@ -47,7 +68,8 @@ public class InfConsultaValoresRecargaRespValoresProducts   {
    * Identificador do produto.
    * @return id
   **/
-  @ApiModelProperty(example = "7", value = "Identificador do produto.")
+  @ApiModelProperty(example = "1", required = true, value = "Identificador do produto.")
+  @NotNull
 
 @Pattern(regexp="^\\d+$") 
   public String getId() {
@@ -56,46 +78,6 @@ public class InfConsultaValoresRecargaRespValoresProducts   {
 
   public void setId(String id) {
     this.id = id;
-  }
-
-  public InfConsultaValoresRecargaRespValoresProducts name(String name) {
-    this.name = name;
-    return this;
-  }
-
-  /**
-   * Nome do produto.
-   * @return name
-  **/
-  @ApiModelProperty(example = "Bilhete Antecipado", value = "Nome do produto.")
-
-
-  public String getName() {
-    return name;
-  }
-
-  public void setName(String name) {
-    this.name = name;
-  }
-
-  public InfConsultaValoresRecargaRespValoresProducts minValue(String minValue) {
-    this.minValue = minValue;
-    return this;
-  }
-
-  /**
-   * Valor mínimo de recarga.
-   * @return minValue
-  **/
-  @ApiModelProperty(example = "1000", value = "Valor mínimo de recarga.")
-
-@Pattern(regexp="^\\d+$") 
-  public String getMinValue() {
-    return minValue;
-  }
-
-  public void setMinValue(String minValue) {
-    this.minValue = minValue;
   }
 
   public InfConsultaValoresRecargaRespValoresProducts maxValue(String maxValue) {
@@ -107,7 +89,8 @@ public class InfConsultaValoresRecargaRespValoresProducts   {
    * Valor máximo de recarga.
    * @return maxValue
   **/
-  @ApiModelProperty(example = "9000", value = "Valor máximo de recarga.")
+  @ApiModelProperty(example = "9000", required = true, value = "Valor máximo de recarga.")
+  @NotNull
 
 @Pattern(regexp="^\\d+$") 
   public String getMaxValue() {
@@ -118,24 +101,46 @@ public class InfConsultaValoresRecargaRespValoresProducts   {
     this.maxValue = maxValue;
   }
 
-  public InfConsultaValoresRecargaRespValoresProducts fee(String fee) {
-    this.fee = fee;
+  public InfConsultaValoresRecargaRespValoresProducts minValue(String minValue) {
+    this.minValue = minValue;
     return this;
   }
 
   /**
-   * Taxa da recarga.
-   * @return fee
+   * Valor mínimo de recarga.
+   * @return minValue
   **/
-  @ApiModelProperty(example = "200", value = "Taxa da recarga.")
+  @ApiModelProperty(example = "1000", required = true, value = "Valor mínimo de recarga.")
+  @NotNull
 
 @Pattern(regexp="^\\d+$") 
-  public String getFee() {
-    return fee;
+  public String getMinValue() {
+    return minValue;
   }
 
-  public void setFee(String fee) {
-    this.fee = fee;
+  public void setMinValue(String minValue) {
+    this.minValue = minValue;
+  }
+
+  public InfConsultaValoresRecargaRespValoresProducts name(String name) {
+    this.name = name;
+    return this;
+  }
+
+  /**
+   * Nome do produto.
+   * @return name
+  **/
+  @ApiModelProperty(example = "Bilhete Antecipado", required = true, value = "Nome do produto.")
+  @NotNull
+
+
+  public String getName() {
+    return name;
+  }
+
+  public void setName(String name) {
+    this.name = name;
   }
 
   public InfConsultaValoresRecargaRespValoresProducts values(List<InfConsultaValoresRecargaRespValoresValues> values) {
@@ -177,17 +182,17 @@ public class InfConsultaValoresRecargaRespValoresProducts   {
       return false;
     }
     InfConsultaValoresRecargaRespValoresProducts infConsultaValoresRecargaRespValoresProducts = (InfConsultaValoresRecargaRespValoresProducts) o;
-    return Objects.equals(this.id, infConsultaValoresRecargaRespValoresProducts.id) &&
-        Objects.equals(this.name, infConsultaValoresRecargaRespValoresProducts.name) &&
-        Objects.equals(this.minValue, infConsultaValoresRecargaRespValoresProducts.minValue) &&
+    return Objects.equals(this.fee, infConsultaValoresRecargaRespValoresProducts.fee) &&
+        Objects.equals(this.id, infConsultaValoresRecargaRespValoresProducts.id) &&
         Objects.equals(this.maxValue, infConsultaValoresRecargaRespValoresProducts.maxValue) &&
-        Objects.equals(this.fee, infConsultaValoresRecargaRespValoresProducts.fee) &&
+        Objects.equals(this.minValue, infConsultaValoresRecargaRespValoresProducts.minValue) &&
+        Objects.equals(this.name, infConsultaValoresRecargaRespValoresProducts.name) &&
         Objects.equals(this.values, infConsultaValoresRecargaRespValoresProducts.values);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, minValue, maxValue, fee, values);
+    return Objects.hash(fee, id, maxValue, minValue, name, values);
   }
 
   @Override
@@ -195,11 +200,11 @@ public class InfConsultaValoresRecargaRespValoresProducts   {
     StringBuilder sb = new StringBuilder();
     sb.append("class InfConsultaValoresRecargaRespValoresProducts {\n");
     
-    sb.append("    id: ").append(toIndentedString(id)).append("\n");
-    sb.append("    name: ").append(toIndentedString(name)).append("\n");
-    sb.append("    minValue: ").append(toIndentedString(minValue)).append("\n");
-    sb.append("    maxValue: ").append(toIndentedString(maxValue)).append("\n");
     sb.append("    fee: ").append(toIndentedString(fee)).append("\n");
+    sb.append("    id: ").append(toIndentedString(id)).append("\n");
+    sb.append("    maxValue: ").append(toIndentedString(maxValue)).append("\n");
+    sb.append("    minValue: ").append(toIndentedString(minValue)).append("\n");
+    sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    values: ").append(toIndentedString(values)).append("\n");
     sb.append("}");
     return sb.toString();

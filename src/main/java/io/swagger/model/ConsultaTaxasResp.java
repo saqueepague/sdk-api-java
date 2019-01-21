@@ -17,62 +17,20 @@ import javax.validation.constraints.*;
  * ConsultaTaxasResp
  */
 @Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.SpringCodegen", date = "2018-12-05T18:08:56.087Z[GMT]")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2019-01-18T19:37:26.329Z")
 
 public class ConsultaTaxasResp   {
-  @JsonProperty("InfTransacao")
-  private InfTransacaoResp infTransacao = null;
-
-  @JsonProperty("Terminal")
-  private Terminal terminal = null;
-
   @JsonProperty("Cripto")
   private CriptoResp cripto = null;
 
   @JsonProperty("InfConsultaTaxas")
   private InfConsultaTaxasResp infConsultaTaxas = null;
 
-  public ConsultaTaxasResp infTransacao(InfTransacaoResp infTransacao) {
-    this.infTransacao = infTransacao;
-    return this;
-  }
+  @JsonProperty("InfTransacao")
+  private InfTransacaoResp infTransacao = null;
 
-  /**
-   * Get infTransacao
-   * @return infTransacao
-  **/
-  @ApiModelProperty(value = "")
-
-  @Valid
-
-  public InfTransacaoResp getInfTransacao() {
-    return infTransacao;
-  }
-
-  public void setInfTransacao(InfTransacaoResp infTransacao) {
-    this.infTransacao = infTransacao;
-  }
-
-  public ConsultaTaxasResp terminal(Terminal terminal) {
-    this.terminal = terminal;
-    return this;
-  }
-
-  /**
-   * Get terminal
-   * @return terminal
-  **/
-  @ApiModelProperty(value = "")
-
-  @Valid
-
-  public Terminal getTerminal() {
-    return terminal;
-  }
-
-  public void setTerminal(Terminal terminal) {
-    this.terminal = terminal;
-  }
+  @JsonProperty("Terminal")
+  private Terminal terminal = null;
 
   public ConsultaTaxasResp cripto(CriptoResp cripto) {
     this.cripto = cripto;
@@ -104,7 +62,8 @@ public class ConsultaTaxasResp   {
    * Get infConsultaTaxas
    * @return infConsultaTaxas
   **/
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(required = true, value = "")
+  @NotNull
 
   @Valid
 
@@ -114,6 +73,50 @@ public class ConsultaTaxasResp   {
 
   public void setInfConsultaTaxas(InfConsultaTaxasResp infConsultaTaxas) {
     this.infConsultaTaxas = infConsultaTaxas;
+  }
+
+  public ConsultaTaxasResp infTransacao(InfTransacaoResp infTransacao) {
+    this.infTransacao = infTransacao;
+    return this;
+  }
+
+  /**
+   * Get infTransacao
+   * @return infTransacao
+  **/
+  @ApiModelProperty(required = true, value = "")
+  @NotNull
+
+  @Valid
+
+  public InfTransacaoResp getInfTransacao() {
+    return infTransacao;
+  }
+
+  public void setInfTransacao(InfTransacaoResp infTransacao) {
+    this.infTransacao = infTransacao;
+  }
+
+  public ConsultaTaxasResp terminal(Terminal terminal) {
+    this.terminal = terminal;
+    return this;
+  }
+
+  /**
+   * Get terminal
+   * @return terminal
+  **/
+  @ApiModelProperty(required = true, value = "")
+  @NotNull
+
+  @Valid
+
+  public Terminal getTerminal() {
+    return terminal;
+  }
+
+  public void setTerminal(Terminal terminal) {
+    this.terminal = terminal;
   }
 
 
@@ -126,15 +129,15 @@ public class ConsultaTaxasResp   {
       return false;
     }
     ConsultaTaxasResp consultaTaxasResp = (ConsultaTaxasResp) o;
-    return Objects.equals(this.infTransacao, consultaTaxasResp.infTransacao) &&
-        Objects.equals(this.terminal, consultaTaxasResp.terminal) &&
-        Objects.equals(this.cripto, consultaTaxasResp.cripto) &&
-        Objects.equals(this.infConsultaTaxas, consultaTaxasResp.infConsultaTaxas);
+    return Objects.equals(this.cripto, consultaTaxasResp.cripto) &&
+        Objects.equals(this.infConsultaTaxas, consultaTaxasResp.infConsultaTaxas) &&
+        Objects.equals(this.infTransacao, consultaTaxasResp.infTransacao) &&
+        Objects.equals(this.terminal, consultaTaxasResp.terminal);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(infTransacao, terminal, cripto, infConsultaTaxas);
+    return Objects.hash(cripto, infConsultaTaxas, infTransacao, terminal);
   }
 
   @Override
@@ -142,10 +145,10 @@ public class ConsultaTaxasResp   {
     StringBuilder sb = new StringBuilder();
     sb.append("class ConsultaTaxasResp {\n");
     
-    sb.append("    infTransacao: ").append(toIndentedString(infTransacao)).append("\n");
-    sb.append("    terminal: ").append(toIndentedString(terminal)).append("\n");
     sb.append("    cripto: ").append(toIndentedString(cripto)).append("\n");
     sb.append("    infConsultaTaxas: ").append(toIndentedString(infConsultaTaxas)).append("\n");
+    sb.append("    infTransacao: ").append(toIndentedString(infTransacao)).append("\n");
+    sb.append("    terminal: ").append(toIndentedString(terminal)).append("\n");
     sb.append("}");
     return sb.toString();
   }

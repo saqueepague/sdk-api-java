@@ -16,18 +16,45 @@ import javax.validation.constraints.*;
  * InfConsultaTaxasRespTransactionsFees
  */
 @Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.SpringCodegen", date = "2018-12-05T18:08:56.087Z[GMT]")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2019-01-18T19:37:26.329Z")
 
 public class InfConsultaTaxasRespTransactionsFees   {
+  @JsonProperty("fees")
+  @Valid
+  private List<InfConsultaTaxasRespFees> fees = new ArrayList<InfConsultaTaxasRespFees>();
+
   @JsonProperty("id")
   private String id = null;
 
   @JsonProperty("name")
   private String name = null;
 
-  @JsonProperty("fees")
+  public InfConsultaTaxasRespTransactionsFees fees(List<InfConsultaTaxasRespFees> fees) {
+    this.fees = fees;
+    return this;
+  }
+
+  public InfConsultaTaxasRespTransactionsFees addFeesItem(InfConsultaTaxasRespFees feesItem) {
+    this.fees.add(feesItem);
+    return this;
+  }
+
+  /**
+   * Get fees
+   * @return fees
+  **/
+  @ApiModelProperty(required = true, value = "")
+  @NotNull
+
   @Valid
-  private List<InfConsultaTaxasRespFees> fees = null;
+
+  public List<InfConsultaTaxasRespFees> getFees() {
+    return fees;
+  }
+
+  public void setFees(List<InfConsultaTaxasRespFees> fees) {
+    this.fees = fees;
+  }
 
   public InfConsultaTaxasRespTransactionsFees id(String id) {
     this.id = id;
@@ -38,7 +65,8 @@ public class InfConsultaTaxasRespTransactionsFees   {
    * Identificador da taxa.
    * @return id
   **/
-  @ApiModelProperty(example = "01", value = "Identificador da taxa.")
+  @ApiModelProperty(example = "01", required = true, value = "Identificador da taxa.")
+  @NotNull
 
 @Pattern(regexp="^\\d+$") 
   public String getId() {
@@ -58,7 +86,8 @@ public class InfConsultaTaxasRespTransactionsFees   {
    * Nome da taxa.
    * @return name
   **/
-  @ApiModelProperty(example = "deposit", value = "Nome da taxa.")
+  @ApiModelProperty(example = "deposit", required = true, value = "Nome da taxa.")
+  @NotNull
 
 
   public String getName() {
@@ -67,35 +96,6 @@ public class InfConsultaTaxasRespTransactionsFees   {
 
   public void setName(String name) {
     this.name = name;
-  }
-
-  public InfConsultaTaxasRespTransactionsFees fees(List<InfConsultaTaxasRespFees> fees) {
-    this.fees = fees;
-    return this;
-  }
-
-  public InfConsultaTaxasRespTransactionsFees addFeesItem(InfConsultaTaxasRespFees feesItem) {
-    if (this.fees == null) {
-      this.fees = new ArrayList<InfConsultaTaxasRespFees>();
-    }
-    this.fees.add(feesItem);
-    return this;
-  }
-
-  /**
-   * Get fees
-   * @return fees
-  **/
-  @ApiModelProperty(value = "")
-
-  @Valid
-
-  public List<InfConsultaTaxasRespFees> getFees() {
-    return fees;
-  }
-
-  public void setFees(List<InfConsultaTaxasRespFees> fees) {
-    this.fees = fees;
   }
 
 
@@ -108,14 +108,14 @@ public class InfConsultaTaxasRespTransactionsFees   {
       return false;
     }
     InfConsultaTaxasRespTransactionsFees infConsultaTaxasRespTransactionsFees = (InfConsultaTaxasRespTransactionsFees) o;
-    return Objects.equals(this.id, infConsultaTaxasRespTransactionsFees.id) &&
-        Objects.equals(this.name, infConsultaTaxasRespTransactionsFees.name) &&
-        Objects.equals(this.fees, infConsultaTaxasRespTransactionsFees.fees);
+    return Objects.equals(this.fees, infConsultaTaxasRespTransactionsFees.fees) &&
+        Objects.equals(this.id, infConsultaTaxasRespTransactionsFees.id) &&
+        Objects.equals(this.name, infConsultaTaxasRespTransactionsFees.name);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, fees);
+    return Objects.hash(fees, id, name);
   }
 
   @Override
@@ -123,9 +123,9 @@ public class InfConsultaTaxasRespTransactionsFees   {
     StringBuilder sb = new StringBuilder();
     sb.append("class InfConsultaTaxasRespTransactionsFees {\n");
     
+    sb.append("    fees: ").append(toIndentedString(fees)).append("\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
-    sb.append("    fees: ").append(toIndentedString(fees)).append("\n");
     sb.append("}");
     return sb.toString();
   }

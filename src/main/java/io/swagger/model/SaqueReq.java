@@ -18,17 +18,11 @@ import javax.validation.constraints.*;
  * SaqueReq
  */
 @Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.SpringCodegen", date = "2018-12-05T18:08:56.087Z[GMT]")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2019-01-18T19:37:26.329Z")
 
 public class SaqueReq   {
-  @JsonProperty("InfTransacao")
-  private InfTransacaoReq infTransacao = null;
-
   @JsonProperty("Cartao")
   private Cartao cartao = null;
-
-  @JsonProperty("Terminal")
-  private Terminal terminal = null;
 
   @JsonProperty("Cripto")
   private Cripto cripto = null;
@@ -36,26 +30,11 @@ public class SaqueReq   {
   @JsonProperty("InfSaque")
   private InfSaqueReq infSaque = null;
 
-  public SaqueReq infTransacao(InfTransacaoReq infTransacao) {
-    this.infTransacao = infTransacao;
-    return this;
-  }
+  @JsonProperty("InfTransacao")
+  private InfTransacaoReq infTransacao = null;
 
-  /**
-   * Get infTransacao
-   * @return infTransacao
-  **/
-  @ApiModelProperty(value = "")
-
-  @Valid
-
-  public InfTransacaoReq getInfTransacao() {
-    return infTransacao;
-  }
-
-  public void setInfTransacao(InfTransacaoReq infTransacao) {
-    this.infTransacao = infTransacao;
-  }
+  @JsonProperty("Terminal")
+  private Terminal terminal = null;
 
   public SaqueReq cartao(Cartao cartao) {
     this.cartao = cartao;
@@ -76,27 +55,6 @@ public class SaqueReq   {
 
   public void setCartao(Cartao cartao) {
     this.cartao = cartao;
-  }
-
-  public SaqueReq terminal(Terminal terminal) {
-    this.terminal = terminal;
-    return this;
-  }
-
-  /**
-   * Get terminal
-   * @return terminal
-  **/
-  @ApiModelProperty(value = "")
-
-  @Valid
-
-  public Terminal getTerminal() {
-    return terminal;
-  }
-
-  public void setTerminal(Terminal terminal) {
-    this.terminal = terminal;
   }
 
   public SaqueReq cripto(Cripto cripto) {
@@ -129,7 +87,8 @@ public class SaqueReq   {
    * Get infSaque
    * @return infSaque
   **/
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(required = true, value = "")
+  @NotNull
 
   @Valid
 
@@ -139,6 +98,50 @@ public class SaqueReq   {
 
   public void setInfSaque(InfSaqueReq infSaque) {
     this.infSaque = infSaque;
+  }
+
+  public SaqueReq infTransacao(InfTransacaoReq infTransacao) {
+    this.infTransacao = infTransacao;
+    return this;
+  }
+
+  /**
+   * Get infTransacao
+   * @return infTransacao
+  **/
+  @ApiModelProperty(required = true, value = "")
+  @NotNull
+
+  @Valid
+
+  public InfTransacaoReq getInfTransacao() {
+    return infTransacao;
+  }
+
+  public void setInfTransacao(InfTransacaoReq infTransacao) {
+    this.infTransacao = infTransacao;
+  }
+
+  public SaqueReq terminal(Terminal terminal) {
+    this.terminal = terminal;
+    return this;
+  }
+
+  /**
+   * Get terminal
+   * @return terminal
+  **/
+  @ApiModelProperty(required = true, value = "")
+  @NotNull
+
+  @Valid
+
+  public Terminal getTerminal() {
+    return terminal;
+  }
+
+  public void setTerminal(Terminal terminal) {
+    this.terminal = terminal;
   }
 
 
@@ -151,16 +154,16 @@ public class SaqueReq   {
       return false;
     }
     SaqueReq saqueReq = (SaqueReq) o;
-    return Objects.equals(this.infTransacao, saqueReq.infTransacao) &&
-        Objects.equals(this.cartao, saqueReq.cartao) &&
-        Objects.equals(this.terminal, saqueReq.terminal) &&
+    return Objects.equals(this.cartao, saqueReq.cartao) &&
         Objects.equals(this.cripto, saqueReq.cripto) &&
-        Objects.equals(this.infSaque, saqueReq.infSaque);
+        Objects.equals(this.infSaque, saqueReq.infSaque) &&
+        Objects.equals(this.infTransacao, saqueReq.infTransacao) &&
+        Objects.equals(this.terminal, saqueReq.terminal);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(infTransacao, cartao, terminal, cripto, infSaque);
+    return Objects.hash(cartao, cripto, infSaque, infTransacao, terminal);
   }
 
   @Override
@@ -168,11 +171,11 @@ public class SaqueReq   {
     StringBuilder sb = new StringBuilder();
     sb.append("class SaqueReq {\n");
     
-    sb.append("    infTransacao: ").append(toIndentedString(infTransacao)).append("\n");
     sb.append("    cartao: ").append(toIndentedString(cartao)).append("\n");
-    sb.append("    terminal: ").append(toIndentedString(terminal)).append("\n");
     sb.append("    cripto: ").append(toIndentedString(cripto)).append("\n");
     sb.append("    infSaque: ").append(toIndentedString(infSaque)).append("\n");
+    sb.append("    infTransacao: ").append(toIndentedString(infTransacao)).append("\n");
+    sb.append("    terminal: ").append(toIndentedString(terminal)).append("\n");
     sb.append("}");
     return sb.toString();
   }

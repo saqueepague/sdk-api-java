@@ -16,17 +16,39 @@ import javax.validation.constraints.*;
  * CompraTitulosCapitalizacaoResp
  */
 @Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.SpringCodegen", date = "2018-12-05T18:08:56.087Z[GMT]")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2019-01-18T19:37:26.329Z")
 
 public class CompraTitulosCapitalizacaoResp   {
+  @JsonProperty("InfCompraTitulosCapitalizacao")
+  private InfCompraTitulosCapitalizacaoResp infCompraTitulosCapitalizacao = null;
+
   @JsonProperty("InfTransacao")
   private InfTransacaoResp infTransacao = null;
 
   @JsonProperty("Terminal")
   private Terminal terminal = null;
 
-  @JsonProperty("InfCompraTitulosCapitalizacao")
-  private InfCompraTitulosCapitalizacaoResp infCompraTitulosCapitalizacao = null;
+  public CompraTitulosCapitalizacaoResp infCompraTitulosCapitalizacao(InfCompraTitulosCapitalizacaoResp infCompraTitulosCapitalizacao) {
+    this.infCompraTitulosCapitalizacao = infCompraTitulosCapitalizacao;
+    return this;
+  }
+
+  /**
+   * Get infCompraTitulosCapitalizacao
+   * @return infCompraTitulosCapitalizacao
+  **/
+  @ApiModelProperty(required = true, value = "")
+  @NotNull
+
+  @Valid
+
+  public InfCompraTitulosCapitalizacaoResp getInfCompraTitulosCapitalizacao() {
+    return infCompraTitulosCapitalizacao;
+  }
+
+  public void setInfCompraTitulosCapitalizacao(InfCompraTitulosCapitalizacaoResp infCompraTitulosCapitalizacao) {
+    this.infCompraTitulosCapitalizacao = infCompraTitulosCapitalizacao;
+  }
 
   public CompraTitulosCapitalizacaoResp infTransacao(InfTransacaoResp infTransacao) {
     this.infTransacao = infTransacao;
@@ -37,7 +59,8 @@ public class CompraTitulosCapitalizacaoResp   {
    * Get infTransacao
    * @return infTransacao
   **/
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(required = true, value = "")
+  @NotNull
 
   @Valid
 
@@ -58,7 +81,8 @@ public class CompraTitulosCapitalizacaoResp   {
    * Get terminal
    * @return terminal
   **/
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(required = true, value = "")
+  @NotNull
 
   @Valid
 
@@ -68,27 +92,6 @@ public class CompraTitulosCapitalizacaoResp   {
 
   public void setTerminal(Terminal terminal) {
     this.terminal = terminal;
-  }
-
-  public CompraTitulosCapitalizacaoResp infCompraTitulosCapitalizacao(InfCompraTitulosCapitalizacaoResp infCompraTitulosCapitalizacao) {
-    this.infCompraTitulosCapitalizacao = infCompraTitulosCapitalizacao;
-    return this;
-  }
-
-  /**
-   * Get infCompraTitulosCapitalizacao
-   * @return infCompraTitulosCapitalizacao
-  **/
-  @ApiModelProperty(value = "")
-
-  @Valid
-
-  public InfCompraTitulosCapitalizacaoResp getInfCompraTitulosCapitalizacao() {
-    return infCompraTitulosCapitalizacao;
-  }
-
-  public void setInfCompraTitulosCapitalizacao(InfCompraTitulosCapitalizacaoResp infCompraTitulosCapitalizacao) {
-    this.infCompraTitulosCapitalizacao = infCompraTitulosCapitalizacao;
   }
 
 
@@ -101,14 +104,14 @@ public class CompraTitulosCapitalizacaoResp   {
       return false;
     }
     CompraTitulosCapitalizacaoResp compraTitulosCapitalizacaoResp = (CompraTitulosCapitalizacaoResp) o;
-    return Objects.equals(this.infTransacao, compraTitulosCapitalizacaoResp.infTransacao) &&
-        Objects.equals(this.terminal, compraTitulosCapitalizacaoResp.terminal) &&
-        Objects.equals(this.infCompraTitulosCapitalizacao, compraTitulosCapitalizacaoResp.infCompraTitulosCapitalizacao);
+    return Objects.equals(this.infCompraTitulosCapitalizacao, compraTitulosCapitalizacaoResp.infCompraTitulosCapitalizacao) &&
+        Objects.equals(this.infTransacao, compraTitulosCapitalizacaoResp.infTransacao) &&
+        Objects.equals(this.terminal, compraTitulosCapitalizacaoResp.terminal);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(infTransacao, terminal, infCompraTitulosCapitalizacao);
+    return Objects.hash(infCompraTitulosCapitalizacao, infTransacao, terminal);
   }
 
   @Override
@@ -116,9 +119,9 @@ public class CompraTitulosCapitalizacaoResp   {
     StringBuilder sb = new StringBuilder();
     sb.append("class CompraTitulosCapitalizacaoResp {\n");
     
+    sb.append("    infCompraTitulosCapitalizacao: ").append(toIndentedString(infCompraTitulosCapitalizacao)).append("\n");
     sb.append("    infTransacao: ").append(toIndentedString(infTransacao)).append("\n");
     sb.append("    terminal: ").append(toIndentedString(terminal)).append("\n");
-    sb.append("    infCompraTitulosCapitalizacao: ").append(toIndentedString(infCompraTitulosCapitalizacao)).append("\n");
     sb.append("}");
     return sb.toString();
   }

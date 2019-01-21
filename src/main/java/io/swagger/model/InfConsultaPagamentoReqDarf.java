@@ -13,17 +13,59 @@ import javax.validation.constraints.*;
  * InfConsultaPagamentoReqDarf
  */
 @Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.SpringCodegen", date = "2018-12-05T18:08:56.087Z[GMT]")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2019-01-18T19:37:26.329Z")
 
 public class InfConsultaPagamentoReqDarf   {
-  @JsonProperty("periodoApuracao")
-  private String periodoApuracao = null;
-
   @JsonProperty("codReceita")
   private String codReceita = null;
 
   @JsonProperty("numReferencia")
   private String numReferencia = null;
+
+  @JsonProperty("periodoApuracao")
+  private String periodoApuracao = null;
+
+  public InfConsultaPagamentoReqDarf codReceita(String codReceita) {
+    this.codReceita = codReceita;
+    return this;
+  }
+
+  /**
+   * Código da receita do DARF.
+   * @return codReceita
+  **/
+  @ApiModelProperty(example = "8301", required = true, value = "Código da receita do DARF.")
+  @NotNull
+
+@Pattern(regexp="^\\d+$") 
+  public String getCodReceita() {
+    return codReceita;
+  }
+
+  public void setCodReceita(String codReceita) {
+    this.codReceita = codReceita;
+  }
+
+  public InfConsultaPagamentoReqDarf numReferencia(String numReferencia) {
+    this.numReferencia = numReferencia;
+    return this;
+  }
+
+  /**
+   * Número de referência.
+   * @return numReferencia
+  **/
+  @ApiModelProperty(example = "7", required = true, value = "Número de referência.")
+  @NotNull
+
+@Pattern(regexp="^\\d+$") 
+  public String getNumReferencia() {
+    return numReferencia;
+  }
+
+  public void setNumReferencia(String numReferencia) {
+    this.numReferencia = numReferencia;
+  }
 
   public InfConsultaPagamentoReqDarf periodoApuracao(String periodoApuracao) {
     this.periodoApuracao = periodoApuracao;
@@ -45,46 +87,6 @@ public class InfConsultaPagamentoReqDarf   {
     this.periodoApuracao = periodoApuracao;
   }
 
-  public InfConsultaPagamentoReqDarf codReceita(String codReceita) {
-    this.codReceita = codReceita;
-    return this;
-  }
-
-  /**
-   * Código da receita do DARF.
-   * @return codReceita
-  **/
-  @ApiModelProperty(value = "Código da receita do DARF.")
-
-
-  public String getCodReceita() {
-    return codReceita;
-  }
-
-  public void setCodReceita(String codReceita) {
-    this.codReceita = codReceita;
-  }
-
-  public InfConsultaPagamentoReqDarf numReferencia(String numReferencia) {
-    this.numReferencia = numReferencia;
-    return this;
-  }
-
-  /**
-   * Número de referência.
-   * @return numReferencia
-  **/
-  @ApiModelProperty(example = "7", value = "Número de referência.")
-
-@Pattern(regexp="^\\d+$") 
-  public String getNumReferencia() {
-    return numReferencia;
-  }
-
-  public void setNumReferencia(String numReferencia) {
-    this.numReferencia = numReferencia;
-  }
-
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -95,14 +97,14 @@ public class InfConsultaPagamentoReqDarf   {
       return false;
     }
     InfConsultaPagamentoReqDarf infConsultaPagamentoReqDarf = (InfConsultaPagamentoReqDarf) o;
-    return Objects.equals(this.periodoApuracao, infConsultaPagamentoReqDarf.periodoApuracao) &&
-        Objects.equals(this.codReceita, infConsultaPagamentoReqDarf.codReceita) &&
-        Objects.equals(this.numReferencia, infConsultaPagamentoReqDarf.numReferencia);
+    return Objects.equals(this.codReceita, infConsultaPagamentoReqDarf.codReceita) &&
+        Objects.equals(this.numReferencia, infConsultaPagamentoReqDarf.numReferencia) &&
+        Objects.equals(this.periodoApuracao, infConsultaPagamentoReqDarf.periodoApuracao);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(periodoApuracao, codReceita, numReferencia);
+    return Objects.hash(codReceita, numReferencia, periodoApuracao);
   }
 
   @Override
@@ -110,9 +112,9 @@ public class InfConsultaPagamentoReqDarf   {
     StringBuilder sb = new StringBuilder();
     sb.append("class InfConsultaPagamentoReqDarf {\n");
     
-    sb.append("    periodoApuracao: ").append(toIndentedString(periodoApuracao)).append("\n");
     sb.append("    codReceita: ").append(toIndentedString(codReceita)).append("\n");
     sb.append("    numReferencia: ").append(toIndentedString(numReferencia)).append("\n");
+    sb.append("    periodoApuracao: ").append(toIndentedString(periodoApuracao)).append("\n");
     sb.append("}");
     return sb.toString();
   }

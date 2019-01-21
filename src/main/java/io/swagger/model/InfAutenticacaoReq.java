@@ -14,7 +14,7 @@ import javax.validation.constraints.*;
  */
 @ApiModel(description = "Informações da requisição de autenticação.")
 @Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.SpringCodegen", date = "2018-12-05T18:08:56.087Z[GMT]")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2019-01-18T19:37:26.329Z")
 
 public class InfAutenticacaoReq   {
   @JsonProperty("cpf")
@@ -22,9 +22,6 @@ public class InfAutenticacaoReq   {
 
   @JsonProperty("telefone")
   private String telefone = null;
-
-  @JsonProperty("token")
-  private String token = null;
 
   public InfAutenticacaoReq cpf(String cpf) {
     this.cpf = cpf;
@@ -35,7 +32,8 @@ public class InfAutenticacaoReq   {
    * Número do CPF do cliente a autenticar (11 dígitos).
    * @return cpf
   **/
-  @ApiModelProperty(example = "02358422785", value = "Número do CPF do cliente a autenticar (11 dígitos).")
+  @ApiModelProperty(example = "02358422785", required = true, value = "Número do CPF do cliente a autenticar (11 dígitos).")
+  @NotNull
 
 @Pattern(regexp="^\\d{11}$") 
   public String getCpf() {
@@ -55,7 +53,8 @@ public class InfAutenticacaoReq   {
    * Telefone do cliente favorecido a autenticar (11 dígitos = DDD com 0 quando número tem 8 dígitos, sem 0 quando número tem 9 dígitos).
    * @return telefone
   **/
-  @ApiModelProperty(example = "51999999999", value = "Telefone do cliente favorecido a autenticar (11 dígitos = DDD com 0 quando número tem 8 dígitos, sem 0 quando número tem 9 dígitos).")
+  @ApiModelProperty(example = "51999999999", required = true, value = "Telefone do cliente favorecido a autenticar (11 dígitos = DDD com 0 quando número tem 8 dígitos, sem 0 quando número tem 9 dígitos).")
+  @NotNull
 
 @Pattern(regexp="^\\d{11}$") 
   public String getTelefone() {
@@ -64,26 +63,6 @@ public class InfAutenticacaoReq   {
 
   public void setTelefone(String telefone) {
     this.telefone = telefone;
-  }
-
-  public InfAutenticacaoReq token(String token) {
-    this.token = token;
-    return this;
-  }
-
-  /**
-   * Número do token do cliente se autenticando.
-   * @return token
-  **/
-  @ApiModelProperty(example = "02C47DF604EB43B1", value = "Número do token do cliente se autenticando.")
-
-
-  public String getToken() {
-    return token;
-  }
-
-  public void setToken(String token) {
-    this.token = token;
   }
 
 
@@ -97,13 +76,12 @@ public class InfAutenticacaoReq   {
     }
     InfAutenticacaoReq infAutenticacaoReq = (InfAutenticacaoReq) o;
     return Objects.equals(this.cpf, infAutenticacaoReq.cpf) &&
-        Objects.equals(this.telefone, infAutenticacaoReq.telefone) &&
-        Objects.equals(this.token, infAutenticacaoReq.token);
+        Objects.equals(this.telefone, infAutenticacaoReq.telefone);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(cpf, telefone, token);
+    return Objects.hash(cpf, telefone);
   }
 
   @Override
@@ -113,7 +91,6 @@ public class InfAutenticacaoReq   {
     
     sb.append("    cpf: ").append(toIndentedString(cpf)).append("\n");
     sb.append("    telefone: ").append(toIndentedString(telefone)).append("\n");
-    sb.append("    token: ").append(toIndentedString(token)).append("\n");
     sb.append("}");
     return sb.toString();
   }

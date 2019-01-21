@@ -13,16 +13,16 @@ import javax.validation.Valid;
 import javax.validation.constraints.*;
 
 /**
- * Lista de valores possíveis de recarga para os produtos de cada operadora.
+ * Lista de valores possíveis de produtos de recarga com seus valores.
  */
-@ApiModel(description = "Lista de valores possíveis de recarga para os produtos de cada operadora.")
+@ApiModel(description = "Lista de valores possíveis de produtos de recarga com seus valores.")
 @Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.SpringCodegen", date = "2018-12-05T18:08:56.087Z[GMT]")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2019-01-18T19:37:26.329Z")
 
 public class InfConsultaValoresRecargaRespValores   {
   @JsonProperty("issuers")
   @Valid
-  private List<InfConsultaValoresRecargaRespValoresIssuers> issuers = null;
+  private List<InfConsultaValoresRecargaRespValoresIssuers> issuers = new ArrayList<InfConsultaValoresRecargaRespValoresIssuers>();
 
   public InfConsultaValoresRecargaRespValores issuers(List<InfConsultaValoresRecargaRespValoresIssuers> issuers) {
     this.issuers = issuers;
@@ -30,9 +30,6 @@ public class InfConsultaValoresRecargaRespValores   {
   }
 
   public InfConsultaValoresRecargaRespValores addIssuersItem(InfConsultaValoresRecargaRespValoresIssuers issuersItem) {
-    if (this.issuers == null) {
-      this.issuers = new ArrayList<InfConsultaValoresRecargaRespValoresIssuers>();
-    }
     this.issuers.add(issuersItem);
     return this;
   }
@@ -41,7 +38,8 @@ public class InfConsultaValoresRecargaRespValores   {
    * Get issuers
    * @return issuers
   **/
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(required = true, value = "")
+  @NotNull
 
   @Valid
 

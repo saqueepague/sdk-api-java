@@ -14,37 +14,37 @@ import javax.validation.constraints.*;
  */
 @ApiModel(description = "Informações sobre o terminal vigente.")
 @Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.SpringCodegen", date = "2018-12-05T18:08:56.087Z[GMT]")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2019-01-18T19:37:26.329Z")
 
 public class Terminal   {
-  @JsonProperty("tipo")
-  private String tipo = null;
+  @JsonProperty("codEstab")
+  private String codEstab = null;
 
   @JsonProperty("id")
   private String id = null;
 
-  @JsonProperty("codEstab")
-  private String codEstab = null;
+  @JsonProperty("tipo")
+  private String tipo = null;
 
-  public Terminal tipo(String tipo) {
-    this.tipo = tipo;
+  public Terminal codEstab(String codEstab) {
+    this.codEstab = codEstab;
     return this;
   }
 
   /**
-   * Tipo de terminal o qual a operação é gerada (3 dígitos, 008 = ATM).
-   * @return tipo
+   * Código do estabelecimento onde está localizado o terminal gerado pela Saque e Pague (15 dígitos).
+   * @return codEstab
   **/
-  @ApiModelProperty(example = "008", required = true, value = "Tipo de terminal o qual a operação é gerada (3 dígitos, 008 = ATM).")
+  @ApiModelProperty(example = "000000000742673", required = true, value = "Código do estabelecimento onde está localizado o terminal gerado pela Saque e Pague (15 dígitos).")
   @NotNull
 
-@Pattern(regexp="^\\d{3}$") 
-  public String getTipo() {
-    return tipo;
+@Pattern(regexp="^\\d{15}$") 
+  public String getCodEstab() {
+    return codEstab;
   }
 
-  public void setTipo(String tipo) {
-    this.tipo = tipo;
+  public void setCodEstab(String codEstab) {
+    this.codEstab = codEstab;
   }
 
   public Terminal id(String id) {
@@ -68,25 +68,25 @@ public class Terminal   {
     this.id = id;
   }
 
-  public Terminal codEstab(String codEstab) {
-    this.codEstab = codEstab;
+  public Terminal tipo(String tipo) {
+    this.tipo = tipo;
     return this;
   }
 
   /**
-   * Código do estabelecimento onde está localizado o terminal gerado pela Saque e Pague (15 dígitos).
-   * @return codEstab
+   * Tipo de terminal o qual a operação é gerada (3 dígitos, 008 = ATM).
+   * @return tipo
   **/
-  @ApiModelProperty(example = "000000000742673", required = true, value = "Código do estabelecimento onde está localizado o terminal gerado pela Saque e Pague (15 dígitos).")
+  @ApiModelProperty(example = "008", required = true, value = "Tipo de terminal o qual a operação é gerada (3 dígitos, 008 = ATM).")
   @NotNull
 
-@Pattern(regexp="^\\d{15}$") 
-  public String getCodEstab() {
-    return codEstab;
+@Pattern(regexp="^\\d{3}$") 
+  public String getTipo() {
+    return tipo;
   }
 
-  public void setCodEstab(String codEstab) {
-    this.codEstab = codEstab;
+  public void setTipo(String tipo) {
+    this.tipo = tipo;
   }
 
 
@@ -99,14 +99,14 @@ public class Terminal   {
       return false;
     }
     Terminal terminal = (Terminal) o;
-    return Objects.equals(this.tipo, terminal.tipo) &&
+    return Objects.equals(this.codEstab, terminal.codEstab) &&
         Objects.equals(this.id, terminal.id) &&
-        Objects.equals(this.codEstab, terminal.codEstab);
+        Objects.equals(this.tipo, terminal.tipo);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(tipo, id, codEstab);
+    return Objects.hash(codEstab, id, tipo);
   }
 
   @Override
@@ -114,9 +114,9 @@ public class Terminal   {
     StringBuilder sb = new StringBuilder();
     sb.append("class Terminal {\n");
     
-    sb.append("    tipo: ").append(toIndentedString(tipo)).append("\n");
-    sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    codEstab: ").append(toIndentedString(codEstab)).append("\n");
+    sb.append("    id: ").append(toIndentedString(id)).append("\n");
+    sb.append("    tipo: ").append(toIndentedString(tipo)).append("\n");
     sb.append("}");
     return sb.toString();
   }

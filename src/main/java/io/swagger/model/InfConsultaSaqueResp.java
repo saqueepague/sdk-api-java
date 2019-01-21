@@ -17,7 +17,7 @@ import javax.validation.constraints.*;
  */
 @ApiModel(description = "Informações da resposta de requisiçãoi de consulta de saque.")
 @Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.SpringCodegen", date = "2018-12-05T18:08:56.087Z[GMT]")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2019-01-18T19:37:26.329Z")
 
 public class InfConsultaSaqueResp   {
   @JsonProperty("nomeCliente")
@@ -33,12 +33,12 @@ public class InfConsultaSaqueResp   {
   }
 
   /**
-   * Nome do cliente titular da conta (até 60 caracteres).
+   * Nome do cliente titular da conta.
    * @return nomeCliente
   **/
-  @ApiModelProperty(example = "Carl Edward Sagan", value = "Nome do cliente titular da conta (até 60 caracteres).")
+  @ApiModelProperty(example = "Carl Edward Sagan", value = "Nome do cliente titular da conta.")
 
-@Pattern(regexp="^.{0,60}$") 
+
   public String getNomeCliente() {
     return nomeCliente;
   }
@@ -61,10 +61,10 @@ public class InfConsultaSaqueResp   {
   }
 
   /**
-   * Lista de possíveis perguntas a serem mostradas para o usuário para autenticá-lo.
+   * Lista de possíveis perguntas a serem mostradas para o usuário para autorizar o saque.
    * @return perguntas
   **/
-  @ApiModelProperty(value = "Lista de possíveis perguntas a serem mostradas para o usuário para autenticá-lo.")
+  @ApiModelProperty(value = "Lista de possíveis perguntas a serem mostradas para o usuário para autorizar o saque.")
 
   @Valid
 

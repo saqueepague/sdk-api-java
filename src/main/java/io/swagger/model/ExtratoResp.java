@@ -17,62 +17,20 @@ import javax.validation.constraints.*;
  * ExtratoResp
  */
 @Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.SpringCodegen", date = "2018-12-05T18:08:56.087Z[GMT]")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2019-01-18T19:37:26.329Z")
 
 public class ExtratoResp   {
-  @JsonProperty("InfTransacao")
-  private InfTransacaoResp infTransacao = null;
-
-  @JsonProperty("Terminal")
-  private Terminal terminal = null;
-
   @JsonProperty("Cripto")
   private CriptoResp cripto = null;
 
   @JsonProperty("InfExtrato")
   private InfExtratoResp infExtrato = null;
 
-  public ExtratoResp infTransacao(InfTransacaoResp infTransacao) {
-    this.infTransacao = infTransacao;
-    return this;
-  }
+  @JsonProperty("InfTransacao")
+  private InfTransacaoResp infTransacao = null;
 
-  /**
-   * Get infTransacao
-   * @return infTransacao
-  **/
-  @ApiModelProperty(value = "")
-
-  @Valid
-
-  public InfTransacaoResp getInfTransacao() {
-    return infTransacao;
-  }
-
-  public void setInfTransacao(InfTransacaoResp infTransacao) {
-    this.infTransacao = infTransacao;
-  }
-
-  public ExtratoResp terminal(Terminal terminal) {
-    this.terminal = terminal;
-    return this;
-  }
-
-  /**
-   * Get terminal
-   * @return terminal
-  **/
-  @ApiModelProperty(value = "")
-
-  @Valid
-
-  public Terminal getTerminal() {
-    return terminal;
-  }
-
-  public void setTerminal(Terminal terminal) {
-    this.terminal = terminal;
-  }
+  @JsonProperty("Terminal")
+  private Terminal terminal = null;
 
   public ExtratoResp cripto(CriptoResp cripto) {
     this.cripto = cripto;
@@ -104,7 +62,8 @@ public class ExtratoResp   {
    * Get infExtrato
    * @return infExtrato
   **/
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(required = true, value = "")
+  @NotNull
 
   @Valid
 
@@ -114,6 +73,50 @@ public class ExtratoResp   {
 
   public void setInfExtrato(InfExtratoResp infExtrato) {
     this.infExtrato = infExtrato;
+  }
+
+  public ExtratoResp infTransacao(InfTransacaoResp infTransacao) {
+    this.infTransacao = infTransacao;
+    return this;
+  }
+
+  /**
+   * Get infTransacao
+   * @return infTransacao
+  **/
+  @ApiModelProperty(required = true, value = "")
+  @NotNull
+
+  @Valid
+
+  public InfTransacaoResp getInfTransacao() {
+    return infTransacao;
+  }
+
+  public void setInfTransacao(InfTransacaoResp infTransacao) {
+    this.infTransacao = infTransacao;
+  }
+
+  public ExtratoResp terminal(Terminal terminal) {
+    this.terminal = terminal;
+    return this;
+  }
+
+  /**
+   * Get terminal
+   * @return terminal
+  **/
+  @ApiModelProperty(required = true, value = "")
+  @NotNull
+
+  @Valid
+
+  public Terminal getTerminal() {
+    return terminal;
+  }
+
+  public void setTerminal(Terminal terminal) {
+    this.terminal = terminal;
   }
 
 
@@ -126,15 +129,15 @@ public class ExtratoResp   {
       return false;
     }
     ExtratoResp extratoResp = (ExtratoResp) o;
-    return Objects.equals(this.infTransacao, extratoResp.infTransacao) &&
-        Objects.equals(this.terminal, extratoResp.terminal) &&
-        Objects.equals(this.cripto, extratoResp.cripto) &&
-        Objects.equals(this.infExtrato, extratoResp.infExtrato);
+    return Objects.equals(this.cripto, extratoResp.cripto) &&
+        Objects.equals(this.infExtrato, extratoResp.infExtrato) &&
+        Objects.equals(this.infTransacao, extratoResp.infTransacao) &&
+        Objects.equals(this.terminal, extratoResp.terminal);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(infTransacao, terminal, cripto, infExtrato);
+    return Objects.hash(cripto, infExtrato, infTransacao, terminal);
   }
 
   @Override
@@ -142,10 +145,10 @@ public class ExtratoResp   {
     StringBuilder sb = new StringBuilder();
     sb.append("class ExtratoResp {\n");
     
-    sb.append("    infTransacao: ").append(toIndentedString(infTransacao)).append("\n");
-    sb.append("    terminal: ").append(toIndentedString(terminal)).append("\n");
     sb.append("    cripto: ").append(toIndentedString(cripto)).append("\n");
     sb.append("    infExtrato: ").append(toIndentedString(infExtrato)).append("\n");
+    sb.append("    infTransacao: ").append(toIndentedString(infTransacao)).append("\n");
+    sb.append("    terminal: ").append(toIndentedString(terminal)).append("\n");
     sb.append("}");
     return sb.toString();
   }

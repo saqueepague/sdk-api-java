@@ -13,7 +13,7 @@ import javax.validation.constraints.*;
  * InfIdentificacaoRespPerguntas
  */
 @Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.SpringCodegen", date = "2018-12-05T18:08:56.087Z[GMT]")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2019-01-18T19:37:26.329Z")
 
 public class InfIdentificacaoRespPerguntas   {
   @JsonProperty("id")
@@ -22,11 +22,11 @@ public class InfIdentificacaoRespPerguntas   {
   @JsonProperty("pergunta")
   private String pergunta = null;
 
-  @JsonProperty("tamResposta")
-  private String tamResposta = null;
-
   @JsonProperty("resposta")
   private String resposta = null;
+
+  @JsonProperty("tamResposta")
+  private String tamResposta = null;
 
   public InfIdentificacaoRespPerguntas id(String id) {
     this.id = id;
@@ -37,7 +37,8 @@ public class InfIdentificacaoRespPerguntas   {
    * Identificador da pergunta.
    * @return id
   **/
-  @ApiModelProperty(example = "1", value = "Identificador da pergunta.")
+  @ApiModelProperty(example = "1", required = true, value = "Identificador da pergunta.")
+  @NotNull
 
 @Pattern(regexp="^\\d+$") 
   public String getId() {
@@ -57,7 +58,8 @@ public class InfIdentificacaoRespPerguntas   {
    * Pergunta a ser exibida ao usuário.
    * @return pergunta
   **/
-  @ApiModelProperty(example = "Qual a sua senha?", value = "Pergunta a ser exibida ao usuário.")
+  @ApiModelProperty(example = "Qual a sua senha?", required = true, value = "Pergunta a ser exibida ao usuário.")
+  @NotNull
 
 
   public String getPergunta() {
@@ -66,26 +68,6 @@ public class InfIdentificacaoRespPerguntas   {
 
   public void setPergunta(String pergunta) {
     this.pergunta = pergunta;
-  }
-
-  public InfIdentificacaoRespPerguntas tamResposta(String tamResposta) {
-    this.tamResposta = tamResposta;
-    return this;
-  }
-
-  /**
-   * Qual o tamanho da resposta.
-   * @return tamResposta
-  **/
-  @ApiModelProperty(example = "6", value = "Qual o tamanho da resposta.")
-
-@Pattern(regexp="^\\d+$") 
-  public String getTamResposta() {
-    return tamResposta;
-  }
-
-  public void setTamResposta(String tamResposta) {
-    this.tamResposta = tamResposta;
   }
 
   public InfIdentificacaoRespPerguntas resposta(String resposta) {
@@ -97,7 +79,8 @@ public class InfIdentificacaoRespPerguntas   {
    * Resposta da pergunta.
    * @return resposta
   **/
-  @ApiModelProperty(example = "mimimi", value = "Resposta da pergunta.")
+  @ApiModelProperty(example = "mimimi", required = true, value = "Resposta da pergunta.")
+  @NotNull
 
 
   public String getResposta() {
@@ -106,6 +89,27 @@ public class InfIdentificacaoRespPerguntas   {
 
   public void setResposta(String resposta) {
     this.resposta = resposta;
+  }
+
+  public InfIdentificacaoRespPerguntas tamResposta(String tamResposta) {
+    this.tamResposta = tamResposta;
+    return this;
+  }
+
+  /**
+   * Qual o tamanho da resposta.
+   * @return tamResposta
+  **/
+  @ApiModelProperty(example = "6", required = true, value = "Qual o tamanho da resposta.")
+  @NotNull
+
+@Pattern(regexp="^\\d+$") 
+  public String getTamResposta() {
+    return tamResposta;
+  }
+
+  public void setTamResposta(String tamResposta) {
+    this.tamResposta = tamResposta;
   }
 
 
@@ -120,13 +124,13 @@ public class InfIdentificacaoRespPerguntas   {
     InfIdentificacaoRespPerguntas infIdentificacaoRespPerguntas = (InfIdentificacaoRespPerguntas) o;
     return Objects.equals(this.id, infIdentificacaoRespPerguntas.id) &&
         Objects.equals(this.pergunta, infIdentificacaoRespPerguntas.pergunta) &&
-        Objects.equals(this.tamResposta, infIdentificacaoRespPerguntas.tamResposta) &&
-        Objects.equals(this.resposta, infIdentificacaoRespPerguntas.resposta);
+        Objects.equals(this.resposta, infIdentificacaoRespPerguntas.resposta) &&
+        Objects.equals(this.tamResposta, infIdentificacaoRespPerguntas.tamResposta);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, pergunta, tamResposta, resposta);
+    return Objects.hash(id, pergunta, resposta, tamResposta);
   }
 
   @Override
@@ -136,8 +140,8 @@ public class InfIdentificacaoRespPerguntas   {
     
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    pergunta: ").append(toIndentedString(pergunta)).append("\n");
-    sb.append("    tamResposta: ").append(toIndentedString(tamResposta)).append("\n");
     sb.append("    resposta: ").append(toIndentedString(resposta)).append("\n");
+    sb.append("    tamResposta: ").append(toIndentedString(tamResposta)).append("\n");
     sb.append("}");
     return sb.toString();
   }

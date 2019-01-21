@@ -11,11 +11,11 @@ import javax.validation.Valid;
 import javax.validation.constraints.*;
 
 /**
- * Informações da resposta de requisição de valores de recarga.
+ * Informações da resposta de consulta de todos os possíveis produtos e valores de recarga de cartão de transporte ou pré-pago na rede. Traz uma lista de todos os produtos e seus valores para depois serem filtrados pelo cartão do usuário.
  */
-@ApiModel(description = "Informações da resposta de requisição de valores de recarga.")
+@ApiModel(description = "Informações da resposta de consulta de todos os possíveis produtos e valores de recarga de cartão de transporte ou pré-pago na rede. Traz uma lista de todos os produtos e seus valores para depois serem filtrados pelo cartão do usuário.")
 @Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.SpringCodegen", date = "2018-12-05T18:08:56.087Z[GMT]")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2019-01-18T19:37:26.329Z")
 
 public class InfConsultaValoresRecargaResp   {
   @JsonProperty("valores")
@@ -30,7 +30,8 @@ public class InfConsultaValoresRecargaResp   {
    * Get valores
    * @return valores
   **/
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(required = true, value = "")
+  @NotNull
 
   @Valid
 

@@ -10,64 +10,24 @@ import javax.validation.Valid;
 import javax.validation.constraints.*;
 
 /**
- * Informações da requisição de identificação.
+ * Informações da requisição de identificação do cliente através do cartão.
  */
-@ApiModel(description = "Informações da requisição de identificação.")
+@ApiModel(description = "Informações da requisição de identificação do cliente através do cartão.")
 @Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.SpringCodegen", date = "2018-12-05T18:08:56.087Z[GMT]")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2019-01-18T19:37:26.329Z")
 
 public class InfIdentificacaoReq   {
+  @JsonProperty("cpf")
+  private String cpf = null;
+
   @JsonProperty("numAgencia")
   private String numAgencia = null;
 
   @JsonProperty("numConta")
   private String numConta = null;
 
-  @JsonProperty("cpf")
-  private String cpf = null;
-
   @JsonProperty("telefone")
   private String telefone = null;
-
-  public InfIdentificacaoReq numAgencia(String numAgencia) {
-    this.numAgencia = numAgencia;
-    return this;
-  }
-
-  /**
-   * Número da agência utilizada na operação (4 dígitos).
-   * @return numAgencia
-  **/
-  @ApiModelProperty(example = "4029", value = "Número da agência utilizada na operação (4 dígitos).")
-
-@Pattern(regexp="^\\d{4}$") 
-  public String getNumAgencia() {
-    return numAgencia;
-  }
-
-  public void setNumAgencia(String numAgencia) {
-    this.numAgencia = numAgencia;
-  }
-
-  public InfIdentificacaoReq numConta(String numConta) {
-    this.numConta = numConta;
-    return this;
-  }
-
-  /**
-   * Número da conta utilizada na operação (10 dígitos).
-   * @return numConta
-  **/
-  @ApiModelProperty(example = "0082348296", value = "Número da conta utilizada na operação (10 dígitos).")
-
-@Pattern(regexp="^\\d{10}$") 
-  public String getNumConta() {
-    return numConta;
-  }
-
-  public void setNumConta(String numConta) {
-    this.numConta = numConta;
-  }
 
   public InfIdentificacaoReq cpf(String cpf) {
     this.cpf = cpf;
@@ -87,6 +47,46 @@ public class InfIdentificacaoReq   {
 
   public void setCpf(String cpf) {
     this.cpf = cpf;
+  }
+
+  public InfIdentificacaoReq numAgencia(String numAgencia) {
+    this.numAgencia = numAgencia;
+    return this;
+  }
+
+  /**
+   * Número da agência utilizada na operação.
+   * @return numAgencia
+  **/
+  @ApiModelProperty(example = "4029", value = "Número da agência utilizada na operação.")
+
+@Pattern(regexp="^\\d+$") 
+  public String getNumAgencia() {
+    return numAgencia;
+  }
+
+  public void setNumAgencia(String numAgencia) {
+    this.numAgencia = numAgencia;
+  }
+
+  public InfIdentificacaoReq numConta(String numConta) {
+    this.numConta = numConta;
+    return this;
+  }
+
+  /**
+   * Número da conta utilizada na operação.
+   * @return numConta
+  **/
+  @ApiModelProperty(example = "0082348296", value = "Número da conta utilizada na operação.")
+
+@Pattern(regexp="^\\d+$") 
+  public String getNumConta() {
+    return numConta;
+  }
+
+  public void setNumConta(String numConta) {
+    this.numConta = numConta;
   }
 
   public InfIdentificacaoReq telefone(String telefone) {
@@ -119,15 +119,15 @@ public class InfIdentificacaoReq   {
       return false;
     }
     InfIdentificacaoReq infIdentificacaoReq = (InfIdentificacaoReq) o;
-    return Objects.equals(this.numAgencia, infIdentificacaoReq.numAgencia) &&
+    return Objects.equals(this.cpf, infIdentificacaoReq.cpf) &&
+        Objects.equals(this.numAgencia, infIdentificacaoReq.numAgencia) &&
         Objects.equals(this.numConta, infIdentificacaoReq.numConta) &&
-        Objects.equals(this.cpf, infIdentificacaoReq.cpf) &&
         Objects.equals(this.telefone, infIdentificacaoReq.telefone);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(numAgencia, numConta, cpf, telefone);
+    return Objects.hash(cpf, numAgencia, numConta, telefone);
   }
 
   @Override
@@ -135,9 +135,9 @@ public class InfIdentificacaoReq   {
     StringBuilder sb = new StringBuilder();
     sb.append("class InfIdentificacaoReq {\n");
     
+    sb.append("    cpf: ").append(toIndentedString(cpf)).append("\n");
     sb.append("    numAgencia: ").append(toIndentedString(numAgencia)).append("\n");
     sb.append("    numConta: ").append(toIndentedString(numConta)).append("\n");
-    sb.append("    cpf: ").append(toIndentedString(cpf)).append("\n");
     sb.append("    telefone: ").append(toIndentedString(telefone)).append("\n");
     sb.append("}");
     return sb.toString();

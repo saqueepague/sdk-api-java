@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import io.swagger.model.InfConsultaTitulosCapitalizacaoRespTema;
 import org.springframework.validation.annotation.Validated;
 import javax.validation.Valid;
 import javax.validation.constraints.*;
@@ -13,14 +14,14 @@ import javax.validation.constraints.*;
  * InfConsultaTitulosCapitalizacaoRespProdutos
  */
 @Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.SpringCodegen", date = "2018-12-05T18:08:56.087Z[GMT]")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2019-01-18T19:37:26.329Z")
 
 public class InfConsultaTitulosCapitalizacaoRespProdutos   {
-  @JsonProperty("id")
-  private String id = null;
+  @JsonProperty("dataFimVigencia")
+  private String dataFimVigencia = null;
 
-  @JsonProperty("nome")
-  private String nome = null;
+  @JsonProperty("dataInicioVigencia")
+  private String dataInicioVigencia = null;
 
   @JsonProperty("descricao")
   private String descricao = null;
@@ -28,99 +29,39 @@ public class InfConsultaTitulosCapitalizacaoRespProdutos   {
   @JsonProperty("detalhes")
   private String detalhes = null;
 
-  @JsonProperty("dataInicioVigencia")
-  private String dataInicioVigencia = null;
-
-  @JsonProperty("dataFimVigencia")
-  private String dataFimVigencia = null;
-
-  @JsonProperty("valor")
-  private String valor = null;
+  @JsonProperty("id")
+  private String id = null;
 
   @JsonProperty("limiteMaximoCompra")
   private String limiteMaximoCompra = null;
 
+  @JsonProperty("nome")
+  private String nome = null;
+
   @JsonProperty("tema")
-  private Object tema = null;
+  private InfConsultaTitulosCapitalizacaoRespTema tema = null;
 
-  public InfConsultaTitulosCapitalizacaoRespProdutos id(String id) {
-    this.id = id;
+  @JsonProperty("valor")
+  private String valor = null;
+
+  public InfConsultaTitulosCapitalizacaoRespProdutos dataFimVigencia(String dataFimVigencia) {
+    this.dataFimVigencia = dataFimVigencia;
     return this;
   }
 
   /**
-   * Identificador do produto.
-   * @return id
+   * Data final da vigência do produto (AAAAMMDD).
+   * @return dataFimVigencia
   **/
-  @ApiModelProperty(example = "7", value = "Identificador do produto.")
+  @ApiModelProperty(example = "20181130", value = "Data final da vigência do produto (AAAAMMDD).")
 
-@Pattern(regexp="^\\d+$") 
-  public String getId() {
-    return id;
+@Pattern(regexp="^\\d{8}$") 
+  public String getDataFimVigencia() {
+    return dataFimVigencia;
   }
 
-  public void setId(String id) {
-    this.id = id;
-  }
-
-  public InfConsultaTitulosCapitalizacaoRespProdutos nome(String nome) {
-    this.nome = nome;
-    return this;
-  }
-
-  /**
-   * Nome do produto (até 60 caracteres).
-   * @return nome
-  **/
-  @ApiModelProperty(example = "Grêmio Mais", value = "Nome do produto (até 60 caracteres).")
-
-@Pattern(regexp="^.{0,60}$") 
-  public String getNome() {
-    return nome;
-  }
-
-  public void setNome(String nome) {
-    this.nome = nome;
-  }
-
-  public InfConsultaTitulosCapitalizacaoRespProdutos descricao(String descricao) {
-    this.descricao = descricao;
-    return this;
-  }
-
-  /**
-   * Descrição do produto (até 60 caracteres).
-   * @return descricao
-  **/
-  @ApiModelProperty(example = "Edição 115 Anos", value = "Descrição do produto (até 60 caracteres).")
-
-@Pattern(regexp="^.{0,60}$") 
-  public String getDescricao() {
-    return descricao;
-  }
-
-  public void setDescricao(String descricao) {
-    this.descricao = descricao;
-  }
-
-  public InfConsultaTitulosCapitalizacaoRespProdutos detalhes(String detalhes) {
-    this.detalhes = detalhes;
-    return this;
-  }
-
-  /**
-   * Informações complementares sobre o produto (até 60 caracteres).
-   * @return detalhes
-  **/
-  @ApiModelProperty(example = "Edição ouro de mais um produto do Grêmio Mais", value = "Informações complementares sobre o produto (até 60 caracteres).")
-
-@Pattern(regexp="^.{0,60}$") 
-  public String getDetalhes() {
-    return detalhes;
-  }
-
-  public void setDetalhes(String detalhes) {
-    this.detalhes = detalhes;
+  public void setDataFimVigencia(String dataFimVigencia) {
+    this.dataFimVigencia = dataFimVigencia;
   }
 
   public InfConsultaTitulosCapitalizacaoRespProdutos dataInicioVigencia(String dataInicioVigencia) {
@@ -143,44 +84,64 @@ public class InfConsultaTitulosCapitalizacaoRespProdutos   {
     this.dataInicioVigencia = dataInicioVigencia;
   }
 
-  public InfConsultaTitulosCapitalizacaoRespProdutos dataFimVigencia(String dataFimVigencia) {
-    this.dataFimVigencia = dataFimVigencia;
+  public InfConsultaTitulosCapitalizacaoRespProdutos descricao(String descricao) {
+    this.descricao = descricao;
     return this;
   }
 
   /**
-   * Data final da vigência do produto (AAAAMMDD).
-   * @return dataFimVigencia
+   * Descrição do produto.
+   * @return descricao
   **/
-  @ApiModelProperty(example = "20181130", value = "Data final da vigência do produto (AAAAMMDD).")
+  @ApiModelProperty(example = "Edição 115 Anos", value = "Descrição do produto.")
 
-@Pattern(regexp="^\\d{8}$") 
-  public String getDataFimVigencia() {
-    return dataFimVigencia;
+
+  public String getDescricao() {
+    return descricao;
   }
 
-  public void setDataFimVigencia(String dataFimVigencia) {
-    this.dataFimVigencia = dataFimVigencia;
+  public void setDescricao(String descricao) {
+    this.descricao = descricao;
   }
 
-  public InfConsultaTitulosCapitalizacaoRespProdutos valor(String valor) {
-    this.valor = valor;
+  public InfConsultaTitulosCapitalizacaoRespProdutos detalhes(String detalhes) {
+    this.detalhes = detalhes;
     return this;
   }
 
   /**
-   * Valor por produto (12 dígitos, incluindo centavos).
-   * @return valor
+   * Informações complementares sobre o produto (até 60 caracteres).
+   * @return detalhes
   **/
-  @ApiModelProperty(example = "000000000500", value = "Valor por produto (12 dígitos, incluindo centavos).")
+  @ApiModelProperty(example = "Edição ouro de mais um produto do Grêmio Mais", value = "Informações complementares sobre o produto (até 60 caracteres).")
 
-@Pattern(regexp="^\\d{12}$") 
-  public String getValor() {
-    return valor;
+
+  public String getDetalhes() {
+    return detalhes;
   }
 
-  public void setValor(String valor) {
-    this.valor = valor;
+  public void setDetalhes(String detalhes) {
+    this.detalhes = detalhes;
+  }
+
+  public InfConsultaTitulosCapitalizacaoRespProdutos id(String id) {
+    this.id = id;
+    return this;
+  }
+
+  /**
+   * Identificador do produto.
+   * @return id
+  **/
+  @ApiModelProperty(example = "7", value = "Identificador do produto.")
+
+@Pattern(regexp="^\\d+$") 
+  public String getId() {
+    return id;
+  }
+
+  public void setId(String id) {
+    this.id = id;
   }
 
   public InfConsultaTitulosCapitalizacaoRespProdutos limiteMaximoCompra(String limiteMaximoCompra) {
@@ -203,24 +164,65 @@ public class InfConsultaTitulosCapitalizacaoRespProdutos   {
     this.limiteMaximoCompra = limiteMaximoCompra;
   }
 
-  public InfConsultaTitulosCapitalizacaoRespProdutos tema(Object tema) {
+  public InfConsultaTitulosCapitalizacaoRespProdutos nome(String nome) {
+    this.nome = nome;
+    return this;
+  }
+
+  /**
+   * Nome do produto.
+   * @return nome
+  **/
+  @ApiModelProperty(example = "Grêmio Mais", value = "Nome do produto.")
+
+
+  public String getNome() {
+    return nome;
+  }
+
+  public void setNome(String nome) {
+    this.nome = nome;
+  }
+
+  public InfConsultaTitulosCapitalizacaoRespProdutos tema(InfConsultaTitulosCapitalizacaoRespTema tema) {
     this.tema = tema;
     return this;
   }
 
   /**
-   * Tema que sará utilizado para montar o layout do usuário.
+   * Get tema
    * @return tema
   **/
-  @ApiModelProperty(value = "Tema que sará utilizado para montar o layout do usuário.")
+  @ApiModelProperty(value = "")
 
+  @Valid
 
-  public Object getTema() {
+  public InfConsultaTitulosCapitalizacaoRespTema getTema() {
     return tema;
   }
 
-  public void setTema(Object tema) {
+  public void setTema(InfConsultaTitulosCapitalizacaoRespTema tema) {
     this.tema = tema;
+  }
+
+  public InfConsultaTitulosCapitalizacaoRespProdutos valor(String valor) {
+    this.valor = valor;
+    return this;
+  }
+
+  /**
+   * Valor por produto (12 dígitos, incluindo centavos).
+   * @return valor
+  **/
+  @ApiModelProperty(example = "000000000500", value = "Valor por produto (12 dígitos, incluindo centavos).")
+
+@Pattern(regexp="^\\d{12}$") 
+  public String getValor() {
+    return valor;
+  }
+
+  public void setValor(String valor) {
+    this.valor = valor;
   }
 
 
@@ -233,20 +235,20 @@ public class InfConsultaTitulosCapitalizacaoRespProdutos   {
       return false;
     }
     InfConsultaTitulosCapitalizacaoRespProdutos infConsultaTitulosCapitalizacaoRespProdutos = (InfConsultaTitulosCapitalizacaoRespProdutos) o;
-    return Objects.equals(this.id, infConsultaTitulosCapitalizacaoRespProdutos.id) &&
-        Objects.equals(this.nome, infConsultaTitulosCapitalizacaoRespProdutos.nome) &&
+    return Objects.equals(this.dataFimVigencia, infConsultaTitulosCapitalizacaoRespProdutos.dataFimVigencia) &&
+        Objects.equals(this.dataInicioVigencia, infConsultaTitulosCapitalizacaoRespProdutos.dataInicioVigencia) &&
         Objects.equals(this.descricao, infConsultaTitulosCapitalizacaoRespProdutos.descricao) &&
         Objects.equals(this.detalhes, infConsultaTitulosCapitalizacaoRespProdutos.detalhes) &&
-        Objects.equals(this.dataInicioVigencia, infConsultaTitulosCapitalizacaoRespProdutos.dataInicioVigencia) &&
-        Objects.equals(this.dataFimVigencia, infConsultaTitulosCapitalizacaoRespProdutos.dataFimVigencia) &&
-        Objects.equals(this.valor, infConsultaTitulosCapitalizacaoRespProdutos.valor) &&
+        Objects.equals(this.id, infConsultaTitulosCapitalizacaoRespProdutos.id) &&
         Objects.equals(this.limiteMaximoCompra, infConsultaTitulosCapitalizacaoRespProdutos.limiteMaximoCompra) &&
-        Objects.equals(this.tema, infConsultaTitulosCapitalizacaoRespProdutos.tema);
+        Objects.equals(this.nome, infConsultaTitulosCapitalizacaoRespProdutos.nome) &&
+        Objects.equals(this.tema, infConsultaTitulosCapitalizacaoRespProdutos.tema) &&
+        Objects.equals(this.valor, infConsultaTitulosCapitalizacaoRespProdutos.valor);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, nome, descricao, detalhes, dataInicioVigencia, dataFimVigencia, valor, limiteMaximoCompra, tema);
+    return Objects.hash(dataFimVigencia, dataInicioVigencia, descricao, detalhes, id, limiteMaximoCompra, nome, tema, valor);
   }
 
   @Override
@@ -254,15 +256,15 @@ public class InfConsultaTitulosCapitalizacaoRespProdutos   {
     StringBuilder sb = new StringBuilder();
     sb.append("class InfConsultaTitulosCapitalizacaoRespProdutos {\n");
     
-    sb.append("    id: ").append(toIndentedString(id)).append("\n");
-    sb.append("    nome: ").append(toIndentedString(nome)).append("\n");
+    sb.append("    dataFimVigencia: ").append(toIndentedString(dataFimVigencia)).append("\n");
+    sb.append("    dataInicioVigencia: ").append(toIndentedString(dataInicioVigencia)).append("\n");
     sb.append("    descricao: ").append(toIndentedString(descricao)).append("\n");
     sb.append("    detalhes: ").append(toIndentedString(detalhes)).append("\n");
-    sb.append("    dataInicioVigencia: ").append(toIndentedString(dataInicioVigencia)).append("\n");
-    sb.append("    dataFimVigencia: ").append(toIndentedString(dataFimVigencia)).append("\n");
-    sb.append("    valor: ").append(toIndentedString(valor)).append("\n");
+    sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    limiteMaximoCompra: ").append(toIndentedString(limiteMaximoCompra)).append("\n");
+    sb.append("    nome: ").append(toIndentedString(nome)).append("\n");
     sb.append("    tema: ").append(toIndentedString(tema)).append("\n");
+    sb.append("    valor: ").append(toIndentedString(valor)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -10,27 +10,18 @@ import javax.validation.Valid;
 import javax.validation.constraints.*;
 
 /**
- * Informações sobre a requisição de transação.
+ * Informações genéricas sobre a requisição de transação.
  */
-@ApiModel(description = "Informações sobre a requisição de transação.")
+@ApiModel(description = "Informações genéricas sobre a requisição de transação.")
 @Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.SpringCodegen", date = "2018-12-05T18:08:56.087Z[GMT]")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2019-01-18T19:37:26.329Z")
 
 public class InfTransacaoReq   {
-  @JsonProperty("nsu")
-  private String nsu = null;
-
   @JsonProperty("cdProc")
   private String cdProc = null;
 
-  @JsonProperty("dataHora")
-  private String dataHora = null;
-
-  @JsonProperty("horaLocal")
-  private String horaLocal = null;
-
-  @JsonProperty("dataLocal")
-  private String dataLocal = null;
+  @JsonProperty("codMoeda")
+  private String codMoeda = null;
 
   @JsonProperty("codOperadora")
   private String codOperadora = null;
@@ -38,32 +29,20 @@ public class InfTransacaoReq   {
   @JsonProperty("dataContabil")
   private String dataContabil = null;
 
+  @JsonProperty("dataHora")
+  private String dataHora = null;
+
+  @JsonProperty("dataLocal")
+  private String dataLocal = null;
+
+  @JsonProperty("horaLocal")
+  private String horaLocal = null;
+
+  @JsonProperty("nsu")
+  private String nsu = null;
+
   @JsonProperty("valor")
   private String valor = null;
-
-  @JsonProperty("codMoeda")
-  private String codMoeda = null;
-
-  public InfTransacaoReq nsu(String nsu) {
-    this.nsu = nsu;
-    return this;
-  }
-
-  /**
-   * Identificador da transação gerado pela Saque e Pague (12 dígitos).
-   * @return nsu
-  **/
-  @ApiModelProperty(example = "000080247206", required = true, value = "Identificador da transação gerado pela Saque e Pague (12 dígitos).")
-  @NotNull
-
-@Pattern(regexp="^\\d{12}$") 
-  public String getNsu() {
-    return nsu;
-  }
-
-  public void setNsu(String nsu) {
-    this.nsu = nsu;
-  }
 
   public InfTransacaoReq cdProc(String cdProc) {
     this.cdProc = cdProc;
@@ -86,67 +65,24 @@ public class InfTransacaoReq   {
     this.cdProc = cdProc;
   }
 
-  public InfTransacaoReq dataHora(String dataHora) {
-    this.dataHora = dataHora;
+  public InfTransacaoReq codMoeda(String codMoeda) {
+    this.codMoeda = codMoeda;
     return this;
   }
 
   /**
-   * Data local (MMDDhhmmss).
-   * @return dataHora
+   * Código na tabela de moedas do Banco Central (986 = real, 3 dígitos).
+   * @return codMoeda
   **/
-  @ApiModelProperty(example = "1122151032", required = true, value = "Data local (MMDDhhmmss).")
-  @NotNull
+  @ApiModelProperty(example = "986", value = "Código na tabela de moedas do Banco Central (986 = real, 3 dígitos).")
 
-@Pattern(regexp="^\\d{4}$") 
-  public String getDataHora() {
-    return dataHora;
+@Pattern(regexp="^\\d{3}$") 
+  public String getCodMoeda() {
+    return codMoeda;
   }
 
-  public void setDataHora(String dataHora) {
-    this.dataHora = dataHora;
-  }
-
-  public InfTransacaoReq horaLocal(String horaLocal) {
-    this.horaLocal = horaLocal;
-    return this;
-  }
-
-  /**
-   * Hora local (hhmmss).
-   * @return horaLocal
-  **/
-  @ApiModelProperty(example = "151032", required = true, value = "Hora local (hhmmss).")
-  @NotNull
-
-@Pattern(regexp="^\\d{6}$") 
-  public String getHoraLocal() {
-    return horaLocal;
-  }
-
-  public void setHoraLocal(String horaLocal) {
-    this.horaLocal = horaLocal;
-  }
-
-  public InfTransacaoReq dataLocal(String dataLocal) {
-    this.dataLocal = dataLocal;
-    return this;
-  }
-
-  /**
-   * Data local (MMDD).
-   * @return dataLocal
-  **/
-  @ApiModelProperty(example = "1122", required = true, value = "Data local (MMDD).")
-  @NotNull
-
-@Pattern(regexp="^\\d{4}$") 
-  public String getDataLocal() {
-    return dataLocal;
-  }
-
-  public void setDataLocal(String dataLocal) {
-    this.dataLocal = dataLocal;
+  public void setCodMoeda(String codMoeda) {
+    this.codMoeda = codMoeda;
   }
 
   public InfTransacaoReq codOperadora(String codOperadora) {
@@ -190,6 +126,90 @@ public class InfTransacaoReq   {
     this.dataContabil = dataContabil;
   }
 
+  public InfTransacaoReq dataHora(String dataHora) {
+    this.dataHora = dataHora;
+    return this;
+  }
+
+  /**
+   * Data local (MMDDhhmmss).
+   * @return dataHora
+  **/
+  @ApiModelProperty(example = "1122151032", required = true, value = "Data local (MMDDhhmmss).")
+  @NotNull
+
+@Pattern(regexp="^\\d{4}$") 
+  public String getDataHora() {
+    return dataHora;
+  }
+
+  public void setDataHora(String dataHora) {
+    this.dataHora = dataHora;
+  }
+
+  public InfTransacaoReq dataLocal(String dataLocal) {
+    this.dataLocal = dataLocal;
+    return this;
+  }
+
+  /**
+   * Data local (MMDD).
+   * @return dataLocal
+  **/
+  @ApiModelProperty(example = "1122", required = true, value = "Data local (MMDD).")
+  @NotNull
+
+@Pattern(regexp="^\\d{4}$") 
+  public String getDataLocal() {
+    return dataLocal;
+  }
+
+  public void setDataLocal(String dataLocal) {
+    this.dataLocal = dataLocal;
+  }
+
+  public InfTransacaoReq horaLocal(String horaLocal) {
+    this.horaLocal = horaLocal;
+    return this;
+  }
+
+  /**
+   * Hora local (hhmmss).
+   * @return horaLocal
+  **/
+  @ApiModelProperty(example = "151032", required = true, value = "Hora local (hhmmss).")
+  @NotNull
+
+@Pattern(regexp="^\\d{6}$") 
+  public String getHoraLocal() {
+    return horaLocal;
+  }
+
+  public void setHoraLocal(String horaLocal) {
+    this.horaLocal = horaLocal;
+  }
+
+  public InfTransacaoReq nsu(String nsu) {
+    this.nsu = nsu;
+    return this;
+  }
+
+  /**
+   * Identificador da transação gerado pela Saque e Pague (12 dígitos).
+   * @return nsu
+  **/
+  @ApiModelProperty(example = "000080247206", required = true, value = "Identificador da transação gerado pela Saque e Pague (12 dígitos).")
+  @NotNull
+
+@Pattern(regexp="^\\d{12}$") 
+  public String getNsu() {
+    return nsu;
+  }
+
+  public void setNsu(String nsu) {
+    this.nsu = nsu;
+  }
+
   public InfTransacaoReq valor(String valor) {
     this.valor = valor;
     return this;
@@ -210,26 +230,6 @@ public class InfTransacaoReq   {
     this.valor = valor;
   }
 
-  public InfTransacaoReq codMoeda(String codMoeda) {
-    this.codMoeda = codMoeda;
-    return this;
-  }
-
-  /**
-   * Código na tabela de moedas do Banco Central (986 = real, 3 dígitos).
-   * @return codMoeda
-  **/
-  @ApiModelProperty(example = "986", value = "Código na tabela de moedas do Banco Central (986 = real, 3 dígitos).")
-
-@Pattern(regexp="^\\d{3}$") 
-  public String getCodMoeda() {
-    return codMoeda;
-  }
-
-  public void setCodMoeda(String codMoeda) {
-    this.codMoeda = codMoeda;
-  }
-
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -240,20 +240,20 @@ public class InfTransacaoReq   {
       return false;
     }
     InfTransacaoReq infTransacaoReq = (InfTransacaoReq) o;
-    return Objects.equals(this.nsu, infTransacaoReq.nsu) &&
-        Objects.equals(this.cdProc, infTransacaoReq.cdProc) &&
-        Objects.equals(this.dataHora, infTransacaoReq.dataHora) &&
-        Objects.equals(this.horaLocal, infTransacaoReq.horaLocal) &&
-        Objects.equals(this.dataLocal, infTransacaoReq.dataLocal) &&
+    return Objects.equals(this.cdProc, infTransacaoReq.cdProc) &&
+        Objects.equals(this.codMoeda, infTransacaoReq.codMoeda) &&
         Objects.equals(this.codOperadora, infTransacaoReq.codOperadora) &&
         Objects.equals(this.dataContabil, infTransacaoReq.dataContabil) &&
-        Objects.equals(this.valor, infTransacaoReq.valor) &&
-        Objects.equals(this.codMoeda, infTransacaoReq.codMoeda);
+        Objects.equals(this.dataHora, infTransacaoReq.dataHora) &&
+        Objects.equals(this.dataLocal, infTransacaoReq.dataLocal) &&
+        Objects.equals(this.horaLocal, infTransacaoReq.horaLocal) &&
+        Objects.equals(this.nsu, infTransacaoReq.nsu) &&
+        Objects.equals(this.valor, infTransacaoReq.valor);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(nsu, cdProc, dataHora, horaLocal, dataLocal, codOperadora, dataContabil, valor, codMoeda);
+    return Objects.hash(cdProc, codMoeda, codOperadora, dataContabil, dataHora, dataLocal, horaLocal, nsu, valor);
   }
 
   @Override
@@ -261,15 +261,15 @@ public class InfTransacaoReq   {
     StringBuilder sb = new StringBuilder();
     sb.append("class InfTransacaoReq {\n");
     
-    sb.append("    nsu: ").append(toIndentedString(nsu)).append("\n");
     sb.append("    cdProc: ").append(toIndentedString(cdProc)).append("\n");
-    sb.append("    dataHora: ").append(toIndentedString(dataHora)).append("\n");
-    sb.append("    horaLocal: ").append(toIndentedString(horaLocal)).append("\n");
-    sb.append("    dataLocal: ").append(toIndentedString(dataLocal)).append("\n");
+    sb.append("    codMoeda: ").append(toIndentedString(codMoeda)).append("\n");
     sb.append("    codOperadora: ").append(toIndentedString(codOperadora)).append("\n");
     sb.append("    dataContabil: ").append(toIndentedString(dataContabil)).append("\n");
+    sb.append("    dataHora: ").append(toIndentedString(dataHora)).append("\n");
+    sb.append("    dataLocal: ").append(toIndentedString(dataLocal)).append("\n");
+    sb.append("    horaLocal: ").append(toIndentedString(horaLocal)).append("\n");
+    sb.append("    nsu: ").append(toIndentedString(nsu)).append("\n");
     sb.append("    valor: ").append(toIndentedString(valor)).append("\n");
-    sb.append("    codMoeda: ").append(toIndentedString(codMoeda)).append("\n");
     sb.append("}");
     return sb.toString();
   }

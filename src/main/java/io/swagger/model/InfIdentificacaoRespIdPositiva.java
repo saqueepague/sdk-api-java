@@ -14,7 +14,7 @@ import javax.validation.constraints.*;
  */
 @ApiModel(description = "Lista de conjunto de letras/sílabas a serem mostradas nas teclas em cada tela (até 7 caracteres por tecla).")
 @Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.SpringCodegen", date = "2018-12-05T18:08:56.087Z[GMT]")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2019-01-18T19:37:26.329Z")
 
 public class InfIdentificacaoRespIdPositiva   {
   @JsonProperty("idTela")
@@ -53,7 +53,8 @@ public class InfIdentificacaoRespIdPositiva   {
    * Identificador da tela.
    * @return idTela
   **/
-  @ApiModelProperty(example = "1", value = "Identificador da tela.")
+  @ApiModelProperty(example = "1", required = true, value = "Identificador da tela.")
+  @NotNull
 
 @Pattern(regexp="^\\d+$") 
   public String getIdTela() {
@@ -73,7 +74,8 @@ public class InfIdentificacaoRespIdPositiva   {
    * Get pos1
    * @return pos1
   **/
-  @ApiModelProperty(example = "A-C-D-3", value = "")
+  @ApiModelProperty(example = "A-C-D-3", required = true, value = "")
+  @NotNull
 
 @Pattern(regexp="^.{0,7}$") 
   public String getPos1() {
@@ -93,7 +95,8 @@ public class InfIdentificacaoRespIdPositiva   {
    * Get pos2
    * @return pos2
   **/
-  @ApiModelProperty(example = "A-C-D-3", value = "")
+  @ApiModelProperty(example = "A-C-D-3", required = true, value = "")
+  @NotNull
 
 @Pattern(regexp="^.{0,7}$") 
   public String getPos2() {
@@ -113,7 +116,8 @@ public class InfIdentificacaoRespIdPositiva   {
    * Get pos3
    * @return pos3
   **/
-  @ApiModelProperty(example = "A-C-D-3", value = "")
+  @ApiModelProperty(example = "A-C-D-3", required = true, value = "")
+  @NotNull
 
 @Pattern(regexp="^.{0,7}$") 
   public String getPos3() {
@@ -133,7 +137,8 @@ public class InfIdentificacaoRespIdPositiva   {
    * Get pos4
    * @return pos4
   **/
-  @ApiModelProperty(example = "A-C-D-3", value = "")
+  @ApiModelProperty(example = "A-C-D-3", required = true, value = "")
+  @NotNull
 
 @Pattern(regexp="^.{0,7}$") 
   public String getPos4() {
@@ -153,7 +158,8 @@ public class InfIdentificacaoRespIdPositiva   {
    * Get pos5
    * @return pos5
   **/
-  @ApiModelProperty(example = "A-C-D-3", value = "")
+  @ApiModelProperty(example = "A-C-D-3", required = true, value = "")
+  @NotNull
 
 @Pattern(regexp="^.{0,7}$") 
   public String getPos5() {
@@ -173,7 +179,8 @@ public class InfIdentificacaoRespIdPositiva   {
    * Get pos6
    * @return pos6
   **/
-  @ApiModelProperty(example = "A-C-D-3", value = "")
+  @ApiModelProperty(example = "A-C-D-3", required = true, value = "")
+  @NotNull
 
 @Pattern(regexp="^.{0,7}$") 
   public String getPos6() {
@@ -193,7 +200,8 @@ public class InfIdentificacaoRespIdPositiva   {
    * Get pos7
    * @return pos7
   **/
-  @ApiModelProperty(example = "A-C-D-3", value = "")
+  @ApiModelProperty(example = "A-C-D-3", required = true, value = "")
+  @NotNull
 
 @Pattern(regexp="^.{0,7}$") 
   public String getPos7() {
@@ -213,7 +221,8 @@ public class InfIdentificacaoRespIdPositiva   {
    * Get pos8
    * @return pos8
   **/
-  @ApiModelProperty(example = "A-C-D-3", value = "")
+  @ApiModelProperty(example = "A-C-D-3", required = true, value = "")
+  @NotNull
 
 @Pattern(regexp="^.{0,7}$") 
   public String getPos8() {

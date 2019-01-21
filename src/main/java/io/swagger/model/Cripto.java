@@ -11,136 +11,36 @@ import javax.validation.Valid;
 import javax.validation.constraints.*;
 
 /**
- * Informações relacionadas a criptografia e senhas.
+ * Informações relacionadas a criptografia e senhas da requisição. Varia dependendo da necessidade de cada transação.
  */
-@ApiModel(description = "Informações relacionadas a criptografia e senhas.")
+@ApiModel(description = "Informações relacionadas a criptografia e senhas da requisição. Varia dependendo da necessidade de cada transação.")
 @Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.SpringCodegen", date = "2018-12-05T18:08:56.087Z[GMT]")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2019-01-18T19:37:26.329Z")
 
 public class Cripto   {
-  @JsonProperty("senha")
-  private String senha = null;
-
-  @JsonProperty("tamanhoSenha")
-  private String tamanhoSenha = null;
-
-  @JsonProperty("idPositiva")
-  private String idPositiva = null;
-
-  @JsonProperty("token")
-  private String token = null;
-
-  @JsonProperty("templateBiometria")
-  private String templateBiometria = null;
-
   @JsonProperty("criptogramaChip")
   private String criptogramaChip = null;
 
   @JsonProperty("hash")
   private String hash = null;
 
+  @JsonProperty("idPositiva")
+  private String idPositiva = null;
+
   @JsonProperty("respostaCliente")
   private CriptoRespostaCliente respostaCliente = null;
 
-  public Cripto senha(String senha) {
-    this.senha = senha;
-    return this;
-  }
+  @JsonProperty("senha")
+  private String senha = null;
 
-  /**
-   * Senha numérica criptografada.
-   * @return senha
-  **/
-  @ApiModelProperty(value = "Senha numérica criptografada.")
+  @JsonProperty("tamanhoSenha")
+  private String tamanhoSenha = null;
 
+  @JsonProperty("templateBiometria")
+  private String templateBiometria = null;
 
-  public String getSenha() {
-    return senha;
-  }
-
-  public void setSenha(String senha) {
-    this.senha = senha;
-  }
-
-  public Cripto tamanhoSenha(String tamanhoSenha) {
-    this.tamanhoSenha = tamanhoSenha;
-    return this;
-  }
-
-  /**
-   * Tamanho da senha numérica.
-   * @return tamanhoSenha
-  **/
-  @ApiModelProperty(example = "15", value = "Tamanho da senha numérica.")
-
-@Pattern(regexp="^\\d+$") 
-  public String getTamanhoSenha() {
-    return tamanhoSenha;
-  }
-
-  public void setTamanhoSenha(String tamanhoSenha) {
-    this.tamanhoSenha = tamanhoSenha;
-  }
-
-  public Cripto idPositiva(String idPositiva) {
-    this.idPositiva = idPositiva;
-    return this;
-  }
-
-  /**
-   * Identificação positiva informada pelo usuário, caso utilizada. Corresponde às posições da tela selecionadas pelo usuário. Pode ser criptografada ou não.
-   * @return idPositiva
-  **/
-  @ApiModelProperty(value = "Identificação positiva informada pelo usuário, caso utilizada. Corresponde às posições da tela selecionadas pelo usuário. Pode ser criptografada ou não.")
-
-
-  public String getIdPositiva() {
-    return idPositiva;
-  }
-
-  public void setIdPositiva(String idPositiva) {
-    this.idPositiva = idPositiva;
-  }
-
-  public Cripto token(String token) {
-    this.token = token;
-    return this;
-  }
-
-  /**
-   * Em caso de utilização de token para autenticação, contém o token informado pelo usuário.
-   * @return token
-  **/
-  @ApiModelProperty(example = "02C47DF604EB43B1", value = "Em caso de utilização de token para autenticação, contém o token informado pelo usuário.")
-
-
-  public String getToken() {
-    return token;
-  }
-
-  public void setToken(String token) {
-    this.token = token;
-  }
-
-  public Cripto templateBiometria(String templateBiometria) {
-    this.templateBiometria = templateBiometria;
-    return this;
-  }
-
-  /**
-   * Em caso de biometria, contém o template gerado.
-   * @return templateBiometria
-  **/
-  @ApiModelProperty(value = "Em caso de biometria, contém o template gerado.")
-
-
-  public String getTemplateBiometria() {
-    return templateBiometria;
-  }
-
-  public void setTemplateBiometria(String templateBiometria) {
-    this.templateBiometria = templateBiometria;
-  }
+  @JsonProperty("token")
+  private String token = null;
 
   public Cripto criptogramaChip(String criptogramaChip) {
     this.criptogramaChip = criptogramaChip;
@@ -182,6 +82,26 @@ public class Cripto   {
     this.hash = hash;
   }
 
+  public Cripto idPositiva(String idPositiva) {
+    this.idPositiva = idPositiva;
+    return this;
+  }
+
+  /**
+   * Identificação positiva informada pelo usuário, caso utilizada. Corresponde às posições da tela selecionadas pelo usuário. Pode ser criptografada ou não.
+   * @return idPositiva
+  **/
+  @ApiModelProperty(value = "Identificação positiva informada pelo usuário, caso utilizada. Corresponde às posições da tela selecionadas pelo usuário. Pode ser criptografada ou não.")
+
+
+  public String getIdPositiva() {
+    return idPositiva;
+  }
+
+  public void setIdPositiva(String idPositiva) {
+    this.idPositiva = idPositiva;
+  }
+
   public Cripto respostaCliente(CriptoRespostaCliente respostaCliente) {
     this.respostaCliente = respostaCliente;
     return this;
@@ -203,6 +123,86 @@ public class Cripto   {
     this.respostaCliente = respostaCliente;
   }
 
+  public Cripto senha(String senha) {
+    this.senha = senha;
+    return this;
+  }
+
+  /**
+   * Senha numérica criptografada.
+   * @return senha
+  **/
+  @ApiModelProperty(value = "Senha numérica criptografada.")
+
+
+  public String getSenha() {
+    return senha;
+  }
+
+  public void setSenha(String senha) {
+    this.senha = senha;
+  }
+
+  public Cripto tamanhoSenha(String tamanhoSenha) {
+    this.tamanhoSenha = tamanhoSenha;
+    return this;
+  }
+
+  /**
+   * Tamanho da senha numérica.
+   * @return tamanhoSenha
+  **/
+  @ApiModelProperty(example = "15", value = "Tamanho da senha numérica.")
+
+@Pattern(regexp="^\\d+$") 
+  public String getTamanhoSenha() {
+    return tamanhoSenha;
+  }
+
+  public void setTamanhoSenha(String tamanhoSenha) {
+    this.tamanhoSenha = tamanhoSenha;
+  }
+
+  public Cripto templateBiometria(String templateBiometria) {
+    this.templateBiometria = templateBiometria;
+    return this;
+  }
+
+  /**
+   * Em caso de biometria, contém o template gerado.
+   * @return templateBiometria
+  **/
+  @ApiModelProperty(value = "Em caso de biometria, contém o template gerado.")
+
+
+  public String getTemplateBiometria() {
+    return templateBiometria;
+  }
+
+  public void setTemplateBiometria(String templateBiometria) {
+    this.templateBiometria = templateBiometria;
+  }
+
+  public Cripto token(String token) {
+    this.token = token;
+    return this;
+  }
+
+  /**
+   * Em caso de utilização de token para autenticação, contém o token informado pelo usuário.
+   * @return token
+  **/
+  @ApiModelProperty(example = "02C47DF604EB43B1", value = "Em caso de utilização de token para autenticação, contém o token informado pelo usuário.")
+
+
+  public String getToken() {
+    return token;
+  }
+
+  public void setToken(String token) {
+    this.token = token;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -213,19 +213,19 @@ public class Cripto   {
       return false;
     }
     Cripto cripto = (Cripto) o;
-    return Objects.equals(this.senha, cripto.senha) &&
-        Objects.equals(this.tamanhoSenha, cripto.tamanhoSenha) &&
-        Objects.equals(this.idPositiva, cripto.idPositiva) &&
-        Objects.equals(this.token, cripto.token) &&
-        Objects.equals(this.templateBiometria, cripto.templateBiometria) &&
-        Objects.equals(this.criptogramaChip, cripto.criptogramaChip) &&
+    return Objects.equals(this.criptogramaChip, cripto.criptogramaChip) &&
         Objects.equals(this.hash, cripto.hash) &&
-        Objects.equals(this.respostaCliente, cripto.respostaCliente);
+        Objects.equals(this.idPositiva, cripto.idPositiva) &&
+        Objects.equals(this.respostaCliente, cripto.respostaCliente) &&
+        Objects.equals(this.senha, cripto.senha) &&
+        Objects.equals(this.tamanhoSenha, cripto.tamanhoSenha) &&
+        Objects.equals(this.templateBiometria, cripto.templateBiometria) &&
+        Objects.equals(this.token, cripto.token);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(senha, tamanhoSenha, idPositiva, token, templateBiometria, criptogramaChip, hash, respostaCliente);
+    return Objects.hash(criptogramaChip, hash, idPositiva, respostaCliente, senha, tamanhoSenha, templateBiometria, token);
   }
 
   @Override
@@ -233,14 +233,14 @@ public class Cripto   {
     StringBuilder sb = new StringBuilder();
     sb.append("class Cripto {\n");
     
-    sb.append("    senha: ").append(toIndentedString(senha)).append("\n");
-    sb.append("    tamanhoSenha: ").append(toIndentedString(tamanhoSenha)).append("\n");
-    sb.append("    idPositiva: ").append(toIndentedString(idPositiva)).append("\n");
-    sb.append("    token: ").append(toIndentedString(token)).append("\n");
-    sb.append("    templateBiometria: ").append(toIndentedString(templateBiometria)).append("\n");
     sb.append("    criptogramaChip: ").append(toIndentedString(criptogramaChip)).append("\n");
     sb.append("    hash: ").append(toIndentedString(hash)).append("\n");
+    sb.append("    idPositiva: ").append(toIndentedString(idPositiva)).append("\n");
     sb.append("    respostaCliente: ").append(toIndentedString(respostaCliente)).append("\n");
+    sb.append("    senha: ").append(toIndentedString(senha)).append("\n");
+    sb.append("    tamanhoSenha: ").append(toIndentedString(tamanhoSenha)).append("\n");
+    sb.append("    templateBiometria: ").append(toIndentedString(templateBiometria)).append("\n");
+    sb.append("    token: ").append(toIndentedString(token)).append("\n");
     sb.append("}");
     return sb.toString();
   }

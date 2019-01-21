@@ -14,11 +14,17 @@ import javax.validation.constraints.*;
  * InfPagamentoReqCodBarras
  */
 @Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.SpringCodegen", date = "2018-12-05T18:08:56.087Z[GMT]")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2019-01-18T19:37:26.329Z")
 
 public class InfPagamentoReqCodBarras   {
   @JsonProperty("codigo")
   private String codigo = null;
+
+  @JsonProperty("dataPagamento")
+  private String dataPagamento = null;
+
+  @JsonProperty("dataVencimento")
+  private String dataVencimento = null;
 
   /**
    * Forma de entrada do código de barras (0 = escaneado, 1 = digitado).
@@ -54,17 +60,11 @@ public class InfPagamentoReqCodBarras   {
   @JsonProperty("modoEntrada")
   private ModoEntradaEnum modoEntrada = null;
 
-  @JsonProperty("dataVencimento")
-  private String dataVencimento = null;
-
-  @JsonProperty("dataPagamento")
-  private String dataPagamento = null;
+  @JsonProperty("numTitular")
+  private String numTitular = null;
 
   @JsonProperty("valor")
   private String valor = null;
-
-  @JsonProperty("numTitular")
-  private String numTitular = null;
 
   public InfPagamentoReqCodBarras codigo(String codigo) {
     this.codigo = codigo;
@@ -75,7 +75,8 @@ public class InfPagamentoReqCodBarras   {
    * Código de barras do pagamento.
    * @return codigo
   **/
-  @ApiModelProperty(value = "Código de barras do pagamento.")
+  @ApiModelProperty(required = true, value = "Código de barras do pagamento.")
+  @NotNull
 
 @Pattern(regexp="^\\d+$") 
   public String getCodigo() {
@@ -84,46 +85,6 @@ public class InfPagamentoReqCodBarras   {
 
   public void setCodigo(String codigo) {
     this.codigo = codigo;
-  }
-
-  public InfPagamentoReqCodBarras modoEntrada(ModoEntradaEnum modoEntrada) {
-    this.modoEntrada = modoEntrada;
-    return this;
-  }
-
-  /**
-   * Forma de entrada do código de barras (0 = escaneado, 1 = digitado).
-   * @return modoEntrada
-  **/
-  @ApiModelProperty(example = "0", value = "Forma de entrada do código de barras (0 = escaneado, 1 = digitado).")
-
-
-  public ModoEntradaEnum getModoEntrada() {
-    return modoEntrada;
-  }
-
-  public void setModoEntrada(ModoEntradaEnum modoEntrada) {
-    this.modoEntrada = modoEntrada;
-  }
-
-  public InfPagamentoReqCodBarras dataVencimento(String dataVencimento) {
-    this.dataVencimento = dataVencimento;
-    return this;
-  }
-
-  /**
-   * Data de vencimento (AAAAMMDD).
-   * @return dataVencimento
-  **/
-  @ApiModelProperty(example = "20181122", value = "Data de vencimento (AAAAMMDD).")
-
-@Pattern(regexp="^\\d{8}$") 
-  public String getDataVencimento() {
-    return dataVencimento;
-  }
-
-  public void setDataVencimento(String dataVencimento) {
-    this.dataVencimento = dataVencimento;
   }
 
   public InfPagamentoReqCodBarras dataPagamento(String dataPagamento) {
@@ -135,7 +96,8 @@ public class InfPagamentoReqCodBarras   {
    * Data em que o pagamento deve ser efetuado (AAAAMMDD).
    * @return dataPagamento
   **/
-  @ApiModelProperty(example = "20181122", value = "Data em que o pagamento deve ser efetuado (AAAAMMDD).")
+  @ApiModelProperty(example = "20181122", required = true, value = "Data em que o pagamento deve ser efetuado (AAAAMMDD).")
+  @NotNull
 
 @Pattern(regexp="^\\d{8}$") 
   public String getDataPagamento() {
@@ -146,24 +108,46 @@ public class InfPagamentoReqCodBarras   {
     this.dataPagamento = dataPagamento;
   }
 
-  public InfPagamentoReqCodBarras valor(String valor) {
-    this.valor = valor;
+  public InfPagamentoReqCodBarras dataVencimento(String dataVencimento) {
+    this.dataVencimento = dataVencimento;
     return this;
   }
 
   /**
-   * Valor do pagamento (12 dígitos, incluindo centavos).
-   * @return valor
+   * Data de vencimento (AAAAMMDD).
+   * @return dataVencimento
   **/
-  @ApiModelProperty(example = "000000001150", value = "Valor do pagamento (12 dígitos, incluindo centavos).")
+  @ApiModelProperty(example = "20181122", required = true, value = "Data de vencimento (AAAAMMDD).")
+  @NotNull
 
-@Pattern(regexp="^\\d{12}$") 
-  public String getValor() {
-    return valor;
+@Pattern(regexp="^\\d{8}$") 
+  public String getDataVencimento() {
+    return dataVencimento;
   }
 
-  public void setValor(String valor) {
-    this.valor = valor;
+  public void setDataVencimento(String dataVencimento) {
+    this.dataVencimento = dataVencimento;
+  }
+
+  public InfPagamentoReqCodBarras modoEntrada(ModoEntradaEnum modoEntrada) {
+    this.modoEntrada = modoEntrada;
+    return this;
+  }
+
+  /**
+   * Forma de entrada do código de barras (0 = escaneado, 1 = digitado).
+   * @return modoEntrada
+  **/
+  @ApiModelProperty(example = "0", required = true, value = "Forma de entrada do código de barras (0 = escaneado, 1 = digitado).")
+  @NotNull
+
+
+  public ModoEntradaEnum getModoEntrada() {
+    return modoEntrada;
+  }
+
+  public void setModoEntrada(ModoEntradaEnum modoEntrada) {
+    this.modoEntrada = modoEntrada;
   }
 
   public InfPagamentoReqCodBarras numTitular(String numTitular) {
@@ -175,7 +159,8 @@ public class InfPagamentoReqCodBarras   {
    * Número do Titular.
    * @return numTitular
   **/
-  @ApiModelProperty(value = "Número do Titular.")
+  @ApiModelProperty(required = true, value = "Número do Titular.")
+  @NotNull
 
 @Pattern(regexp="^\\d+$") 
   public String getNumTitular() {
@@ -184,6 +169,27 @@ public class InfPagamentoReqCodBarras   {
 
   public void setNumTitular(String numTitular) {
     this.numTitular = numTitular;
+  }
+
+  public InfPagamentoReqCodBarras valor(String valor) {
+    this.valor = valor;
+    return this;
+  }
+
+  /**
+   * Valor do pagamento (12 dígitos, incluindo centavos).
+   * @return valor
+  **/
+  @ApiModelProperty(example = "000000001150", required = true, value = "Valor do pagamento (12 dígitos, incluindo centavos).")
+  @NotNull
+
+@Pattern(regexp="^\\d{12}$") 
+  public String getValor() {
+    return valor;
+  }
+
+  public void setValor(String valor) {
+    this.valor = valor;
   }
 
 
@@ -197,16 +203,16 @@ public class InfPagamentoReqCodBarras   {
     }
     InfPagamentoReqCodBarras infPagamentoReqCodBarras = (InfPagamentoReqCodBarras) o;
     return Objects.equals(this.codigo, infPagamentoReqCodBarras.codigo) &&
-        Objects.equals(this.modoEntrada, infPagamentoReqCodBarras.modoEntrada) &&
-        Objects.equals(this.dataVencimento, infPagamentoReqCodBarras.dataVencimento) &&
         Objects.equals(this.dataPagamento, infPagamentoReqCodBarras.dataPagamento) &&
-        Objects.equals(this.valor, infPagamentoReqCodBarras.valor) &&
-        Objects.equals(this.numTitular, infPagamentoReqCodBarras.numTitular);
+        Objects.equals(this.dataVencimento, infPagamentoReqCodBarras.dataVencimento) &&
+        Objects.equals(this.modoEntrada, infPagamentoReqCodBarras.modoEntrada) &&
+        Objects.equals(this.numTitular, infPagamentoReqCodBarras.numTitular) &&
+        Objects.equals(this.valor, infPagamentoReqCodBarras.valor);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(codigo, modoEntrada, dataVencimento, dataPagamento, valor, numTitular);
+    return Objects.hash(codigo, dataPagamento, dataVencimento, modoEntrada, numTitular, valor);
   }
 
   @Override
@@ -215,11 +221,11 @@ public class InfPagamentoReqCodBarras   {
     sb.append("class InfPagamentoReqCodBarras {\n");
     
     sb.append("    codigo: ").append(toIndentedString(codigo)).append("\n");
-    sb.append("    modoEntrada: ").append(toIndentedString(modoEntrada)).append("\n");
-    sb.append("    dataVencimento: ").append(toIndentedString(dataVencimento)).append("\n");
     sb.append("    dataPagamento: ").append(toIndentedString(dataPagamento)).append("\n");
-    sb.append("    valor: ").append(toIndentedString(valor)).append("\n");
+    sb.append("    dataVencimento: ").append(toIndentedString(dataVencimento)).append("\n");
+    sb.append("    modoEntrada: ").append(toIndentedString(modoEntrada)).append("\n");
     sb.append("    numTitular: ").append(toIndentedString(numTitular)).append("\n");
+    sb.append("    valor: ").append(toIndentedString(valor)).append("\n");
     sb.append("}");
     return sb.toString();
   }

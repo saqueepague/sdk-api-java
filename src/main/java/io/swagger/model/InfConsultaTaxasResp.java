@@ -13,16 +13,16 @@ import javax.validation.Valid;
 import javax.validation.constraints.*;
 
 /**
- * Informações da resposta de consulta de taxas.
+ * Informações da resposta de consulta de taxas dinâmicas para depósito e saque.
  */
-@ApiModel(description = "Informações da resposta de consulta de taxas.")
+@ApiModel(description = "Informações da resposta de consulta de taxas dinâmicas para depósito e saque.")
 @Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.SpringCodegen", date = "2018-12-05T18:08:56.087Z[GMT]")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2019-01-18T19:37:26.329Z")
 
 public class InfConsultaTaxasResp   {
   @JsonProperty("transactions_fees")
   @Valid
-  private List<InfConsultaTaxasRespTransactionsFees> transactionsFees = null;
+  private List<InfConsultaTaxasRespTransactionsFees> transactionsFees = new ArrayList<InfConsultaTaxasRespTransactionsFees>();
 
   public InfConsultaTaxasResp transactionsFees(List<InfConsultaTaxasRespTransactionsFees> transactionsFees) {
     this.transactionsFees = transactionsFees;
@@ -30,9 +30,6 @@ public class InfConsultaTaxasResp   {
   }
 
   public InfConsultaTaxasResp addTransactionsFeesItem(InfConsultaTaxasRespTransactionsFees transactionsFeesItem) {
-    if (this.transactionsFees == null) {
-      this.transactionsFees = new ArrayList<InfConsultaTaxasRespTransactionsFees>();
-    }
     this.transactionsFees.add(transactionsFeesItem);
     return this;
   }
@@ -41,7 +38,8 @@ public class InfConsultaTaxasResp   {
    * Get transactionsFees
    * @return transactionsFees
   **/
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(required = true, value = "")
+  @NotNull
 
   @Valid
 

@@ -17,44 +17,15 @@ import javax.validation.constraints.*;
  */
 @ApiModel(description = "Informações da resposta da requisição de consulta de parcelas de empréstimo.")
 @Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.SpringCodegen", date = "2018-12-05T18:08:56.087Z[GMT]")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2019-01-18T19:37:26.329Z")
 
 public class InfConsultaParcelasEmprestimoResp   {
-  @JsonProperty("opcoesParcelas")
-  @Valid
-  private List<InfConsultaParcelasEmprestimoRespOpcoesParcelas> opcoesParcelas = null;
-
   @JsonProperty("dataPrimeiraParcela")
   private String dataPrimeiraParcela = null;
 
-  public InfConsultaParcelasEmprestimoResp opcoesParcelas(List<InfConsultaParcelasEmprestimoRespOpcoesParcelas> opcoesParcelas) {
-    this.opcoesParcelas = opcoesParcelas;
-    return this;
-  }
-
-  public InfConsultaParcelasEmprestimoResp addOpcoesParcelasItem(InfConsultaParcelasEmprestimoRespOpcoesParcelas opcoesParcelasItem) {
-    if (this.opcoesParcelas == null) {
-      this.opcoesParcelas = new ArrayList<InfConsultaParcelasEmprestimoRespOpcoesParcelas>();
-    }
-    this.opcoesParcelas.add(opcoesParcelasItem);
-    return this;
-  }
-
-  /**
-   * Get opcoesParcelas
-   * @return opcoesParcelas
-  **/
-  @ApiModelProperty(value = "")
-
+  @JsonProperty("opcoesParcelas")
   @Valid
-
-  public List<InfConsultaParcelasEmprestimoRespOpcoesParcelas> getOpcoesParcelas() {
-    return opcoesParcelas;
-  }
-
-  public void setOpcoesParcelas(List<InfConsultaParcelasEmprestimoRespOpcoesParcelas> opcoesParcelas) {
-    this.opcoesParcelas = opcoesParcelas;
-  }
+  private List<InfConsultaParcelasEmprestimoRespOpcoesParcelas> opcoesParcelas = new ArrayList<InfConsultaParcelasEmprestimoRespOpcoesParcelas>();
 
   public InfConsultaParcelasEmprestimoResp dataPrimeiraParcela(String dataPrimeiraParcela) {
     this.dataPrimeiraParcela = dataPrimeiraParcela;
@@ -65,7 +36,8 @@ public class InfConsultaParcelasEmprestimoResp   {
    * Data da primeira parcela do empréstimo (AAAAMMDD).
    * @return dataPrimeiraParcela
   **/
-  @ApiModelProperty(example = "20181122", value = "Data da primeira parcela do empréstimo (AAAAMMDD).")
+  @ApiModelProperty(example = "20181122", required = true, value = "Data da primeira parcela do empréstimo (AAAAMMDD).")
+  @NotNull
 
 @Pattern(regexp="^\\d{8}$") 
   public String getDataPrimeiraParcela() {
@@ -74,6 +46,33 @@ public class InfConsultaParcelasEmprestimoResp   {
 
   public void setDataPrimeiraParcela(String dataPrimeiraParcela) {
     this.dataPrimeiraParcela = dataPrimeiraParcela;
+  }
+
+  public InfConsultaParcelasEmprestimoResp opcoesParcelas(List<InfConsultaParcelasEmprestimoRespOpcoesParcelas> opcoesParcelas) {
+    this.opcoesParcelas = opcoesParcelas;
+    return this;
+  }
+
+  public InfConsultaParcelasEmprestimoResp addOpcoesParcelasItem(InfConsultaParcelasEmprestimoRespOpcoesParcelas opcoesParcelasItem) {
+    this.opcoesParcelas.add(opcoesParcelasItem);
+    return this;
+  }
+
+  /**
+   * Get opcoesParcelas
+   * @return opcoesParcelas
+  **/
+  @ApiModelProperty(required = true, value = "")
+  @NotNull
+
+  @Valid
+
+  public List<InfConsultaParcelasEmprestimoRespOpcoesParcelas> getOpcoesParcelas() {
+    return opcoesParcelas;
+  }
+
+  public void setOpcoesParcelas(List<InfConsultaParcelasEmprestimoRespOpcoesParcelas> opcoesParcelas) {
+    this.opcoesParcelas = opcoesParcelas;
   }
 
 
@@ -86,13 +85,13 @@ public class InfConsultaParcelasEmprestimoResp   {
       return false;
     }
     InfConsultaParcelasEmprestimoResp infConsultaParcelasEmprestimoResp = (InfConsultaParcelasEmprestimoResp) o;
-    return Objects.equals(this.opcoesParcelas, infConsultaParcelasEmprestimoResp.opcoesParcelas) &&
-        Objects.equals(this.dataPrimeiraParcela, infConsultaParcelasEmprestimoResp.dataPrimeiraParcela);
+    return Objects.equals(this.dataPrimeiraParcela, infConsultaParcelasEmprestimoResp.dataPrimeiraParcela) &&
+        Objects.equals(this.opcoesParcelas, infConsultaParcelasEmprestimoResp.opcoesParcelas);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(opcoesParcelas, dataPrimeiraParcela);
+    return Objects.hash(dataPrimeiraParcela, opcoesParcelas);
   }
 
   @Override
@@ -100,8 +99,8 @@ public class InfConsultaParcelasEmprestimoResp   {
     StringBuilder sb = new StringBuilder();
     sb.append("class InfConsultaParcelasEmprestimoResp {\n");
     
-    sb.append("    opcoesParcelas: ").append(toIndentedString(opcoesParcelas)).append("\n");
     sb.append("    dataPrimeiraParcela: ").append(toIndentedString(dataPrimeiraParcela)).append("\n");
+    sb.append("    opcoesParcelas: ").append(toIndentedString(opcoesParcelas)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -13,7 +13,7 @@ import javax.validation.constraints.*;
  * InfPagamentoReqGps
  */
 @Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.SpringCodegen", date = "2018-12-05T18:08:56.087Z[GMT]")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2019-01-18T19:37:26.329Z")
 
 public class InfPagamentoReqGps   {
   @JsonProperty("codPagamento")
@@ -28,11 +28,11 @@ public class InfPagamentoReqGps   {
   @JsonProperty("valorInss")
   private String valorInss = null;
 
-  @JsonProperty("valorOutros")
-  private String valorOutros = null;
-
   @JsonProperty("valorMulta")
   private String valorMulta = null;
+
+  @JsonProperty("valorOutros")
+  private String valorOutros = null;
 
   @JsonProperty("valorTotal")
   private String valorTotal = null;
@@ -46,9 +46,10 @@ public class InfPagamentoReqGps   {
    * Código da Guia da Previdência Social (GPS).
    * @return codPagamento
   **/
-  @ApiModelProperty(value = "Código da Guia da Previdência Social (GPS).")
+  @ApiModelProperty(example = "3456", required = true, value = "Código da Guia da Previdência Social (GPS).")
+  @NotNull
 
-
+@Pattern(regexp="^\\d{4}$") 
   public String getCodPagamento() {
     return codPagamento;
   }
@@ -66,7 +67,8 @@ public class InfPagamentoReqGps   {
    * Data de competência (AAAAMMDD).
    * @return dataCompetencia
   **/
-  @ApiModelProperty(example = "20181122", value = "Data de competência (AAAAMMDD).")
+  @ApiModelProperty(example = "20181122", required = true, value = "Data de competência (AAAAMMDD).")
+  @NotNull
 
 @Pattern(regexp="^\\d{8}$") 
   public String getDataCompetencia() {
@@ -86,9 +88,10 @@ public class InfPagamentoReqGps   {
    * Identificador da guia.
    * @return identificador
   **/
-  @ApiModelProperty(value = "Identificador da guia.")
+  @ApiModelProperty(example = "1234567890", required = true, value = "Identificador da guia.")
+  @NotNull
 
-
+@Pattern(regexp="^\\d+$") 
   public String getIdentificador() {
     return identificador;
   }
@@ -106,7 +109,8 @@ public class InfPagamentoReqGps   {
    * Valor do INSS (12 dígitos, incluindo centavos).
    * @return valorInss
   **/
-  @ApiModelProperty(example = "000000001150", value = "Valor do INSS (12 dígitos, incluindo centavos).")
+  @ApiModelProperty(example = "000000001150", required = true, value = "Valor do INSS (12 dígitos, incluindo centavos).")
+  @NotNull
 
 @Pattern(regexp="^\\d{12}$") 
   public String getValorInss() {
@@ -115,26 +119,6 @@ public class InfPagamentoReqGps   {
 
   public void setValorInss(String valorInss) {
     this.valorInss = valorInss;
-  }
-
-  public InfPagamentoReqGps valorOutros(String valorOutros) {
-    this.valorOutros = valorOutros;
-    return this;
-  }
-
-  /**
-   * Valor de outras entidades (12 dígitos, incluindo centavos).
-   * @return valorOutros
-  **/
-  @ApiModelProperty(example = "000000001150", value = "Valor de outras entidades (12 dígitos, incluindo centavos).")
-
-@Pattern(regexp="^\\d{12}$") 
-  public String getValorOutros() {
-    return valorOutros;
-  }
-
-  public void setValorOutros(String valorOutros) {
-    this.valorOutros = valorOutros;
   }
 
   public InfPagamentoReqGps valorMulta(String valorMulta) {
@@ -146,7 +130,8 @@ public class InfPagamentoReqGps   {
    * Valor associado a ATM/Multa e Juros (12 dígitos, incluindo centavos).
    * @return valorMulta
   **/
-  @ApiModelProperty(example = "000000001150", value = "Valor associado a ATM/Multa e Juros (12 dígitos, incluindo centavos).")
+  @ApiModelProperty(example = "000000001150", required = true, value = "Valor associado a ATM/Multa e Juros (12 dígitos, incluindo centavos).")
+  @NotNull
 
 @Pattern(regexp="^\\d{12}$") 
   public String getValorMulta() {
@@ -155,6 +140,27 @@ public class InfPagamentoReqGps   {
 
   public void setValorMulta(String valorMulta) {
     this.valorMulta = valorMulta;
+  }
+
+  public InfPagamentoReqGps valorOutros(String valorOutros) {
+    this.valorOutros = valorOutros;
+    return this;
+  }
+
+  /**
+   * Valor de outras entidades (12 dígitos, incluindo centavos).
+   * @return valorOutros
+  **/
+  @ApiModelProperty(example = "000000001150", required = true, value = "Valor de outras entidades (12 dígitos, incluindo centavos).")
+  @NotNull
+
+@Pattern(regexp="^\\d{12}$") 
+  public String getValorOutros() {
+    return valorOutros;
+  }
+
+  public void setValorOutros(String valorOutros) {
+    this.valorOutros = valorOutros;
   }
 
   public InfPagamentoReqGps valorTotal(String valorTotal) {
@@ -166,7 +172,8 @@ public class InfPagamentoReqGps   {
    * Valor total da Guia da Previdência Social (GPS, 12 dígitos, incluindo centavos).
    * @return valorTotal
   **/
-  @ApiModelProperty(example = "000000001150", value = "Valor total da Guia da Previdência Social (GPS, 12 dígitos, incluindo centavos).")
+  @ApiModelProperty(example = "000000001150", required = true, value = "Valor total da Guia da Previdência Social (GPS, 12 dígitos, incluindo centavos).")
+  @NotNull
 
 @Pattern(regexp="^\\d{12}$") 
   public String getValorTotal() {
@@ -191,14 +198,14 @@ public class InfPagamentoReqGps   {
         Objects.equals(this.dataCompetencia, infPagamentoReqGps.dataCompetencia) &&
         Objects.equals(this.identificador, infPagamentoReqGps.identificador) &&
         Objects.equals(this.valorInss, infPagamentoReqGps.valorInss) &&
-        Objects.equals(this.valorOutros, infPagamentoReqGps.valorOutros) &&
         Objects.equals(this.valorMulta, infPagamentoReqGps.valorMulta) &&
+        Objects.equals(this.valorOutros, infPagamentoReqGps.valorOutros) &&
         Objects.equals(this.valorTotal, infPagamentoReqGps.valorTotal);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(codPagamento, dataCompetencia, identificador, valorInss, valorOutros, valorMulta, valorTotal);
+    return Objects.hash(codPagamento, dataCompetencia, identificador, valorInss, valorMulta, valorOutros, valorTotal);
   }
 
   @Override
@@ -210,8 +217,8 @@ public class InfPagamentoReqGps   {
     sb.append("    dataCompetencia: ").append(toIndentedString(dataCompetencia)).append("\n");
     sb.append("    identificador: ").append(toIndentedString(identificador)).append("\n");
     sb.append("    valorInss: ").append(toIndentedString(valorInss)).append("\n");
-    sb.append("    valorOutros: ").append(toIndentedString(valorOutros)).append("\n");
     sb.append("    valorMulta: ").append(toIndentedString(valorMulta)).append("\n");
+    sb.append("    valorOutros: ").append(toIndentedString(valorOutros)).append("\n");
     sb.append("    valorTotal: ").append(toIndentedString(valorTotal)).append("\n");
     sb.append("}");
     return sb.toString();

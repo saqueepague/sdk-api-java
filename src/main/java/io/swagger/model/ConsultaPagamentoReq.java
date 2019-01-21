@@ -17,41 +17,20 @@ import javax.validation.constraints.*;
  * ConsultaPagamentoReq
  */
 @Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.SpringCodegen", date = "2018-12-05T18:08:56.087Z[GMT]")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2019-01-18T19:37:26.329Z")
 
 public class ConsultaPagamentoReq   {
-  @JsonProperty("InfTransacao")
-  private InfTransacaoReq infTransacao = null;
-
   @JsonProperty("Cartao")
   private Cartao cartao = null;
-
-  @JsonProperty("Terminal")
-  private Terminal terminal = null;
 
   @JsonProperty("InfConsultaPagamento")
   private InfConsultaPagamentoReq infConsultaPagamento = null;
 
-  public ConsultaPagamentoReq infTransacao(InfTransacaoReq infTransacao) {
-    this.infTransacao = infTransacao;
-    return this;
-  }
+  @JsonProperty("InfTransacao")
+  private InfTransacaoReq infTransacao = null;
 
-  /**
-   * Get infTransacao
-   * @return infTransacao
-  **/
-  @ApiModelProperty(value = "")
-
-  @Valid
-
-  public InfTransacaoReq getInfTransacao() {
-    return infTransacao;
-  }
-
-  public void setInfTransacao(InfTransacaoReq infTransacao) {
-    this.infTransacao = infTransacao;
-  }
+  @JsonProperty("Terminal")
+  private Terminal terminal = null;
 
   public ConsultaPagamentoReq cartao(Cartao cartao) {
     this.cartao = cartao;
@@ -62,7 +41,8 @@ public class ConsultaPagamentoReq   {
    * Get cartao
    * @return cartao
   **/
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(required = true, value = "")
+  @NotNull
 
   @Valid
 
@@ -74,27 +54,6 @@ public class ConsultaPagamentoReq   {
     this.cartao = cartao;
   }
 
-  public ConsultaPagamentoReq terminal(Terminal terminal) {
-    this.terminal = terminal;
-    return this;
-  }
-
-  /**
-   * Get terminal
-   * @return terminal
-  **/
-  @ApiModelProperty(value = "")
-
-  @Valid
-
-  public Terminal getTerminal() {
-    return terminal;
-  }
-
-  public void setTerminal(Terminal terminal) {
-    this.terminal = terminal;
-  }
-
   public ConsultaPagamentoReq infConsultaPagamento(InfConsultaPagamentoReq infConsultaPagamento) {
     this.infConsultaPagamento = infConsultaPagamento;
     return this;
@@ -104,7 +63,8 @@ public class ConsultaPagamentoReq   {
    * Get infConsultaPagamento
    * @return infConsultaPagamento
   **/
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(required = true, value = "")
+  @NotNull
 
   @Valid
 
@@ -114,6 +74,50 @@ public class ConsultaPagamentoReq   {
 
   public void setInfConsultaPagamento(InfConsultaPagamentoReq infConsultaPagamento) {
     this.infConsultaPagamento = infConsultaPagamento;
+  }
+
+  public ConsultaPagamentoReq infTransacao(InfTransacaoReq infTransacao) {
+    this.infTransacao = infTransacao;
+    return this;
+  }
+
+  /**
+   * Get infTransacao
+   * @return infTransacao
+  **/
+  @ApiModelProperty(required = true, value = "")
+  @NotNull
+
+  @Valid
+
+  public InfTransacaoReq getInfTransacao() {
+    return infTransacao;
+  }
+
+  public void setInfTransacao(InfTransacaoReq infTransacao) {
+    this.infTransacao = infTransacao;
+  }
+
+  public ConsultaPagamentoReq terminal(Terminal terminal) {
+    this.terminal = terminal;
+    return this;
+  }
+
+  /**
+   * Get terminal
+   * @return terminal
+  **/
+  @ApiModelProperty(required = true, value = "")
+  @NotNull
+
+  @Valid
+
+  public Terminal getTerminal() {
+    return terminal;
+  }
+
+  public void setTerminal(Terminal terminal) {
+    this.terminal = terminal;
   }
 
 
@@ -126,15 +130,15 @@ public class ConsultaPagamentoReq   {
       return false;
     }
     ConsultaPagamentoReq consultaPagamentoReq = (ConsultaPagamentoReq) o;
-    return Objects.equals(this.infTransacao, consultaPagamentoReq.infTransacao) &&
-        Objects.equals(this.cartao, consultaPagamentoReq.cartao) &&
-        Objects.equals(this.terminal, consultaPagamentoReq.terminal) &&
-        Objects.equals(this.infConsultaPagamento, consultaPagamentoReq.infConsultaPagamento);
+    return Objects.equals(this.cartao, consultaPagamentoReq.cartao) &&
+        Objects.equals(this.infConsultaPagamento, consultaPagamentoReq.infConsultaPagamento) &&
+        Objects.equals(this.infTransacao, consultaPagamentoReq.infTransacao) &&
+        Objects.equals(this.terminal, consultaPagamentoReq.terminal);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(infTransacao, cartao, terminal, infConsultaPagamento);
+    return Objects.hash(cartao, infConsultaPagamento, infTransacao, terminal);
   }
 
   @Override
@@ -142,10 +146,10 @@ public class ConsultaPagamentoReq   {
     StringBuilder sb = new StringBuilder();
     sb.append("class ConsultaPagamentoReq {\n");
     
-    sb.append("    infTransacao: ").append(toIndentedString(infTransacao)).append("\n");
     sb.append("    cartao: ").append(toIndentedString(cartao)).append("\n");
-    sb.append("    terminal: ").append(toIndentedString(terminal)).append("\n");
     sb.append("    infConsultaPagamento: ").append(toIndentedString(infConsultaPagamento)).append("\n");
+    sb.append("    infTransacao: ").append(toIndentedString(infTransacao)).append("\n");
+    sb.append("    terminal: ").append(toIndentedString(terminal)).append("\n");
     sb.append("}");
     return sb.toString();
   }

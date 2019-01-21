@@ -13,83 +13,23 @@ import javax.validation.constraints.*;
  * InfPagamentoReqTroco
  */
 @Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.SpringCodegen", date = "2018-12-05T18:08:56.087Z[GMT]")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2019-01-18T19:37:26.329Z")
 
 public class InfPagamentoReqTroco   {
-  @JsonProperty("valorCreditoConta")
-  private String valorCreditoConta = null;
-
-  @JsonProperty("valorEspecie")
-  private String valorEspecie = null;
-
-  @JsonProperty("valorDoacao")
-  private String valorDoacao = null;
-
   @JsonProperty("cnpjInstituicao")
   private String cnpjInstituicao = null;
+
+  @JsonProperty("valorCreditoConta")
+  private String valorCreditoConta = null;
 
   @JsonProperty("valorCupom")
   private String valorCupom = null;
 
-  public InfPagamentoReqTroco valorCreditoConta(String valorCreditoConta) {
-    this.valorCreditoConta = valorCreditoConta;
-    return this;
-  }
+  @JsonProperty("valorDoacao")
+  private String valorDoacao = null;
 
-  /**
-   * Valor do troco creditado em conta (pagamento em dinheiro, 12 dígitos, incluindo centavos).
-   * @return valorCreditoConta
-  **/
-  @ApiModelProperty(example = "000000001150", value = "Valor do troco creditado em conta (pagamento em dinheiro, 12 dígitos, incluindo centavos).")
-
-@Pattern(regexp="^\\d{12}$") 
-  public String getValorCreditoConta() {
-    return valorCreditoConta;
-  }
-
-  public void setValorCreditoConta(String valorCreditoConta) {
-    this.valorCreditoConta = valorCreditoConta;
-  }
-
-  public InfPagamentoReqTroco valorEspecie(String valorEspecie) {
-    this.valorEspecie = valorEspecie;
-    return this;
-  }
-
-  /**
-   * Valor do troco entregue em espécie (pagamento em dinheiro, 12 dígitos, incluindo centavos).
-   * @return valorEspecie
-  **/
-  @ApiModelProperty(example = "000000001150", value = "Valor do troco entregue em espécie (pagamento em dinheiro, 12 dígitos, incluindo centavos).")
-
-@Pattern(regexp="^\\d{12}$") 
-  public String getValorEspecie() {
-    return valorEspecie;
-  }
-
-  public void setValorEspecie(String valorEspecie) {
-    this.valorEspecie = valorEspecie;
-  }
-
-  public InfPagamentoReqTroco valorDoacao(String valorDoacao) {
-    this.valorDoacao = valorDoacao;
-    return this;
-  }
-
-  /**
-   * Valor do troco doado à instituição de caridade (pagamento em dinheiro, 12 dígitos, incluindo centavos).
-   * @return valorDoacao
-  **/
-  @ApiModelProperty(example = "000000000350", value = "Valor do troco doado à instituição de caridade (pagamento em dinheiro, 12 dígitos, incluindo centavos).")
-
-@Pattern(regexp="^\\d{12}$") 
-  public String getValorDoacao() {
-    return valorDoacao;
-  }
-
-  public void setValorDoacao(String valorDoacao) {
-    this.valorDoacao = valorDoacao;
-  }
+  @JsonProperty("valorEspecie")
+  private String valorEspecie = null;
 
   public InfPagamentoReqTroco cnpjInstituicao(String cnpjInstituicao) {
     this.cnpjInstituicao = cnpjInstituicao;
@@ -109,6 +49,26 @@ public class InfPagamentoReqTroco   {
 
   public void setCnpjInstituicao(String cnpjInstituicao) {
     this.cnpjInstituicao = cnpjInstituicao;
+  }
+
+  public InfPagamentoReqTroco valorCreditoConta(String valorCreditoConta) {
+    this.valorCreditoConta = valorCreditoConta;
+    return this;
+  }
+
+  /**
+   * Valor do troco creditado em conta (pagamento em dinheiro, 12 dígitos, incluindo centavos).
+   * @return valorCreditoConta
+  **/
+  @ApiModelProperty(example = "000000001150", value = "Valor do troco creditado em conta (pagamento em dinheiro, 12 dígitos, incluindo centavos).")
+
+@Pattern(regexp="^\\d{12}$") 
+  public String getValorCreditoConta() {
+    return valorCreditoConta;
+  }
+
+  public void setValorCreditoConta(String valorCreditoConta) {
+    this.valorCreditoConta = valorCreditoConta;
   }
 
   public InfPagamentoReqTroco valorCupom(String valorCupom) {
@@ -131,6 +91,46 @@ public class InfPagamentoReqTroco   {
     this.valorCupom = valorCupom;
   }
 
+  public InfPagamentoReqTroco valorDoacao(String valorDoacao) {
+    this.valorDoacao = valorDoacao;
+    return this;
+  }
+
+  /**
+   * Valor do troco doado à instituição de caridade (pagamento em dinheiro, 12 dígitos, incluindo centavos).
+   * @return valorDoacao
+  **/
+  @ApiModelProperty(example = "000000000350", value = "Valor do troco doado à instituição de caridade (pagamento em dinheiro, 12 dígitos, incluindo centavos).")
+
+@Pattern(regexp="^\\d{12}$") 
+  public String getValorDoacao() {
+    return valorDoacao;
+  }
+
+  public void setValorDoacao(String valorDoacao) {
+    this.valorDoacao = valorDoacao;
+  }
+
+  public InfPagamentoReqTroco valorEspecie(String valorEspecie) {
+    this.valorEspecie = valorEspecie;
+    return this;
+  }
+
+  /**
+   * Valor do troco entregue em espécie (pagamento em dinheiro, 12 dígitos, incluindo centavos).
+   * @return valorEspecie
+  **/
+  @ApiModelProperty(example = "000000001150", value = "Valor do troco entregue em espécie (pagamento em dinheiro, 12 dígitos, incluindo centavos).")
+
+@Pattern(regexp="^\\d{12}$") 
+  public String getValorEspecie() {
+    return valorEspecie;
+  }
+
+  public void setValorEspecie(String valorEspecie) {
+    this.valorEspecie = valorEspecie;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -141,16 +141,16 @@ public class InfPagamentoReqTroco   {
       return false;
     }
     InfPagamentoReqTroco infPagamentoReqTroco = (InfPagamentoReqTroco) o;
-    return Objects.equals(this.valorCreditoConta, infPagamentoReqTroco.valorCreditoConta) &&
-        Objects.equals(this.valorEspecie, infPagamentoReqTroco.valorEspecie) &&
+    return Objects.equals(this.cnpjInstituicao, infPagamentoReqTroco.cnpjInstituicao) &&
+        Objects.equals(this.valorCreditoConta, infPagamentoReqTroco.valorCreditoConta) &&
+        Objects.equals(this.valorCupom, infPagamentoReqTroco.valorCupom) &&
         Objects.equals(this.valorDoacao, infPagamentoReqTroco.valorDoacao) &&
-        Objects.equals(this.cnpjInstituicao, infPagamentoReqTroco.cnpjInstituicao) &&
-        Objects.equals(this.valorCupom, infPagamentoReqTroco.valorCupom);
+        Objects.equals(this.valorEspecie, infPagamentoReqTroco.valorEspecie);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(valorCreditoConta, valorEspecie, valorDoacao, cnpjInstituicao, valorCupom);
+    return Objects.hash(cnpjInstituicao, valorCreditoConta, valorCupom, valorDoacao, valorEspecie);
   }
 
   @Override
@@ -158,11 +158,11 @@ public class InfPagamentoReqTroco   {
     StringBuilder sb = new StringBuilder();
     sb.append("class InfPagamentoReqTroco {\n");
     
-    sb.append("    valorCreditoConta: ").append(toIndentedString(valorCreditoConta)).append("\n");
-    sb.append("    valorEspecie: ").append(toIndentedString(valorEspecie)).append("\n");
-    sb.append("    valorDoacao: ").append(toIndentedString(valorDoacao)).append("\n");
     sb.append("    cnpjInstituicao: ").append(toIndentedString(cnpjInstituicao)).append("\n");
+    sb.append("    valorCreditoConta: ").append(toIndentedString(valorCreditoConta)).append("\n");
     sb.append("    valorCupom: ").append(toIndentedString(valorCupom)).append("\n");
+    sb.append("    valorDoacao: ").append(toIndentedString(valorDoacao)).append("\n");
+    sb.append("    valorEspecie: ").append(toIndentedString(valorEspecie)).append("\n");
     sb.append("}");
     return sb.toString();
   }

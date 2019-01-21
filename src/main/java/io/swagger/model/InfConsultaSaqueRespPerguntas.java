@@ -13,7 +13,7 @@ import javax.validation.constraints.*;
  * InfConsultaSaqueRespPerguntas
  */
 @Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.SpringCodegen", date = "2018-12-05T18:08:56.087Z[GMT]")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2019-01-18T19:37:26.329Z")
 
 public class InfConsultaSaqueRespPerguntas   {
   @JsonProperty("id")
@@ -54,7 +54,7 @@ public class InfConsultaSaqueRespPerguntas   {
    * Pergunta de identificação.
    * @return pergunta
   **/
-  @ApiModelProperty(example = "Qual o nome do seu primeiro animal de estimação?", value = "Pergunta de identificação.")
+  @ApiModelProperty(example = "INFORME OS 3 PRIMEIROS DIGITOS DO SEU CPF", value = "Pergunta de identificação.")
 
 
   public String getPergunta() {
@@ -74,7 +74,7 @@ public class InfConsultaSaqueRespPerguntas   {
    * Tamanho da resposta da pergunta.
    * @return tamResposta
   **/
-  @ApiModelProperty(example = "27", value = "Tamanho da resposta da pergunta.")
+  @ApiModelProperty(example = "3", value = "Tamanho da resposta da pergunta.")
 
 @Pattern(regexp="^\\d+$") 
   public String getTamResposta() {

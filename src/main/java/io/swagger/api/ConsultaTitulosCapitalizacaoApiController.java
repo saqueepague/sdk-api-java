@@ -21,8 +21,7 @@ import javax.validation.Valid;
 import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
 import java.util.List;
-import java.util.Map;
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.SpringCodegen", date = "2018-12-05T18:08:56.087Z[GMT]")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2019-01-18T19:37:26.329Z")
 
 @Controller
 public class ConsultaTitulosCapitalizacaoApiController implements ConsultaTitulosCapitalizacaoApi {
@@ -39,8 +38,17 @@ public class ConsultaTitulosCapitalizacaoApiController implements ConsultaTitulo
         this.request = request;
     }
 
-    public ResponseEntity<ConsultaTitulosCapitalizacaoResp> consultaTitulosCapitalizacaoPost(@ApiParam(value = "Requisição de consulta produtos de títulos de capitalização." ,required=true )  @Valid @RequestBody ConsultaTitulosCapitalizacaoReq body,@ApiParam(value = "Tipo de autenticação requerida." ,required=true) @RequestHeader(value="authenticationType", required=true) String authenticationType,@ApiParam(value = "Identificação do cliente." ,required=true) @RequestHeader(value="clientId", required=true) String clientId,@ApiParam(value = "Chave para validação do acesso ao serviço." ,required=true) @RequestHeader(value="token", required=true) String token) {
+    public ResponseEntity<ConsultaTitulosCapitalizacaoResp> consultaTitulosCapitalizacaoPost(@ApiParam(value = "Tipo de autenticação requerida." ,required=true) @RequestHeader(value="authenticationType", required=true) String authenticationType,@ApiParam(value = "Identificação do cliente." ,required=true) @RequestHeader(value="clientId", required=true) String clientId,@ApiParam(value = "Chave para validação do acesso ao serviço." ,required=true) @RequestHeader(value="token", required=true) String token,@ApiParam(value = "Requisição de consulta produtos de títulos de capitalização." ,required=true )  @Valid @RequestBody ConsultaTitulosCapitalizacaoReq body) {
         String accept = request.getHeader("Accept");
+        if (accept != null && accept.contains("application/json")) {
+            try {
+                return new ResponseEntity<ConsultaTitulosCapitalizacaoResp>(objectMapper.readValue("{  \"InfTransacao\" : {    \"cdProc\" : \"029100\",    \"mensagemCliente\" : \"Não foi possível validar o cartão.\",    \"nsu\" : \"000080247206\",    \"codMoeda\" : \"986\",    \"codOperadora\" : \"00000000914\",    \"dataLocal\" : \"1122\",    \"errorMessage\" : \"Cartão inválido.\",    \"valor\" : \"5000\",    \"horaLocal\" : \"151032\",    \"nsuResposta\" : \"820\",    \"dataHora\" : \"1122151032\"  },  \"InfConsultaTitulosCapitalizacao\" : {    \"produtos\" : [ {      \"limiteMaximoCompra\" : \"4\",      \"tema\" : {        \"estilos\" : [ {          \"valor\" : \"#00288C\",          \"nome\" : \"cor-fundo ou cor-botao\"        }, {          \"valor\" : \"#00288C\",          \"nome\" : \"cor-fundo ou cor-botao\"        } ]      },      \"valor\" : \"000000000500\",      \"nome\" : \"Grêmio Mais\",      \"id\" : \"7\",      \"dataFimVigencia\" : \"20181130\",      \"dataInicioVigencia\" : \"20181122\",      \"detalhes\" : \"Edição ouro de mais um produto do Grêmio Mais\",      \"descricao\" : \"Edição 115 Anos\"    }, {      \"limiteMaximoCompra\" : \"4\",      \"tema\" : {        \"estilos\" : [ {          \"valor\" : \"#00288C\",          \"nome\" : \"cor-fundo ou cor-botao\"        }, {          \"valor\" : \"#00288C\",          \"nome\" : \"cor-fundo ou cor-botao\"        } ]      },      \"valor\" : \"000000000500\",      \"nome\" : \"Grêmio Mais\",      \"id\" : \"7\",      \"dataFimVigencia\" : \"20181130\",      \"dataInicioVigencia\" : \"20181122\",      \"detalhes\" : \"Edição ouro de mais um produto do Grêmio Mais\",      \"descricao\" : \"Edição 115 Anos\"    } ]  },  \"Terminal\" : {    \"codEstab\" : \"000000000742673\",    \"tipo\" : \"008\",    \"id\" : \"05100004\"  }}", ConsultaTitulosCapitalizacaoResp.class), HttpStatus.NOT_IMPLEMENTED);
+            } catch (IOException e) {
+                log.error("Couldn't serialize response for content type application/json", e);
+                return new ResponseEntity<ConsultaTitulosCapitalizacaoResp>(HttpStatus.INTERNAL_SERVER_ERROR);
+            }
+        }
+
         return new ResponseEntity<ConsultaTitulosCapitalizacaoResp>(HttpStatus.NOT_IMPLEMENTED);
     }
 

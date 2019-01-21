@@ -18,17 +18,11 @@ import javax.validation.constraints.*;
  * IdentificacaoReq
  */
 @Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.SpringCodegen", date = "2018-12-05T18:08:56.087Z[GMT]")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2019-01-18T19:37:26.329Z")
 
 public class IdentificacaoReq   {
-  @JsonProperty("InfTransacao")
-  private InfTransacaoReq infTransacao = null;
-
   @JsonProperty("Cartao")
   private Cartao cartao = null;
-
-  @JsonProperty("Terminal")
-  private Terminal terminal = null;
 
   @JsonProperty("Cripto")
   private Cripto cripto = null;
@@ -36,26 +30,11 @@ public class IdentificacaoReq   {
   @JsonProperty("InfIdentificacao")
   private InfIdentificacaoReq infIdentificacao = null;
 
-  public IdentificacaoReq infTransacao(InfTransacaoReq infTransacao) {
-    this.infTransacao = infTransacao;
-    return this;
-  }
+  @JsonProperty("InfTransacao")
+  private InfTransacaoReq infTransacao = null;
 
-  /**
-   * Get infTransacao
-   * @return infTransacao
-  **/
-  @ApiModelProperty(value = "")
-
-  @Valid
-
-  public InfTransacaoReq getInfTransacao() {
-    return infTransacao;
-  }
-
-  public void setInfTransacao(InfTransacaoReq infTransacao) {
-    this.infTransacao = infTransacao;
-  }
+  @JsonProperty("Terminal")
+  private Terminal terminal = null;
 
   public IdentificacaoReq cartao(Cartao cartao) {
     this.cartao = cartao;
@@ -66,7 +45,8 @@ public class IdentificacaoReq   {
    * Get cartao
    * @return cartao
   **/
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(required = true, value = "")
+  @NotNull
 
   @Valid
 
@@ -78,27 +58,6 @@ public class IdentificacaoReq   {
     this.cartao = cartao;
   }
 
-  public IdentificacaoReq terminal(Terminal terminal) {
-    this.terminal = terminal;
-    return this;
-  }
-
-  /**
-   * Get terminal
-   * @return terminal
-  **/
-  @ApiModelProperty(value = "")
-
-  @Valid
-
-  public Terminal getTerminal() {
-    return terminal;
-  }
-
-  public void setTerminal(Terminal terminal) {
-    this.terminal = terminal;
-  }
-
   public IdentificacaoReq cripto(Cripto cripto) {
     this.cripto = cripto;
     return this;
@@ -108,7 +67,8 @@ public class IdentificacaoReq   {
    * Get cripto
    * @return cripto
   **/
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(required = true, value = "")
+  @NotNull
 
   @Valid
 
@@ -129,7 +89,8 @@ public class IdentificacaoReq   {
    * Get infIdentificacao
    * @return infIdentificacao
   **/
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(required = true, value = "")
+  @NotNull
 
   @Valid
 
@@ -139,6 +100,50 @@ public class IdentificacaoReq   {
 
   public void setInfIdentificacao(InfIdentificacaoReq infIdentificacao) {
     this.infIdentificacao = infIdentificacao;
+  }
+
+  public IdentificacaoReq infTransacao(InfTransacaoReq infTransacao) {
+    this.infTransacao = infTransacao;
+    return this;
+  }
+
+  /**
+   * Get infTransacao
+   * @return infTransacao
+  **/
+  @ApiModelProperty(required = true, value = "")
+  @NotNull
+
+  @Valid
+
+  public InfTransacaoReq getInfTransacao() {
+    return infTransacao;
+  }
+
+  public void setInfTransacao(InfTransacaoReq infTransacao) {
+    this.infTransacao = infTransacao;
+  }
+
+  public IdentificacaoReq terminal(Terminal terminal) {
+    this.terminal = terminal;
+    return this;
+  }
+
+  /**
+   * Get terminal
+   * @return terminal
+  **/
+  @ApiModelProperty(required = true, value = "")
+  @NotNull
+
+  @Valid
+
+  public Terminal getTerminal() {
+    return terminal;
+  }
+
+  public void setTerminal(Terminal terminal) {
+    this.terminal = terminal;
   }
 
 
@@ -151,16 +156,16 @@ public class IdentificacaoReq   {
       return false;
     }
     IdentificacaoReq identificacaoReq = (IdentificacaoReq) o;
-    return Objects.equals(this.infTransacao, identificacaoReq.infTransacao) &&
-        Objects.equals(this.cartao, identificacaoReq.cartao) &&
-        Objects.equals(this.terminal, identificacaoReq.terminal) &&
+    return Objects.equals(this.cartao, identificacaoReq.cartao) &&
         Objects.equals(this.cripto, identificacaoReq.cripto) &&
-        Objects.equals(this.infIdentificacao, identificacaoReq.infIdentificacao);
+        Objects.equals(this.infIdentificacao, identificacaoReq.infIdentificacao) &&
+        Objects.equals(this.infTransacao, identificacaoReq.infTransacao) &&
+        Objects.equals(this.terminal, identificacaoReq.terminal);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(infTransacao, cartao, terminal, cripto, infIdentificacao);
+    return Objects.hash(cartao, cripto, infIdentificacao, infTransacao, terminal);
   }
 
   @Override
@@ -168,11 +173,11 @@ public class IdentificacaoReq   {
     StringBuilder sb = new StringBuilder();
     sb.append("class IdentificacaoReq {\n");
     
-    sb.append("    infTransacao: ").append(toIndentedString(infTransacao)).append("\n");
     sb.append("    cartao: ").append(toIndentedString(cartao)).append("\n");
-    sb.append("    terminal: ").append(toIndentedString(terminal)).append("\n");
     sb.append("    cripto: ").append(toIndentedString(cripto)).append("\n");
     sb.append("    infIdentificacao: ").append(toIndentedString(infIdentificacao)).append("\n");
+    sb.append("    infTransacao: ").append(toIndentedString(infTransacao)).append("\n");
+    sb.append("    terminal: ").append(toIndentedString(terminal)).append("\n");
     sb.append("}");
     return sb.toString();
   }

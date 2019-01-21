@@ -14,7 +14,7 @@ import javax.validation.constraints.*;
  */
 @ApiModel(description = "Informações da requisição de empréstimo.")
 @Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.SpringCodegen", date = "2018-12-05T18:08:56.087Z[GMT]")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2019-01-18T19:37:26.329Z")
 
 public class InfEmprestimoReq   {
   @JsonProperty("qntParcelas")
@@ -29,7 +29,8 @@ public class InfEmprestimoReq   {
    * Quantidade de parcelas.
    * @return qntParcelas
   **/
-  @ApiModelProperty(example = "6", value = "Quantidade de parcelas.")
+  @ApiModelProperty(example = "6", required = true, value = "Quantidade de parcelas.")
+  @NotNull
 
 @Pattern(regexp="^\\d+$") 
   public String getQntParcelas() {

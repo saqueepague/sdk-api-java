@@ -17,62 +17,20 @@ import javax.validation.constraints.*;
  * SaqueResp
  */
 @Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.SpringCodegen", date = "2018-12-05T18:08:56.087Z[GMT]")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2019-01-18T19:37:26.329Z")
 
 public class SaqueResp   {
-  @JsonProperty("InfTransacao")
-  private InfTransacaoResp infTransacao = null;
-
-  @JsonProperty("Terminal")
-  private Terminal terminal = null;
-
   @JsonProperty("Cripto")
   private CriptoResp cripto = null;
 
   @JsonProperty("InfSaque")
   private InfSaqueResp infSaque = null;
 
-  public SaqueResp infTransacao(InfTransacaoResp infTransacao) {
-    this.infTransacao = infTransacao;
-    return this;
-  }
+  @JsonProperty("InfTransacao")
+  private InfTransacaoResp infTransacao = null;
 
-  /**
-   * Get infTransacao
-   * @return infTransacao
-  **/
-  @ApiModelProperty(value = "")
-
-  @Valid
-
-  public InfTransacaoResp getInfTransacao() {
-    return infTransacao;
-  }
-
-  public void setInfTransacao(InfTransacaoResp infTransacao) {
-    this.infTransacao = infTransacao;
-  }
-
-  public SaqueResp terminal(Terminal terminal) {
-    this.terminal = terminal;
-    return this;
-  }
-
-  /**
-   * Get terminal
-   * @return terminal
-  **/
-  @ApiModelProperty(value = "")
-
-  @Valid
-
-  public Terminal getTerminal() {
-    return terminal;
-  }
-
-  public void setTerminal(Terminal terminal) {
-    this.terminal = terminal;
-  }
+  @JsonProperty("Terminal")
+  private Terminal terminal = null;
 
   public SaqueResp cripto(CriptoResp cripto) {
     this.cripto = cripto;
@@ -116,6 +74,50 @@ public class SaqueResp   {
     this.infSaque = infSaque;
   }
 
+  public SaqueResp infTransacao(InfTransacaoResp infTransacao) {
+    this.infTransacao = infTransacao;
+    return this;
+  }
+
+  /**
+   * Get infTransacao
+   * @return infTransacao
+  **/
+  @ApiModelProperty(required = true, value = "")
+  @NotNull
+
+  @Valid
+
+  public InfTransacaoResp getInfTransacao() {
+    return infTransacao;
+  }
+
+  public void setInfTransacao(InfTransacaoResp infTransacao) {
+    this.infTransacao = infTransacao;
+  }
+
+  public SaqueResp terminal(Terminal terminal) {
+    this.terminal = terminal;
+    return this;
+  }
+
+  /**
+   * Get terminal
+   * @return terminal
+  **/
+  @ApiModelProperty(required = true, value = "")
+  @NotNull
+
+  @Valid
+
+  public Terminal getTerminal() {
+    return terminal;
+  }
+
+  public void setTerminal(Terminal terminal) {
+    this.terminal = terminal;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -126,15 +128,15 @@ public class SaqueResp   {
       return false;
     }
     SaqueResp saqueResp = (SaqueResp) o;
-    return Objects.equals(this.infTransacao, saqueResp.infTransacao) &&
-        Objects.equals(this.terminal, saqueResp.terminal) &&
-        Objects.equals(this.cripto, saqueResp.cripto) &&
-        Objects.equals(this.infSaque, saqueResp.infSaque);
+    return Objects.equals(this.cripto, saqueResp.cripto) &&
+        Objects.equals(this.infSaque, saqueResp.infSaque) &&
+        Objects.equals(this.infTransacao, saqueResp.infTransacao) &&
+        Objects.equals(this.terminal, saqueResp.terminal);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(infTransacao, terminal, cripto, infSaque);
+    return Objects.hash(cripto, infSaque, infTransacao, terminal);
   }
 
   @Override
@@ -142,10 +144,10 @@ public class SaqueResp   {
     StringBuilder sb = new StringBuilder();
     sb.append("class SaqueResp {\n");
     
-    sb.append("    infTransacao: ").append(toIndentedString(infTransacao)).append("\n");
-    sb.append("    terminal: ").append(toIndentedString(terminal)).append("\n");
     sb.append("    cripto: ").append(toIndentedString(cripto)).append("\n");
     sb.append("    infSaque: ").append(toIndentedString(infSaque)).append("\n");
+    sb.append("    infTransacao: ").append(toIndentedString(infTransacao)).append("\n");
+    sb.append("    terminal: ").append(toIndentedString(terminal)).append("\n");
     sb.append("}");
     return sb.toString();
   }

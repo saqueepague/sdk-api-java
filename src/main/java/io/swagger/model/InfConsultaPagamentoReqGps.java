@@ -13,7 +13,7 @@ import javax.validation.constraints.*;
  * InfConsultaPagamentoReqGps
  */
 @Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.SpringCodegen", date = "2018-12-05T18:08:56.087Z[GMT]")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2019-01-18T19:37:26.329Z")
 
 public class InfConsultaPagamentoReqGps   {
   @JsonProperty("codPagamento")
@@ -34,9 +34,10 @@ public class InfConsultaPagamentoReqGps   {
    * Código da Guia da Previdência Social (GPS).
    * @return codPagamento
   **/
-  @ApiModelProperty(value = "Código da Guia da Previdência Social (GPS).")
+  @ApiModelProperty(example = "2704", required = true, value = "Código da Guia da Previdência Social (GPS).")
+  @NotNull
 
-
+@Pattern(regexp="^\\d{4}$") 
   public String getCodPagamento() {
     return codPagamento;
   }
@@ -54,7 +55,8 @@ public class InfConsultaPagamentoReqGps   {
    * Data de competência (AAAAMMDD).
    * @return dataCompetencia
   **/
-  @ApiModelProperty(example = "20181122", value = "Data de competência (AAAAMMDD).")
+  @ApiModelProperty(example = "20181122", required = true, value = "Data de competência (AAAAMMDD).")
+  @NotNull
 
 @Pattern(regexp="^\\d{8}$") 
   public String getDataCompetencia() {
@@ -74,9 +76,10 @@ public class InfConsultaPagamentoReqGps   {
    * Identificador da guia.
    * @return identificador
   **/
-  @ApiModelProperty(value = "Identificador da guia.")
+  @ApiModelProperty(example = "1234567890", required = true, value = "Identificador da guia.")
+  @NotNull
 
-
+@Pattern(regexp="^\\d+$") 
   public String getIdentificador() {
     return identificador;
   }

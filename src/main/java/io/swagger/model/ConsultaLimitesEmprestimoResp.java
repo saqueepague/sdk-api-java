@@ -17,62 +17,20 @@ import javax.validation.constraints.*;
  * ConsultaLimitesEmprestimoResp
  */
 @Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.SpringCodegen", date = "2018-12-05T18:08:56.087Z[GMT]")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2019-01-18T19:37:26.329Z")
 
 public class ConsultaLimitesEmprestimoResp   {
-  @JsonProperty("InfTransacao")
-  private InfTransacaoResp infTransacao = null;
-
-  @JsonProperty("Terminal")
-  private Terminal terminal = null;
-
   @JsonProperty("Cripto")
   private CriptoResp cripto = null;
 
   @JsonProperty("InfConsultaLimitesEmprestimo")
   private InfConsultaLimitesEmprestimoResp infConsultaLimitesEmprestimo = null;
 
-  public ConsultaLimitesEmprestimoResp infTransacao(InfTransacaoResp infTransacao) {
-    this.infTransacao = infTransacao;
-    return this;
-  }
+  @JsonProperty("InfTransacao")
+  private InfTransacaoResp infTransacao = null;
 
-  /**
-   * Get infTransacao
-   * @return infTransacao
-  **/
-  @ApiModelProperty(value = "")
-
-  @Valid
-
-  public InfTransacaoResp getInfTransacao() {
-    return infTransacao;
-  }
-
-  public void setInfTransacao(InfTransacaoResp infTransacao) {
-    this.infTransacao = infTransacao;
-  }
-
-  public ConsultaLimitesEmprestimoResp terminal(Terminal terminal) {
-    this.terminal = terminal;
-    return this;
-  }
-
-  /**
-   * Get terminal
-   * @return terminal
-  **/
-  @ApiModelProperty(value = "")
-
-  @Valid
-
-  public Terminal getTerminal() {
-    return terminal;
-  }
-
-  public void setTerminal(Terminal terminal) {
-    this.terminal = terminal;
-  }
+  @JsonProperty("Terminal")
+  private Terminal terminal = null;
 
   public ConsultaLimitesEmprestimoResp cripto(CriptoResp cripto) {
     this.cripto = cripto;
@@ -104,7 +62,8 @@ public class ConsultaLimitesEmprestimoResp   {
    * Get infConsultaLimitesEmprestimo
    * @return infConsultaLimitesEmprestimo
   **/
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(required = true, value = "")
+  @NotNull
 
   @Valid
 
@@ -114,6 +73,50 @@ public class ConsultaLimitesEmprestimoResp   {
 
   public void setInfConsultaLimitesEmprestimo(InfConsultaLimitesEmprestimoResp infConsultaLimitesEmprestimo) {
     this.infConsultaLimitesEmprestimo = infConsultaLimitesEmprestimo;
+  }
+
+  public ConsultaLimitesEmprestimoResp infTransacao(InfTransacaoResp infTransacao) {
+    this.infTransacao = infTransacao;
+    return this;
+  }
+
+  /**
+   * Get infTransacao
+   * @return infTransacao
+  **/
+  @ApiModelProperty(required = true, value = "")
+  @NotNull
+
+  @Valid
+
+  public InfTransacaoResp getInfTransacao() {
+    return infTransacao;
+  }
+
+  public void setInfTransacao(InfTransacaoResp infTransacao) {
+    this.infTransacao = infTransacao;
+  }
+
+  public ConsultaLimitesEmprestimoResp terminal(Terminal terminal) {
+    this.terminal = terminal;
+    return this;
+  }
+
+  /**
+   * Get terminal
+   * @return terminal
+  **/
+  @ApiModelProperty(required = true, value = "")
+  @NotNull
+
+  @Valid
+
+  public Terminal getTerminal() {
+    return terminal;
+  }
+
+  public void setTerminal(Terminal terminal) {
+    this.terminal = terminal;
   }
 
 
@@ -126,15 +129,15 @@ public class ConsultaLimitesEmprestimoResp   {
       return false;
     }
     ConsultaLimitesEmprestimoResp consultaLimitesEmprestimoResp = (ConsultaLimitesEmprestimoResp) o;
-    return Objects.equals(this.infTransacao, consultaLimitesEmprestimoResp.infTransacao) &&
-        Objects.equals(this.terminal, consultaLimitesEmprestimoResp.terminal) &&
-        Objects.equals(this.cripto, consultaLimitesEmprestimoResp.cripto) &&
-        Objects.equals(this.infConsultaLimitesEmprestimo, consultaLimitesEmprestimoResp.infConsultaLimitesEmprestimo);
+    return Objects.equals(this.cripto, consultaLimitesEmprestimoResp.cripto) &&
+        Objects.equals(this.infConsultaLimitesEmprestimo, consultaLimitesEmprestimoResp.infConsultaLimitesEmprestimo) &&
+        Objects.equals(this.infTransacao, consultaLimitesEmprestimoResp.infTransacao) &&
+        Objects.equals(this.terminal, consultaLimitesEmprestimoResp.terminal);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(infTransacao, terminal, cripto, infConsultaLimitesEmprestimo);
+    return Objects.hash(cripto, infConsultaLimitesEmprestimo, infTransacao, terminal);
   }
 
   @Override
@@ -142,10 +145,10 @@ public class ConsultaLimitesEmprestimoResp   {
     StringBuilder sb = new StringBuilder();
     sb.append("class ConsultaLimitesEmprestimoResp {\n");
     
-    sb.append("    infTransacao: ").append(toIndentedString(infTransacao)).append("\n");
-    sb.append("    terminal: ").append(toIndentedString(terminal)).append("\n");
     sb.append("    cripto: ").append(toIndentedString(cripto)).append("\n");
     sb.append("    infConsultaLimitesEmprestimo: ").append(toIndentedString(infConsultaLimitesEmprestimo)).append("\n");
+    sb.append("    infTransacao: ").append(toIndentedString(infTransacao)).append("\n");
+    sb.append("    terminal: ").append(toIndentedString(terminal)).append("\n");
     sb.append("}");
     return sb.toString();
   }

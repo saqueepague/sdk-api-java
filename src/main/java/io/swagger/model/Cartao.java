@@ -14,7 +14,7 @@ import javax.validation.constraints.*;
  * Cartao
  */
 @Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.SpringCodegen", date = "2018-12-05T18:08:56.087Z[GMT]")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2019-01-18T19:37:26.329Z")
 
 public class Cartao   {
   /**
@@ -70,7 +70,8 @@ public class Cartao   {
    * Modo de entrada de leitura do cartão. (000 = sem cartão, 050 = chip, 800 = chip, se falhar realiza leitura da trilha, 900 = trilha completa).
    * @return modoEntrada
   **/
-  @ApiModelProperty(value = "Modo de entrada de leitura do cartão. (000 = sem cartão, 050 = chip, 800 = chip, se falhar realiza leitura da trilha, 900 = trilha completa).")
+  @ApiModelProperty(required = true, value = "Modo de entrada de leitura do cartão. (000 = sem cartão, 050 = chip, 800 = chip, se falhar realiza leitura da trilha, 900 = trilha completa).")
+  @NotNull
 
 
   public ModoEntradaEnum getModoEntrada() {
@@ -92,7 +93,7 @@ public class Cartao   {
   **/
   @ApiModelProperty(example = "0000955707050150", value = "PAN/Número do cartão utilizado (16 a 19 caracteres normais ou 48 criptografados).")
 
-@Pattern(regexp="^.{16,19}|.{48}$") 
+@Pattern(regexp="^.{48}|.{16,19}$") 
   public String getPan() {
     return pan;
   }
@@ -112,7 +113,7 @@ public class Cartao   {
   **/
   @ApiModelProperty(example = "5076415910012119\\u003d27086060000017290360", value = "Trilha 2 do cartão utilizado (37 caracteres normais ou 80 criptografados).")
 
-@Pattern(regexp="^.{37}|.{80}$") 
+@Pattern(regexp="^.{80}|.{37}$") 
   public String getTrilha2() {
     return trilha2;
   }

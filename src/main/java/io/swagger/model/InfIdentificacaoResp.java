@@ -19,11 +19,11 @@ import javax.validation.constraints.*;
  */
 @ApiModel(description = "Informações da resposta da requisição de identificação.")
 @Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.SpringCodegen", date = "2018-12-05T18:08:56.087Z[GMT]")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2019-01-18T19:37:26.329Z")
 
 public class InfIdentificacaoResp   {
-  @JsonProperty("transacValidas")
-  private String transacValidas = null;
+  @JsonProperty("frase")
+  private String frase = null;
 
   @JsonProperty("idPositiva")
   @Valid
@@ -63,34 +63,34 @@ public class InfIdentificacaoResp   {
   @JsonProperty("pedirToken")
   private PedirTokenEnum pedirToken = null;
 
-  @JsonProperty("frase")
-  private String frase = null;
-
-  @JsonProperty("saldo")
-  private String saldo = null;
-
   @JsonProperty("perguntas")
   @Valid
   private List<InfIdentificacaoRespPerguntas> perguntas = null;
 
-  public InfIdentificacaoResp transacValidas(String transacValidas) {
-    this.transacValidas = transacValidas;
+  @JsonProperty("saldo")
+  private String saldo = null;
+
+  @JsonProperty("transacValidas")
+  private String transacValidas = null;
+
+  public InfIdentificacaoResp frase(String frase) {
+    this.frase = frase;
     return this;
   }
 
   /**
-   * Transações habilitadas para o cartão utilizado. Enviar os cdProcs concatenados (6 dígitos cada).
-   * @return transacValidas
+   * Frase a ser mostrada para o cliente quando pedir o token ou identificacao positiva.
+   * @return frase
   **/
-  @ApiModelProperty(example = "068101068010", value = "Transações habilitadas para o cartão utilizado. Enviar os cdProcs concatenados (6 dígitos cada).")
+  @ApiModelProperty(example = "Gere um token pelo Unicred Mobile e digite-o:", value = "Frase a ser mostrada para o cliente quando pedir o token ou identificacao positiva.")
 
-@Pattern(regexp="^(?:\\d{6})*$") 
-  public String getTransacValidas() {
-    return transacValidas;
+
+  public String getFrase() {
+    return frase;
   }
 
-  public void setTransacValidas(String transacValidas) {
-    this.transacValidas = transacValidas;
+  public void setFrase(String frase) {
+    this.frase = frase;
   }
 
   public InfIdentificacaoResp idPositiva(List<InfIdentificacaoRespIdPositiva> idPositiva) {
@@ -131,7 +131,8 @@ public class InfIdentificacaoResp   {
    * Informa se o cliente deve se autenticar utilizando token (00 = não, 01 = sim).
    * @return pedirToken
   **/
-  @ApiModelProperty(example = "01", value = "Informa se o cliente deve se autenticar utilizando token (00 = não, 01 = sim).")
+  @ApiModelProperty(example = "01", required = true, value = "Informa se o cliente deve se autenticar utilizando token (00 = não, 01 = sim).")
+  @NotNull
 
 
   public PedirTokenEnum getPedirToken() {
@@ -140,46 +141,6 @@ public class InfIdentificacaoResp   {
 
   public void setPedirToken(PedirTokenEnum pedirToken) {
     this.pedirToken = pedirToken;
-  }
-
-  public InfIdentificacaoResp frase(String frase) {
-    this.frase = frase;
-    return this;
-  }
-
-  /**
-   * Frase a ser mostrada para o cliente quando pedir o token ou identificacao positiva (máx. 28 caracteres).
-   * @return frase
-  **/
-  @ApiModelProperty(example = "Por favor, se identifique.", value = "Frase a ser mostrada para o cliente quando pedir o token ou identificacao positiva (máx. 28 caracteres).")
-
-@Pattern(regexp="^.{0,28}$") 
-  public String getFrase() {
-    return frase;
-  }
-
-  public void setFrase(String frase) {
-    this.frase = frase;
-  }
-
-  public InfIdentificacaoResp saldo(String saldo) {
-    this.saldo = saldo;
-    return this;
-  }
-
-  /**
-   * Saldo do cliente a ser mostrado na tela (12 dígitos).
-   * @return saldo
-  **/
-  @ApiModelProperty(example = "000000005000", value = "Saldo do cliente a ser mostrado na tela (12 dígitos).")
-
-@Pattern(regexp="^d{12}$") 
-  public String getSaldo() {
-    return saldo;
-  }
-
-  public void setSaldo(String saldo) {
-    this.saldo = saldo;
   }
 
   public InfIdentificacaoResp perguntas(List<InfIdentificacaoRespPerguntas> perguntas) {
@@ -211,6 +172,47 @@ public class InfIdentificacaoResp   {
     this.perguntas = perguntas;
   }
 
+  public InfIdentificacaoResp saldo(String saldo) {
+    this.saldo = saldo;
+    return this;
+  }
+
+  /**
+   * Saldo do cliente a ser mostrado na tela (12 dígitos).
+   * @return saldo
+  **/
+  @ApiModelProperty(example = "000000005000", value = "Saldo do cliente a ser mostrado na tela (12 dígitos).")
+
+@Pattern(regexp="^d{12}$") 
+  public String getSaldo() {
+    return saldo;
+  }
+
+  public void setSaldo(String saldo) {
+    this.saldo = saldo;
+  }
+
+  public InfIdentificacaoResp transacValidas(String transacValidas) {
+    this.transacValidas = transacValidas;
+    return this;
+  }
+
+  /**
+   * Transações habilitadas para o cartão utilizado. Enviar os cdProcs concatenados (6 dígitos cada).
+   * @return transacValidas
+  **/
+  @ApiModelProperty(example = "068101068010", required = true, value = "Transações habilitadas para o cartão utilizado. Enviar os cdProcs concatenados (6 dígitos cada).")
+  @NotNull
+
+@Pattern(regexp="^(?:\\d{6})*$") 
+  public String getTransacValidas() {
+    return transacValidas;
+  }
+
+  public void setTransacValidas(String transacValidas) {
+    this.transacValidas = transacValidas;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -221,17 +223,17 @@ public class InfIdentificacaoResp   {
       return false;
     }
     InfIdentificacaoResp infIdentificacaoResp = (InfIdentificacaoResp) o;
-    return Objects.equals(this.transacValidas, infIdentificacaoResp.transacValidas) &&
+    return Objects.equals(this.frase, infIdentificacaoResp.frase) &&
         Objects.equals(this.idPositiva, infIdentificacaoResp.idPositiva) &&
         Objects.equals(this.pedirToken, infIdentificacaoResp.pedirToken) &&
-        Objects.equals(this.frase, infIdentificacaoResp.frase) &&
+        Objects.equals(this.perguntas, infIdentificacaoResp.perguntas) &&
         Objects.equals(this.saldo, infIdentificacaoResp.saldo) &&
-        Objects.equals(this.perguntas, infIdentificacaoResp.perguntas);
+        Objects.equals(this.transacValidas, infIdentificacaoResp.transacValidas);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(transacValidas, idPositiva, pedirToken, frase, saldo, perguntas);
+    return Objects.hash(frase, idPositiva, pedirToken, perguntas, saldo, transacValidas);
   }
 
   @Override
@@ -239,12 +241,12 @@ public class InfIdentificacaoResp   {
     StringBuilder sb = new StringBuilder();
     sb.append("class InfIdentificacaoResp {\n");
     
-    sb.append("    transacValidas: ").append(toIndentedString(transacValidas)).append("\n");
+    sb.append("    frase: ").append(toIndentedString(frase)).append("\n");
     sb.append("    idPositiva: ").append(toIndentedString(idPositiva)).append("\n");
     sb.append("    pedirToken: ").append(toIndentedString(pedirToken)).append("\n");
-    sb.append("    frase: ").append(toIndentedString(frase)).append("\n");
-    sb.append("    saldo: ").append(toIndentedString(saldo)).append("\n");
     sb.append("    perguntas: ").append(toIndentedString(perguntas)).append("\n");
+    sb.append("    saldo: ").append(toIndentedString(saldo)).append("\n");
+    sb.append("    transacValidas: ").append(toIndentedString(transacValidas)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -5,7 +5,6 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import io.swagger.model.CriptoResp;
 import io.swagger.model.InfConsultaSaqueResp;
 import io.swagger.model.InfTransacaoResp;
 import io.swagger.model.Terminal;
@@ -17,20 +16,39 @@ import javax.validation.constraints.*;
  * ConsultaSaqueResp
  */
 @Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.SpringCodegen", date = "2018-12-05T18:08:56.087Z[GMT]")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2019-01-18T19:37:26.329Z")
 
 public class ConsultaSaqueResp   {
+  @JsonProperty("InfConsultaSaque")
+  private InfConsultaSaqueResp infConsultaSaque = null;
+
   @JsonProperty("InfTransacao")
   private InfTransacaoResp infTransacao = null;
 
   @JsonProperty("Terminal")
   private Terminal terminal = null;
 
-  @JsonProperty("Cripto")
-  private CriptoResp cripto = null;
+  public ConsultaSaqueResp infConsultaSaque(InfConsultaSaqueResp infConsultaSaque) {
+    this.infConsultaSaque = infConsultaSaque;
+    return this;
+  }
 
-  @JsonProperty("InfConsultaSaque")
-  private InfConsultaSaqueResp infConsultaSaque = null;
+  /**
+   * Get infConsultaSaque
+   * @return infConsultaSaque
+  **/
+  @ApiModelProperty(required = true, value = "")
+  @NotNull
+
+  @Valid
+
+  public InfConsultaSaqueResp getInfConsultaSaque() {
+    return infConsultaSaque;
+  }
+
+  public void setInfConsultaSaque(InfConsultaSaqueResp infConsultaSaque) {
+    this.infConsultaSaque = infConsultaSaque;
+  }
 
   public ConsultaSaqueResp infTransacao(InfTransacaoResp infTransacao) {
     this.infTransacao = infTransacao;
@@ -62,7 +80,8 @@ public class ConsultaSaqueResp   {
    * Get terminal
    * @return terminal
   **/
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(required = true, value = "")
+  @NotNull
 
   @Valid
 
@@ -72,48 +91,6 @@ public class ConsultaSaqueResp   {
 
   public void setTerminal(Terminal terminal) {
     this.terminal = terminal;
-  }
-
-  public ConsultaSaqueResp cripto(CriptoResp cripto) {
-    this.cripto = cripto;
-    return this;
-  }
-
-  /**
-   * Get cripto
-   * @return cripto
-  **/
-  @ApiModelProperty(value = "")
-
-  @Valid
-
-  public CriptoResp getCripto() {
-    return cripto;
-  }
-
-  public void setCripto(CriptoResp cripto) {
-    this.cripto = cripto;
-  }
-
-  public ConsultaSaqueResp infConsultaSaque(InfConsultaSaqueResp infConsultaSaque) {
-    this.infConsultaSaque = infConsultaSaque;
-    return this;
-  }
-
-  /**
-   * Get infConsultaSaque
-   * @return infConsultaSaque
-  **/
-  @ApiModelProperty(value = "")
-
-  @Valid
-
-  public InfConsultaSaqueResp getInfConsultaSaque() {
-    return infConsultaSaque;
-  }
-
-  public void setInfConsultaSaque(InfConsultaSaqueResp infConsultaSaque) {
-    this.infConsultaSaque = infConsultaSaque;
   }
 
 
@@ -126,15 +103,14 @@ public class ConsultaSaqueResp   {
       return false;
     }
     ConsultaSaqueResp consultaSaqueResp = (ConsultaSaqueResp) o;
-    return Objects.equals(this.infTransacao, consultaSaqueResp.infTransacao) &&
-        Objects.equals(this.terminal, consultaSaqueResp.terminal) &&
-        Objects.equals(this.cripto, consultaSaqueResp.cripto) &&
-        Objects.equals(this.infConsultaSaque, consultaSaqueResp.infConsultaSaque);
+    return Objects.equals(this.infConsultaSaque, consultaSaqueResp.infConsultaSaque) &&
+        Objects.equals(this.infTransacao, consultaSaqueResp.infTransacao) &&
+        Objects.equals(this.terminal, consultaSaqueResp.terminal);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(infTransacao, terminal, cripto, infConsultaSaque);
+    return Objects.hash(infConsultaSaque, infTransacao, terminal);
   }
 
   @Override
@@ -142,10 +118,9 @@ public class ConsultaSaqueResp   {
     StringBuilder sb = new StringBuilder();
     sb.append("class ConsultaSaqueResp {\n");
     
+    sb.append("    infConsultaSaque: ").append(toIndentedString(infConsultaSaque)).append("\n");
     sb.append("    infTransacao: ").append(toIndentedString(infTransacao)).append("\n");
     sb.append("    terminal: ").append(toIndentedString(terminal)).append("\n");
-    sb.append("    cripto: ").append(toIndentedString(cripto)).append("\n");
-    sb.append("    infConsultaSaque: ").append(toIndentedString(infConsultaSaque)).append("\n");
     sb.append("}");
     return sb.toString();
   }

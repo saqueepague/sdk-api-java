@@ -16,38 +16,17 @@ import javax.validation.constraints.*;
  * ConsultaParcelasEmprestimoReq
  */
 @Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.SpringCodegen", date = "2018-12-05T18:08:56.087Z[GMT]")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2019-01-18T19:37:26.329Z")
 
 public class ConsultaParcelasEmprestimoReq   {
-  @JsonProperty("InfTransacao")
-  private InfTransacaoReq infTransacao = null;
-
   @JsonProperty("Cartao")
   private Cartao cartao = null;
 
+  @JsonProperty("InfTransacao")
+  private InfTransacaoReq infTransacao = null;
+
   @JsonProperty("Terminal")
   private Terminal terminal = null;
-
-  public ConsultaParcelasEmprestimoReq infTransacao(InfTransacaoReq infTransacao) {
-    this.infTransacao = infTransacao;
-    return this;
-  }
-
-  /**
-   * Get infTransacao
-   * @return infTransacao
-  **/
-  @ApiModelProperty(value = "")
-
-  @Valid
-
-  public InfTransacaoReq getInfTransacao() {
-    return infTransacao;
-  }
-
-  public void setInfTransacao(InfTransacaoReq infTransacao) {
-    this.infTransacao = infTransacao;
-  }
 
   public ConsultaParcelasEmprestimoReq cartao(Cartao cartao) {
     this.cartao = cartao;
@@ -58,7 +37,8 @@ public class ConsultaParcelasEmprestimoReq   {
    * Get cartao
    * @return cartao
   **/
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(required = true, value = "")
+  @NotNull
 
   @Valid
 
@@ -70,6 +50,28 @@ public class ConsultaParcelasEmprestimoReq   {
     this.cartao = cartao;
   }
 
+  public ConsultaParcelasEmprestimoReq infTransacao(InfTransacaoReq infTransacao) {
+    this.infTransacao = infTransacao;
+    return this;
+  }
+
+  /**
+   * Get infTransacao
+   * @return infTransacao
+  **/
+  @ApiModelProperty(required = true, value = "")
+  @NotNull
+
+  @Valid
+
+  public InfTransacaoReq getInfTransacao() {
+    return infTransacao;
+  }
+
+  public void setInfTransacao(InfTransacaoReq infTransacao) {
+    this.infTransacao = infTransacao;
+  }
+
   public ConsultaParcelasEmprestimoReq terminal(Terminal terminal) {
     this.terminal = terminal;
     return this;
@@ -79,7 +81,8 @@ public class ConsultaParcelasEmprestimoReq   {
    * Get terminal
    * @return terminal
   **/
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(required = true, value = "")
+  @NotNull
 
   @Valid
 
@@ -101,14 +104,14 @@ public class ConsultaParcelasEmprestimoReq   {
       return false;
     }
     ConsultaParcelasEmprestimoReq consultaParcelasEmprestimoReq = (ConsultaParcelasEmprestimoReq) o;
-    return Objects.equals(this.infTransacao, consultaParcelasEmprestimoReq.infTransacao) &&
-        Objects.equals(this.cartao, consultaParcelasEmprestimoReq.cartao) &&
+    return Objects.equals(this.cartao, consultaParcelasEmprestimoReq.cartao) &&
+        Objects.equals(this.infTransacao, consultaParcelasEmprestimoReq.infTransacao) &&
         Objects.equals(this.terminal, consultaParcelasEmprestimoReq.terminal);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(infTransacao, cartao, terminal);
+    return Objects.hash(cartao, infTransacao, terminal);
   }
 
   @Override
@@ -116,8 +119,8 @@ public class ConsultaParcelasEmprestimoReq   {
     StringBuilder sb = new StringBuilder();
     sb.append("class ConsultaParcelasEmprestimoReq {\n");
     
-    sb.append("    infTransacao: ").append(toIndentedString(infTransacao)).append("\n");
     sb.append("    cartao: ").append(toIndentedString(cartao)).append("\n");
+    sb.append("    infTransacao: ").append(toIndentedString(infTransacao)).append("\n");
     sb.append("    terminal: ").append(toIndentedString(terminal)).append("\n");
     sb.append("}");
     return sb.toString();

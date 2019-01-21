@@ -13,16 +13,16 @@ import javax.validation.Valid;
 import javax.validation.constraints.*;
 
 /**
- * Informações da resposta da requisição de consulta de produtos de recarga.
+ * Informações da resposta da requisição de consulta de produtos disponíveis de recarga de um cartão.
  */
-@ApiModel(description = "Informações da resposta da requisição de consulta de produtos de recarga.")
+@ApiModel(description = "Informações da resposta da requisição de consulta de produtos disponíveis de recarga de um cartão.")
 @Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.SpringCodegen", date = "2018-12-05T18:08:56.087Z[GMT]")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2019-01-18T19:37:26.329Z")
 
 public class InfConsultaProdutosRecargaResp   {
   @JsonProperty("products")
   @Valid
-  private List<InfConsultaProdutosRecargaRespProducts> products = null;
+  private List<InfConsultaProdutosRecargaRespProducts> products = new ArrayList<InfConsultaProdutosRecargaRespProducts>();
 
   public InfConsultaProdutosRecargaResp products(List<InfConsultaProdutosRecargaRespProducts> products) {
     this.products = products;
@@ -30,18 +30,16 @@ public class InfConsultaProdutosRecargaResp   {
   }
 
   public InfConsultaProdutosRecargaResp addProductsItem(InfConsultaProdutosRecargaRespProducts productsItem) {
-    if (this.products == null) {
-      this.products = new ArrayList<InfConsultaProdutosRecargaRespProducts>();
-    }
     this.products.add(productsItem);
     return this;
   }
 
   /**
-   * Identificador e nomes dos produtos associados ao cartão.
+   * Identificador e nomes dos produtos disponíveis do cartão.
    * @return products
   **/
-  @ApiModelProperty(value = "Identificador e nomes dos produtos associados ao cartão.")
+  @ApiModelProperty(required = true, value = "Identificador e nomes dos produtos disponíveis do cartão.")
+  @NotNull
 
   @Valid
 

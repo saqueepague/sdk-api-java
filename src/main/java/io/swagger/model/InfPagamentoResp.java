@@ -14,17 +14,17 @@ import javax.validation.constraints.*;
  * InfPagamentoResp
  */
 @Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.SpringCodegen", date = "2018-12-05T18:08:56.087Z[GMT]")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2019-01-18T19:37:26.329Z")
 
 public class InfPagamentoResp   {
-  @JsonProperty("valor")
-  private String valor = null;
-
   @JsonProperty("cedente")
   private String cedente = null;
 
   @JsonProperty("dataPagamento")
   private String dataPagamento = null;
+
+  @JsonProperty("desconto")
+  private String desconto = null;
 
   @JsonProperty("mensagem")
   private String mensagem = null;
@@ -32,8 +32,8 @@ public class InfPagamentoResp   {
   @JsonProperty("qtdeViasComprovante")
   private String qtdeViasComprovante = null;
 
-  @JsonProperty("desconto")
-  private String desconto = null;
+  @JsonProperty("recibo")
+  private String recibo = null;
 
   /**
    * Informa se foi usado o novo sistema de cobrança de contas (00 = não, 01 = sim).
@@ -69,31 +69,8 @@ public class InfPagamentoResp   {
   @JsonProperty("sistemaCobranca")
   private SistemaCobrancaEnum sistemaCobranca = null;
 
-  @JsonProperty("cupom")
-  private String cupom = null;
-
-  @JsonProperty("recibo")
-  private String recibo = null;
-
-  public InfPagamentoResp valor(String valor) {
-    this.valor = valor;
-    return this;
-  }
-
-  /**
-   * Valor atualizado pelo host (12 dígitos, incluindo centavos).
-   * @return valor
-  **/
-  @ApiModelProperty(example = "000000005000", value = "Valor atualizado pelo host (12 dígitos, incluindo centavos).")
-
-@Pattern(regexp="^\\d{12}$") 
-  public String getValor() {
-    return valor;
-  }
-
-  public void setValor(String valor) {
-    this.valor = valor;
-  }
+  @JsonProperty("valor")
+  private String valor = null;
 
   public InfPagamentoResp cedente(String cedente) {
     this.cedente = cedente;
@@ -101,12 +78,13 @@ public class InfPagamentoResp   {
   }
 
   /**
-   * Cedente (até 40 caracteres).
+   * Cedente.
    * @return cedente
   **/
-  @ApiModelProperty(example = "Cedente", value = "Cedente (até 40 caracteres).")
+  @ApiModelProperty(example = "Cedente", required = true, value = "Cedente.")
+  @NotNull
 
-@Pattern(regexp="^.{0,40}$") 
+
   public String getCedente() {
     return cedente;
   }
@@ -121,10 +99,11 @@ public class InfPagamentoResp   {
   }
 
   /**
-   * Data de pagamento atualizada pelo host (AAAAMMDD).
+   * Data de pagamento atualizada pelo parceiro (AAAAMMDD).
    * @return dataPagamento
   **/
-  @ApiModelProperty(example = "20181122", value = "Data de pagamento atualizada pelo host (AAAAMMDD).")
+  @ApiModelProperty(example = "20181122", required = true, value = "Data de pagamento atualizada pelo parceiro (AAAAMMDD).")
+  @NotNull
 
 @Pattern(regexp="^\\d{8}$") 
   public String getDataPagamento() {
@@ -135,16 +114,37 @@ public class InfPagamentoResp   {
     this.dataPagamento = dataPagamento;
   }
 
+  public InfPagamentoResp desconto(String desconto) {
+    this.desconto = desconto;
+    return this;
+  }
+
+  /**
+   * Valor do desconto (12 dígitos, incluindo centavos).
+   * @return desconto
+  **/
+  @ApiModelProperty(example = "000000000499", required = true, value = "Valor do desconto (12 dígitos, incluindo centavos).")
+  @NotNull
+
+@Pattern(regexp="^\\d{12}$") 
+  public String getDesconto() {
+    return desconto;
+  }
+
+  public void setDesconto(String desconto) {
+    this.desconto = desconto;
+  }
+
   public InfPagamentoResp mensagem(String mensagem) {
     this.mensagem = mensagem;
     return this;
   }
 
   /**
-   * Mensagem informativa quanto à alteração de valores e/ou data de pagamento pelo host.
+   * Mensagem informativa quanto à alteração de valores e/ou data de pagamento pelo paceiro.
    * @return mensagem
   **/
-  @ApiModelProperty(value = "Mensagem informativa quanto à alteração de valores e/ou data de pagamento pelo host.")
+  @ApiModelProperty(value = "Mensagem informativa quanto à alteração de valores e/ou data de pagamento pelo paceiro.")
 
 
   public String getMensagem() {
@@ -164,7 +164,8 @@ public class InfPagamentoResp   {
    * Quantidade de vias para impressão do Comprovante.
    * @return qtdeViasComprovante
   **/
-  @ApiModelProperty(example = "1", value = "Quantidade de vias para impressão do Comprovante.")
+  @ApiModelProperty(example = "1", required = true, value = "Quantidade de vias para impressão do Comprovante.")
+  @NotNull
 
 @Pattern(regexp="^\\d+$") 
   public String getQtdeViasComprovante() {
@@ -175,24 +176,25 @@ public class InfPagamentoResp   {
     this.qtdeViasComprovante = qtdeViasComprovante;
   }
 
-  public InfPagamentoResp desconto(String desconto) {
-    this.desconto = desconto;
+  public InfPagamentoResp recibo(String recibo) {
+    this.recibo = recibo;
     return this;
   }
 
   /**
-   * Valor do desconto (12 dígitos, incluindo centavos).
-   * @return desconto
+   * Recibo do pagamento. Linhas com 48 posições separadas por \"@\".
+   * @return recibo
   **/
-  @ApiModelProperty(example = "000000000499", value = "Valor do desconto (12 dígitos, incluindo centavos).")
+  @ApiModelProperty(example = "", required = true, value = "Recibo do pagamento. Linhas com 48 posições separadas por \"@\".")
+  @NotNull
 
-@Pattern(regexp="^\\d{12}$") 
-  public String getDesconto() {
-    return desconto;
+@Pattern(regexp="^[^@]{0,48}(\\@[^@]{0,48})*$") 
+  public String getRecibo() {
+    return recibo;
   }
 
-  public void setDesconto(String desconto) {
-    this.desconto = desconto;
+  public void setRecibo(String recibo) {
+    this.recibo = recibo;
   }
 
   public InfPagamentoResp sistemaCobranca(SistemaCobrancaEnum sistemaCobranca) {
@@ -204,7 +206,8 @@ public class InfPagamentoResp   {
    * Informa se foi usado o novo sistema de cobrança de contas (00 = não, 01 = sim).
    * @return sistemaCobranca
   **/
-  @ApiModelProperty(example = "01", value = "Informa se foi usado o novo sistema de cobrança de contas (00 = não, 01 = sim).")
+  @ApiModelProperty(example = "01", required = true, value = "Informa se foi usado o novo sistema de cobrança de contas (00 = não, 01 = sim).")
+  @NotNull
 
 
   public SistemaCobrancaEnum getSistemaCobranca() {
@@ -215,44 +218,25 @@ public class InfPagamentoResp   {
     this.sistemaCobranca = sistemaCobranca;
   }
 
-  public InfPagamentoResp cupom(String cupom) {
-    this.cupom = cupom;
+  public InfPagamentoResp valor(String valor) {
+    this.valor = valor;
     return this;
   }
 
   /**
-   * Cupom no mesmo formato do comprovante. Linhas com 48 posições separadas por '@'.
-   * @return cupom
+   * Valor atualizado pelo parceiro (12 dígitos, incluindo centavos).
+   * @return valor
   **/
-  @ApiModelProperty(example = "             TEU BILHETE ANTECIPADO             @                036200005433591                @               13/10/2018  20:24               @           VALOR DA RECARGA: R$ 48,00           @                 TAXAS: R$ 2,00                 @              TOTAL PAGO: R$ 50,00              @   OS CRÉDITOS ADQUIRIDOS ESTARÃO DISPONÍVEIS   @      NOS VALIDADORES DOS ÔNIBUS DA REGIÃO      @     METROPOLITANA QUE ACEITAM O CARTÃO TEU     @ OU NAS CATRACAS DO METRÔ, NOS SEGUINTES PRAZOS @            RECARGAS ATÉ O MEIO DIA:            @ CRÉDITOS DISPONÍVEIS NO DIA SEGUINTE DA COMPRA @           RECARGAS APÓS O MEIO DIA:           @   CRÉDITOS DISPONÍVEIS EM 48H APÓS A COMPRA   ", value = "Cupom no mesmo formato do comprovante. Linhas com 48 posições separadas por '@'.")
+  @ApiModelProperty(example = "000000005000", required = true, value = "Valor atualizado pelo parceiro (12 dígitos, incluindo centavos).")
+  @NotNull
 
-@Pattern(regexp="^[^@]{0,48}(\\@[^@]{0,48})*$") 
-  public String getCupom() {
-    return cupom;
+@Pattern(regexp="^\\d{12}$") 
+  public String getValor() {
+    return valor;
   }
 
-  public void setCupom(String cupom) {
-    this.cupom = cupom;
-  }
-
-  public InfPagamentoResp recibo(String recibo) {
-    this.recibo = recibo;
-    return this;
-  }
-
-  /**
-   * Recibo de pagamento ou agendamento. Linhas com 48 posições separadas por '@'.
-   * @return recibo
-  **/
-  @ApiModelProperty(example = "             TEU BILHETE ANTECIPADO             @                036200005433591                @               13/10/2018  20:24               @           VALOR DA RECARGA: R$ 48,00           @                 TAXAS: R$ 2,00                 @              TOTAL PAGO: R$ 50,00              @   OS CRÉDITOS ADQUIRIDOS ESTARÃO DISPONÍVEIS   @      NOS VALIDADORES DOS ÔNIBUS DA REGIÃO      @     METROPOLITANA QUE ACEITAM O CARTÃO TEU     @ OU NAS CATRACAS DO METRÔ, NOS SEGUINTES PRAZOS @            RECARGAS ATÉ O MEIO DIA:            @ CRÉDITOS DISPONÍVEIS NO DIA SEGUINTE DA COMPRA @           RECARGAS APÓS O MEIO DIA:           @   CRÉDITOS DISPONÍVEIS EM 48H APÓS A COMPRA   ", value = "Recibo de pagamento ou agendamento. Linhas com 48 posições separadas por '@'.")
-
-@Pattern(regexp="^[^@]{0,48}(\\@[^@]{0,48})*$") 
-  public String getRecibo() {
-    return recibo;
-  }
-
-  public void setRecibo(String recibo) {
-    this.recibo = recibo;
+  public void setValor(String valor) {
+    this.valor = valor;
   }
 
 
@@ -265,20 +249,19 @@ public class InfPagamentoResp   {
       return false;
     }
     InfPagamentoResp infPagamentoResp = (InfPagamentoResp) o;
-    return Objects.equals(this.valor, infPagamentoResp.valor) &&
-        Objects.equals(this.cedente, infPagamentoResp.cedente) &&
+    return Objects.equals(this.cedente, infPagamentoResp.cedente) &&
         Objects.equals(this.dataPagamento, infPagamentoResp.dataPagamento) &&
+        Objects.equals(this.desconto, infPagamentoResp.desconto) &&
         Objects.equals(this.mensagem, infPagamentoResp.mensagem) &&
         Objects.equals(this.qtdeViasComprovante, infPagamentoResp.qtdeViasComprovante) &&
-        Objects.equals(this.desconto, infPagamentoResp.desconto) &&
+        Objects.equals(this.recibo, infPagamentoResp.recibo) &&
         Objects.equals(this.sistemaCobranca, infPagamentoResp.sistemaCobranca) &&
-        Objects.equals(this.cupom, infPagamentoResp.cupom) &&
-        Objects.equals(this.recibo, infPagamentoResp.recibo);
+        Objects.equals(this.valor, infPagamentoResp.valor);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(valor, cedente, dataPagamento, mensagem, qtdeViasComprovante, desconto, sistemaCobranca, cupom, recibo);
+    return Objects.hash(cedente, dataPagamento, desconto, mensagem, qtdeViasComprovante, recibo, sistemaCobranca, valor);
   }
 
   @Override
@@ -286,15 +269,14 @@ public class InfPagamentoResp   {
     StringBuilder sb = new StringBuilder();
     sb.append("class InfPagamentoResp {\n");
     
-    sb.append("    valor: ").append(toIndentedString(valor)).append("\n");
     sb.append("    cedente: ").append(toIndentedString(cedente)).append("\n");
     sb.append("    dataPagamento: ").append(toIndentedString(dataPagamento)).append("\n");
+    sb.append("    desconto: ").append(toIndentedString(desconto)).append("\n");
     sb.append("    mensagem: ").append(toIndentedString(mensagem)).append("\n");
     sb.append("    qtdeViasComprovante: ").append(toIndentedString(qtdeViasComprovante)).append("\n");
-    sb.append("    desconto: ").append(toIndentedString(desconto)).append("\n");
-    sb.append("    sistemaCobranca: ").append(toIndentedString(sistemaCobranca)).append("\n");
-    sb.append("    cupom: ").append(toIndentedString(cupom)).append("\n");
     sb.append("    recibo: ").append(toIndentedString(recibo)).append("\n");
+    sb.append("    sistemaCobranca: ").append(toIndentedString(sistemaCobranca)).append("\n");
+    sb.append("    valor: ").append(toIndentedString(valor)).append("\n");
     sb.append("}");
     return sb.toString();
   }

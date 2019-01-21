@@ -14,40 +14,20 @@ import javax.validation.constraints.*;
  */
 @ApiModel(description = "Informações da requisição de compra de títulos de capitalização.")
 @Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.SpringCodegen", date = "2018-12-05T18:08:56.087Z[GMT]")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2019-01-18T19:37:26.329Z")
 
 public class InfCompraTitulosCapitalizacaoReq   {
-  @JsonProperty("idProduto")
-  private String idProduto = null;
-
   @JsonProperty("cpf")
   private String cpf = null;
 
-  @JsonProperty("telefone")
-  private String telefone = null;
+  @JsonProperty("idProduto")
+  private String idProduto = null;
 
   @JsonProperty("quantidade")
   private String quantidade = null;
 
-  public InfCompraTitulosCapitalizacaoReq idProduto(String idProduto) {
-    this.idProduto = idProduto;
-    return this;
-  }
-
-  /**
-   * Produto utilizado na operação.
-   * @return idProduto
-  **/
-  @ApiModelProperty(example = "7", value = "Produto utilizado na operação.")
-
-@Pattern(regexp="^\\d+$") 
-  public String getIdProduto() {
-    return idProduto;
-  }
-
-  public void setIdProduto(String idProduto) {
-    this.idProduto = idProduto;
-  }
+  @JsonProperty("telefone")
+  private String telefone = null;
 
   public InfCompraTitulosCapitalizacaoReq cpf(String cpf) {
     this.cpf = cpf;
@@ -58,7 +38,8 @@ public class InfCompraTitulosCapitalizacaoReq   {
    * Número do CPF do cliente favorecido da transação (11 dígitos).
    * @return cpf
   **/
-  @ApiModelProperty(example = "02358422785", value = "Número do CPF do cliente favorecido da transação (11 dígitos).")
+  @ApiModelProperty(example = "02358422785", required = true, value = "Número do CPF do cliente favorecido da transação (11 dígitos).")
+  @NotNull
 
 @Pattern(regexp="^\\d{11}$") 
   public String getCpf() {
@@ -69,24 +50,25 @@ public class InfCompraTitulosCapitalizacaoReq   {
     this.cpf = cpf;
   }
 
-  public InfCompraTitulosCapitalizacaoReq telefone(String telefone) {
-    this.telefone = telefone;
+  public InfCompraTitulosCapitalizacaoReq idProduto(String idProduto) {
+    this.idProduto = idProduto;
     return this;
   }
 
   /**
-   * Telefone do cliente favorecido da transação (11 dígitos = DDD com 0 quando número tem 8 dígitos, sem 0 quando número tem 9 dígitos).
-   * @return telefone
+   * Produto utilizado na operação.
+   * @return idProduto
   **/
-  @ApiModelProperty(example = "05199999999", value = "Telefone do cliente favorecido da transação (11 dígitos = DDD com 0 quando número tem 8 dígitos, sem 0 quando número tem 9 dígitos).")
+  @ApiModelProperty(example = "7", required = true, value = "Produto utilizado na operação.")
+  @NotNull
 
-@Pattern(regexp="^\\d{11}$") 
-  public String getTelefone() {
-    return telefone;
+@Pattern(regexp="^\\d+$") 
+  public String getIdProduto() {
+    return idProduto;
   }
 
-  public void setTelefone(String telefone) {
-    this.telefone = telefone;
+  public void setIdProduto(String idProduto) {
+    this.idProduto = idProduto;
   }
 
   public InfCompraTitulosCapitalizacaoReq quantidade(String quantidade) {
@@ -98,7 +80,8 @@ public class InfCompraTitulosCapitalizacaoReq   {
    * Quantidade de itens do produtos.
    * @return quantidade
   **/
-  @ApiModelProperty(example = "2", value = "Quantidade de itens do produtos.")
+  @ApiModelProperty(example = "2", required = true, value = "Quantidade de itens do produtos.")
+  @NotNull
 
 @Pattern(regexp="^\\d+$") 
   public String getQuantidade() {
@@ -107,6 +90,27 @@ public class InfCompraTitulosCapitalizacaoReq   {
 
   public void setQuantidade(String quantidade) {
     this.quantidade = quantidade;
+  }
+
+  public InfCompraTitulosCapitalizacaoReq telefone(String telefone) {
+    this.telefone = telefone;
+    return this;
+  }
+
+  /**
+   * Telefone do cliente favorecido da transação (11 dígitos = DDD com 0 quando número tem 8 dígitos, sem 0 quando número tem 9 dígitos).
+   * @return telefone
+  **/
+  @ApiModelProperty(example = "05199999999", required = true, value = "Telefone do cliente favorecido da transação (11 dígitos = DDD com 0 quando número tem 8 dígitos, sem 0 quando número tem 9 dígitos).")
+  @NotNull
+
+@Pattern(regexp="^\\d{11}$") 
+  public String getTelefone() {
+    return telefone;
+  }
+
+  public void setTelefone(String telefone) {
+    this.telefone = telefone;
   }
 
 
@@ -119,15 +123,15 @@ public class InfCompraTitulosCapitalizacaoReq   {
       return false;
     }
     InfCompraTitulosCapitalizacaoReq infCompraTitulosCapitalizacaoReq = (InfCompraTitulosCapitalizacaoReq) o;
-    return Objects.equals(this.idProduto, infCompraTitulosCapitalizacaoReq.idProduto) &&
-        Objects.equals(this.cpf, infCompraTitulosCapitalizacaoReq.cpf) &&
-        Objects.equals(this.telefone, infCompraTitulosCapitalizacaoReq.telefone) &&
-        Objects.equals(this.quantidade, infCompraTitulosCapitalizacaoReq.quantidade);
+    return Objects.equals(this.cpf, infCompraTitulosCapitalizacaoReq.cpf) &&
+        Objects.equals(this.idProduto, infCompraTitulosCapitalizacaoReq.idProduto) &&
+        Objects.equals(this.quantidade, infCompraTitulosCapitalizacaoReq.quantidade) &&
+        Objects.equals(this.telefone, infCompraTitulosCapitalizacaoReq.telefone);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(idProduto, cpf, telefone, quantidade);
+    return Objects.hash(cpf, idProduto, quantidade, telefone);
   }
 
   @Override
@@ -135,10 +139,10 @@ public class InfCompraTitulosCapitalizacaoReq   {
     StringBuilder sb = new StringBuilder();
     sb.append("class InfCompraTitulosCapitalizacaoReq {\n");
     
-    sb.append("    idProduto: ").append(toIndentedString(idProduto)).append("\n");
     sb.append("    cpf: ").append(toIndentedString(cpf)).append("\n");
-    sb.append("    telefone: ").append(toIndentedString(telefone)).append("\n");
+    sb.append("    idProduto: ").append(toIndentedString(idProduto)).append("\n");
     sb.append("    quantidade: ").append(toIndentedString(quantidade)).append("\n");
+    sb.append("    telefone: ").append(toIndentedString(telefone)).append("\n");
     sb.append("}");
     return sb.toString();
   }

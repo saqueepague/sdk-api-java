@@ -18,7 +18,7 @@ import javax.validation.constraints.*;
  * InfPagamentoReq
  */
 @Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.SpringCodegen", date = "2018-12-05T18:08:56.087Z[GMT]")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2019-01-18T19:37:26.329Z")
 
 public class InfPagamentoReq   {
   @JsonProperty("codBarras")
@@ -27,20 +27,20 @@ public class InfPagamentoReq   {
   @JsonProperty("darf")
   private InfPagamentoReqDarf darf = null;
 
+  @JsonProperty("depositoTroco")
+  private InfPagamentoReqDepositoTroco depositoTroco = null;
+
   @JsonProperty("gps")
   private InfPagamentoReqGps gps = null;
 
-  @JsonProperty("troco")
-  private InfPagamentoReqTroco troco = null;
-
-  @JsonProperty("depositoTroco")
-  private InfPagamentoReqDepositoTroco depositoTroco = null;
+  @JsonProperty("numConsultaPagamento")
+  private String numConsultaPagamento = null;
 
   @JsonProperty("numDDA")
   private String numDDA = null;
 
-  @JsonProperty("numConsultaPagamento")
-  private String numConsultaPagamento = null;
+  @JsonProperty("troco")
+  private InfPagamentoReqTroco troco = null;
 
   public InfPagamentoReq codBarras(InfPagamentoReqCodBarras codBarras) {
     this.codBarras = codBarras;
@@ -84,6 +84,27 @@ public class InfPagamentoReq   {
     this.darf = darf;
   }
 
+  public InfPagamentoReq depositoTroco(InfPagamentoReqDepositoTroco depositoTroco) {
+    this.depositoTroco = depositoTroco;
+    return this;
+  }
+
+  /**
+   * Get depositoTroco
+   * @return depositoTroco
+  **/
+  @ApiModelProperty(value = "")
+
+  @Valid
+
+  public InfPagamentoReqDepositoTroco getDepositoTroco() {
+    return depositoTroco;
+  }
+
+  public void setDepositoTroco(InfPagamentoReqDepositoTroco depositoTroco) {
+    this.depositoTroco = depositoTroco;
+  }
+
   public InfPagamentoReq gps(InfPagamentoReqGps gps) {
     this.gps = gps;
     return this;
@@ -103,6 +124,46 @@ public class InfPagamentoReq   {
 
   public void setGps(InfPagamentoReqGps gps) {
     this.gps = gps;
+  }
+
+  public InfPagamentoReq numConsultaPagamento(String numConsultaPagamento) {
+    this.numConsultaPagamento = numConsultaPagamento;
+    return this;
+  }
+
+  /**
+   * Identificação da Consulta Pagamento.
+   * @return numConsultaPagamento
+  **/
+  @ApiModelProperty(value = "Identificação da Consulta Pagamento.")
+
+@Pattern(regexp="^\\d+$") 
+  public String getNumConsultaPagamento() {
+    return numConsultaPagamento;
+  }
+
+  public void setNumConsultaPagamento(String numConsultaPagamento) {
+    this.numConsultaPagamento = numConsultaPagamento;
+  }
+
+  public InfPagamentoReq numDDA(String numDDA) {
+    this.numDDA = numDDA;
+    return this;
+  }
+
+  /**
+   * Identificador do DDA.
+   * @return numDDA
+  **/
+  @ApiModelProperty(value = "Identificador do DDA.")
+
+@Pattern(regexp="^\\d+$") 
+  public String getNumDDA() {
+    return numDDA;
+  }
+
+  public void setNumDDA(String numDDA) {
+    this.numDDA = numDDA;
   }
 
   public InfPagamentoReq troco(InfPagamentoReqTroco troco) {
@@ -126,67 +187,6 @@ public class InfPagamentoReq   {
     this.troco = troco;
   }
 
-  public InfPagamentoReq depositoTroco(InfPagamentoReqDepositoTroco depositoTroco) {
-    this.depositoTroco = depositoTroco;
-    return this;
-  }
-
-  /**
-   * Get depositoTroco
-   * @return depositoTroco
-  **/
-  @ApiModelProperty(value = "")
-
-  @Valid
-
-  public InfPagamentoReqDepositoTroco getDepositoTroco() {
-    return depositoTroco;
-  }
-
-  public void setDepositoTroco(InfPagamentoReqDepositoTroco depositoTroco) {
-    this.depositoTroco = depositoTroco;
-  }
-
-  public InfPagamentoReq numDDA(String numDDA) {
-    this.numDDA = numDDA;
-    return this;
-  }
-
-  /**
-   * Número ID DDA.
-   * @return numDDA
-  **/
-  @ApiModelProperty(value = "Número ID DDA.")
-
-@Pattern(regexp="^\\d+$") 
-  public String getNumDDA() {
-    return numDDA;
-  }
-
-  public void setNumDDA(String numDDA) {
-    this.numDDA = numDDA;
-  }
-
-  public InfPagamentoReq numConsultaPagamento(String numConsultaPagamento) {
-    this.numConsultaPagamento = numConsultaPagamento;
-    return this;
-  }
-
-  /**
-   * Identificação da Consulta Pagamento.
-   * @return numConsultaPagamento
-  **/
-  @ApiModelProperty(value = "Identificação da Consulta Pagamento.")
-
-@Pattern(regexp="^\\d+$") 
-  public String getNumConsultaPagamento() {
-    return numConsultaPagamento;
-  }
-
-  public void setNumConsultaPagamento(String numConsultaPagamento) {
-    this.numConsultaPagamento = numConsultaPagamento;
-  }
-
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -199,16 +199,16 @@ public class InfPagamentoReq   {
     InfPagamentoReq infPagamentoReq = (InfPagamentoReq) o;
     return Objects.equals(this.codBarras, infPagamentoReq.codBarras) &&
         Objects.equals(this.darf, infPagamentoReq.darf) &&
-        Objects.equals(this.gps, infPagamentoReq.gps) &&
-        Objects.equals(this.troco, infPagamentoReq.troco) &&
         Objects.equals(this.depositoTroco, infPagamentoReq.depositoTroco) &&
+        Objects.equals(this.gps, infPagamentoReq.gps) &&
+        Objects.equals(this.numConsultaPagamento, infPagamentoReq.numConsultaPagamento) &&
         Objects.equals(this.numDDA, infPagamentoReq.numDDA) &&
-        Objects.equals(this.numConsultaPagamento, infPagamentoReq.numConsultaPagamento);
+        Objects.equals(this.troco, infPagamentoReq.troco);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(codBarras, darf, gps, troco, depositoTroco, numDDA, numConsultaPagamento);
+    return Objects.hash(codBarras, darf, depositoTroco, gps, numConsultaPagamento, numDDA, troco);
   }
 
   @Override
@@ -218,11 +218,11 @@ public class InfPagamentoReq   {
     
     sb.append("    codBarras: ").append(toIndentedString(codBarras)).append("\n");
     sb.append("    darf: ").append(toIndentedString(darf)).append("\n");
-    sb.append("    gps: ").append(toIndentedString(gps)).append("\n");
-    sb.append("    troco: ").append(toIndentedString(troco)).append("\n");
     sb.append("    depositoTroco: ").append(toIndentedString(depositoTroco)).append("\n");
-    sb.append("    numDDA: ").append(toIndentedString(numDDA)).append("\n");
+    sb.append("    gps: ").append(toIndentedString(gps)).append("\n");
     sb.append("    numConsultaPagamento: ").append(toIndentedString(numConsultaPagamento)).append("\n");
+    sb.append("    numDDA: ").append(toIndentedString(numDDA)).append("\n");
+    sb.append("    troco: ").append(toIndentedString(troco)).append("\n");
     sb.append("}");
     return sb.toString();
   }

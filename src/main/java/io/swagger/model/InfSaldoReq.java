@@ -14,60 +14,20 @@ import javax.validation.constraints.*;
  */
 @ApiModel(description = "Informações sobre a requisição de saldo.")
 @Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.SpringCodegen", date = "2018-12-05T18:08:56.087Z[GMT]")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2019-01-18T19:37:26.329Z")
 
 public class InfSaldoReq   {
+  @JsonProperty("cpf")
+  private String cpf = null;
+
   @JsonProperty("numAgencia")
   private String numAgencia = null;
 
   @JsonProperty("numConta")
   private String numConta = null;
 
-  @JsonProperty("cpf")
-  private String cpf = null;
-
   @JsonProperty("telefone")
   private String telefone = null;
-
-  public InfSaldoReq numAgencia(String numAgencia) {
-    this.numAgencia = numAgencia;
-    return this;
-  }
-
-  /**
-   * Número da agência utilizada na operação (4 dígitos).
-   * @return numAgencia
-  **/
-  @ApiModelProperty(example = "4029", value = "Número da agência utilizada na operação (4 dígitos).")
-
-@Pattern(regexp="^\\d{4}$") 
-  public String getNumAgencia() {
-    return numAgencia;
-  }
-
-  public void setNumAgencia(String numAgencia) {
-    this.numAgencia = numAgencia;
-  }
-
-  public InfSaldoReq numConta(String numConta) {
-    this.numConta = numConta;
-    return this;
-  }
-
-  /**
-   * Número da conta utilizada na operação (10 dígitos).
-   * @return numConta
-  **/
-  @ApiModelProperty(example = "0082348296", value = "Número da conta utilizada na operação (10 dígitos).")
-
-@Pattern(regexp="^\\d{10}$") 
-  public String getNumConta() {
-    return numConta;
-  }
-
-  public void setNumConta(String numConta) {
-    this.numConta = numConta;
-  }
 
   public InfSaldoReq cpf(String cpf) {
     this.cpf = cpf;
@@ -87,6 +47,46 @@ public class InfSaldoReq   {
 
   public void setCpf(String cpf) {
     this.cpf = cpf;
+  }
+
+  public InfSaldoReq numAgencia(String numAgencia) {
+    this.numAgencia = numAgencia;
+    return this;
+  }
+
+  /**
+   * Número da agência utilizada na operação.
+   * @return numAgencia
+  **/
+  @ApiModelProperty(example = "4029", value = "Número da agência utilizada na operação.")
+
+@Pattern(regexp="^\\d+$") 
+  public String getNumAgencia() {
+    return numAgencia;
+  }
+
+  public void setNumAgencia(String numAgencia) {
+    this.numAgencia = numAgencia;
+  }
+
+  public InfSaldoReq numConta(String numConta) {
+    this.numConta = numConta;
+    return this;
+  }
+
+  /**
+   * Número da conta utilizada na operação.
+   * @return numConta
+  **/
+  @ApiModelProperty(example = "0082348296", value = "Número da conta utilizada na operação.")
+
+@Pattern(regexp="^\\d+$") 
+  public String getNumConta() {
+    return numConta;
+  }
+
+  public void setNumConta(String numConta) {
+    this.numConta = numConta;
   }
 
   public InfSaldoReq telefone(String telefone) {
@@ -119,15 +119,15 @@ public class InfSaldoReq   {
       return false;
     }
     InfSaldoReq infSaldoReq = (InfSaldoReq) o;
-    return Objects.equals(this.numAgencia, infSaldoReq.numAgencia) &&
+    return Objects.equals(this.cpf, infSaldoReq.cpf) &&
+        Objects.equals(this.numAgencia, infSaldoReq.numAgencia) &&
         Objects.equals(this.numConta, infSaldoReq.numConta) &&
-        Objects.equals(this.cpf, infSaldoReq.cpf) &&
         Objects.equals(this.telefone, infSaldoReq.telefone);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(numAgencia, numConta, cpf, telefone);
+    return Objects.hash(cpf, numAgencia, numConta, telefone);
   }
 
   @Override
@@ -135,9 +135,9 @@ public class InfSaldoReq   {
     StringBuilder sb = new StringBuilder();
     sb.append("class InfSaldoReq {\n");
     
+    sb.append("    cpf: ").append(toIndentedString(cpf)).append("\n");
     sb.append("    numAgencia: ").append(toIndentedString(numAgencia)).append("\n");
     sb.append("    numConta: ").append(toIndentedString(numConta)).append("\n");
-    sb.append("    cpf: ").append(toIndentedString(cpf)).append("\n");
     sb.append("    telefone: ").append(toIndentedString(telefone)).append("\n");
     sb.append("}");
     return sb.toString();

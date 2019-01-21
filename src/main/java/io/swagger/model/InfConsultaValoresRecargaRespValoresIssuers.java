@@ -16,64 +16,24 @@ import javax.validation.constraints.*;
  * InfConsultaValoresRecargaRespValoresIssuers
  */
 @Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.SpringCodegen", date = "2018-12-05T18:08:56.087Z[GMT]")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2019-01-18T19:37:26.329Z")
 
 public class InfConsultaValoresRecargaRespValoresIssuers   {
-  @JsonProperty("id")
-  private Integer id = null;
-
-  @JsonProperty("name")
-  private String name = null;
-
   @JsonProperty("card_number_length")
   private Integer cardNumberLength = null;
 
   @JsonProperty("card_number_mask")
   private String cardNumberMask = null;
 
+  @JsonProperty("id")
+  private Integer id = null;
+
+  @JsonProperty("name")
+  private String name = null;
+
   @JsonProperty("products")
   @Valid
   private List<InfConsultaValoresRecargaRespValoresProducts> products = null;
-
-  public InfConsultaValoresRecargaRespValoresIssuers id(Integer id) {
-    this.id = id;
-    return this;
-  }
-
-  /**
-   * Identificador do cartão.
-   * @return id
-  **/
-  @ApiModelProperty(example = "1", value = "Identificador do cartão.")
-
-
-  public Integer getId() {
-    return id;
-  }
-
-  public void setId(Integer id) {
-    this.id = id;
-  }
-
-  public InfConsultaValoresRecargaRespValoresIssuers name(String name) {
-    this.name = name;
-    return this;
-  }
-
-  /**
-   * Nome do cartão.
-   * @return name
-  **/
-  @ApiModelProperty(example = "TEU", value = "Nome do cartão.")
-
-
-  public String getName() {
-    return name;
-  }
-
-  public void setName(String name) {
-    this.name = name;
-  }
 
   public InfConsultaValoresRecargaRespValoresIssuers cardNumberLength(Integer cardNumberLength) {
     this.cardNumberLength = cardNumberLength;
@@ -84,7 +44,8 @@ public class InfConsultaValoresRecargaRespValoresIssuers   {
    * Quantidade de caracteres do cartão.
    * @return cardNumberLength
   **/
-  @ApiModelProperty(example = "15", value = "Quantidade de caracteres do cartão.")
+  @ApiModelProperty(example = "15", required = true, value = "Quantidade de caracteres do cartão.")
+  @NotNull
 
 
   public Integer getCardNumberLength() {
@@ -104,7 +65,8 @@ public class InfConsultaValoresRecargaRespValoresIssuers   {
    * Máscara de números do cartão.
    * @return cardNumberMask
   **/
-  @ApiModelProperty(example = "XXXXXXXXXXXXXX-X", value = "Máscara de números do cartão.")
+  @ApiModelProperty(example = "XXXXXXXXXXXXXX-X", required = true, value = "Máscara de números do cartão.")
+  @NotNull
 
 
   public String getCardNumberMask() {
@@ -113,6 +75,48 @@ public class InfConsultaValoresRecargaRespValoresIssuers   {
 
   public void setCardNumberMask(String cardNumberMask) {
     this.cardNumberMask = cardNumberMask;
+  }
+
+  public InfConsultaValoresRecargaRespValoresIssuers id(Integer id) {
+    this.id = id;
+    return this;
+  }
+
+  /**
+   * Identificador do cartão.
+   * @return id
+  **/
+  @ApiModelProperty(example = "1", required = true, value = "Identificador do cartão.")
+  @NotNull
+
+
+  public Integer getId() {
+    return id;
+  }
+
+  public void setId(Integer id) {
+    this.id = id;
+  }
+
+  public InfConsultaValoresRecargaRespValoresIssuers name(String name) {
+    this.name = name;
+    return this;
+  }
+
+  /**
+   * Nome do cartão.
+   * @return name
+  **/
+  @ApiModelProperty(example = "TEU", required = true, value = "Nome do cartão.")
+  @NotNull
+
+
+  public String getName() {
+    return name;
+  }
+
+  public void setName(String name) {
+    this.name = name;
   }
 
   public InfConsultaValoresRecargaRespValoresIssuers products(List<InfConsultaValoresRecargaRespValoresProducts> products) {
@@ -154,16 +158,16 @@ public class InfConsultaValoresRecargaRespValoresIssuers   {
       return false;
     }
     InfConsultaValoresRecargaRespValoresIssuers infConsultaValoresRecargaRespValoresIssuers = (InfConsultaValoresRecargaRespValoresIssuers) o;
-    return Objects.equals(this.id, infConsultaValoresRecargaRespValoresIssuers.id) &&
-        Objects.equals(this.name, infConsultaValoresRecargaRespValoresIssuers.name) &&
-        Objects.equals(this.cardNumberLength, infConsultaValoresRecargaRespValoresIssuers.cardNumberLength) &&
+    return Objects.equals(this.cardNumberLength, infConsultaValoresRecargaRespValoresIssuers.cardNumberLength) &&
         Objects.equals(this.cardNumberMask, infConsultaValoresRecargaRespValoresIssuers.cardNumberMask) &&
+        Objects.equals(this.id, infConsultaValoresRecargaRespValoresIssuers.id) &&
+        Objects.equals(this.name, infConsultaValoresRecargaRespValoresIssuers.name) &&
         Objects.equals(this.products, infConsultaValoresRecargaRespValoresIssuers.products);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, cardNumberLength, cardNumberMask, products);
+    return Objects.hash(cardNumberLength, cardNumberMask, id, name, products);
   }
 
   @Override
@@ -171,10 +175,10 @@ public class InfConsultaValoresRecargaRespValoresIssuers   {
     StringBuilder sb = new StringBuilder();
     sb.append("class InfConsultaValoresRecargaRespValoresIssuers {\n");
     
-    sb.append("    id: ").append(toIndentedString(id)).append("\n");
-    sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    cardNumberLength: ").append(toIndentedString(cardNumberLength)).append("\n");
     sb.append("    cardNumberMask: ").append(toIndentedString(cardNumberMask)).append("\n");
+    sb.append("    id: ").append(toIndentedString(id)).append("\n");
+    sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    products: ").append(toIndentedString(products)).append("\n");
     sb.append("}");
     return sb.toString();

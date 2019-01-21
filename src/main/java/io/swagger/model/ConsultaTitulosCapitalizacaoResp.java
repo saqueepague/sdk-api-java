@@ -16,17 +16,39 @@ import javax.validation.constraints.*;
  * ConsultaTitulosCapitalizacaoResp
  */
 @Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.SpringCodegen", date = "2018-12-05T18:08:56.087Z[GMT]")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2019-01-18T19:37:26.329Z")
 
 public class ConsultaTitulosCapitalizacaoResp   {
+  @JsonProperty("InfConsultaTitulosCapitalizacao")
+  private InfConsultaTitulosCapitalizacaoResp infConsultaTitulosCapitalizacao = null;
+
   @JsonProperty("InfTransacao")
   private InfTransacaoResp infTransacao = null;
 
   @JsonProperty("Terminal")
   private Terminal terminal = null;
 
-  @JsonProperty("InfConsultaTitulosCapitalizacao")
-  private InfConsultaTitulosCapitalizacaoResp infConsultaTitulosCapitalizacao = null;
+  public ConsultaTitulosCapitalizacaoResp infConsultaTitulosCapitalizacao(InfConsultaTitulosCapitalizacaoResp infConsultaTitulosCapitalizacao) {
+    this.infConsultaTitulosCapitalizacao = infConsultaTitulosCapitalizacao;
+    return this;
+  }
+
+  /**
+   * Get infConsultaTitulosCapitalizacao
+   * @return infConsultaTitulosCapitalizacao
+  **/
+  @ApiModelProperty(required = true, value = "")
+  @NotNull
+
+  @Valid
+
+  public InfConsultaTitulosCapitalizacaoResp getInfConsultaTitulosCapitalizacao() {
+    return infConsultaTitulosCapitalizacao;
+  }
+
+  public void setInfConsultaTitulosCapitalizacao(InfConsultaTitulosCapitalizacaoResp infConsultaTitulosCapitalizacao) {
+    this.infConsultaTitulosCapitalizacao = infConsultaTitulosCapitalizacao;
+  }
 
   public ConsultaTitulosCapitalizacaoResp infTransacao(InfTransacaoResp infTransacao) {
     this.infTransacao = infTransacao;
@@ -37,7 +59,8 @@ public class ConsultaTitulosCapitalizacaoResp   {
    * Get infTransacao
    * @return infTransacao
   **/
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(required = true, value = "")
+  @NotNull
 
   @Valid
 
@@ -58,7 +81,8 @@ public class ConsultaTitulosCapitalizacaoResp   {
    * Get terminal
    * @return terminal
   **/
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(required = true, value = "")
+  @NotNull
 
   @Valid
 
@@ -68,27 +92,6 @@ public class ConsultaTitulosCapitalizacaoResp   {
 
   public void setTerminal(Terminal terminal) {
     this.terminal = terminal;
-  }
-
-  public ConsultaTitulosCapitalizacaoResp infConsultaTitulosCapitalizacao(InfConsultaTitulosCapitalizacaoResp infConsultaTitulosCapitalizacao) {
-    this.infConsultaTitulosCapitalizacao = infConsultaTitulosCapitalizacao;
-    return this;
-  }
-
-  /**
-   * Get infConsultaTitulosCapitalizacao
-   * @return infConsultaTitulosCapitalizacao
-  **/
-  @ApiModelProperty(value = "")
-
-  @Valid
-
-  public InfConsultaTitulosCapitalizacaoResp getInfConsultaTitulosCapitalizacao() {
-    return infConsultaTitulosCapitalizacao;
-  }
-
-  public void setInfConsultaTitulosCapitalizacao(InfConsultaTitulosCapitalizacaoResp infConsultaTitulosCapitalizacao) {
-    this.infConsultaTitulosCapitalizacao = infConsultaTitulosCapitalizacao;
   }
 
 
@@ -101,14 +104,14 @@ public class ConsultaTitulosCapitalizacaoResp   {
       return false;
     }
     ConsultaTitulosCapitalizacaoResp consultaTitulosCapitalizacaoResp = (ConsultaTitulosCapitalizacaoResp) o;
-    return Objects.equals(this.infTransacao, consultaTitulosCapitalizacaoResp.infTransacao) &&
-        Objects.equals(this.terminal, consultaTitulosCapitalizacaoResp.terminal) &&
-        Objects.equals(this.infConsultaTitulosCapitalizacao, consultaTitulosCapitalizacaoResp.infConsultaTitulosCapitalizacao);
+    return Objects.equals(this.infConsultaTitulosCapitalizacao, consultaTitulosCapitalizacaoResp.infConsultaTitulosCapitalizacao) &&
+        Objects.equals(this.infTransacao, consultaTitulosCapitalizacaoResp.infTransacao) &&
+        Objects.equals(this.terminal, consultaTitulosCapitalizacaoResp.terminal);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(infTransacao, terminal, infConsultaTitulosCapitalizacao);
+    return Objects.hash(infConsultaTitulosCapitalizacao, infTransacao, terminal);
   }
 
   @Override
@@ -116,9 +119,9 @@ public class ConsultaTitulosCapitalizacaoResp   {
     StringBuilder sb = new StringBuilder();
     sb.append("class ConsultaTitulosCapitalizacaoResp {\n");
     
+    sb.append("    infConsultaTitulosCapitalizacao: ").append(toIndentedString(infConsultaTitulosCapitalizacao)).append("\n");
     sb.append("    infTransacao: ").append(toIndentedString(infTransacao)).append("\n");
     sb.append("    terminal: ").append(toIndentedString(terminal)).append("\n");
-    sb.append("    infConsultaTitulosCapitalizacao: ").append(toIndentedString(infConsultaTitulosCapitalizacao)).append("\n");
     sb.append("}");
     return sb.toString();
   }

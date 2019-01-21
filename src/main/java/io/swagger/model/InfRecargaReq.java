@@ -10,64 +10,24 @@ import javax.validation.Valid;
 import javax.validation.constraints.*;
 
 /**
- * Informações sobre a requisição de recarga.
+ * Informações sobre a requisição de recarga de transporte ou pré-pago.
  */
-@ApiModel(description = "Informações sobre a requisição de recarga.")
+@ApiModel(description = "Informações sobre a requisição de recarga de transporte ou pré-pago.")
 @Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.SpringCodegen", date = "2018-12-05T18:08:56.087Z[GMT]")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2019-01-18T19:37:26.329Z")
 
 public class InfRecargaReq   {
-  @JsonProperty("telefone")
-  private String telefone = null;
-
-  @JsonProperty("numCartao")
-  private String numCartao = null;
-
   @JsonProperty("idOperadora")
   private String idOperadora = null;
 
   @JsonProperty("idProduto")
   private String idProduto = null;
 
-  public InfRecargaReq telefone(String telefone) {
-    this.telefone = telefone;
-    return this;
-  }
+  @JsonProperty("numCartao")
+  private String numCartao = null;
 
-  /**
-   * Número do telefone utilizado na operação (recarga de celular, 11 dígitos = DDD com 0 quando número tem 8 dígitos, sem 0 quando número tem 9 dígitos).
-   * @return telefone
-  **/
-  @ApiModelProperty(example = "51999999999", value = "Número do telefone utilizado na operação (recarga de celular, 11 dígitos = DDD com 0 quando número tem 8 dígitos, sem 0 quando número tem 9 dígitos).")
-
-@Pattern(regexp="^\\d{11}$") 
-  public String getTelefone() {
-    return telefone;
-  }
-
-  public void setTelefone(String telefone) {
-    this.telefone = telefone;
-  }
-
-  public InfRecargaReq numCartao(String numCartao) {
-    this.numCartao = numCartao;
-    return this;
-  }
-
-  /**
-   * Número do cartão utilizado na operação (recarga de transporte).
-   * @return numCartao
-  **/
-  @ApiModelProperty(example = "036200001842241", value = "Número do cartão utilizado na operação (recarga de transporte).")
-
-@Pattern(regexp="^\\d+$") 
-  public String getNumCartao() {
-    return numCartao;
-  }
-
-  public void setNumCartao(String numCartao) {
-    this.numCartao = numCartao;
-  }
+  @JsonProperty("telefone")
+  private String telefone = null;
 
   public InfRecargaReq idOperadora(String idOperadora) {
     this.idOperadora = idOperadora;
@@ -78,7 +38,8 @@ public class InfRecargaReq   {
    * Operadora utilizada na operação.
    * @return idOperadora
   **/
-  @ApiModelProperty(example = "847", value = "Operadora utilizada na operação.")
+  @ApiModelProperty(example = "847", required = true, value = "Operadora utilizada na operação.")
+  @NotNull
 
 @Pattern(regexp="^\\d+$") 
   public String getIdOperadora() {
@@ -98,7 +59,8 @@ public class InfRecargaReq   {
    * Produto utilizado na operação.
    * @return idProduto
   **/
-  @ApiModelProperty(example = "87", value = "Produto utilizado na operação.")
+  @ApiModelProperty(example = "87", required = true, value = "Produto utilizado na operação.")
+  @NotNull
 
 @Pattern(regexp="^\\d+$") 
   public String getIdProduto() {
@@ -107,6 +69,47 @@ public class InfRecargaReq   {
 
   public void setIdProduto(String idProduto) {
     this.idProduto = idProduto;
+  }
+
+  public InfRecargaReq numCartao(String numCartao) {
+    this.numCartao = numCartao;
+    return this;
+  }
+
+  /**
+   * Número do cartão utilizado na operação.
+   * @return numCartao
+  **/
+  @ApiModelProperty(example = "036200001842241", required = true, value = "Número do cartão utilizado na operação.")
+  @NotNull
+
+@Pattern(regexp="^\\d+$") 
+  public String getNumCartao() {
+    return numCartao;
+  }
+
+  public void setNumCartao(String numCartao) {
+    this.numCartao = numCartao;
+  }
+
+  public InfRecargaReq telefone(String telefone) {
+    this.telefone = telefone;
+    return this;
+  }
+
+  /**
+   * Número do telefone utilizado na operação (11 dígitos = DDD com 0 quando número tem 8 dígitos, sem 0 quando número tem 9 dígitos).
+   * @return telefone
+  **/
+  @ApiModelProperty(example = "51999999999", value = "Número do telefone utilizado na operação (11 dígitos = DDD com 0 quando número tem 8 dígitos, sem 0 quando número tem 9 dígitos).")
+
+@Pattern(regexp="^\\d{11}$") 
+  public String getTelefone() {
+    return telefone;
+  }
+
+  public void setTelefone(String telefone) {
+    this.telefone = telefone;
   }
 
 
@@ -119,15 +122,15 @@ public class InfRecargaReq   {
       return false;
     }
     InfRecargaReq infRecargaReq = (InfRecargaReq) o;
-    return Objects.equals(this.telefone, infRecargaReq.telefone) &&
+    return Objects.equals(this.idOperadora, infRecargaReq.idOperadora) &&
+        Objects.equals(this.idProduto, infRecargaReq.idProduto) &&
         Objects.equals(this.numCartao, infRecargaReq.numCartao) &&
-        Objects.equals(this.idOperadora, infRecargaReq.idOperadora) &&
-        Objects.equals(this.idProduto, infRecargaReq.idProduto);
+        Objects.equals(this.telefone, infRecargaReq.telefone);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(telefone, numCartao, idOperadora, idProduto);
+    return Objects.hash(idOperadora, idProduto, numCartao, telefone);
   }
 
   @Override
@@ -135,10 +138,10 @@ public class InfRecargaReq   {
     StringBuilder sb = new StringBuilder();
     sb.append("class InfRecargaReq {\n");
     
-    sb.append("    telefone: ").append(toIndentedString(telefone)).append("\n");
-    sb.append("    numCartao: ").append(toIndentedString(numCartao)).append("\n");
     sb.append("    idOperadora: ").append(toIndentedString(idOperadora)).append("\n");
     sb.append("    idProduto: ").append(toIndentedString(idProduto)).append("\n");
+    sb.append("    numCartao: ").append(toIndentedString(numCartao)).append("\n");
+    sb.append("    telefone: ").append(toIndentedString(telefone)).append("\n");
     sb.append("}");
     return sb.toString();
   }

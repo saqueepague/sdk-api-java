@@ -14,7 +14,7 @@ import javax.validation.constraints.*;
  * InfConsultaPagamentoReqCodBarras
  */
 @Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.SpringCodegen", date = "2018-12-05T18:08:56.087Z[GMT]")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2019-01-18T19:37:26.329Z")
 
 public class InfConsultaPagamentoReqCodBarras   {
   @JsonProperty("codigo")
@@ -54,19 +54,17 @@ public class InfConsultaPagamentoReqCodBarras   {
   @JsonProperty("modoEntrada")
   private ModoEntradaEnum modoEntrada = null;
 
-  @JsonProperty("dataAgendamento")
-  private String dataAgendamento = null;
-
   public InfConsultaPagamentoReqCodBarras codigo(String codigo) {
     this.codigo = codigo;
     return this;
   }
 
   /**
-   * Código de barras.
+   * Código de barras do documento.
    * @return codigo
   **/
-  @ApiModelProperty(value = "Código de barras.")
+  @ApiModelProperty(required = true, value = "Código de barras do documento.")
+  @NotNull
 
 @Pattern(regexp="^\\d+$") 
   public String getCodigo() {
@@ -86,7 +84,8 @@ public class InfConsultaPagamentoReqCodBarras   {
    * Forma de entrada do código de barras (0 = escaneado, 1 = digitado).
    * @return modoEntrada
   **/
-  @ApiModelProperty(example = "0", value = "Forma de entrada do código de barras (0 = escaneado, 1 = digitado).")
+  @ApiModelProperty(example = "0", required = true, value = "Forma de entrada do código de barras (0 = escaneado, 1 = digitado).")
+  @NotNull
 
 
   public ModoEntradaEnum getModoEntrada() {
@@ -95,26 +94,6 @@ public class InfConsultaPagamentoReqCodBarras   {
 
   public void setModoEntrada(ModoEntradaEnum modoEntrada) {
     this.modoEntrada = modoEntrada;
-  }
-
-  public InfConsultaPagamentoReqCodBarras dataAgendamento(String dataAgendamento) {
-    this.dataAgendamento = dataAgendamento;
-    return this;
-  }
-
-  /**
-   * Data em que o pagamento do Boleto/Título será realizado. Utilizado para pagamento agendado (AAAAMMDD).
-   * @return dataAgendamento
-  **/
-  @ApiModelProperty(example = "20181122", value = "Data em que o pagamento do Boleto/Título será realizado. Utilizado para pagamento agendado (AAAAMMDD).")
-
-@Pattern(regexp="^\\d{8}$") 
-  public String getDataAgendamento() {
-    return dataAgendamento;
-  }
-
-  public void setDataAgendamento(String dataAgendamento) {
-    this.dataAgendamento = dataAgendamento;
   }
 
 
@@ -128,13 +107,12 @@ public class InfConsultaPagamentoReqCodBarras   {
     }
     InfConsultaPagamentoReqCodBarras infConsultaPagamentoReqCodBarras = (InfConsultaPagamentoReqCodBarras) o;
     return Objects.equals(this.codigo, infConsultaPagamentoReqCodBarras.codigo) &&
-        Objects.equals(this.modoEntrada, infConsultaPagamentoReqCodBarras.modoEntrada) &&
-        Objects.equals(this.dataAgendamento, infConsultaPagamentoReqCodBarras.dataAgendamento);
+        Objects.equals(this.modoEntrada, infConsultaPagamentoReqCodBarras.modoEntrada);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(codigo, modoEntrada, dataAgendamento);
+    return Objects.hash(codigo, modoEntrada);
   }
 
   @Override
@@ -144,7 +122,6 @@ public class InfConsultaPagamentoReqCodBarras   {
     
     sb.append("    codigo: ").append(toIndentedString(codigo)).append("\n");
     sb.append("    modoEntrada: ").append(toIndentedString(modoEntrada)).append("\n");
-    sb.append("    dataAgendamento: ").append(toIndentedString(dataAgendamento)).append("\n");
     sb.append("}");
     return sb.toString();
   }

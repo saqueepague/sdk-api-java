@@ -11,30 +11,55 @@ import javax.validation.Valid;
 import javax.validation.constraints.*;
 
 /**
- * Informações de retorno para consultas de DDA.
+ * Informações para consultas de DDA.
  */
-@ApiModel(description = "Informações de retorno para consultas de DDA.")
+@ApiModel(description = "Informações para consultas de DDA.")
 @Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.SpringCodegen", date = "2018-12-05T18:08:56.087Z[GMT]")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2019-01-18T19:37:26.329Z")
 
 public class InfDDA   {
-  @JsonProperty("numDDA")
-  private String numDDA = null;
+  /**
+   * Possível pagar parcialmente (00 = não, 01 = sim).
+   */
+  public enum AceitaPagamentoParcialEnum {
+    _00("00"),
+    
+    _01("01");
+
+    private String value;
+
+    AceitaPagamentoParcialEnum(String value) {
+      this.value = value;
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+
+    @JsonCreator
+    public static AceitaPagamentoParcialEnum fromValue(String text) {
+      for (AceitaPagamentoParcialEnum b : AceitaPagamentoParcialEnum.values()) {
+        if (String.valueOf(b.value).equals(text)) {
+          return b;
+        }
+      }
+      return null;
+    }
+  }
+
+  @JsonProperty("aceitaPagamentoParcial")
+  private AceitaPagamentoParcialEnum aceitaPagamentoParcial = null;
+
+  @JsonProperty("alegacao")
+  private String alegacao = null;
 
   @JsonProperty("cedente")
   private String cedente = null;
 
-  @JsonProperty("sacado")
-  private String sacado = null;
-
   @JsonProperty("dataVencimento")
   private String dataVencimento = null;
-
-  @JsonProperty("valor")
-  private String valor = null;
-
-  @JsonProperty("tipo")
-  private String tipo = null;
 
   /**
    * Flag que indica se houve alteração (00 = não, 01 = sim).
@@ -70,202 +95,17 @@ public class InfDDA   {
   @JsonProperty("modificado")
   private ModificadoEnum modificado = null;
 
-  @JsonProperty("alegacao")
-  private String alegacao = null;
+  @JsonProperty("numDDA")
+  private String numDDA = null;
 
-  /**
-   * Possível pagar parcialmente (00 = não, 01 = sim).
-   */
-  public enum AceitaPagamentoParcialEnum {
-    _00("00"),
-    
-    _01("01");
+  @JsonProperty("sacado")
+  private String sacado = null;
 
-    private String value;
+  @JsonProperty("tipo")
+  private String tipo = null;
 
-    AceitaPagamentoParcialEnum(String value) {
-      this.value = value;
-    }
-
-    @Override
-    @JsonValue
-    public String toString() {
-      return String.valueOf(value);
-    }
-
-    @JsonCreator
-    public static AceitaPagamentoParcialEnum fromValue(String text) {
-      for (AceitaPagamentoParcialEnum b : AceitaPagamentoParcialEnum.values()) {
-        if (String.valueOf(b.value).equals(text)) {
-          return b;
-        }
-      }
-      return null;
-    }
-  }
-
-  @JsonProperty("aceitaPagamentoParcial")
-  private AceitaPagamentoParcialEnum aceitaPagamentoParcial = null;
-
-  public InfDDA numDDA(String numDDA) {
-    this.numDDA = numDDA;
-    return this;
-  }
-
-  /**
-   * Número ID DDA.
-   * @return numDDA
-  **/
-  @ApiModelProperty(example = "7123", value = "Número ID DDA.")
-
-@Pattern(regexp="^\\d+$") 
-  public String getNumDDA() {
-    return numDDA;
-  }
-
-  public void setNumDDA(String numDDA) {
-    this.numDDA = numDDA;
-  }
-
-  public InfDDA cedente(String cedente) {
-    this.cedente = cedente;
-    return this;
-  }
-
-  /**
-   * Cedente (até 40 caracteres).
-   * @return cedente
-  **/
-  @ApiModelProperty(example = "Cedente", value = "Cedente (até 40 caracteres).")
-
-@Pattern(regexp="^.{0,40}$") 
-  public String getCedente() {
-    return cedente;
-  }
-
-  public void setCedente(String cedente) {
-    this.cedente = cedente;
-  }
-
-  public InfDDA sacado(String sacado) {
-    this.sacado = sacado;
-    return this;
-  }
-
-  /**
-   * Sacado.
-   * @return sacado
-  **/
-  @ApiModelProperty(value = "Sacado.")
-
-
-  public String getSacado() {
-    return sacado;
-  }
-
-  public void setSacado(String sacado) {
-    this.sacado = sacado;
-  }
-
-  public InfDDA dataVencimento(String dataVencimento) {
-    this.dataVencimento = dataVencimento;
-    return this;
-  }
-
-  /**
-   * Data de vencimento (AAAAMMDD).
-   * @return dataVencimento
-  **/
-  @ApiModelProperty(example = "20181122", value = "Data de vencimento (AAAAMMDD).")
-
-@Pattern(regexp="^\\d{8}$") 
-  public String getDataVencimento() {
-    return dataVencimento;
-  }
-
-  public void setDataVencimento(String dataVencimento) {
-    this.dataVencimento = dataVencimento;
-  }
-
-  public InfDDA valor(String valor) {
-    this.valor = valor;
-    return this;
-  }
-
-  /**
-   * Valor do DDA (12 dígitos, incluindo centavos).
-   * @return valor
-  **/
-  @ApiModelProperty(example = "000000005000", value = "Valor do DDA (12 dígitos, incluindo centavos).")
-
-@Pattern(regexp="^\\d{12}$") 
-  public String getValor() {
-    return valor;
-  }
-
-  public void setValor(String valor) {
-    this.valor = valor;
-  }
-
-  public InfDDA tipo(String tipo) {
-    this.tipo = tipo;
-    return this;
-  }
-
-  /**
-   * Tipo da DDA.
-   * @return tipo
-  **/
-  @ApiModelProperty(value = "Tipo da DDA.")
-
-
-  public String getTipo() {
-    return tipo;
-  }
-
-  public void setTipo(String tipo) {
-    this.tipo = tipo;
-  }
-
-  public InfDDA modificado(ModificadoEnum modificado) {
-    this.modificado = modificado;
-    return this;
-  }
-
-  /**
-   * Flag que indica se houve alteração (00 = não, 01 = sim).
-   * @return modificado
-  **/
-  @ApiModelProperty(example = "00", value = "Flag que indica se houve alteração (00 = não, 01 = sim).")
-
-
-  public ModificadoEnum getModificado() {
-    return modificado;
-  }
-
-  public void setModificado(ModificadoEnum modificado) {
-    this.modificado = modificado;
-  }
-
-  public InfDDA alegacao(String alegacao) {
-    this.alegacao = alegacao;
-    return this;
-  }
-
-  /**
-   * Alegação.
-   * @return alegacao
-  **/
-  @ApiModelProperty(value = "Alegação.")
-
-
-  public String getAlegacao() {
-    return alegacao;
-  }
-
-  public void setAlegacao(String alegacao) {
-    this.alegacao = alegacao;
-  }
+  @JsonProperty("valor")
+  private String valor = null;
 
   public InfDDA aceitaPagamentoParcial(AceitaPagamentoParcialEnum aceitaPagamentoParcial) {
     this.aceitaPagamentoParcial = aceitaPagamentoParcial;
@@ -287,6 +127,173 @@ public class InfDDA   {
     this.aceitaPagamentoParcial = aceitaPagamentoParcial;
   }
 
+  public InfDDA alegacao(String alegacao) {
+    this.alegacao = alegacao;
+    return this;
+  }
+
+  /**
+   * Alegação.
+   * @return alegacao
+  **/
+  @ApiModelProperty(required = true, value = "Alegação.")
+  @NotNull
+
+
+  public String getAlegacao() {
+    return alegacao;
+  }
+
+  public void setAlegacao(String alegacao) {
+    this.alegacao = alegacao;
+  }
+
+  public InfDDA cedente(String cedente) {
+    this.cedente = cedente;
+    return this;
+  }
+
+  /**
+   * Cedente.
+   * @return cedente
+  **/
+  @ApiModelProperty(example = "Cedente", value = "Cedente.")
+
+@Pattern(regexp="^.{0,40}$") 
+  public String getCedente() {
+    return cedente;
+  }
+
+  public void setCedente(String cedente) {
+    this.cedente = cedente;
+  }
+
+  public InfDDA dataVencimento(String dataVencimento) {
+    this.dataVencimento = dataVencimento;
+    return this;
+  }
+
+  /**
+   * Data de vencimento (AAAAMMDD).
+   * @return dataVencimento
+  **/
+  @ApiModelProperty(example = "20181122", required = true, value = "Data de vencimento (AAAAMMDD).")
+  @NotNull
+
+@Pattern(regexp="^\\d{8}$") 
+  public String getDataVencimento() {
+    return dataVencimento;
+  }
+
+  public void setDataVencimento(String dataVencimento) {
+    this.dataVencimento = dataVencimento;
+  }
+
+  public InfDDA modificado(ModificadoEnum modificado) {
+    this.modificado = modificado;
+    return this;
+  }
+
+  /**
+   * Flag que indica se houve alteração (00 = não, 01 = sim).
+   * @return modificado
+  **/
+  @ApiModelProperty(example = "00", required = true, value = "Flag que indica se houve alteração (00 = não, 01 = sim).")
+  @NotNull
+
+
+  public ModificadoEnum getModificado() {
+    return modificado;
+  }
+
+  public void setModificado(ModificadoEnum modificado) {
+    this.modificado = modificado;
+  }
+
+  public InfDDA numDDA(String numDDA) {
+    this.numDDA = numDDA;
+    return this;
+  }
+
+  /**
+   * Identificador do DDA.
+   * @return numDDA
+  **/
+  @ApiModelProperty(example = "7123", required = true, value = "Identificador do DDA.")
+  @NotNull
+
+@Pattern(regexp="^\\d+$") 
+  public String getNumDDA() {
+    return numDDA;
+  }
+
+  public void setNumDDA(String numDDA) {
+    this.numDDA = numDDA;
+  }
+
+  public InfDDA sacado(String sacado) {
+    this.sacado = sacado;
+    return this;
+  }
+
+  /**
+   * Sacado.
+   * @return sacado
+  **/
+  @ApiModelProperty(required = true, value = "Sacado.")
+  @NotNull
+
+
+  public String getSacado() {
+    return sacado;
+  }
+
+  public void setSacado(String sacado) {
+    this.sacado = sacado;
+  }
+
+  public InfDDA tipo(String tipo) {
+    this.tipo = tipo;
+    return this;
+  }
+
+  /**
+   * Tipo do DDA.
+   * @return tipo
+  **/
+  @ApiModelProperty(required = true, value = "Tipo do DDA.")
+  @NotNull
+
+
+  public String getTipo() {
+    return tipo;
+  }
+
+  public void setTipo(String tipo) {
+    this.tipo = tipo;
+  }
+
+  public InfDDA valor(String valor) {
+    this.valor = valor;
+    return this;
+  }
+
+  /**
+   * Valor do DDA (12 dígitos, incluindo centavos).
+   * @return valor
+  **/
+  @ApiModelProperty(example = "000000005000", required = true, value = "Valor do DDA (12 dígitos, incluindo centavos).")
+  @NotNull
+
+@Pattern(regexp="^\\d{12}$") 
+  public String getValor() {
+    return valor;
+  }
+
+  public void setValor(String valor) {
+    this.valor = valor;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -297,20 +304,20 @@ public class InfDDA   {
       return false;
     }
     InfDDA infDDA = (InfDDA) o;
-    return Objects.equals(this.numDDA, infDDA.numDDA) &&
-        Objects.equals(this.cedente, infDDA.cedente) &&
-        Objects.equals(this.sacado, infDDA.sacado) &&
-        Objects.equals(this.dataVencimento, infDDA.dataVencimento) &&
-        Objects.equals(this.valor, infDDA.valor) &&
-        Objects.equals(this.tipo, infDDA.tipo) &&
-        Objects.equals(this.modificado, infDDA.modificado) &&
+    return Objects.equals(this.aceitaPagamentoParcial, infDDA.aceitaPagamentoParcial) &&
         Objects.equals(this.alegacao, infDDA.alegacao) &&
-        Objects.equals(this.aceitaPagamentoParcial, infDDA.aceitaPagamentoParcial);
+        Objects.equals(this.cedente, infDDA.cedente) &&
+        Objects.equals(this.dataVencimento, infDDA.dataVencimento) &&
+        Objects.equals(this.modificado, infDDA.modificado) &&
+        Objects.equals(this.numDDA, infDDA.numDDA) &&
+        Objects.equals(this.sacado, infDDA.sacado) &&
+        Objects.equals(this.tipo, infDDA.tipo) &&
+        Objects.equals(this.valor, infDDA.valor);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(numDDA, cedente, sacado, dataVencimento, valor, tipo, modificado, alegacao, aceitaPagamentoParcial);
+    return Objects.hash(aceitaPagamentoParcial, alegacao, cedente, dataVencimento, modificado, numDDA, sacado, tipo, valor);
   }
 
   @Override
@@ -318,15 +325,15 @@ public class InfDDA   {
     StringBuilder sb = new StringBuilder();
     sb.append("class InfDDA {\n");
     
-    sb.append("    numDDA: ").append(toIndentedString(numDDA)).append("\n");
-    sb.append("    cedente: ").append(toIndentedString(cedente)).append("\n");
-    sb.append("    sacado: ").append(toIndentedString(sacado)).append("\n");
-    sb.append("    dataVencimento: ").append(toIndentedString(dataVencimento)).append("\n");
-    sb.append("    valor: ").append(toIndentedString(valor)).append("\n");
-    sb.append("    tipo: ").append(toIndentedString(tipo)).append("\n");
-    sb.append("    modificado: ").append(toIndentedString(modificado)).append("\n");
-    sb.append("    alegacao: ").append(toIndentedString(alegacao)).append("\n");
     sb.append("    aceitaPagamentoParcial: ").append(toIndentedString(aceitaPagamentoParcial)).append("\n");
+    sb.append("    alegacao: ").append(toIndentedString(alegacao)).append("\n");
+    sb.append("    cedente: ").append(toIndentedString(cedente)).append("\n");
+    sb.append("    dataVencimento: ").append(toIndentedString(dataVencimento)).append("\n");
+    sb.append("    modificado: ").append(toIndentedString(modificado)).append("\n");
+    sb.append("    numDDA: ").append(toIndentedString(numDDA)).append("\n");
+    sb.append("    sacado: ").append(toIndentedString(sacado)).append("\n");
+    sb.append("    tipo: ").append(toIndentedString(tipo)).append("\n");
+    sb.append("    valor: ").append(toIndentedString(valor)).append("\n");
     sb.append("}");
     return sb.toString();
   }

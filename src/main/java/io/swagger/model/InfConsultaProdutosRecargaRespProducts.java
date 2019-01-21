@@ -13,7 +13,7 @@ import javax.validation.constraints.*;
  * InfConsultaProdutosRecargaRespProducts
  */
 @Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.SpringCodegen", date = "2018-12-05T18:08:56.087Z[GMT]")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2019-01-18T19:37:26.329Z")
 
 public class InfConsultaProdutosRecargaRespProducts   {
   @JsonProperty("id")
@@ -31,7 +31,8 @@ public class InfConsultaProdutosRecargaRespProducts   {
    * Identificador do produto.
    * @return id
   **/
-  @ApiModelProperty(example = "5", value = "Identificador do produto.")
+  @ApiModelProperty(example = "1", required = true, value = "Identificador do produto.")
+  @NotNull
 
 @Pattern(regexp="^\\d+$") 
   public String getId() {
@@ -51,7 +52,8 @@ public class InfConsultaProdutosRecargaRespProducts   {
    * Nome do produto.
    * @return name
   **/
-  @ApiModelProperty(example = "Produto novo", value = "Nome do produto.")
+  @ApiModelProperty(example = "Produto de Recarga", required = true, value = "Nome do produto.")
+  @NotNull
 
 
   public String getName() {

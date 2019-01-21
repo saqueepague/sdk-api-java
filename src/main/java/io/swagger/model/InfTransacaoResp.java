@@ -14,83 +14,41 @@ import javax.validation.constraints.*;
  */
 @ApiModel(description = "Informações sobre a resposta da resquisição de transação.")
 @Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.SpringCodegen", date = "2018-12-05T18:08:56.087Z[GMT]")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2019-01-18T19:37:26.329Z")
 
 public class InfTransacaoResp   {
-  @JsonProperty("nsuResposta")
-  private String nsuResposta = null;
-
-  @JsonProperty("nsu")
-  private String nsu = null;
-
   @JsonProperty("cdProc")
   private String cdProc = null;
-
-  @JsonProperty("dataHora")
-  private String dataHora = null;
-
-  @JsonProperty("horaLocal")
-  private String horaLocal = null;
-
-  @JsonProperty("dataLocal")
-  private String dataLocal = null;
-
-  @JsonProperty("codOperadora")
-  private String codOperadora = null;
-
-  @JsonProperty("valor")
-  private String valor = null;
 
   @JsonProperty("codMoeda")
   private String codMoeda = null;
 
-  @JsonProperty("mensagemCliente")
-  private String mensagemCliente = null;
+  @JsonProperty("codOperadora")
+  private String codOperadora = null;
+
+  @JsonProperty("dataHora")
+  private String dataHora = null;
+
+  @JsonProperty("dataLocal")
+  private String dataLocal = null;
 
   @JsonProperty("errorMessage")
   private String errorMessage = null;
 
-  public InfTransacaoResp nsuResposta(String nsuResposta) {
-    this.nsuResposta = nsuResposta;
-    return this;
-  }
+  @JsonProperty("horaLocal")
+  private String horaLocal = null;
 
-  /**
-   * Identificador da resposta da transação, gerado pelo autorizador.
-   * @return nsuResposta
-  **/
-  @ApiModelProperty(example = "820", required = true, value = "Identificador da resposta da transação, gerado pelo autorizador.")
-  @NotNull
+  @JsonProperty("mensagemCliente")
+  private String mensagemCliente = null;
 
-@Pattern(regexp="^\\d+$") 
-  public String getNsuResposta() {
-    return nsuResposta;
-  }
+  @JsonProperty("nsu")
+  private String nsu = null;
 
-  public void setNsuResposta(String nsuResposta) {
-    this.nsuResposta = nsuResposta;
-  }
+  @JsonProperty("nsuResposta")
+  private String nsuResposta = null;
 
-  public InfTransacaoResp nsu(String nsu) {
-    this.nsu = nsu;
-    return this;
-  }
-
-  /**
-   * Igual à requisição.
-   * @return nsu
-  **/
-  @ApiModelProperty(example = "000080247206", required = true, value = "Igual à requisição.")
-  @NotNull
-
-@Pattern(regexp="^\\d{12}$") 
-  public String getNsu() {
-    return nsu;
-  }
-
-  public void setNsu(String nsu) {
-    this.nsu = nsu;
-  }
+  @JsonProperty("valor")
+  private String valor = null;
 
   public InfTransacaoResp cdProc(String cdProc) {
     this.cdProc = cdProc;
@@ -113,67 +71,24 @@ public class InfTransacaoResp   {
     this.cdProc = cdProc;
   }
 
-  public InfTransacaoResp dataHora(String dataHora) {
-    this.dataHora = dataHora;
-    return this;
-  }
-
-  /**
-   * Data hora da transação (MMDDhhmmss).
-   * @return dataHora
-  **/
-  @ApiModelProperty(example = "1122151032", required = true, value = "Data hora da transação (MMDDhhmmss).")
-  @NotNull
-
-@Pattern(regexp="^\\d{10}$") 
-  public String getDataHora() {
-    return dataHora;
-  }
-
-  public void setDataHora(String dataHora) {
-    this.dataHora = dataHora;
-  }
-
-  public InfTransacaoResp horaLocal(String horaLocal) {
-    this.horaLocal = horaLocal;
+  public InfTransacaoResp codMoeda(String codMoeda) {
+    this.codMoeda = codMoeda;
     return this;
   }
 
   /**
    * Igual à requisição.
-   * @return horaLocal
+   * @return codMoeda
   **/
-  @ApiModelProperty(example = "151032", required = true, value = "Igual à requisição.")
-  @NotNull
+  @ApiModelProperty(example = "986", value = "Igual à requisição.")
 
-@Pattern(regexp="^\\d{6}$") 
-  public String getHoraLocal() {
-    return horaLocal;
+@Pattern(regexp="^\\d{3}") 
+  public String getCodMoeda() {
+    return codMoeda;
   }
 
-  public void setHoraLocal(String horaLocal) {
-    this.horaLocal = horaLocal;
-  }
-
-  public InfTransacaoResp dataLocal(String dataLocal) {
-    this.dataLocal = dataLocal;
-    return this;
-  }
-
-  /**
-   * Igual à requisição.
-   * @return dataLocal
-  **/
-  @ApiModelProperty(example = "1122", required = true, value = "Igual à requisição.")
-  @NotNull
-
-@Pattern(regexp="^\\d{4}$") 
-  public String getDataLocal() {
-    return dataLocal;
-  }
-
-  public void setDataLocal(String dataLocal) {
-    this.dataLocal = dataLocal;
+  public void setCodMoeda(String codMoeda) {
+    this.codMoeda = codMoeda;
   }
 
   public InfTransacaoResp codOperadora(String codOperadora) {
@@ -197,64 +112,46 @@ public class InfTransacaoResp   {
     this.codOperadora = codOperadora;
   }
 
-  public InfTransacaoResp valor(String valor) {
-    this.valor = valor;
+  public InfTransacaoResp dataHora(String dataHora) {
+    this.dataHora = dataHora;
+    return this;
+  }
+
+  /**
+   * Data hora da transação (MMDDhhmmss).
+   * @return dataHora
+  **/
+  @ApiModelProperty(example = "1122151032", required = true, value = "Data hora da transação (MMDDhhmmss).")
+  @NotNull
+
+@Pattern(regexp="^\\d{10}$") 
+  public String getDataHora() {
+    return dataHora;
+  }
+
+  public void setDataHora(String dataHora) {
+    this.dataHora = dataHora;
+  }
+
+  public InfTransacaoResp dataLocal(String dataLocal) {
+    this.dataLocal = dataLocal;
     return this;
   }
 
   /**
    * Igual à requisição.
-   * @return valor
+   * @return dataLocal
   **/
-  @ApiModelProperty(example = "5000", value = "Igual à requisição.")
+  @ApiModelProperty(example = "1122", required = true, value = "Igual à requisição.")
+  @NotNull
 
-@Pattern(regexp="^\\d+") 
-  public String getValor() {
-    return valor;
+@Pattern(regexp="^\\d{4}$") 
+  public String getDataLocal() {
+    return dataLocal;
   }
 
-  public void setValor(String valor) {
-    this.valor = valor;
-  }
-
-  public InfTransacaoResp codMoeda(String codMoeda) {
-    this.codMoeda = codMoeda;
-    return this;
-  }
-
-  /**
-   * Igual à requisição.
-   * @return codMoeda
-  **/
-  @ApiModelProperty(example = "986", value = "Igual à requisição.")
-
-@Pattern(regexp="^\\d{3}") 
-  public String getCodMoeda() {
-    return codMoeda;
-  }
-
-  public void setCodMoeda(String codMoeda) {
-    this.codMoeda = codMoeda;
-  }
-
-  public InfTransacaoResp mensagemCliente(String mensagemCliente) {
-    this.mensagemCliente = mensagemCliente;
-    return this;
-  }
-
-  /**
-   * Mensagem para ser mostrada na tela para o cliente.
-   * @return mensagemCliente
-  **/
-  @ApiModelProperty(example = "Não foi possível validar o cartão.", value = "Mensagem para ser mostrada na tela para o cliente.")
-
-
-  public String getMensagemCliente() {
-    return mensagemCliente;
-  }
-
-  public void setMensagemCliente(String mensagemCliente) {
-    this.mensagemCliente = mensagemCliente;
+  public void setDataLocal(String dataLocal) {
+    this.dataLocal = dataLocal;
   }
 
   public InfTransacaoResp errorMessage(String errorMessage) {
@@ -277,6 +174,109 @@ public class InfTransacaoResp   {
     this.errorMessage = errorMessage;
   }
 
+  public InfTransacaoResp horaLocal(String horaLocal) {
+    this.horaLocal = horaLocal;
+    return this;
+  }
+
+  /**
+   * Igual à requisição.
+   * @return horaLocal
+  **/
+  @ApiModelProperty(example = "151032", required = true, value = "Igual à requisição.")
+  @NotNull
+
+@Pattern(regexp="^\\d{6}$") 
+  public String getHoraLocal() {
+    return horaLocal;
+  }
+
+  public void setHoraLocal(String horaLocal) {
+    this.horaLocal = horaLocal;
+  }
+
+  public InfTransacaoResp mensagemCliente(String mensagemCliente) {
+    this.mensagemCliente = mensagemCliente;
+    return this;
+  }
+
+  /**
+   * Mensagem para ser mostrada na tela para o cliente.
+   * @return mensagemCliente
+  **/
+  @ApiModelProperty(example = "Não foi possível validar o cartão.", value = "Mensagem para ser mostrada na tela para o cliente.")
+
+
+  public String getMensagemCliente() {
+    return mensagemCliente;
+  }
+
+  public void setMensagemCliente(String mensagemCliente) {
+    this.mensagemCliente = mensagemCliente;
+  }
+
+  public InfTransacaoResp nsu(String nsu) {
+    this.nsu = nsu;
+    return this;
+  }
+
+  /**
+   * Igual à requisição.
+   * @return nsu
+  **/
+  @ApiModelProperty(example = "000080247206", required = true, value = "Igual à requisição.")
+  @NotNull
+
+@Pattern(regexp="^\\d{12}$") 
+  public String getNsu() {
+    return nsu;
+  }
+
+  public void setNsu(String nsu) {
+    this.nsu = nsu;
+  }
+
+  public InfTransacaoResp nsuResposta(String nsuResposta) {
+    this.nsuResposta = nsuResposta;
+    return this;
+  }
+
+  /**
+   * Identificador da resposta da transação, gerado pelo autorizador.
+   * @return nsuResposta
+  **/
+  @ApiModelProperty(example = "820", required = true, value = "Identificador da resposta da transação, gerado pelo autorizador.")
+  @NotNull
+
+@Pattern(regexp="^\\d+$") 
+  public String getNsuResposta() {
+    return nsuResposta;
+  }
+
+  public void setNsuResposta(String nsuResposta) {
+    this.nsuResposta = nsuResposta;
+  }
+
+  public InfTransacaoResp valor(String valor) {
+    this.valor = valor;
+    return this;
+  }
+
+  /**
+   * Igual à requisição.
+   * @return valor
+  **/
+  @ApiModelProperty(example = "5000", value = "Igual à requisição.")
+
+@Pattern(regexp="^\\d+") 
+  public String getValor() {
+    return valor;
+  }
+
+  public void setValor(String valor) {
+    this.valor = valor;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -287,22 +287,22 @@ public class InfTransacaoResp   {
       return false;
     }
     InfTransacaoResp infTransacaoResp = (InfTransacaoResp) o;
-    return Objects.equals(this.nsuResposta, infTransacaoResp.nsuResposta) &&
-        Objects.equals(this.nsu, infTransacaoResp.nsu) &&
-        Objects.equals(this.cdProc, infTransacaoResp.cdProc) &&
-        Objects.equals(this.dataHora, infTransacaoResp.dataHora) &&
-        Objects.equals(this.horaLocal, infTransacaoResp.horaLocal) &&
-        Objects.equals(this.dataLocal, infTransacaoResp.dataLocal) &&
-        Objects.equals(this.codOperadora, infTransacaoResp.codOperadora) &&
-        Objects.equals(this.valor, infTransacaoResp.valor) &&
+    return Objects.equals(this.cdProc, infTransacaoResp.cdProc) &&
         Objects.equals(this.codMoeda, infTransacaoResp.codMoeda) &&
+        Objects.equals(this.codOperadora, infTransacaoResp.codOperadora) &&
+        Objects.equals(this.dataHora, infTransacaoResp.dataHora) &&
+        Objects.equals(this.dataLocal, infTransacaoResp.dataLocal) &&
+        Objects.equals(this.errorMessage, infTransacaoResp.errorMessage) &&
+        Objects.equals(this.horaLocal, infTransacaoResp.horaLocal) &&
         Objects.equals(this.mensagemCliente, infTransacaoResp.mensagemCliente) &&
-        Objects.equals(this.errorMessage, infTransacaoResp.errorMessage);
+        Objects.equals(this.nsu, infTransacaoResp.nsu) &&
+        Objects.equals(this.nsuResposta, infTransacaoResp.nsuResposta) &&
+        Objects.equals(this.valor, infTransacaoResp.valor);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(nsuResposta, nsu, cdProc, dataHora, horaLocal, dataLocal, codOperadora, valor, codMoeda, mensagemCliente, errorMessage);
+    return Objects.hash(cdProc, codMoeda, codOperadora, dataHora, dataLocal, errorMessage, horaLocal, mensagemCliente, nsu, nsuResposta, valor);
   }
 
   @Override
@@ -310,17 +310,17 @@ public class InfTransacaoResp   {
     StringBuilder sb = new StringBuilder();
     sb.append("class InfTransacaoResp {\n");
     
-    sb.append("    nsuResposta: ").append(toIndentedString(nsuResposta)).append("\n");
-    sb.append("    nsu: ").append(toIndentedString(nsu)).append("\n");
     sb.append("    cdProc: ").append(toIndentedString(cdProc)).append("\n");
-    sb.append("    dataHora: ").append(toIndentedString(dataHora)).append("\n");
-    sb.append("    horaLocal: ").append(toIndentedString(horaLocal)).append("\n");
-    sb.append("    dataLocal: ").append(toIndentedString(dataLocal)).append("\n");
-    sb.append("    codOperadora: ").append(toIndentedString(codOperadora)).append("\n");
-    sb.append("    valor: ").append(toIndentedString(valor)).append("\n");
     sb.append("    codMoeda: ").append(toIndentedString(codMoeda)).append("\n");
-    sb.append("    mensagemCliente: ").append(toIndentedString(mensagemCliente)).append("\n");
+    sb.append("    codOperadora: ").append(toIndentedString(codOperadora)).append("\n");
+    sb.append("    dataHora: ").append(toIndentedString(dataHora)).append("\n");
+    sb.append("    dataLocal: ").append(toIndentedString(dataLocal)).append("\n");
     sb.append("    errorMessage: ").append(toIndentedString(errorMessage)).append("\n");
+    sb.append("    horaLocal: ").append(toIndentedString(horaLocal)).append("\n");
+    sb.append("    mensagemCliente: ").append(toIndentedString(mensagemCliente)).append("\n");
+    sb.append("    nsu: ").append(toIndentedString(nsu)).append("\n");
+    sb.append("    nsuResposta: ").append(toIndentedString(nsuResposta)).append("\n");
+    sb.append("    valor: ").append(toIndentedString(valor)).append("\n");
     sb.append("}");
     return sb.toString();
   }

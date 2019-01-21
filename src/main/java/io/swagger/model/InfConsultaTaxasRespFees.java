@@ -13,17 +13,17 @@ import javax.validation.constraints.*;
  * InfConsultaTaxasRespFees
  */
 @Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.SpringCodegen", date = "2018-12-05T18:08:56.087Z[GMT]")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2019-01-18T19:37:26.329Z")
 
 public class InfConsultaTaxasRespFees   {
   @JsonProperty("id")
   private String id = null;
 
-  @JsonProperty("min_amount")
-  private String minAmount = null;
-
   @JsonProperty("max_amount")
   private String maxAmount = null;
+
+  @JsonProperty("min_amount")
+  private String minAmount = null;
 
   @JsonProperty("value")
   private String value = null;
@@ -37,7 +37,8 @@ public class InfConsultaTaxasRespFees   {
    * Identificador da operação da taxa.
    * @return id
   **/
-  @ApiModelProperty(example = "0201", value = "Identificador da operação da taxa.")
+  @ApiModelProperty(example = "0201", required = true, value = "Identificador da operação da taxa.")
+  @NotNull
 
 @Pattern(regexp="^\\d+$") 
   public String getId() {
@@ -46,26 +47,6 @@ public class InfConsultaTaxasRespFees   {
 
   public void setId(String id) {
     this.id = id;
-  }
-
-  public InfConsultaTaxasRespFees minAmount(String minAmount) {
-    this.minAmount = minAmount;
-    return this;
-  }
-
-  /**
-   * Valor mínimo da taxa.
-   * @return minAmount
-  **/
-  @ApiModelProperty(example = "000", value = "Valor mínimo da taxa.")
-
-@Pattern(regexp="^\\d+$") 
-  public String getMinAmount() {
-    return minAmount;
-  }
-
-  public void setMinAmount(String minAmount) {
-    this.minAmount = minAmount;
   }
 
   public InfConsultaTaxasRespFees maxAmount(String maxAmount) {
@@ -77,7 +58,8 @@ public class InfConsultaTaxasRespFees   {
    * Valor máximo da taxa.
    * @return maxAmount
   **/
-  @ApiModelProperty(example = "10000", value = "Valor máximo da taxa.")
+  @ApiModelProperty(example = "10000", required = true, value = "Valor máximo da taxa.")
+  @NotNull
 
 @Pattern(regexp="^\\d+$") 
   public String getMaxAmount() {
@@ -86,6 +68,27 @@ public class InfConsultaTaxasRespFees   {
 
   public void setMaxAmount(String maxAmount) {
     this.maxAmount = maxAmount;
+  }
+
+  public InfConsultaTaxasRespFees minAmount(String minAmount) {
+    this.minAmount = minAmount;
+    return this;
+  }
+
+  /**
+   * Valor mínimo da taxa.
+   * @return minAmount
+  **/
+  @ApiModelProperty(example = "000", required = true, value = "Valor mínimo da taxa.")
+  @NotNull
+
+@Pattern(regexp="^\\d+$") 
+  public String getMinAmount() {
+    return minAmount;
+  }
+
+  public void setMinAmount(String minAmount) {
+    this.minAmount = minAmount;
   }
 
   public InfConsultaTaxasRespFees value(String value) {
@@ -97,7 +100,8 @@ public class InfConsultaTaxasRespFees   {
    * Valor da taxa.
    * @return value
   **/
-  @ApiModelProperty(example = "000", value = "Valor da taxa.")
+  @ApiModelProperty(example = "000", required = true, value = "Valor da taxa.")
+  @NotNull
 
 @Pattern(regexp="^\\d+$") 
   public String getValue() {
@@ -119,14 +123,14 @@ public class InfConsultaTaxasRespFees   {
     }
     InfConsultaTaxasRespFees infConsultaTaxasRespFees = (InfConsultaTaxasRespFees) o;
     return Objects.equals(this.id, infConsultaTaxasRespFees.id) &&
-        Objects.equals(this.minAmount, infConsultaTaxasRespFees.minAmount) &&
         Objects.equals(this.maxAmount, infConsultaTaxasRespFees.maxAmount) &&
+        Objects.equals(this.minAmount, infConsultaTaxasRespFees.minAmount) &&
         Objects.equals(this.value, infConsultaTaxasRespFees.value);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, minAmount, maxAmount, value);
+    return Objects.hash(id, maxAmount, minAmount, value);
   }
 
   @Override
@@ -135,8 +139,8 @@ public class InfConsultaTaxasRespFees   {
     sb.append("class InfConsultaTaxasRespFees {\n");
     
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
-    sb.append("    minAmount: ").append(toIndentedString(minAmount)).append("\n");
     sb.append("    maxAmount: ").append(toIndentedString(maxAmount)).append("\n");
+    sb.append("    minAmount: ").append(toIndentedString(minAmount)).append("\n");
     sb.append("    value: ").append(toIndentedString(value)).append("\n");
     sb.append("}");
     return sb.toString();

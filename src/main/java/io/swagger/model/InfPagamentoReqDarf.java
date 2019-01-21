@@ -13,52 +13,32 @@ import javax.validation.constraints.*;
  * InfPagamentoReqDarf
  */
 @Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.SpringCodegen", date = "2018-12-05T18:08:56.087Z[GMT]")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2019-01-18T19:37:26.329Z")
 
 public class InfPagamentoReqDarf   {
-  @JsonProperty("periodoApuracao")
-  private String periodoApuracao = null;
-
   @JsonProperty("codReceita")
   private String codReceita = null;
-
-  @JsonProperty("numReferencia")
-  private String numReferencia = null;
 
   @JsonProperty("dataVencimento")
   private String dataVencimento = null;
 
-  @JsonProperty("valorPrincipal")
-  private String valorPrincipal = null;
+  @JsonProperty("numReferencia")
+  private String numReferencia = null;
 
-  @JsonProperty("valorMulta")
-  private String valorMulta = null;
+  @JsonProperty("periodoApuracao")
+  private String periodoApuracao = null;
 
   @JsonProperty("valorJuros")
   private String valorJuros = null;
 
+  @JsonProperty("valorMulta")
+  private String valorMulta = null;
+
+  @JsonProperty("valorPrincipal")
+  private String valorPrincipal = null;
+
   @JsonProperty("valorTotal")
   private String valorTotal = null;
-
-  public InfPagamentoReqDarf periodoApuracao(String periodoApuracao) {
-    this.periodoApuracao = periodoApuracao;
-    return this;
-  }
-
-  /**
-   * Data de apuração do DARF (AAAAMMDD).
-   * @return periodoApuracao
-  **/
-  @ApiModelProperty(example = "20181122", value = "Data de apuração do DARF (AAAAMMDD).")
-
-@Pattern(regexp="^\\d{8}$") 
-  public String getPeriodoApuracao() {
-    return periodoApuracao;
-  }
-
-  public void setPeriodoApuracao(String periodoApuracao) {
-    this.periodoApuracao = periodoApuracao;
-  }
 
   public InfPagamentoReqDarf codReceita(String codReceita) {
     this.codReceita = codReceita;
@@ -69,35 +49,16 @@ public class InfPagamentoReqDarf   {
    * Código da receita do DARF.
    * @return codReceita
   **/
-  @ApiModelProperty(value = "Código da receita do DARF.")
+  @ApiModelProperty(example = "3456", required = true, value = "Código da receita do DARF.")
+  @NotNull
 
-
+@Pattern(regexp="^\\d{4}$") 
   public String getCodReceita() {
     return codReceita;
   }
 
   public void setCodReceita(String codReceita) {
     this.codReceita = codReceita;
-  }
-
-  public InfPagamentoReqDarf numReferencia(String numReferencia) {
-    this.numReferencia = numReferencia;
-    return this;
-  }
-
-  /**
-   * Número de referência.
-   * @return numReferencia
-  **/
-  @ApiModelProperty(value = "Número de referência.")
-
-@Pattern(regexp="^\\d+$") 
-  public String getNumReferencia() {
-    return numReferencia;
-  }
-
-  public void setNumReferencia(String numReferencia) {
-    this.numReferencia = numReferencia;
   }
 
   public InfPagamentoReqDarf dataVencimento(String dataVencimento) {
@@ -109,7 +70,8 @@ public class InfPagamentoReqDarf   {
    * Data de vencimento do DARF (AAAAMMDD).
    * @return dataVencimento
   **/
-  @ApiModelProperty(example = "20181122", value = "Data de vencimento do DARF (AAAAMMDD).")
+  @ApiModelProperty(example = "20181122", required = true, value = "Data de vencimento do DARF (AAAAMMDD).")
+  @NotNull
 
 @Pattern(regexp="^\\d{8}$") 
   public String getDataVencimento() {
@@ -120,44 +82,46 @@ public class InfPagamentoReqDarf   {
     this.dataVencimento = dataVencimento;
   }
 
-  public InfPagamentoReqDarf valorPrincipal(String valorPrincipal) {
-    this.valorPrincipal = valorPrincipal;
+  public InfPagamentoReqDarf numReferencia(String numReferencia) {
+    this.numReferencia = numReferencia;
     return this;
   }
 
   /**
-   * Valor principal do DARF (12 dígitos, incluindo centavos).
-   * @return valorPrincipal
+   * Número de referência.
+   * @return numReferencia
   **/
-  @ApiModelProperty(example = "000000001150", value = "Valor principal do DARF (12 dígitos, incluindo centavos).")
+  @ApiModelProperty(required = true, value = "Número de referência.")
+  @NotNull
 
-@Pattern(regexp="^\\d{12}$") 
-  public String getValorPrincipal() {
-    return valorPrincipal;
+@Pattern(regexp="^\\d+$") 
+  public String getNumReferencia() {
+    return numReferencia;
   }
 
-  public void setValorPrincipal(String valorPrincipal) {
-    this.valorPrincipal = valorPrincipal;
+  public void setNumReferencia(String numReferencia) {
+    this.numReferencia = numReferencia;
   }
 
-  public InfPagamentoReqDarf valorMulta(String valorMulta) {
-    this.valorMulta = valorMulta;
+  public InfPagamentoReqDarf periodoApuracao(String periodoApuracao) {
+    this.periodoApuracao = periodoApuracao;
     return this;
   }
 
   /**
-   * Valor da multa (12 dígitos, incluindo centavos).
-   * @return valorMulta
+   * Data de apuração do DARF (AAAAMMDD).
+   * @return periodoApuracao
   **/
-  @ApiModelProperty(example = "000000001150", value = "Valor da multa (12 dígitos, incluindo centavos).")
+  @ApiModelProperty(example = "20181122", required = true, value = "Data de apuração do DARF (AAAAMMDD).")
+  @NotNull
 
-@Pattern(regexp="^\\d{12}$") 
-  public String getValorMulta() {
-    return valorMulta;
+@Pattern(regexp="^\\d{8}$") 
+  public String getPeriodoApuracao() {
+    return periodoApuracao;
   }
 
-  public void setValorMulta(String valorMulta) {
-    this.valorMulta = valorMulta;
+  public void setPeriodoApuracao(String periodoApuracao) {
+    this.periodoApuracao = periodoApuracao;
   }
 
   public InfPagamentoReqDarf valorJuros(String valorJuros) {
@@ -169,7 +133,8 @@ public class InfPagamentoReqDarf   {
    * Valor relativo aos juros (12 dígitos, incluindo centavos).
    * @return valorJuros
   **/
-  @ApiModelProperty(example = "000000001150", value = "Valor relativo aos juros (12 dígitos, incluindo centavos).")
+  @ApiModelProperty(example = "000000001150", required = true, value = "Valor relativo aos juros (12 dígitos, incluindo centavos).")
+  @NotNull
 
 @Pattern(regexp="^\\d{12}$") 
   public String getValorJuros() {
@@ -178,6 +143,48 @@ public class InfPagamentoReqDarf   {
 
   public void setValorJuros(String valorJuros) {
     this.valorJuros = valorJuros;
+  }
+
+  public InfPagamentoReqDarf valorMulta(String valorMulta) {
+    this.valorMulta = valorMulta;
+    return this;
+  }
+
+  /**
+   * Valor da multa (12 dígitos, incluindo centavos).
+   * @return valorMulta
+  **/
+  @ApiModelProperty(example = "000000001150", required = true, value = "Valor da multa (12 dígitos, incluindo centavos).")
+  @NotNull
+
+@Pattern(regexp="^\\d{12}$") 
+  public String getValorMulta() {
+    return valorMulta;
+  }
+
+  public void setValorMulta(String valorMulta) {
+    this.valorMulta = valorMulta;
+  }
+
+  public InfPagamentoReqDarf valorPrincipal(String valorPrincipal) {
+    this.valorPrincipal = valorPrincipal;
+    return this;
+  }
+
+  /**
+   * Valor principal do DARF (12 dígitos, incluindo centavos).
+   * @return valorPrincipal
+  **/
+  @ApiModelProperty(example = "000000001150", required = true, value = "Valor principal do DARF (12 dígitos, incluindo centavos).")
+  @NotNull
+
+@Pattern(regexp="^\\d{12}$") 
+  public String getValorPrincipal() {
+    return valorPrincipal;
+  }
+
+  public void setValorPrincipal(String valorPrincipal) {
+    this.valorPrincipal = valorPrincipal;
   }
 
   public InfPagamentoReqDarf valorTotal(String valorTotal) {
@@ -189,7 +196,8 @@ public class InfPagamentoReqDarf   {
    * Valor total de pagamento do DARF (12 dígitos, incluindo centavos).
    * @return valorTotal
   **/
-  @ApiModelProperty(example = "000000001150", value = "Valor total de pagamento do DARF (12 dígitos, incluindo centavos).")
+  @ApiModelProperty(example = "000000001150", required = true, value = "Valor total de pagamento do DARF (12 dígitos, incluindo centavos).")
+  @NotNull
 
 @Pattern(regexp="^\\d{12}$") 
   public String getValorTotal() {
@@ -210,19 +218,19 @@ public class InfPagamentoReqDarf   {
       return false;
     }
     InfPagamentoReqDarf infPagamentoReqDarf = (InfPagamentoReqDarf) o;
-    return Objects.equals(this.periodoApuracao, infPagamentoReqDarf.periodoApuracao) &&
-        Objects.equals(this.codReceita, infPagamentoReqDarf.codReceita) &&
-        Objects.equals(this.numReferencia, infPagamentoReqDarf.numReferencia) &&
+    return Objects.equals(this.codReceita, infPagamentoReqDarf.codReceita) &&
         Objects.equals(this.dataVencimento, infPagamentoReqDarf.dataVencimento) &&
-        Objects.equals(this.valorPrincipal, infPagamentoReqDarf.valorPrincipal) &&
-        Objects.equals(this.valorMulta, infPagamentoReqDarf.valorMulta) &&
+        Objects.equals(this.numReferencia, infPagamentoReqDarf.numReferencia) &&
+        Objects.equals(this.periodoApuracao, infPagamentoReqDarf.periodoApuracao) &&
         Objects.equals(this.valorJuros, infPagamentoReqDarf.valorJuros) &&
+        Objects.equals(this.valorMulta, infPagamentoReqDarf.valorMulta) &&
+        Objects.equals(this.valorPrincipal, infPagamentoReqDarf.valorPrincipal) &&
         Objects.equals(this.valorTotal, infPagamentoReqDarf.valorTotal);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(periodoApuracao, codReceita, numReferencia, dataVencimento, valorPrincipal, valorMulta, valorJuros, valorTotal);
+    return Objects.hash(codReceita, dataVencimento, numReferencia, periodoApuracao, valorJuros, valorMulta, valorPrincipal, valorTotal);
   }
 
   @Override
@@ -230,13 +238,13 @@ public class InfPagamentoReqDarf   {
     StringBuilder sb = new StringBuilder();
     sb.append("class InfPagamentoReqDarf {\n");
     
-    sb.append("    periodoApuracao: ").append(toIndentedString(periodoApuracao)).append("\n");
     sb.append("    codReceita: ").append(toIndentedString(codReceita)).append("\n");
-    sb.append("    numReferencia: ").append(toIndentedString(numReferencia)).append("\n");
     sb.append("    dataVencimento: ").append(toIndentedString(dataVencimento)).append("\n");
-    sb.append("    valorPrincipal: ").append(toIndentedString(valorPrincipal)).append("\n");
-    sb.append("    valorMulta: ").append(toIndentedString(valorMulta)).append("\n");
+    sb.append("    numReferencia: ").append(toIndentedString(numReferencia)).append("\n");
+    sb.append("    periodoApuracao: ").append(toIndentedString(periodoApuracao)).append("\n");
     sb.append("    valorJuros: ").append(toIndentedString(valorJuros)).append("\n");
+    sb.append("    valorMulta: ").append(toIndentedString(valorMulta)).append("\n");
+    sb.append("    valorPrincipal: ").append(toIndentedString(valorPrincipal)).append("\n");
     sb.append("    valorTotal: ").append(toIndentedString(valorTotal)).append("\n");
     sb.append("}");
     return sb.toString();
