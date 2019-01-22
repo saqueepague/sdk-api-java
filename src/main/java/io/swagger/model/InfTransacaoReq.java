@@ -14,7 +14,7 @@ import javax.validation.constraints.*;
  */
 @ApiModel(description = "Informações genéricas sobre a requisição de transação.")
 @Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2019-01-18T19:37:26.329Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2019-01-22T18:11:57.142Z")
 
 public class InfTransacaoReq   {
   @JsonProperty("cdProc")
@@ -138,7 +138,7 @@ public class InfTransacaoReq   {
   @ApiModelProperty(example = "1122151032", required = true, value = "Data local (MMDDhhmmss).")
   @NotNull
 
-@Pattern(regexp="^\\d{4}$") 
+@Pattern(regexp="^\\d{10}$") 
   public String getDataHora() {
     return dataHora;
   }
