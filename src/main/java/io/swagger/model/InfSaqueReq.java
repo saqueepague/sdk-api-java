@@ -14,40 +14,19 @@ import javax.validation.constraints.*;
  */
 @ApiModel(description = "Informações sobre a requisição de saque.")
 @Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2019-01-22T18:11:57.142Z")
-
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.SpringCodegen", date = "2019-03-19T14:13:24.289Z[GMT]")
 public class InfSaqueReq   {
-  @JsonProperty("cpf")
-  private String cpf = null;
-
   @JsonProperty("numAgencia")
   private String numAgencia = null;
 
   @JsonProperty("numConta")
   private String numConta = null;
 
+  @JsonProperty("cpf")
+  private String cpf = null;
+
   @JsonProperty("telefone")
   private String telefone = null;
-
-  public InfSaqueReq cpf(String cpf) {
-    this.cpf = cpf;
-    return this;
-  }
-
-  /**
-   * Número do CPF do cliente realizando a operação (11 dígitos).
-   * @return cpf
-  **/
-  @ApiModelProperty(example = "02358422785", value = "Número do CPF do cliente realizando a operação (11 dígitos).")
-
-@Pattern(regexp="^\\d{11}$") 
-  public String getCpf() {
-    return cpf;
-  }
-
-  public void setCpf(String cpf) {
-    this.cpf = cpf;
-  }
 
   public InfSaqueReq numAgencia(String numAgencia) {
     this.numAgencia = numAgencia;
@@ -61,8 +40,7 @@ public class InfSaqueReq   {
   @ApiModelProperty(example = "4029", required = true, value = "Número da agência utilizada na operação.")
   @NotNull
 
-@Pattern(regexp="^\\d+$") 
-  public String getNumAgencia() {
+@Pattern(regexp="^\\d+$")   public String getNumAgencia() {
     return numAgencia;
   }
 
@@ -82,13 +60,31 @@ public class InfSaqueReq   {
   @ApiModelProperty(example = "0082348296", required = true, value = "Número da conta utilizada na operação.")
   @NotNull
 
-@Pattern(regexp="^\\d+$") 
-  public String getNumConta() {
+@Pattern(regexp="^\\d+$")   public String getNumConta() {
     return numConta;
   }
 
   public void setNumConta(String numConta) {
     this.numConta = numConta;
+  }
+
+  public InfSaqueReq cpf(String cpf) {
+    this.cpf = cpf;
+    return this;
+  }
+
+  /**
+   * Número do CPF do cliente realizando a operação (11 dígitos).
+   * @return cpf
+  **/
+  @ApiModelProperty(example = "02358422785", value = "Número do CPF do cliente realizando a operação (11 dígitos).")
+
+@Pattern(regexp="^\\d{11}$")   public String getCpf() {
+    return cpf;
+  }
+
+  public void setCpf(String cpf) {
+    this.cpf = cpf;
   }
 
   public InfSaqueReq telefone(String telefone) {
@@ -102,8 +98,7 @@ public class InfSaqueReq   {
   **/
   @ApiModelProperty(example = "51999999999", value = "Telefone do cliente realizando a operação (11 dígitos = DDD com 0 quando número tem 8 dígitos, sem 0 quando número tem 9 dígitos).")
 
-@Pattern(regexp="^\\d{11}$") 
-  public String getTelefone() {
+@Pattern(regexp="^\\d{11}$")   public String getTelefone() {
     return telefone;
   }
 
@@ -121,15 +116,15 @@ public class InfSaqueReq   {
       return false;
     }
     InfSaqueReq infSaqueReq = (InfSaqueReq) o;
-    return Objects.equals(this.cpf, infSaqueReq.cpf) &&
-        Objects.equals(this.numAgencia, infSaqueReq.numAgencia) &&
+    return Objects.equals(this.numAgencia, infSaqueReq.numAgencia) &&
         Objects.equals(this.numConta, infSaqueReq.numConta) &&
+        Objects.equals(this.cpf, infSaqueReq.cpf) &&
         Objects.equals(this.telefone, infSaqueReq.telefone);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(cpf, numAgencia, numConta, telefone);
+    return Objects.hash(numAgencia, numConta, cpf, telefone);
   }
 
   @Override
@@ -137,9 +132,9 @@ public class InfSaqueReq   {
     StringBuilder sb = new StringBuilder();
     sb.append("class InfSaqueReq {\n");
     
-    sb.append("    cpf: ").append(toIndentedString(cpf)).append("\n");
     sb.append("    numAgencia: ").append(toIndentedString(numAgencia)).append("\n");
     sb.append("    numConta: ").append(toIndentedString(numConta)).append("\n");
+    sb.append("    cpf: ").append(toIndentedString(cpf)).append("\n");
     sb.append("    telefone: ").append(toIndentedString(telefone)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -156,4 +151,3 @@ public class InfSaqueReq   {
     return o.toString().replace("\n", "\n    ");
   }
 }
-

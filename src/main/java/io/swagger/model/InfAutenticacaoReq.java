@@ -14,8 +14,7 @@ import javax.validation.constraints.*;
  */
 @ApiModel(description = "Informações da requisição de autenticação.")
 @Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2019-01-22T18:11:57.142Z")
-
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.SpringCodegen", date = "2019-03-19T14:13:24.289Z[GMT]")
 public class InfAutenticacaoReq   {
   @JsonProperty("cpf")
   private String cpf = null;
@@ -35,8 +34,7 @@ public class InfAutenticacaoReq   {
   @ApiModelProperty(example = "02358422785", required = true, value = "Número do CPF do cliente a autenticar (11 dígitos).")
   @NotNull
 
-@Pattern(regexp="^\\d{11}$") 
-  public String getCpf() {
+@Pattern(regexp="^\\d{11}$")   public String getCpf() {
     return cpf;
   }
 
@@ -56,8 +54,7 @@ public class InfAutenticacaoReq   {
   @ApiModelProperty(example = "51999999999", required = true, value = "Telefone do cliente favorecido a autenticar (11 dígitos = DDD com 0 quando número tem 8 dígitos, sem 0 quando número tem 9 dígitos).")
   @NotNull
 
-@Pattern(regexp="^\\d{11}$") 
-  public String getTelefone() {
+@Pattern(regexp="^\\d{11}$")   public String getTelefone() {
     return telefone;
   }
 
@@ -106,4 +103,3 @@ public class InfAutenticacaoReq   {
     return o.toString().replace("\n", "\n    ");
   }
 }
-

@@ -16,39 +16,16 @@ import javax.validation.constraints.*;
  * AutenticacaoReq
  */
 @Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2019-01-22T18:11:57.142Z")
-
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.SpringCodegen", date = "2019-03-19T14:13:24.289Z[GMT]")
 public class AutenticacaoReq   {
-  @JsonProperty("InfAutenticacao")
-  private InfAutenticacaoReq infAutenticacao = null;
-
   @JsonProperty("InfTransacao")
   private InfTransacaoReq infTransacao = null;
 
   @JsonProperty("Terminal")
   private Terminal terminal = null;
 
-  public AutenticacaoReq infAutenticacao(InfAutenticacaoReq infAutenticacao) {
-    this.infAutenticacao = infAutenticacao;
-    return this;
-  }
-
-  /**
-   * Get infAutenticacao
-   * @return infAutenticacao
-  **/
-  @ApiModelProperty(required = true, value = "")
-  @NotNull
-
-  @Valid
-
-  public InfAutenticacaoReq getInfAutenticacao() {
-    return infAutenticacao;
-  }
-
-  public void setInfAutenticacao(InfAutenticacaoReq infAutenticacao) {
-    this.infAutenticacao = infAutenticacao;
-  }
+  @JsonProperty("InfAutenticacao")
+  private InfAutenticacaoReq infAutenticacao = null;
 
   public AutenticacaoReq infTransacao(InfTransacaoReq infTransacao) {
     this.infTransacao = infTransacao;
@@ -63,7 +40,6 @@ public class AutenticacaoReq   {
   @NotNull
 
   @Valid
-
   public InfTransacaoReq getInfTransacao() {
     return infTransacao;
   }
@@ -85,13 +61,33 @@ public class AutenticacaoReq   {
   @NotNull
 
   @Valid
-
   public Terminal getTerminal() {
     return terminal;
   }
 
   public void setTerminal(Terminal terminal) {
     this.terminal = terminal;
+  }
+
+  public AutenticacaoReq infAutenticacao(InfAutenticacaoReq infAutenticacao) {
+    this.infAutenticacao = infAutenticacao;
+    return this;
+  }
+
+  /**
+   * Get infAutenticacao
+   * @return infAutenticacao
+  **/
+  @ApiModelProperty(required = true, value = "")
+  @NotNull
+
+  @Valid
+  public InfAutenticacaoReq getInfAutenticacao() {
+    return infAutenticacao;
+  }
+
+  public void setInfAutenticacao(InfAutenticacaoReq infAutenticacao) {
+    this.infAutenticacao = infAutenticacao;
   }
 
 
@@ -104,14 +100,14 @@ public class AutenticacaoReq   {
       return false;
     }
     AutenticacaoReq autenticacaoReq = (AutenticacaoReq) o;
-    return Objects.equals(this.infAutenticacao, autenticacaoReq.infAutenticacao) &&
-        Objects.equals(this.infTransacao, autenticacaoReq.infTransacao) &&
-        Objects.equals(this.terminal, autenticacaoReq.terminal);
+    return Objects.equals(this.infTransacao, autenticacaoReq.infTransacao) &&
+        Objects.equals(this.terminal, autenticacaoReq.terminal) &&
+        Objects.equals(this.infAutenticacao, autenticacaoReq.infAutenticacao);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(infAutenticacao, infTransacao, terminal);
+    return Objects.hash(infTransacao, terminal, infAutenticacao);
   }
 
   @Override
@@ -119,9 +115,9 @@ public class AutenticacaoReq   {
     StringBuilder sb = new StringBuilder();
     sb.append("class AutenticacaoReq {\n");
     
-    sb.append("    infAutenticacao: ").append(toIndentedString(infAutenticacao)).append("\n");
     sb.append("    infTransacao: ").append(toIndentedString(infTransacao)).append("\n");
     sb.append("    terminal: ").append(toIndentedString(terminal)).append("\n");
+    sb.append("    infAutenticacao: ").append(toIndentedString(infAutenticacao)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -137,4 +133,3 @@ public class AutenticacaoReq   {
     return o.toString().replace("\n", "\n    ");
   }
 }
-

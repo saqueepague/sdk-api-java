@@ -18,11 +18,16 @@ import javax.validation.constraints.*;
  * ConsultaContaReq
  */
 @Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2019-01-22T18:11:57.142Z")
-
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.SpringCodegen", date = "2019-03-19T14:13:24.289Z[GMT]")
 public class ConsultaContaReq   {
+  @JsonProperty("InfTransacao")
+  private InfTransacaoReq infTransacao = null;
+
   @JsonProperty("Cartao")
   private Cartao cartao = null;
+
+  @JsonProperty("Terminal")
+  private Terminal terminal = null;
 
   @JsonProperty("Cripto")
   private Cripto cripto = null;
@@ -30,11 +35,26 @@ public class ConsultaContaReq   {
   @JsonProperty("InfConsultaConta")
   private InfConsultaContaReq infConsultaConta = null;
 
-  @JsonProperty("InfTransacao")
-  private InfTransacaoReq infTransacao = null;
+  public ConsultaContaReq infTransacao(InfTransacaoReq infTransacao) {
+    this.infTransacao = infTransacao;
+    return this;
+  }
 
-  @JsonProperty("Terminal")
-  private Terminal terminal = null;
+  /**
+   * Get infTransacao
+   * @return infTransacao
+  **/
+  @ApiModelProperty(required = true, value = "")
+  @NotNull
+
+  @Valid
+  public InfTransacaoReq getInfTransacao() {
+    return infTransacao;
+  }
+
+  public void setInfTransacao(InfTransacaoReq infTransacao) {
+    this.infTransacao = infTransacao;
+  }
 
   public ConsultaContaReq cartao(Cartao cartao) {
     this.cartao = cartao;
@@ -48,13 +68,33 @@ public class ConsultaContaReq   {
   @ApiModelProperty(value = "")
 
   @Valid
-
   public Cartao getCartao() {
     return cartao;
   }
 
   public void setCartao(Cartao cartao) {
     this.cartao = cartao;
+  }
+
+  public ConsultaContaReq terminal(Terminal terminal) {
+    this.terminal = terminal;
+    return this;
+  }
+
+  /**
+   * Get terminal
+   * @return terminal
+  **/
+  @ApiModelProperty(required = true, value = "")
+  @NotNull
+
+  @Valid
+  public Terminal getTerminal() {
+    return terminal;
+  }
+
+  public void setTerminal(Terminal terminal) {
+    this.terminal = terminal;
   }
 
   public ConsultaContaReq cripto(Cripto cripto) {
@@ -69,7 +109,6 @@ public class ConsultaContaReq   {
   @ApiModelProperty(value = "")
 
   @Valid
-
   public Cripto getCripto() {
     return cripto;
   }
@@ -91,57 +130,12 @@ public class ConsultaContaReq   {
   @NotNull
 
   @Valid
-
   public InfConsultaContaReq getInfConsultaConta() {
     return infConsultaConta;
   }
 
   public void setInfConsultaConta(InfConsultaContaReq infConsultaConta) {
     this.infConsultaConta = infConsultaConta;
-  }
-
-  public ConsultaContaReq infTransacao(InfTransacaoReq infTransacao) {
-    this.infTransacao = infTransacao;
-    return this;
-  }
-
-  /**
-   * Get infTransacao
-   * @return infTransacao
-  **/
-  @ApiModelProperty(required = true, value = "")
-  @NotNull
-
-  @Valid
-
-  public InfTransacaoReq getInfTransacao() {
-    return infTransacao;
-  }
-
-  public void setInfTransacao(InfTransacaoReq infTransacao) {
-    this.infTransacao = infTransacao;
-  }
-
-  public ConsultaContaReq terminal(Terminal terminal) {
-    this.terminal = terminal;
-    return this;
-  }
-
-  /**
-   * Get terminal
-   * @return terminal
-  **/
-  @ApiModelProperty(required = true, value = "")
-  @NotNull
-
-  @Valid
-
-  public Terminal getTerminal() {
-    return terminal;
-  }
-
-  public void setTerminal(Terminal terminal) {
-    this.terminal = terminal;
   }
 
 
@@ -154,16 +148,16 @@ public class ConsultaContaReq   {
       return false;
     }
     ConsultaContaReq consultaContaReq = (ConsultaContaReq) o;
-    return Objects.equals(this.cartao, consultaContaReq.cartao) &&
+    return Objects.equals(this.infTransacao, consultaContaReq.infTransacao) &&
+        Objects.equals(this.cartao, consultaContaReq.cartao) &&
+        Objects.equals(this.terminal, consultaContaReq.terminal) &&
         Objects.equals(this.cripto, consultaContaReq.cripto) &&
-        Objects.equals(this.infConsultaConta, consultaContaReq.infConsultaConta) &&
-        Objects.equals(this.infTransacao, consultaContaReq.infTransacao) &&
-        Objects.equals(this.terminal, consultaContaReq.terminal);
+        Objects.equals(this.infConsultaConta, consultaContaReq.infConsultaConta);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(cartao, cripto, infConsultaConta, infTransacao, terminal);
+    return Objects.hash(infTransacao, cartao, terminal, cripto, infConsultaConta);
   }
 
   @Override
@@ -171,11 +165,11 @@ public class ConsultaContaReq   {
     StringBuilder sb = new StringBuilder();
     sb.append("class ConsultaContaReq {\n");
     
+    sb.append("    infTransacao: ").append(toIndentedString(infTransacao)).append("\n");
     sb.append("    cartao: ").append(toIndentedString(cartao)).append("\n");
+    sb.append("    terminal: ").append(toIndentedString(terminal)).append("\n");
     sb.append("    cripto: ").append(toIndentedString(cripto)).append("\n");
     sb.append("    infConsultaConta: ").append(toIndentedString(infConsultaConta)).append("\n");
-    sb.append("    infTransacao: ").append(toIndentedString(infTransacao)).append("\n");
-    sb.append("    terminal: ").append(toIndentedString(terminal)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -191,4 +185,3 @@ public class ConsultaContaReq   {
     return o.toString().replace("\n", "\n    ");
   }
 }
-

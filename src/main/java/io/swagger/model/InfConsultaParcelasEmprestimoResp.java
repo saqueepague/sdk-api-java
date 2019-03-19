@@ -13,40 +13,18 @@ import javax.validation.Valid;
 import javax.validation.constraints.*;
 
 /**
- * Informações da resposta da requisição de consulta de parcelas de empréstimo.
+ * Informações da resposta da requisição de consulta de condições de parcelamento de empréstimo.
  */
-@ApiModel(description = "Informações da resposta da requisição de consulta de parcelas de empréstimo.")
+@ApiModel(description = "Informações da resposta da requisição de consulta de condições de parcelamento de empréstimo.")
 @Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2019-01-22T18:11:57.142Z")
-
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.SpringCodegen", date = "2019-03-19T14:13:24.289Z[GMT]")
 public class InfConsultaParcelasEmprestimoResp   {
-  @JsonProperty("dataPrimeiraParcela")
-  private String dataPrimeiraParcela = null;
-
   @JsonProperty("opcoesParcelas")
   @Valid
   private List<InfConsultaParcelasEmprestimoRespOpcoesParcelas> opcoesParcelas = new ArrayList<InfConsultaParcelasEmprestimoRespOpcoesParcelas>();
 
-  public InfConsultaParcelasEmprestimoResp dataPrimeiraParcela(String dataPrimeiraParcela) {
-    this.dataPrimeiraParcela = dataPrimeiraParcela;
-    return this;
-  }
-
-  /**
-   * Data da primeira parcela do empréstimo (AAAAMMDD).
-   * @return dataPrimeiraParcela
-  **/
-  @ApiModelProperty(example = "20181122", required = true, value = "Data da primeira parcela do empréstimo (AAAAMMDD).")
-  @NotNull
-
-@Pattern(regexp="^\\d{8}$") 
-  public String getDataPrimeiraParcela() {
-    return dataPrimeiraParcela;
-  }
-
-  public void setDataPrimeiraParcela(String dataPrimeiraParcela) {
-    this.dataPrimeiraParcela = dataPrimeiraParcela;
-  }
+  @JsonProperty("dataPrimeiraParcela")
+  private String dataPrimeiraParcela = null;
 
   public InfConsultaParcelasEmprestimoResp opcoesParcelas(List<InfConsultaParcelasEmprestimoRespOpcoesParcelas> opcoesParcelas) {
     this.opcoesParcelas = opcoesParcelas;
@@ -64,15 +42,33 @@ public class InfConsultaParcelasEmprestimoResp   {
   **/
   @ApiModelProperty(required = true, value = "")
   @NotNull
-
   @Valid
-
   public List<InfConsultaParcelasEmprestimoRespOpcoesParcelas> getOpcoesParcelas() {
     return opcoesParcelas;
   }
 
   public void setOpcoesParcelas(List<InfConsultaParcelasEmprestimoRespOpcoesParcelas> opcoesParcelas) {
     this.opcoesParcelas = opcoesParcelas;
+  }
+
+  public InfConsultaParcelasEmprestimoResp dataPrimeiraParcela(String dataPrimeiraParcela) {
+    this.dataPrimeiraParcela = dataPrimeiraParcela;
+    return this;
+  }
+
+  /**
+   * Data da primeira parcela do empréstimo (AAAAMMDD).
+   * @return dataPrimeiraParcela
+  **/
+  @ApiModelProperty(example = "20181122", required = true, value = "Data da primeira parcela do empréstimo (AAAAMMDD).")
+  @NotNull
+
+@Pattern(regexp="^\\d{8}$")   public String getDataPrimeiraParcela() {
+    return dataPrimeiraParcela;
+  }
+
+  public void setDataPrimeiraParcela(String dataPrimeiraParcela) {
+    this.dataPrimeiraParcela = dataPrimeiraParcela;
   }
 
 
@@ -85,13 +81,13 @@ public class InfConsultaParcelasEmprestimoResp   {
       return false;
     }
     InfConsultaParcelasEmprestimoResp infConsultaParcelasEmprestimoResp = (InfConsultaParcelasEmprestimoResp) o;
-    return Objects.equals(this.dataPrimeiraParcela, infConsultaParcelasEmprestimoResp.dataPrimeiraParcela) &&
-        Objects.equals(this.opcoesParcelas, infConsultaParcelasEmprestimoResp.opcoesParcelas);
+    return Objects.equals(this.opcoesParcelas, infConsultaParcelasEmprestimoResp.opcoesParcelas) &&
+        Objects.equals(this.dataPrimeiraParcela, infConsultaParcelasEmprestimoResp.dataPrimeiraParcela);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(dataPrimeiraParcela, opcoesParcelas);
+    return Objects.hash(opcoesParcelas, dataPrimeiraParcela);
   }
 
   @Override
@@ -99,8 +95,8 @@ public class InfConsultaParcelasEmprestimoResp   {
     StringBuilder sb = new StringBuilder();
     sb.append("class InfConsultaParcelasEmprestimoResp {\n");
     
-    sb.append("    dataPrimeiraParcela: ").append(toIndentedString(dataPrimeiraParcela)).append("\n");
     sb.append("    opcoesParcelas: ").append(toIndentedString(opcoesParcelas)).append("\n");
+    sb.append("    dataPrimeiraParcela: ").append(toIndentedString(dataPrimeiraParcela)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -116,4 +112,3 @@ public class InfConsultaParcelasEmprestimoResp   {
     return o.toString().replace("\n", "\n    ");
   }
 }
-

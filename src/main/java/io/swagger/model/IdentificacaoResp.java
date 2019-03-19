@@ -17,63 +17,19 @@ import javax.validation.constraints.*;
  * IdentificacaoResp
  */
 @Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2019-01-22T18:11:57.142Z")
-
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.SpringCodegen", date = "2019-03-19T14:13:24.289Z[GMT]")
 public class IdentificacaoResp   {
-  @JsonProperty("Cripto")
-  private CriptoResp cripto = null;
-
-  @JsonProperty("InfIdentificacao")
-  private InfIdentificacaoResp infIdentificacao = null;
-
   @JsonProperty("InfTransacao")
   private InfTransacaoResp infTransacao = null;
 
   @JsonProperty("Terminal")
   private Terminal terminal = null;
 
-  public IdentificacaoResp cripto(CriptoResp cripto) {
-    this.cripto = cripto;
-    return this;
-  }
+  @JsonProperty("Cripto")
+  private CriptoResp cripto = null;
 
-  /**
-   * Get cripto
-   * @return cripto
-  **/
-  @ApiModelProperty(value = "")
-
-  @Valid
-
-  public CriptoResp getCripto() {
-    return cripto;
-  }
-
-  public void setCripto(CriptoResp cripto) {
-    this.cripto = cripto;
-  }
-
-  public IdentificacaoResp infIdentificacao(InfIdentificacaoResp infIdentificacao) {
-    this.infIdentificacao = infIdentificacao;
-    return this;
-  }
-
-  /**
-   * Get infIdentificacao
-   * @return infIdentificacao
-  **/
-  @ApiModelProperty(required = true, value = "")
-  @NotNull
-
-  @Valid
-
-  public InfIdentificacaoResp getInfIdentificacao() {
-    return infIdentificacao;
-  }
-
-  public void setInfIdentificacao(InfIdentificacaoResp infIdentificacao) {
-    this.infIdentificacao = infIdentificacao;
-  }
+  @JsonProperty("InfIdentificacao")
+  private InfIdentificacaoResp infIdentificacao = null;
 
   public IdentificacaoResp infTransacao(InfTransacaoResp infTransacao) {
     this.infTransacao = infTransacao;
@@ -88,7 +44,6 @@ public class IdentificacaoResp   {
   @NotNull
 
   @Valid
-
   public InfTransacaoResp getInfTransacao() {
     return infTransacao;
   }
@@ -110,13 +65,53 @@ public class IdentificacaoResp   {
   @NotNull
 
   @Valid
-
   public Terminal getTerminal() {
     return terminal;
   }
 
   public void setTerminal(Terminal terminal) {
     this.terminal = terminal;
+  }
+
+  public IdentificacaoResp cripto(CriptoResp cripto) {
+    this.cripto = cripto;
+    return this;
+  }
+
+  /**
+   * Get cripto
+   * @return cripto
+  **/
+  @ApiModelProperty(value = "")
+
+  @Valid
+  public CriptoResp getCripto() {
+    return cripto;
+  }
+
+  public void setCripto(CriptoResp cripto) {
+    this.cripto = cripto;
+  }
+
+  public IdentificacaoResp infIdentificacao(InfIdentificacaoResp infIdentificacao) {
+    this.infIdentificacao = infIdentificacao;
+    return this;
+  }
+
+  /**
+   * Get infIdentificacao
+   * @return infIdentificacao
+  **/
+  @ApiModelProperty(required = true, value = "")
+  @NotNull
+
+  @Valid
+  public InfIdentificacaoResp getInfIdentificacao() {
+    return infIdentificacao;
+  }
+
+  public void setInfIdentificacao(InfIdentificacaoResp infIdentificacao) {
+    this.infIdentificacao = infIdentificacao;
   }
 
 
@@ -129,15 +124,15 @@ public class IdentificacaoResp   {
       return false;
     }
     IdentificacaoResp identificacaoResp = (IdentificacaoResp) o;
-    return Objects.equals(this.cripto, identificacaoResp.cripto) &&
-        Objects.equals(this.infIdentificacao, identificacaoResp.infIdentificacao) &&
-        Objects.equals(this.infTransacao, identificacaoResp.infTransacao) &&
-        Objects.equals(this.terminal, identificacaoResp.terminal);
+    return Objects.equals(this.infTransacao, identificacaoResp.infTransacao) &&
+        Objects.equals(this.terminal, identificacaoResp.terminal) &&
+        Objects.equals(this.cripto, identificacaoResp.cripto) &&
+        Objects.equals(this.infIdentificacao, identificacaoResp.infIdentificacao);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(cripto, infIdentificacao, infTransacao, terminal);
+    return Objects.hash(infTransacao, terminal, cripto, infIdentificacao);
   }
 
   @Override
@@ -145,10 +140,10 @@ public class IdentificacaoResp   {
     StringBuilder sb = new StringBuilder();
     sb.append("class IdentificacaoResp {\n");
     
-    sb.append("    cripto: ").append(toIndentedString(cripto)).append("\n");
-    sb.append("    infIdentificacao: ").append(toIndentedString(infIdentificacao)).append("\n");
     sb.append("    infTransacao: ").append(toIndentedString(infTransacao)).append("\n");
     sb.append("    terminal: ").append(toIndentedString(terminal)).append("\n");
+    sb.append("    cripto: ").append(toIndentedString(cripto)).append("\n");
+    sb.append("    infIdentificacao: ").append(toIndentedString(infIdentificacao)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -164,4 +159,3 @@ public class IdentificacaoResp   {
     return o.toString().replace("\n", "\n    ");
   }
 }
-

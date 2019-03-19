@@ -13,12 +13,11 @@ import javax.validation.Valid;
 import javax.validation.constraints.*;
 
 /**
- * Informações da resposta de requisiçãoi de consulta de saque.
+ * Informações da resposta de requisição de consulta de saque.
  */
-@ApiModel(description = "Informações da resposta de requisiçãoi de consulta de saque.")
+@ApiModel(description = "Informações da resposta de requisição de consulta de saque.")
 @Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2019-01-22T18:11:57.142Z")
-
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.SpringCodegen", date = "2019-03-19T14:13:24.289Z[GMT]")
 public class InfConsultaSaqueResp   {
   @JsonProperty("nomeCliente")
   private String nomeCliente = null;
@@ -37,7 +36,6 @@ public class InfConsultaSaqueResp   {
    * @return nomeCliente
   **/
   @ApiModelProperty(example = "Carl Edward Sagan", value = "Nome do cliente titular da conta.")
-
 
   public String getNomeCliente() {
     return nomeCliente;
@@ -65,9 +63,7 @@ public class InfConsultaSaqueResp   {
    * @return perguntas
   **/
   @ApiModelProperty(value = "Lista de possíveis perguntas a serem mostradas para o usuário para autorizar o saque.")
-
   @Valid
-
   public List<InfConsultaSaqueRespPerguntas> getPerguntas() {
     return perguntas;
   }
@@ -117,4 +113,3 @@ public class InfConsultaSaqueResp   {
     return o.toString().replace("\n", "\n    ");
   }
 }
-

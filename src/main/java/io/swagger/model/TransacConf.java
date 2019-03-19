@@ -16,38 +16,16 @@ import javax.validation.constraints.*;
  * TransacConf
  */
 @Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2019-01-22T18:11:57.142Z")
-
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.SpringCodegen", date = "2019-03-19T14:13:24.289Z[GMT]")
 public class TransacConf   {
-  @JsonProperty("Cripto")
-  private CriptoResp cripto = null;
-
   @JsonProperty("InfTransacao")
   private InfTransacaoConf infTransacao = null;
 
   @JsonProperty("Terminal")
   private Terminal terminal = null;
 
-  public TransacConf cripto(CriptoResp cripto) {
-    this.cripto = cripto;
-    return this;
-  }
-
-  /**
-   * Get cripto
-   * @return cripto
-  **/
-  @ApiModelProperty(value = "")
-
-  @Valid
-
-  public CriptoResp getCripto() {
-    return cripto;
-  }
-
-  public void setCripto(CriptoResp cripto) {
-    this.cripto = cripto;
-  }
+  @JsonProperty("Cripto")
+  private CriptoResp cripto = null;
 
   public TransacConf infTransacao(InfTransacaoConf infTransacao) {
     this.infTransacao = infTransacao;
@@ -62,7 +40,6 @@ public class TransacConf   {
   @NotNull
 
   @Valid
-
   public InfTransacaoConf getInfTransacao() {
     return infTransacao;
   }
@@ -84,13 +61,32 @@ public class TransacConf   {
   @NotNull
 
   @Valid
-
   public Terminal getTerminal() {
     return terminal;
   }
 
   public void setTerminal(Terminal terminal) {
     this.terminal = terminal;
+  }
+
+  public TransacConf cripto(CriptoResp cripto) {
+    this.cripto = cripto;
+    return this;
+  }
+
+  /**
+   * Get cripto
+   * @return cripto
+  **/
+  @ApiModelProperty(value = "")
+
+  @Valid
+  public CriptoResp getCripto() {
+    return cripto;
+  }
+
+  public void setCripto(CriptoResp cripto) {
+    this.cripto = cripto;
   }
 
 
@@ -103,14 +99,14 @@ public class TransacConf   {
       return false;
     }
     TransacConf transacConf = (TransacConf) o;
-    return Objects.equals(this.cripto, transacConf.cripto) &&
-        Objects.equals(this.infTransacao, transacConf.infTransacao) &&
-        Objects.equals(this.terminal, transacConf.terminal);
+    return Objects.equals(this.infTransacao, transacConf.infTransacao) &&
+        Objects.equals(this.terminal, transacConf.terminal) &&
+        Objects.equals(this.cripto, transacConf.cripto);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(cripto, infTransacao, terminal);
+    return Objects.hash(infTransacao, terminal, cripto);
   }
 
   @Override
@@ -118,9 +114,9 @@ public class TransacConf   {
     StringBuilder sb = new StringBuilder();
     sb.append("class TransacConf {\n");
     
-    sb.append("    cripto: ").append(toIndentedString(cripto)).append("\n");
     sb.append("    infTransacao: ").append(toIndentedString(infTransacao)).append("\n");
     sb.append("    terminal: ").append(toIndentedString(terminal)).append("\n");
+    sb.append("    cripto: ").append(toIndentedString(cripto)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -136,4 +132,3 @@ public class TransacConf   {
     return o.toString().replace("\n", "\n    ");
   }
 }
-

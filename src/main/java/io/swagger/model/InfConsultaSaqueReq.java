@@ -14,12 +14,8 @@ import javax.validation.constraints.*;
  */
 @ApiModel(description = "Informações da requisição de consulta de saque.")
 @Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2019-01-22T18:11:57.142Z")
-
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.SpringCodegen", date = "2019-03-19T14:13:24.289Z[GMT]")
 public class InfConsultaSaqueReq   {
-  @JsonProperty("cpfFavorecido")
-  private String cpfFavorecido = null;
-
   @JsonProperty("numAgencia")
   private String numAgencia = null;
 
@@ -29,25 +25,8 @@ public class InfConsultaSaqueReq   {
   @JsonProperty("tokenFavorecido")
   private String tokenFavorecido = null;
 
-  public InfConsultaSaqueReq cpfFavorecido(String cpfFavorecido) {
-    this.cpfFavorecido = cpfFavorecido;
-    return this;
-  }
-
-  /**
-   * Número do CPF do cliente favorecido da transação (11 dígitos).
-   * @return cpfFavorecido
-  **/
-  @ApiModelProperty(example = "02358422785", value = "Número do CPF do cliente favorecido da transação (11 dígitos).")
-
-@Pattern(regexp="^\\d{11}$") 
-  public String getCpfFavorecido() {
-    return cpfFavorecido;
-  }
-
-  public void setCpfFavorecido(String cpfFavorecido) {
-    this.cpfFavorecido = cpfFavorecido;
-  }
+  @JsonProperty("cpfFavorecido")
+  private String cpfFavorecido = null;
 
   public InfConsultaSaqueReq numAgencia(String numAgencia) {
     this.numAgencia = numAgencia;
@@ -60,8 +39,7 @@ public class InfConsultaSaqueReq   {
   **/
   @ApiModelProperty(example = "4029", value = "Número da agência utilizada na operação.")
 
-@Pattern(regexp="^\\d+$") 
-  public String getNumAgencia() {
+@Pattern(regexp="^\\d+$")   public String getNumAgencia() {
     return numAgencia;
   }
 
@@ -80,8 +58,7 @@ public class InfConsultaSaqueReq   {
   **/
   @ApiModelProperty(example = "0082348296", value = "Número da conta utilizada na operação.")
 
-@Pattern(regexp="^\\d+$") 
-  public String getNumConta() {
+@Pattern(regexp="^\\d+$")   public String getNumConta() {
     return numConta;
   }
 
@@ -100,13 +77,31 @@ public class InfConsultaSaqueReq   {
   **/
   @ApiModelProperty(example = "02C47DF604EB43B1", value = "Token gerado pela instituicao que identifica a transação.")
 
-
   public String getTokenFavorecido() {
     return tokenFavorecido;
   }
 
   public void setTokenFavorecido(String tokenFavorecido) {
     this.tokenFavorecido = tokenFavorecido;
+  }
+
+  public InfConsultaSaqueReq cpfFavorecido(String cpfFavorecido) {
+    this.cpfFavorecido = cpfFavorecido;
+    return this;
+  }
+
+  /**
+   * Número do CPF do cliente (11 dígitos).
+   * @return cpfFavorecido
+  **/
+  @ApiModelProperty(example = "02358422785", value = "Número do CPF do cliente (11 dígitos).")
+
+@Pattern(regexp="^\\d{11}$")   public String getCpfFavorecido() {
+    return cpfFavorecido;
+  }
+
+  public void setCpfFavorecido(String cpfFavorecido) {
+    this.cpfFavorecido = cpfFavorecido;
   }
 
 
@@ -119,15 +114,15 @@ public class InfConsultaSaqueReq   {
       return false;
     }
     InfConsultaSaqueReq infConsultaSaqueReq = (InfConsultaSaqueReq) o;
-    return Objects.equals(this.cpfFavorecido, infConsultaSaqueReq.cpfFavorecido) &&
-        Objects.equals(this.numAgencia, infConsultaSaqueReq.numAgencia) &&
+    return Objects.equals(this.numAgencia, infConsultaSaqueReq.numAgencia) &&
         Objects.equals(this.numConta, infConsultaSaqueReq.numConta) &&
-        Objects.equals(this.tokenFavorecido, infConsultaSaqueReq.tokenFavorecido);
+        Objects.equals(this.tokenFavorecido, infConsultaSaqueReq.tokenFavorecido) &&
+        Objects.equals(this.cpfFavorecido, infConsultaSaqueReq.cpfFavorecido);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(cpfFavorecido, numAgencia, numConta, tokenFavorecido);
+    return Objects.hash(numAgencia, numConta, tokenFavorecido, cpfFavorecido);
   }
 
   @Override
@@ -135,10 +130,10 @@ public class InfConsultaSaqueReq   {
     StringBuilder sb = new StringBuilder();
     sb.append("class InfConsultaSaqueReq {\n");
     
-    sb.append("    cpfFavorecido: ").append(toIndentedString(cpfFavorecido)).append("\n");
     sb.append("    numAgencia: ").append(toIndentedString(numAgencia)).append("\n");
     sb.append("    numConta: ").append(toIndentedString(numConta)).append("\n");
     sb.append("    tokenFavorecido: ").append(toIndentedString(tokenFavorecido)).append("\n");
+    sb.append("    cpfFavorecido: ").append(toIndentedString(cpfFavorecido)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -154,4 +149,3 @@ public class InfConsultaSaqueReq   {
     return o.toString().replace("\n", "\n    ");
   }
 }
-

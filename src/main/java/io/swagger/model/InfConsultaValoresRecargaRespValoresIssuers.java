@@ -16,24 +16,61 @@ import javax.validation.constraints.*;
  * InfConsultaValoresRecargaRespValoresIssuers
  */
 @Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2019-01-22T18:11:57.142Z")
-
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.SpringCodegen", date = "2019-03-19T14:13:24.289Z[GMT]")
 public class InfConsultaValoresRecargaRespValoresIssuers   {
-  @JsonProperty("card_number_length")
-  private Integer cardNumberLength = null;
-
-  @JsonProperty("card_number_mask")
-  private String cardNumberMask = null;
-
   @JsonProperty("id")
   private Integer id = null;
 
   @JsonProperty("name")
   private String name = null;
 
+  @JsonProperty("card_number_length")
+  private Integer cardNumberLength = null;
+
+  @JsonProperty("card_number_mask")
+  private String cardNumberMask = null;
+
   @JsonProperty("products")
   @Valid
   private List<InfConsultaValoresRecargaRespValoresProducts> products = null;
+
+  public InfConsultaValoresRecargaRespValoresIssuers id(Integer id) {
+    this.id = id;
+    return this;
+  }
+
+  /**
+   * Identificador da operadora de bilhetagem.
+   * @return id
+  **/
+  @ApiModelProperty(example = "1", value = "Identificador da operadora de bilhetagem.")
+
+  public Integer getId() {
+    return id;
+  }
+
+  public void setId(Integer id) {
+    this.id = id;
+  }
+
+  public InfConsultaValoresRecargaRespValoresIssuers name(String name) {
+    this.name = name;
+    return this;
+  }
+
+  /**
+   * Nome da operadora.
+   * @return name
+  **/
+  @ApiModelProperty(example = "TEU", value = "Nome da operadora.")
+
+  public String getName() {
+    return name;
+  }
+
+  public void setName(String name) {
+    this.name = name;
+  }
 
   public InfConsultaValoresRecargaRespValoresIssuers cardNumberLength(Integer cardNumberLength) {
     this.cardNumberLength = cardNumberLength;
@@ -41,12 +78,10 @@ public class InfConsultaValoresRecargaRespValoresIssuers   {
   }
 
   /**
-   * Quantidade de caracteres do cartão.
+   * Quantidade de caracteres do cartão esperado para cartões da operadora.
    * @return cardNumberLength
   **/
-  @ApiModelProperty(example = "15", required = true, value = "Quantidade de caracteres do cartão.")
-  @NotNull
-
+  @ApiModelProperty(example = "15", value = "Quantidade de caracteres do cartão esperado para cartões da operadora.")
 
   public Integer getCardNumberLength() {
     return cardNumberLength;
@@ -65,9 +100,7 @@ public class InfConsultaValoresRecargaRespValoresIssuers   {
    * Máscara de números do cartão.
    * @return cardNumberMask
   **/
-  @ApiModelProperty(example = "XXXXXXXXXXXXXX-X", required = true, value = "Máscara de números do cartão.")
-  @NotNull
-
+  @ApiModelProperty(example = "XXXXXXXXXXXXXX-X", value = "Máscara de números do cartão.")
 
   public String getCardNumberMask() {
     return cardNumberMask;
@@ -75,48 +108,6 @@ public class InfConsultaValoresRecargaRespValoresIssuers   {
 
   public void setCardNumberMask(String cardNumberMask) {
     this.cardNumberMask = cardNumberMask;
-  }
-
-  public InfConsultaValoresRecargaRespValoresIssuers id(Integer id) {
-    this.id = id;
-    return this;
-  }
-
-  /**
-   * Identificador do cartão.
-   * @return id
-  **/
-  @ApiModelProperty(example = "1", required = true, value = "Identificador do cartão.")
-  @NotNull
-
-
-  public Integer getId() {
-    return id;
-  }
-
-  public void setId(Integer id) {
-    this.id = id;
-  }
-
-  public InfConsultaValoresRecargaRespValoresIssuers name(String name) {
-    this.name = name;
-    return this;
-  }
-
-  /**
-   * Nome do cartão.
-   * @return name
-  **/
-  @ApiModelProperty(example = "TEU", required = true, value = "Nome do cartão.")
-  @NotNull
-
-
-  public String getName() {
-    return name;
-  }
-
-  public void setName(String name) {
-    this.name = name;
   }
 
   public InfConsultaValoresRecargaRespValoresIssuers products(List<InfConsultaValoresRecargaRespValoresProducts> products) {
@@ -137,9 +128,7 @@ public class InfConsultaValoresRecargaRespValoresIssuers   {
    * @return products
   **/
   @ApiModelProperty(value = "")
-
   @Valid
-
   public List<InfConsultaValoresRecargaRespValoresProducts> getProducts() {
     return products;
   }
@@ -158,16 +147,16 @@ public class InfConsultaValoresRecargaRespValoresIssuers   {
       return false;
     }
     InfConsultaValoresRecargaRespValoresIssuers infConsultaValoresRecargaRespValoresIssuers = (InfConsultaValoresRecargaRespValoresIssuers) o;
-    return Objects.equals(this.cardNumberLength, infConsultaValoresRecargaRespValoresIssuers.cardNumberLength) &&
-        Objects.equals(this.cardNumberMask, infConsultaValoresRecargaRespValoresIssuers.cardNumberMask) &&
-        Objects.equals(this.id, infConsultaValoresRecargaRespValoresIssuers.id) &&
+    return Objects.equals(this.id, infConsultaValoresRecargaRespValoresIssuers.id) &&
         Objects.equals(this.name, infConsultaValoresRecargaRespValoresIssuers.name) &&
+        Objects.equals(this.cardNumberLength, infConsultaValoresRecargaRespValoresIssuers.cardNumberLength) &&
+        Objects.equals(this.cardNumberMask, infConsultaValoresRecargaRespValoresIssuers.cardNumberMask) &&
         Objects.equals(this.products, infConsultaValoresRecargaRespValoresIssuers.products);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(cardNumberLength, cardNumberMask, id, name, products);
+    return Objects.hash(id, name, cardNumberLength, cardNumberMask, products);
   }
 
   @Override
@@ -175,10 +164,10 @@ public class InfConsultaValoresRecargaRespValoresIssuers   {
     StringBuilder sb = new StringBuilder();
     sb.append("class InfConsultaValoresRecargaRespValoresIssuers {\n");
     
-    sb.append("    cardNumberLength: ").append(toIndentedString(cardNumberLength)).append("\n");
-    sb.append("    cardNumberMask: ").append(toIndentedString(cardNumberMask)).append("\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
+    sb.append("    cardNumberLength: ").append(toIndentedString(cardNumberLength)).append("\n");
+    sb.append("    cardNumberMask: ").append(toIndentedString(cardNumberMask)).append("\n");
     sb.append("    products: ").append(toIndentedString(products)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -195,4 +184,3 @@ public class InfConsultaValoresRecargaRespValoresIssuers   {
     return o.toString().replace("\n", "\n    ");
   }
 }
-

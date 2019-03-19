@@ -14,160 +14,53 @@ import javax.validation.constraints.*;
  */
 @ApiModel(description = "Informações sobre a requisição de confirmação de transação.")
 @Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2019-01-22T18:11:57.142Z")
-
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.SpringCodegen", date = "2019-03-19T14:13:24.289Z[GMT]")
 public class InfTransacaoConf   {
-  @JsonProperty("cdProc")
-  private String cdProc = null;
-
-  @JsonProperty("codMoeda")
-  private String codMoeda = null;
-
-  @JsonProperty("codOperadora")
-  private String codOperadora = null;
-
-  @JsonProperty("dataHora")
-  private String dataHora = null;
-
-  @JsonProperty("dataLocal")
-  private String dataLocal = null;
-
-  @JsonProperty("horaLocal")
-  private String horaLocal = null;
+  @JsonProperty("nsuResposta")
+  private String nsuResposta = null;
 
   @JsonProperty("nsu")
   private String nsu = null;
 
-  @JsonProperty("nsuResposta")
-  private String nsuResposta = null;
+  @JsonProperty("cdProc")
+  private String cdProc = null;
+
+  @JsonProperty("dataHora")
+  private String dataHora = null;
+
+  @JsonProperty("horaLocal")
+  private String horaLocal = null;
+
+  @JsonProperty("dataLocal")
+  private String dataLocal = null;
+
+  @JsonProperty("codOperadora")
+  private String codOperadora = null;
 
   @JsonProperty("valor")
   private String valor = null;
 
-  public InfTransacaoConf cdProc(String cdProc) {
-    this.cdProc = cdProc;
+  @JsonProperty("codMoeda")
+  private String codMoeda = null;
+
+  public InfTransacaoConf nsuResposta(String nsuResposta) {
+    this.nsuResposta = nsuResposta;
     return this;
   }
 
   /**
-   * Igual à requisição e à resposta.
-   * @return cdProc
+   * Igual à resposta.
+   * @return nsuResposta
   **/
-  @ApiModelProperty(example = "029100", required = true, value = "Igual à requisição e à resposta.")
+  @ApiModelProperty(example = "820", required = true, value = "Igual à resposta.")
   @NotNull
 
-@Pattern(regexp="^\\d{6}$") 
-  public String getCdProc() {
-    return cdProc;
+@Pattern(regexp="^\\d+$")   public String getNsuResposta() {
+    return nsuResposta;
   }
 
-  public void setCdProc(String cdProc) {
-    this.cdProc = cdProc;
-  }
-
-  public InfTransacaoConf codMoeda(String codMoeda) {
-    this.codMoeda = codMoeda;
-    return this;
-  }
-
-  /**
-   * Igual à requisição e à resposta.
-   * @return codMoeda
-  **/
-  @ApiModelProperty(example = "986", required = true, value = "Igual à requisição e à resposta.")
-  @NotNull
-
-@Pattern(regexp="^\\d{3}$") 
-  public String getCodMoeda() {
-    return codMoeda;
-  }
-
-  public void setCodMoeda(String codMoeda) {
-    this.codMoeda = codMoeda;
-  }
-
-  public InfTransacaoConf codOperadora(String codOperadora) {
-    this.codOperadora = codOperadora;
-    return this;
-  }
-
-  /**
-   * Igual à requisição e à resposta.
-   * @return codOperadora
-  **/
-  @ApiModelProperty(example = "00000000914", required = true, value = "Igual à requisição e à resposta.")
-  @NotNull
-
-@Pattern(regexp="^\\d{11}$") 
-  public String getCodOperadora() {
-    return codOperadora;
-  }
-
-  public void setCodOperadora(String codOperadora) {
-    this.codOperadora = codOperadora;
-  }
-
-  public InfTransacaoConf dataHora(String dataHora) {
-    this.dataHora = dataHora;
-    return this;
-  }
-
-  /**
-   * Data e hora da transação (MMDDhhmmss).
-   * @return dataHora
-  **/
-  @ApiModelProperty(example = "1122151032", required = true, value = "Data e hora da transação (MMDDhhmmss).")
-  @NotNull
-
-@Pattern(regexp="^\\d{10}$") 
-  public String getDataHora() {
-    return dataHora;
-  }
-
-  public void setDataHora(String dataHora) {
-    this.dataHora = dataHora;
-  }
-
-  public InfTransacaoConf dataLocal(String dataLocal) {
-    this.dataLocal = dataLocal;
-    return this;
-  }
-
-  /**
-   * Igual à requisição e à resposta.
-   * @return dataLocal
-  **/
-  @ApiModelProperty(example = "1122", required = true, value = "Igual à requisição e à resposta.")
-  @NotNull
-
-@Pattern(regexp="^\\d{4}$") 
-  public String getDataLocal() {
-    return dataLocal;
-  }
-
-  public void setDataLocal(String dataLocal) {
-    this.dataLocal = dataLocal;
-  }
-
-  public InfTransacaoConf horaLocal(String horaLocal) {
-    this.horaLocal = horaLocal;
-    return this;
-  }
-
-  /**
-   * Igual à requisição e à resposta.
-   * @return horaLocal
-  **/
-  @ApiModelProperty(example = "151032", required = true, value = "Igual à requisição e à resposta.")
-  @NotNull
-
-@Pattern(regexp="^\\d{6}$") 
-  public String getHoraLocal() {
-    return horaLocal;
-  }
-
-  public void setHoraLocal(String horaLocal) {
-    this.horaLocal = horaLocal;
+  public void setNsuResposta(String nsuResposta) {
+    this.nsuResposta = nsuResposta;
   }
 
   public InfTransacaoConf nsu(String nsu) {
@@ -182,8 +75,7 @@ public class InfTransacaoConf   {
   @ApiModelProperty(example = "000080247206", required = true, value = "Igual à requisição e à resposta.")
   @NotNull
 
-@Pattern(regexp="^\\d{12}$") 
-  public String getNsu() {
+@Pattern(regexp="^\\d{12}$")   public String getNsu() {
     return nsu;
   }
 
@@ -191,25 +83,104 @@ public class InfTransacaoConf   {
     this.nsu = nsu;
   }
 
-  public InfTransacaoConf nsuResposta(String nsuResposta) {
-    this.nsuResposta = nsuResposta;
+  public InfTransacaoConf cdProc(String cdProc) {
+    this.cdProc = cdProc;
     return this;
   }
 
   /**
-   * Igual à resposta.
-   * @return nsuResposta
+   * Igual à requisição e à resposta.
+   * @return cdProc
   **/
-  @ApiModelProperty(example = "820", required = true, value = "Igual à resposta.")
+  @ApiModelProperty(example = "029100", required = true, value = "Igual à requisição e à resposta.")
   @NotNull
 
-@Pattern(regexp="^\\d+$") 
-  public String getNsuResposta() {
-    return nsuResposta;
+@Pattern(regexp="^\\d{6}$")   public String getCdProc() {
+    return cdProc;
   }
 
-  public void setNsuResposta(String nsuResposta) {
-    this.nsuResposta = nsuResposta;
+  public void setCdProc(String cdProc) {
+    this.cdProc = cdProc;
+  }
+
+  public InfTransacaoConf dataHora(String dataHora) {
+    this.dataHora = dataHora;
+    return this;
+  }
+
+  /**
+   * Data e hora da transação (MMDDhhmmss).
+   * @return dataHora
+  **/
+  @ApiModelProperty(example = "1122151032", required = true, value = "Data e hora da transação (MMDDhhmmss).")
+  @NotNull
+
+@Pattern(regexp="^\\d{10}$")   public String getDataHora() {
+    return dataHora;
+  }
+
+  public void setDataHora(String dataHora) {
+    this.dataHora = dataHora;
+  }
+
+  public InfTransacaoConf horaLocal(String horaLocal) {
+    this.horaLocal = horaLocal;
+    return this;
+  }
+
+  /**
+   * Igual à requisição e à resposta.
+   * @return horaLocal
+  **/
+  @ApiModelProperty(example = "151032", required = true, value = "Igual à requisição e à resposta.")
+  @NotNull
+
+@Pattern(regexp="^\\d{6}$")   public String getHoraLocal() {
+    return horaLocal;
+  }
+
+  public void setHoraLocal(String horaLocal) {
+    this.horaLocal = horaLocal;
+  }
+
+  public InfTransacaoConf dataLocal(String dataLocal) {
+    this.dataLocal = dataLocal;
+    return this;
+  }
+
+  /**
+   * Igual à requisição e à resposta.
+   * @return dataLocal
+  **/
+  @ApiModelProperty(example = "1122", required = true, value = "Igual à requisição e à resposta.")
+  @NotNull
+
+@Pattern(regexp="^\\d{4}$")   public String getDataLocal() {
+    return dataLocal;
+  }
+
+  public void setDataLocal(String dataLocal) {
+    this.dataLocal = dataLocal;
+  }
+
+  public InfTransacaoConf codOperadora(String codOperadora) {
+    this.codOperadora = codOperadora;
+    return this;
+  }
+
+  /**
+   * Igual à requisição e à resposta.
+   * @return codOperadora
+  **/
+  @ApiModelProperty(example = "00000000914", required = true, value = "Igual à requisição e à resposta.")
+  @NotNull
+
+@Pattern(regexp="^\\d{11}$")   public String getCodOperadora() {
+    return codOperadora;
+  }
+
+  public void setCodOperadora(String codOperadora) {
+    this.codOperadora = codOperadora;
   }
 
   public InfTransacaoConf valor(String valor) {
@@ -224,13 +195,32 @@ public class InfTransacaoConf   {
   @ApiModelProperty(example = "000000005000", required = true, value = "Valor efetivado na transação. Em alguns casos, pode ser diferente da requisição e da resposta (12 dígitos, incluindo centavos).")
   @NotNull
 
-@Pattern(regexp="^\\d{12}$") 
-  public String getValor() {
+@Pattern(regexp="^\\d{12}$")   public String getValor() {
     return valor;
   }
 
   public void setValor(String valor) {
     this.valor = valor;
+  }
+
+  public InfTransacaoConf codMoeda(String codMoeda) {
+    this.codMoeda = codMoeda;
+    return this;
+  }
+
+  /**
+   * Igual à requisição e à resposta.
+   * @return codMoeda
+  **/
+  @ApiModelProperty(example = "986", required = true, value = "Igual à requisição e à resposta.")
+  @NotNull
+
+@Pattern(regexp="^\\d{3}$")   public String getCodMoeda() {
+    return codMoeda;
+  }
+
+  public void setCodMoeda(String codMoeda) {
+    this.codMoeda = codMoeda;
   }
 
 
@@ -243,20 +233,20 @@ public class InfTransacaoConf   {
       return false;
     }
     InfTransacaoConf infTransacaoConf = (InfTransacaoConf) o;
-    return Objects.equals(this.cdProc, infTransacaoConf.cdProc) &&
-        Objects.equals(this.codMoeda, infTransacaoConf.codMoeda) &&
-        Objects.equals(this.codOperadora, infTransacaoConf.codOperadora) &&
-        Objects.equals(this.dataHora, infTransacaoConf.dataHora) &&
-        Objects.equals(this.dataLocal, infTransacaoConf.dataLocal) &&
-        Objects.equals(this.horaLocal, infTransacaoConf.horaLocal) &&
+    return Objects.equals(this.nsuResposta, infTransacaoConf.nsuResposta) &&
         Objects.equals(this.nsu, infTransacaoConf.nsu) &&
-        Objects.equals(this.nsuResposta, infTransacaoConf.nsuResposta) &&
-        Objects.equals(this.valor, infTransacaoConf.valor);
+        Objects.equals(this.cdProc, infTransacaoConf.cdProc) &&
+        Objects.equals(this.dataHora, infTransacaoConf.dataHora) &&
+        Objects.equals(this.horaLocal, infTransacaoConf.horaLocal) &&
+        Objects.equals(this.dataLocal, infTransacaoConf.dataLocal) &&
+        Objects.equals(this.codOperadora, infTransacaoConf.codOperadora) &&
+        Objects.equals(this.valor, infTransacaoConf.valor) &&
+        Objects.equals(this.codMoeda, infTransacaoConf.codMoeda);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(cdProc, codMoeda, codOperadora, dataHora, dataLocal, horaLocal, nsu, nsuResposta, valor);
+    return Objects.hash(nsuResposta, nsu, cdProc, dataHora, horaLocal, dataLocal, codOperadora, valor, codMoeda);
   }
 
   @Override
@@ -264,15 +254,15 @@ public class InfTransacaoConf   {
     StringBuilder sb = new StringBuilder();
     sb.append("class InfTransacaoConf {\n");
     
-    sb.append("    cdProc: ").append(toIndentedString(cdProc)).append("\n");
-    sb.append("    codMoeda: ").append(toIndentedString(codMoeda)).append("\n");
-    sb.append("    codOperadora: ").append(toIndentedString(codOperadora)).append("\n");
-    sb.append("    dataHora: ").append(toIndentedString(dataHora)).append("\n");
-    sb.append("    dataLocal: ").append(toIndentedString(dataLocal)).append("\n");
-    sb.append("    horaLocal: ").append(toIndentedString(horaLocal)).append("\n");
-    sb.append("    nsu: ").append(toIndentedString(nsu)).append("\n");
     sb.append("    nsuResposta: ").append(toIndentedString(nsuResposta)).append("\n");
+    sb.append("    nsu: ").append(toIndentedString(nsu)).append("\n");
+    sb.append("    cdProc: ").append(toIndentedString(cdProc)).append("\n");
+    sb.append("    dataHora: ").append(toIndentedString(dataHora)).append("\n");
+    sb.append("    horaLocal: ").append(toIndentedString(horaLocal)).append("\n");
+    sb.append("    dataLocal: ").append(toIndentedString(dataLocal)).append("\n");
+    sb.append("    codOperadora: ").append(toIndentedString(codOperadora)).append("\n");
     sb.append("    valor: ").append(toIndentedString(valor)).append("\n");
+    sb.append("    codMoeda: ").append(toIndentedString(codMoeda)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -288,4 +278,3 @@ public class InfTransacaoConf   {
     return o.toString().replace("\n", "\n    ");
   }
 }
-

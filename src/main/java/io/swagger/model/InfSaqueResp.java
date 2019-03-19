@@ -14,8 +14,7 @@ import javax.validation.constraints.*;
  */
 @ApiModel(description = "Informações da resposta de saque.")
 @Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2019-01-22T18:11:57.142Z")
-
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.SpringCodegen", date = "2019-03-19T14:13:24.289Z[GMT]")
 public class InfSaqueResp   {
   @JsonProperty("recibo")
   private String recibo = null;
@@ -26,14 +25,13 @@ public class InfSaqueResp   {
   }
 
   /**
-   * Recibo com informações do saque efetuado. Linhas com 48 posições separadas por \"@\". Substituir os valores do recibo pela tag %VALOR%. A Saque e Pague substituirá essa tag no comprovante pelo valor realmente sacado pelo cliente.
+   * Recibo da operação de saque efetuada. Linhas com 48 posições separadas por \"@\". Substituir os valores do recibo pela tag %VALOR%. A Saque e Pague substituirá essa tag no comprovante pelo valor realmente sacado pelo cliente.
    * @return recibo
   **/
-  @ApiModelProperty(example = "                 SAQUE DE CONTA                 @                036200005433591                @               13/10/2018  20:24               @                 BANCO: BANCO                  @                AGENCIA: 4029                  @              CONTA: 0082348296                @               VALOR: R$ 50,00                 ", required = true, value = "Recibo com informações do saque efetuado. Linhas com 48 posições separadas por \"@\". Substituir os valores do recibo pela tag %VALOR%. A Saque e Pague substituirá essa tag no comprovante pelo valor realmente sacado pelo cliente.")
+  @ApiModelProperty(example = "                 SAQUE DE CONTA                 @                036200005433591                @               13/10/2018  20:24               @                 BANCO: BANCO                  @                AGENCIA: 4029                  @              CONTA: 0082348296                @               %VALOR%: R$ 50,00                 ", required = true, value = "Recibo da operação de saque efetuada. Linhas com 48 posições separadas por \"@\". Substituir os valores do recibo pela tag %VALOR%. A Saque e Pague substituirá essa tag no comprovante pelo valor realmente sacado pelo cliente.")
   @NotNull
 
-@Pattern(regexp="^[^@]{0,48}(\\@[^@]{0,48})*$") 
-  public String getRecibo() {
+@Pattern(regexp="^[^@]{0,48}(\\@[^@]{0,48})*$")   public String getRecibo() {
     return recibo;
   }
 
@@ -80,4 +78,3 @@ public class InfSaqueResp   {
     return o.toString().replace("\n", "\n    ");
   }
 }
-

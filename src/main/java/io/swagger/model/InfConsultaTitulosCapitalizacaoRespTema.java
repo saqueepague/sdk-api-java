@@ -17,8 +17,7 @@ import javax.validation.constraints.*;
  */
 @ApiModel(description = "Tema que sará utilizado para montar o layout do usuário.")
 @Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2019-01-22T18:11:57.142Z")
-
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.SpringCodegen", date = "2019-03-19T14:13:24.289Z[GMT]")
 public class InfConsultaTitulosCapitalizacaoRespTema   {
   @JsonProperty("estilos")
   @Valid
@@ -42,9 +41,7 @@ public class InfConsultaTitulosCapitalizacaoRespTema   {
    * @return estilos
   **/
   @ApiModelProperty(value = "")
-
   @Valid
-
   public List<InfConsultaTitulosCapitalizacaoRespTemaEstilos> getEstilos() {
     return estilos;
   }
@@ -92,4 +89,3 @@ public class InfConsultaTitulosCapitalizacaoRespTema   {
     return o.toString().replace("\n", "\n    ");
   }
 }
-

@@ -18,11 +18,16 @@ import javax.validation.constraints.*;
  * RecargaReq
  */
 @Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2019-01-22T18:11:57.142Z")
-
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.SpringCodegen", date = "2019-03-19T14:13:24.289Z[GMT]")
 public class RecargaReq   {
+  @JsonProperty("InfTransacao")
+  private InfTransacaoReq infTransacao = null;
+
   @JsonProperty("Cartao")
   private Cartao cartao = null;
+
+  @JsonProperty("Terminal")
+  private Terminal terminal = null;
 
   @JsonProperty("Cripto")
   private Cripto cripto = null;
@@ -30,11 +35,26 @@ public class RecargaReq   {
   @JsonProperty("InfRecarga")
   private InfRecargaReq infRecarga = null;
 
-  @JsonProperty("InfTransacao")
-  private InfTransacaoReq infTransacao = null;
+  public RecargaReq infTransacao(InfTransacaoReq infTransacao) {
+    this.infTransacao = infTransacao;
+    return this;
+  }
 
-  @JsonProperty("Terminal")
-  private Terminal terminal = null;
+  /**
+   * Get infTransacao
+   * @return infTransacao
+  **/
+  @ApiModelProperty(required = true, value = "")
+  @NotNull
+
+  @Valid
+  public InfTransacaoReq getInfTransacao() {
+    return infTransacao;
+  }
+
+  public void setInfTransacao(InfTransacaoReq infTransacao) {
+    this.infTransacao = infTransacao;
+  }
 
   public RecargaReq cartao(Cartao cartao) {
     this.cartao = cartao;
@@ -48,13 +68,33 @@ public class RecargaReq   {
   @ApiModelProperty(value = "")
 
   @Valid
-
   public Cartao getCartao() {
     return cartao;
   }
 
   public void setCartao(Cartao cartao) {
     this.cartao = cartao;
+  }
+
+  public RecargaReq terminal(Terminal terminal) {
+    this.terminal = terminal;
+    return this;
+  }
+
+  /**
+   * Get terminal
+   * @return terminal
+  **/
+  @ApiModelProperty(required = true, value = "")
+  @NotNull
+
+  @Valid
+  public Terminal getTerminal() {
+    return terminal;
+  }
+
+  public void setTerminal(Terminal terminal) {
+    this.terminal = terminal;
   }
 
   public RecargaReq cripto(Cripto cripto) {
@@ -69,7 +109,6 @@ public class RecargaReq   {
   @ApiModelProperty(value = "")
 
   @Valid
-
   public Cripto getCripto() {
     return cripto;
   }
@@ -91,57 +130,12 @@ public class RecargaReq   {
   @NotNull
 
   @Valid
-
   public InfRecargaReq getInfRecarga() {
     return infRecarga;
   }
 
   public void setInfRecarga(InfRecargaReq infRecarga) {
     this.infRecarga = infRecarga;
-  }
-
-  public RecargaReq infTransacao(InfTransacaoReq infTransacao) {
-    this.infTransacao = infTransacao;
-    return this;
-  }
-
-  /**
-   * Get infTransacao
-   * @return infTransacao
-  **/
-  @ApiModelProperty(required = true, value = "")
-  @NotNull
-
-  @Valid
-
-  public InfTransacaoReq getInfTransacao() {
-    return infTransacao;
-  }
-
-  public void setInfTransacao(InfTransacaoReq infTransacao) {
-    this.infTransacao = infTransacao;
-  }
-
-  public RecargaReq terminal(Terminal terminal) {
-    this.terminal = terminal;
-    return this;
-  }
-
-  /**
-   * Get terminal
-   * @return terminal
-  **/
-  @ApiModelProperty(required = true, value = "")
-  @NotNull
-
-  @Valid
-
-  public Terminal getTerminal() {
-    return terminal;
-  }
-
-  public void setTerminal(Terminal terminal) {
-    this.terminal = terminal;
   }
 
 
@@ -154,16 +148,16 @@ public class RecargaReq   {
       return false;
     }
     RecargaReq recargaReq = (RecargaReq) o;
-    return Objects.equals(this.cartao, recargaReq.cartao) &&
+    return Objects.equals(this.infTransacao, recargaReq.infTransacao) &&
+        Objects.equals(this.cartao, recargaReq.cartao) &&
+        Objects.equals(this.terminal, recargaReq.terminal) &&
         Objects.equals(this.cripto, recargaReq.cripto) &&
-        Objects.equals(this.infRecarga, recargaReq.infRecarga) &&
-        Objects.equals(this.infTransacao, recargaReq.infTransacao) &&
-        Objects.equals(this.terminal, recargaReq.terminal);
+        Objects.equals(this.infRecarga, recargaReq.infRecarga);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(cartao, cripto, infRecarga, infTransacao, terminal);
+    return Objects.hash(infTransacao, cartao, terminal, cripto, infRecarga);
   }
 
   @Override
@@ -171,11 +165,11 @@ public class RecargaReq   {
     StringBuilder sb = new StringBuilder();
     sb.append("class RecargaReq {\n");
     
+    sb.append("    infTransacao: ").append(toIndentedString(infTransacao)).append("\n");
     sb.append("    cartao: ").append(toIndentedString(cartao)).append("\n");
+    sb.append("    terminal: ").append(toIndentedString(terminal)).append("\n");
     sb.append("    cripto: ").append(toIndentedString(cripto)).append("\n");
     sb.append("    infRecarga: ").append(toIndentedString(infRecarga)).append("\n");
-    sb.append("    infTransacao: ").append(toIndentedString(infTransacao)).append("\n");
-    sb.append("    terminal: ").append(toIndentedString(terminal)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -191,4 +185,3 @@ public class RecargaReq   {
     return o.toString().replace("\n", "\n    ");
   }
 }
-

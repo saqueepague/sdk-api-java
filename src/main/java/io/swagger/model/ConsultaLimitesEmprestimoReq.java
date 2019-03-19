@@ -16,39 +16,16 @@ import javax.validation.constraints.*;
  * ConsultaLimitesEmprestimoReq
  */
 @Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2019-01-22T18:11:57.142Z")
-
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.SpringCodegen", date = "2019-03-19T14:13:24.289Z[GMT]")
 public class ConsultaLimitesEmprestimoReq   {
-  @JsonProperty("Cartao")
-  private Cartao cartao = null;
-
   @JsonProperty("InfTransacao")
   private InfTransacaoReq infTransacao = null;
 
+  @JsonProperty("Cartao")
+  private Cartao cartao = null;
+
   @JsonProperty("Terminal")
   private Terminal terminal = null;
-
-  public ConsultaLimitesEmprestimoReq cartao(Cartao cartao) {
-    this.cartao = cartao;
-    return this;
-  }
-
-  /**
-   * Get cartao
-   * @return cartao
-  **/
-  @ApiModelProperty(required = true, value = "")
-  @NotNull
-
-  @Valid
-
-  public Cartao getCartao() {
-    return cartao;
-  }
-
-  public void setCartao(Cartao cartao) {
-    this.cartao = cartao;
-  }
 
   public ConsultaLimitesEmprestimoReq infTransacao(InfTransacaoReq infTransacao) {
     this.infTransacao = infTransacao;
@@ -63,13 +40,33 @@ public class ConsultaLimitesEmprestimoReq   {
   @NotNull
 
   @Valid
-
   public InfTransacaoReq getInfTransacao() {
     return infTransacao;
   }
 
   public void setInfTransacao(InfTransacaoReq infTransacao) {
     this.infTransacao = infTransacao;
+  }
+
+  public ConsultaLimitesEmprestimoReq cartao(Cartao cartao) {
+    this.cartao = cartao;
+    return this;
+  }
+
+  /**
+   * Get cartao
+   * @return cartao
+  **/
+  @ApiModelProperty(required = true, value = "")
+  @NotNull
+
+  @Valid
+  public Cartao getCartao() {
+    return cartao;
+  }
+
+  public void setCartao(Cartao cartao) {
+    this.cartao = cartao;
   }
 
   public ConsultaLimitesEmprestimoReq terminal(Terminal terminal) {
@@ -85,7 +82,6 @@ public class ConsultaLimitesEmprestimoReq   {
   @NotNull
 
   @Valid
-
   public Terminal getTerminal() {
     return terminal;
   }
@@ -104,14 +100,14 @@ public class ConsultaLimitesEmprestimoReq   {
       return false;
     }
     ConsultaLimitesEmprestimoReq consultaLimitesEmprestimoReq = (ConsultaLimitesEmprestimoReq) o;
-    return Objects.equals(this.cartao, consultaLimitesEmprestimoReq.cartao) &&
-        Objects.equals(this.infTransacao, consultaLimitesEmprestimoReq.infTransacao) &&
+    return Objects.equals(this.infTransacao, consultaLimitesEmprestimoReq.infTransacao) &&
+        Objects.equals(this.cartao, consultaLimitesEmprestimoReq.cartao) &&
         Objects.equals(this.terminal, consultaLimitesEmprestimoReq.terminal);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(cartao, infTransacao, terminal);
+    return Objects.hash(infTransacao, cartao, terminal);
   }
 
   @Override
@@ -119,8 +115,8 @@ public class ConsultaLimitesEmprestimoReq   {
     StringBuilder sb = new StringBuilder();
     sb.append("class ConsultaLimitesEmprestimoReq {\n");
     
-    sb.append("    cartao: ").append(toIndentedString(cartao)).append("\n");
     sb.append("    infTransacao: ").append(toIndentedString(infTransacao)).append("\n");
+    sb.append("    cartao: ").append(toIndentedString(cartao)).append("\n");
     sb.append("    terminal: ").append(toIndentedString(terminal)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -137,4 +133,3 @@ public class ConsultaLimitesEmprestimoReq   {
     return o.toString().replace("\n", "\n    ");
   }
 }
-

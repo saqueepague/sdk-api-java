@@ -16,39 +16,16 @@ import javax.validation.constraints.*;
  * ConsultaTitulosCapitalizacaoResp
  */
 @Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2019-01-22T18:11:57.142Z")
-
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.SpringCodegen", date = "2019-03-19T14:13:24.289Z[GMT]")
 public class ConsultaTitulosCapitalizacaoResp   {
-  @JsonProperty("InfConsultaTitulosCapitalizacao")
-  private InfConsultaTitulosCapitalizacaoResp infConsultaTitulosCapitalizacao = null;
-
   @JsonProperty("InfTransacao")
   private InfTransacaoResp infTransacao = null;
 
   @JsonProperty("Terminal")
   private Terminal terminal = null;
 
-  public ConsultaTitulosCapitalizacaoResp infConsultaTitulosCapitalizacao(InfConsultaTitulosCapitalizacaoResp infConsultaTitulosCapitalizacao) {
-    this.infConsultaTitulosCapitalizacao = infConsultaTitulosCapitalizacao;
-    return this;
-  }
-
-  /**
-   * Get infConsultaTitulosCapitalizacao
-   * @return infConsultaTitulosCapitalizacao
-  **/
-  @ApiModelProperty(required = true, value = "")
-  @NotNull
-
-  @Valid
-
-  public InfConsultaTitulosCapitalizacaoResp getInfConsultaTitulosCapitalizacao() {
-    return infConsultaTitulosCapitalizacao;
-  }
-
-  public void setInfConsultaTitulosCapitalizacao(InfConsultaTitulosCapitalizacaoResp infConsultaTitulosCapitalizacao) {
-    this.infConsultaTitulosCapitalizacao = infConsultaTitulosCapitalizacao;
-  }
+  @JsonProperty("InfConsultaTitulosCapitalizacao")
+  private InfConsultaTitulosCapitalizacaoResp infConsultaTitulosCapitalizacao = null;
 
   public ConsultaTitulosCapitalizacaoResp infTransacao(InfTransacaoResp infTransacao) {
     this.infTransacao = infTransacao;
@@ -63,7 +40,6 @@ public class ConsultaTitulosCapitalizacaoResp   {
   @NotNull
 
   @Valid
-
   public InfTransacaoResp getInfTransacao() {
     return infTransacao;
   }
@@ -85,13 +61,33 @@ public class ConsultaTitulosCapitalizacaoResp   {
   @NotNull
 
   @Valid
-
   public Terminal getTerminal() {
     return terminal;
   }
 
   public void setTerminal(Terminal terminal) {
     this.terminal = terminal;
+  }
+
+  public ConsultaTitulosCapitalizacaoResp infConsultaTitulosCapitalizacao(InfConsultaTitulosCapitalizacaoResp infConsultaTitulosCapitalizacao) {
+    this.infConsultaTitulosCapitalizacao = infConsultaTitulosCapitalizacao;
+    return this;
+  }
+
+  /**
+   * Get infConsultaTitulosCapitalizacao
+   * @return infConsultaTitulosCapitalizacao
+  **/
+  @ApiModelProperty(required = true, value = "")
+  @NotNull
+
+  @Valid
+  public InfConsultaTitulosCapitalizacaoResp getInfConsultaTitulosCapitalizacao() {
+    return infConsultaTitulosCapitalizacao;
+  }
+
+  public void setInfConsultaTitulosCapitalizacao(InfConsultaTitulosCapitalizacaoResp infConsultaTitulosCapitalizacao) {
+    this.infConsultaTitulosCapitalizacao = infConsultaTitulosCapitalizacao;
   }
 
 
@@ -104,14 +100,14 @@ public class ConsultaTitulosCapitalizacaoResp   {
       return false;
     }
     ConsultaTitulosCapitalizacaoResp consultaTitulosCapitalizacaoResp = (ConsultaTitulosCapitalizacaoResp) o;
-    return Objects.equals(this.infConsultaTitulosCapitalizacao, consultaTitulosCapitalizacaoResp.infConsultaTitulosCapitalizacao) &&
-        Objects.equals(this.infTransacao, consultaTitulosCapitalizacaoResp.infTransacao) &&
-        Objects.equals(this.terminal, consultaTitulosCapitalizacaoResp.terminal);
+    return Objects.equals(this.infTransacao, consultaTitulosCapitalizacaoResp.infTransacao) &&
+        Objects.equals(this.terminal, consultaTitulosCapitalizacaoResp.terminal) &&
+        Objects.equals(this.infConsultaTitulosCapitalizacao, consultaTitulosCapitalizacaoResp.infConsultaTitulosCapitalizacao);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(infConsultaTitulosCapitalizacao, infTransacao, terminal);
+    return Objects.hash(infTransacao, terminal, infConsultaTitulosCapitalizacao);
   }
 
   @Override
@@ -119,9 +115,9 @@ public class ConsultaTitulosCapitalizacaoResp   {
     StringBuilder sb = new StringBuilder();
     sb.append("class ConsultaTitulosCapitalizacaoResp {\n");
     
-    sb.append("    infConsultaTitulosCapitalizacao: ").append(toIndentedString(infConsultaTitulosCapitalizacao)).append("\n");
     sb.append("    infTransacao: ").append(toIndentedString(infTransacao)).append("\n");
     sb.append("    terminal: ").append(toIndentedString(terminal)).append("\n");
+    sb.append("    infConsultaTitulosCapitalizacao: ").append(toIndentedString(infConsultaTitulosCapitalizacao)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -137,4 +133,3 @@ public class ConsultaTitulosCapitalizacaoResp   {
     return o.toString().replace("\n", "\n    ");
   }
 }
-

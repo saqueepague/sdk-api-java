@@ -14,8 +14,7 @@ import javax.validation.constraints.*;
  */
 @ApiModel(description = "Informações da resposta da requisição de compra de títulos de capitalização.")
 @Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2019-01-22T18:11:57.142Z")
-
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.SpringCodegen", date = "2019-03-19T14:13:24.289Z[GMT]")
 public class InfCompraTitulosCapitalizacaoResp   {
   @JsonProperty("recibo")
   private String recibo = null;
@@ -29,11 +28,10 @@ public class InfCompraTitulosCapitalizacaoResp   {
    * Recibo com informações da compra. Linhas com 48 posições separadas por \"@\".
    * @return recibo
   **/
-  @ApiModelProperty(example = "               TÍTULOS COMPRADOS               @                036200005433591                @               13/10/2018  20:24               @                NOME DO TITULO                 @                 QUANTIDADE: 2                 @                VALOR: R$ 25,00                @              VALOR TOTAL: R$ 50,00            @              TELEFONE: 05199999999            @                CPF: 02358422785               ", required = true, value = "Recibo com informações da compra. Linhas com 48 posições separadas por \"@\".")
+  @ApiModelProperty(example = "@               TITULOS COMPRADOS                @                                                @ NOME DO TITULO:  XXXXXXXXXXXXX                 @ QUANTIDADE: 2                                  @ VALOR: R$ 25,00                                @ VALOR TOTAL: R$ 50,00                          @ TELEFONE: 05199999999                          @ CPF: 02358422785                               ", required = true, value = "Recibo com informações da compra. Linhas com 48 posições separadas por \"@\".")
   @NotNull
 
-@Pattern(regexp="^[^@]{0,48}(\\@[^@]{0,48})*$") 
-  public String getRecibo() {
+@Pattern(regexp="^[^@]{0,48}(\\@[^@]{0,48})*$")   public String getRecibo() {
     return recibo;
   }
 
@@ -80,4 +78,3 @@ public class InfCompraTitulosCapitalizacaoResp   {
     return o.toString().replace("\n", "\n    ");
   }
 }
-

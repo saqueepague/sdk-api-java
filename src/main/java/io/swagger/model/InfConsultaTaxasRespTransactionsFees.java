@@ -16,45 +16,17 @@ import javax.validation.constraints.*;
  * InfConsultaTaxasRespTransactionsFees
  */
 @Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2019-01-22T18:11:57.142Z")
-
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.SpringCodegen", date = "2019-03-19T14:13:24.289Z[GMT]")
 public class InfConsultaTaxasRespTransactionsFees   {
-  @JsonProperty("fees")
-  @Valid
-  private List<InfConsultaTaxasRespFees> fees = new ArrayList<InfConsultaTaxasRespFees>();
-
   @JsonProperty("id")
   private String id = null;
 
   @JsonProperty("name")
   private String name = null;
 
-  public InfConsultaTaxasRespTransactionsFees fees(List<InfConsultaTaxasRespFees> fees) {
-    this.fees = fees;
-    return this;
-  }
-
-  public InfConsultaTaxasRespTransactionsFees addFeesItem(InfConsultaTaxasRespFees feesItem) {
-    this.fees.add(feesItem);
-    return this;
-  }
-
-  /**
-   * Get fees
-   * @return fees
-  **/
-  @ApiModelProperty(required = true, value = "")
-  @NotNull
-
+  @JsonProperty("fees")
   @Valid
-
-  public List<InfConsultaTaxasRespFees> getFees() {
-    return fees;
-  }
-
-  public void setFees(List<InfConsultaTaxasRespFees> fees) {
-    this.fees = fees;
-  }
+  private List<InfConsultaTaxasRespFees> fees = null;
 
   public InfConsultaTaxasRespTransactionsFees id(String id) {
     this.id = id;
@@ -62,14 +34,12 @@ public class InfConsultaTaxasRespTransactionsFees   {
   }
 
   /**
-   * Identificador da taxa.
+   * Número identificador produto.
    * @return id
   **/
-  @ApiModelProperty(example = "01", required = true, value = "Identificador da taxa.")
-  @NotNull
+  @ApiModelProperty(example = "01", value = "Número identificador produto.")
 
-@Pattern(regexp="^\\d+$") 
-  public String getId() {
+@Pattern(regexp="^\\d+$")   public String getId() {
     return id;
   }
 
@@ -83,12 +53,10 @@ public class InfConsultaTaxasRespTransactionsFees   {
   }
 
   /**
-   * Nome da taxa.
+   * Nome do produto.
    * @return name
   **/
-  @ApiModelProperty(example = "deposit", required = true, value = "Nome da taxa.")
-  @NotNull
-
+  @ApiModelProperty(example = "deposit", value = "Nome do produto.")
 
   public String getName() {
     return name;
@@ -96,6 +64,33 @@ public class InfConsultaTaxasRespTransactionsFees   {
 
   public void setName(String name) {
     this.name = name;
+  }
+
+  public InfConsultaTaxasRespTransactionsFees fees(List<InfConsultaTaxasRespFees> fees) {
+    this.fees = fees;
+    return this;
+  }
+
+  public InfConsultaTaxasRespTransactionsFees addFeesItem(InfConsultaTaxasRespFees feesItem) {
+    if (this.fees == null) {
+      this.fees = new ArrayList<InfConsultaTaxasRespFees>();
+    }
+    this.fees.add(feesItem);
+    return this;
+  }
+
+  /**
+   * Get fees
+   * @return fees
+  **/
+  @ApiModelProperty(value = "")
+  @Valid
+  public List<InfConsultaTaxasRespFees> getFees() {
+    return fees;
+  }
+
+  public void setFees(List<InfConsultaTaxasRespFees> fees) {
+    this.fees = fees;
   }
 
 
@@ -108,14 +103,14 @@ public class InfConsultaTaxasRespTransactionsFees   {
       return false;
     }
     InfConsultaTaxasRespTransactionsFees infConsultaTaxasRespTransactionsFees = (InfConsultaTaxasRespTransactionsFees) o;
-    return Objects.equals(this.fees, infConsultaTaxasRespTransactionsFees.fees) &&
-        Objects.equals(this.id, infConsultaTaxasRespTransactionsFees.id) &&
-        Objects.equals(this.name, infConsultaTaxasRespTransactionsFees.name);
+    return Objects.equals(this.id, infConsultaTaxasRespTransactionsFees.id) &&
+        Objects.equals(this.name, infConsultaTaxasRespTransactionsFees.name) &&
+        Objects.equals(this.fees, infConsultaTaxasRespTransactionsFees.fees);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(fees, id, name);
+    return Objects.hash(id, name, fees);
   }
 
   @Override
@@ -123,9 +118,9 @@ public class InfConsultaTaxasRespTransactionsFees   {
     StringBuilder sb = new StringBuilder();
     sb.append("class InfConsultaTaxasRespTransactionsFees {\n");
     
-    sb.append("    fees: ").append(toIndentedString(fees)).append("\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
+    sb.append("    fees: ").append(toIndentedString(fees)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -141,4 +136,3 @@ public class InfConsultaTaxasRespTransactionsFees   {
     return o.toString().replace("\n", "\n    ");
   }
 }
-

@@ -11,12 +11,11 @@ import javax.validation.Valid;
 import javax.validation.constraints.*;
 
 /**
- * Informações da resposta de consulta de todos os possíveis produtos e valores de recarga de cartão de transporte ou pré-pago na rede. Traz uma lista de todos os produtos e seus valores para depois serem filtrados pelo cartão do usuário.
+ * Informações da resposta de consulta dos produtos de recarga de cartão pré-pago de transporte disponíveis.
  */
-@ApiModel(description = "Informações da resposta de consulta de todos os possíveis produtos e valores de recarga de cartão de transporte ou pré-pago na rede. Traz uma lista de todos os produtos e seus valores para depois serem filtrados pelo cartão do usuário.")
+@ApiModel(description = "Informações da resposta de consulta dos produtos de recarga de cartão pré-pago de transporte disponíveis.")
 @Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2019-01-22T18:11:57.142Z")
-
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.SpringCodegen", date = "2019-03-19T14:13:24.289Z[GMT]")
 public class InfConsultaValoresRecargaResp   {
   @JsonProperty("valores")
   private InfConsultaValoresRecargaRespValores valores = null;
@@ -34,7 +33,6 @@ public class InfConsultaValoresRecargaResp   {
   @NotNull
 
   @Valid
-
   public InfConsultaValoresRecargaRespValores getValores() {
     return valores;
   }
@@ -82,4 +80,3 @@ public class InfConsultaValoresRecargaResp   {
     return o.toString().replace("\n", "\n    ");
   }
 }
-

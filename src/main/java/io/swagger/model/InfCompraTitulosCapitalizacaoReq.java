@@ -14,41 +14,19 @@ import javax.validation.constraints.*;
  */
 @ApiModel(description = "Informações da requisição de compra de títulos de capitalização.")
 @Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2019-01-22T18:11:57.142Z")
-
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.SpringCodegen", date = "2019-03-19T14:13:24.289Z[GMT]")
 public class InfCompraTitulosCapitalizacaoReq   {
-  @JsonProperty("cpf")
-  private String cpf = null;
-
   @JsonProperty("idProduto")
   private String idProduto = null;
 
-  @JsonProperty("quantidade")
-  private String quantidade = null;
+  @JsonProperty("cpf")
+  private String cpf = null;
 
   @JsonProperty("telefone")
   private String telefone = null;
 
-  public InfCompraTitulosCapitalizacaoReq cpf(String cpf) {
-    this.cpf = cpf;
-    return this;
-  }
-
-  /**
-   * Número do CPF do cliente favorecido da transação (11 dígitos).
-   * @return cpf
-  **/
-  @ApiModelProperty(example = "02358422785", required = true, value = "Número do CPF do cliente favorecido da transação (11 dígitos).")
-  @NotNull
-
-@Pattern(regexp="^\\d{11}$") 
-  public String getCpf() {
-    return cpf;
-  }
-
-  public void setCpf(String cpf) {
-    this.cpf = cpf;
-  }
+  @JsonProperty("quantidade")
+  private String quantidade = null;
 
   public InfCompraTitulosCapitalizacaoReq idProduto(String idProduto) {
     this.idProduto = idProduto;
@@ -62,8 +40,7 @@ public class InfCompraTitulosCapitalizacaoReq   {
   @ApiModelProperty(example = "7", required = true, value = "Produto utilizado na operação.")
   @NotNull
 
-@Pattern(regexp="^\\d+$") 
-  public String getIdProduto() {
+@Pattern(regexp="^\\d+$")   public String getIdProduto() {
     return idProduto;
   }
 
@@ -71,25 +48,24 @@ public class InfCompraTitulosCapitalizacaoReq   {
     this.idProduto = idProduto;
   }
 
-  public InfCompraTitulosCapitalizacaoReq quantidade(String quantidade) {
-    this.quantidade = quantidade;
+  public InfCompraTitulosCapitalizacaoReq cpf(String cpf) {
+    this.cpf = cpf;
     return this;
   }
 
   /**
-   * Quantidade de itens do produtos.
-   * @return quantidade
+   * Número do CPF do cliente favorecido da transação (11 dígitos).
+   * @return cpf
   **/
-  @ApiModelProperty(example = "2", required = true, value = "Quantidade de itens do produtos.")
+  @ApiModelProperty(example = "02358422785", required = true, value = "Número do CPF do cliente favorecido da transação (11 dígitos).")
   @NotNull
 
-@Pattern(regexp="^\\d+$") 
-  public String getQuantidade() {
-    return quantidade;
+@Pattern(regexp="^\\d{11}$")   public String getCpf() {
+    return cpf;
   }
 
-  public void setQuantidade(String quantidade) {
-    this.quantidade = quantidade;
+  public void setCpf(String cpf) {
+    this.cpf = cpf;
   }
 
   public InfCompraTitulosCapitalizacaoReq telefone(String telefone) {
@@ -104,13 +80,32 @@ public class InfCompraTitulosCapitalizacaoReq   {
   @ApiModelProperty(example = "05199999999", required = true, value = "Telefone do cliente favorecido da transação (11 dígitos = DDD com 0 quando número tem 8 dígitos, sem 0 quando número tem 9 dígitos).")
   @NotNull
 
-@Pattern(regexp="^\\d{11}$") 
-  public String getTelefone() {
+@Pattern(regexp="^\\d{11}$")   public String getTelefone() {
     return telefone;
   }
 
   public void setTelefone(String telefone) {
     this.telefone = telefone;
+  }
+
+  public InfCompraTitulosCapitalizacaoReq quantidade(String quantidade) {
+    this.quantidade = quantidade;
+    return this;
+  }
+
+  /**
+   * Quantidade de itens do produtos.
+   * @return quantidade
+  **/
+  @ApiModelProperty(example = "2", required = true, value = "Quantidade de itens do produtos.")
+  @NotNull
+
+@Pattern(regexp="^\\d+$")   public String getQuantidade() {
+    return quantidade;
+  }
+
+  public void setQuantidade(String quantidade) {
+    this.quantidade = quantidade;
   }
 
 
@@ -123,15 +118,15 @@ public class InfCompraTitulosCapitalizacaoReq   {
       return false;
     }
     InfCompraTitulosCapitalizacaoReq infCompraTitulosCapitalizacaoReq = (InfCompraTitulosCapitalizacaoReq) o;
-    return Objects.equals(this.cpf, infCompraTitulosCapitalizacaoReq.cpf) &&
-        Objects.equals(this.idProduto, infCompraTitulosCapitalizacaoReq.idProduto) &&
-        Objects.equals(this.quantidade, infCompraTitulosCapitalizacaoReq.quantidade) &&
-        Objects.equals(this.telefone, infCompraTitulosCapitalizacaoReq.telefone);
+    return Objects.equals(this.idProduto, infCompraTitulosCapitalizacaoReq.idProduto) &&
+        Objects.equals(this.cpf, infCompraTitulosCapitalizacaoReq.cpf) &&
+        Objects.equals(this.telefone, infCompraTitulosCapitalizacaoReq.telefone) &&
+        Objects.equals(this.quantidade, infCompraTitulosCapitalizacaoReq.quantidade);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(cpf, idProduto, quantidade, telefone);
+    return Objects.hash(idProduto, cpf, telefone, quantidade);
   }
 
   @Override
@@ -139,10 +134,10 @@ public class InfCompraTitulosCapitalizacaoReq   {
     StringBuilder sb = new StringBuilder();
     sb.append("class InfCompraTitulosCapitalizacaoReq {\n");
     
-    sb.append("    cpf: ").append(toIndentedString(cpf)).append("\n");
     sb.append("    idProduto: ").append(toIndentedString(idProduto)).append("\n");
-    sb.append("    quantidade: ").append(toIndentedString(quantidade)).append("\n");
+    sb.append("    cpf: ").append(toIndentedString(cpf)).append("\n");
     sb.append("    telefone: ").append(toIndentedString(telefone)).append("\n");
+    sb.append("    quantidade: ").append(toIndentedString(quantidade)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -158,4 +153,3 @@ public class InfCompraTitulosCapitalizacaoReq   {
     return o.toString().replace("\n", "\n    ");
   }
 }
-

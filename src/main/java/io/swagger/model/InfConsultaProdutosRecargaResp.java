@@ -13,12 +13,11 @@ import javax.validation.Valid;
 import javax.validation.constraints.*;
 
 /**
- * Informações da resposta da requisição de consulta de produtos disponíveis de recarga de um cartão.
+ * Informações da resposta da requisição de consulta de produtos disponíveis de recarga para o cartão informado pelo cliente.
  */
-@ApiModel(description = "Informações da resposta da requisição de consulta de produtos disponíveis de recarga de um cartão.")
+@ApiModel(description = "Informações da resposta da requisição de consulta de produtos disponíveis de recarga para o cartão informado pelo cliente.")
 @Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2019-01-22T18:11:57.142Z")
-
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.SpringCodegen", date = "2019-03-19T14:13:24.289Z[GMT]")
 public class InfConsultaProdutosRecargaResp   {
   @JsonProperty("products")
   @Valid
@@ -35,14 +34,12 @@ public class InfConsultaProdutosRecargaResp   {
   }
 
   /**
-   * Identificador e nomes dos produtos disponíveis do cartão.
+   * Identificador e nomes dos produtos disponíveis para o cartão.
    * @return products
   **/
-  @ApiModelProperty(required = true, value = "Identificador e nomes dos produtos disponíveis do cartão.")
+  @ApiModelProperty(required = true, value = "Identificador e nomes dos produtos disponíveis para o cartão.")
   @NotNull
-
   @Valid
-
   public List<InfConsultaProdutosRecargaRespProducts> getProducts() {
     return products;
   }
@@ -90,4 +87,3 @@ public class InfConsultaProdutosRecargaResp   {
     return o.toString().replace("\n", "\n    ");
   }
 }
-

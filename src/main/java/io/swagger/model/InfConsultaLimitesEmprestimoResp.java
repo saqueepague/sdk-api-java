@@ -14,62 +14,19 @@ import javax.validation.constraints.*;
  */
 @ApiModel(description = "Informações da resposta da requisição de consulta de limite de empréstimos.")
 @Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2019-01-22T18:11:57.142Z")
-
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.SpringCodegen", date = "2019-03-19T14:13:24.289Z[GMT]")
 public class InfConsultaLimitesEmprestimoResp   {
-  @JsonProperty("limiteMaximoEmprestimo")
-  private String limiteMaximoEmprestimo = null;
-
-  @JsonProperty("limiteMinimoEmprestimo")
-  private String limiteMinimoEmprestimo = null;
-
   @JsonProperty("nomeAgenciaBancaria")
   private String nomeAgenciaBancaria = null;
 
   @JsonProperty("nomeTitularConta")
   private String nomeTitularConta = null;
 
-  public InfConsultaLimitesEmprestimoResp limiteMaximoEmprestimo(String limiteMaximoEmprestimo) {
-    this.limiteMaximoEmprestimo = limiteMaximoEmprestimo;
-    return this;
-  }
+  @JsonProperty("limiteMinimoEmprestimo")
+  private String limiteMinimoEmprestimo = null;
 
-  /**
-   * Valor máximo permitido de empréstimo (12 caracteres, incluindo centavos).
-   * @return limiteMaximoEmprestimo
-  **/
-  @ApiModelProperty(example = "000005000000", required = true, value = "Valor máximo permitido de empréstimo (12 caracteres, incluindo centavos).")
-  @NotNull
-
-@Pattern(regexp="^\\d{12}$") 
-  public String getLimiteMaximoEmprestimo() {
-    return limiteMaximoEmprestimo;
-  }
-
-  public void setLimiteMaximoEmprestimo(String limiteMaximoEmprestimo) {
-    this.limiteMaximoEmprestimo = limiteMaximoEmprestimo;
-  }
-
-  public InfConsultaLimitesEmprestimoResp limiteMinimoEmprestimo(String limiteMinimoEmprestimo) {
-    this.limiteMinimoEmprestimo = limiteMinimoEmprestimo;
-    return this;
-  }
-
-  /**
-   * Valor mínimo permitido de empréstimo (12 caracteres, incluindo centavos).
-   * @return limiteMinimoEmprestimo
-  **/
-  @ApiModelProperty(example = "000000500000", required = true, value = "Valor mínimo permitido de empréstimo (12 caracteres, incluindo centavos).")
-  @NotNull
-
-@Pattern(regexp="^\\d{12}$") 
-  public String getLimiteMinimoEmprestimo() {
-    return limiteMinimoEmprestimo;
-  }
-
-  public void setLimiteMinimoEmprestimo(String limiteMinimoEmprestimo) {
-    this.limiteMinimoEmprestimo = limiteMinimoEmprestimo;
-  }
+  @JsonProperty("limiteMaximoEmprestimo")
+  private String limiteMaximoEmprestimo = null;
 
   public InfConsultaLimitesEmprestimoResp nomeAgenciaBancaria(String nomeAgenciaBancaria) {
     this.nomeAgenciaBancaria = nomeAgenciaBancaria;
@@ -82,7 +39,6 @@ public class InfConsultaLimitesEmprestimoResp   {
   **/
   @ApiModelProperty(example = "Agência bancária", required = true, value = "Nome da agencia bancária.")
   @NotNull
-
 
   public String getNomeAgenciaBancaria() {
     return nomeAgenciaBancaria;
@@ -104,13 +60,52 @@ public class InfConsultaLimitesEmprestimoResp   {
   @ApiModelProperty(example = "Carl Edward Sagan", required = true, value = "Nome do titular da conta.")
   @NotNull
 
-
   public String getNomeTitularConta() {
     return nomeTitularConta;
   }
 
   public void setNomeTitularConta(String nomeTitularConta) {
     this.nomeTitularConta = nomeTitularConta;
+  }
+
+  public InfConsultaLimitesEmprestimoResp limiteMinimoEmprestimo(String limiteMinimoEmprestimo) {
+    this.limiteMinimoEmprestimo = limiteMinimoEmprestimo;
+    return this;
+  }
+
+  /**
+   * Valor mínimo permitido de empréstimo (12 caracteres, incluindo centavos).
+   * @return limiteMinimoEmprestimo
+  **/
+  @ApiModelProperty(example = "000000500000", required = true, value = "Valor mínimo permitido de empréstimo (12 caracteres, incluindo centavos).")
+  @NotNull
+
+@Pattern(regexp="^\\d{12}$")   public String getLimiteMinimoEmprestimo() {
+    return limiteMinimoEmprestimo;
+  }
+
+  public void setLimiteMinimoEmprestimo(String limiteMinimoEmprestimo) {
+    this.limiteMinimoEmprestimo = limiteMinimoEmprestimo;
+  }
+
+  public InfConsultaLimitesEmprestimoResp limiteMaximoEmprestimo(String limiteMaximoEmprestimo) {
+    this.limiteMaximoEmprestimo = limiteMaximoEmprestimo;
+    return this;
+  }
+
+  /**
+   * Valor máximo permitido de empréstimo (12 caracteres, incluindo centavos).
+   * @return limiteMaximoEmprestimo
+  **/
+  @ApiModelProperty(example = "000005000000", required = true, value = "Valor máximo permitido de empréstimo (12 caracteres, incluindo centavos).")
+  @NotNull
+
+@Pattern(regexp="^\\d{12}$")   public String getLimiteMaximoEmprestimo() {
+    return limiteMaximoEmprestimo;
+  }
+
+  public void setLimiteMaximoEmprestimo(String limiteMaximoEmprestimo) {
+    this.limiteMaximoEmprestimo = limiteMaximoEmprestimo;
   }
 
 
@@ -123,15 +118,15 @@ public class InfConsultaLimitesEmprestimoResp   {
       return false;
     }
     InfConsultaLimitesEmprestimoResp infConsultaLimitesEmprestimoResp = (InfConsultaLimitesEmprestimoResp) o;
-    return Objects.equals(this.limiteMaximoEmprestimo, infConsultaLimitesEmprestimoResp.limiteMaximoEmprestimo) &&
+    return Objects.equals(this.nomeAgenciaBancaria, infConsultaLimitesEmprestimoResp.nomeAgenciaBancaria) &&
+        Objects.equals(this.nomeTitularConta, infConsultaLimitesEmprestimoResp.nomeTitularConta) &&
         Objects.equals(this.limiteMinimoEmprestimo, infConsultaLimitesEmprestimoResp.limiteMinimoEmprestimo) &&
-        Objects.equals(this.nomeAgenciaBancaria, infConsultaLimitesEmprestimoResp.nomeAgenciaBancaria) &&
-        Objects.equals(this.nomeTitularConta, infConsultaLimitesEmprestimoResp.nomeTitularConta);
+        Objects.equals(this.limiteMaximoEmprestimo, infConsultaLimitesEmprestimoResp.limiteMaximoEmprestimo);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(limiteMaximoEmprestimo, limiteMinimoEmprestimo, nomeAgenciaBancaria, nomeTitularConta);
+    return Objects.hash(nomeAgenciaBancaria, nomeTitularConta, limiteMinimoEmprestimo, limiteMaximoEmprestimo);
   }
 
   @Override
@@ -139,10 +134,10 @@ public class InfConsultaLimitesEmprestimoResp   {
     StringBuilder sb = new StringBuilder();
     sb.append("class InfConsultaLimitesEmprestimoResp {\n");
     
-    sb.append("    limiteMaximoEmprestimo: ").append(toIndentedString(limiteMaximoEmprestimo)).append("\n");
-    sb.append("    limiteMinimoEmprestimo: ").append(toIndentedString(limiteMinimoEmprestimo)).append("\n");
     sb.append("    nomeAgenciaBancaria: ").append(toIndentedString(nomeAgenciaBancaria)).append("\n");
     sb.append("    nomeTitularConta: ").append(toIndentedString(nomeTitularConta)).append("\n");
+    sb.append("    limiteMinimoEmprestimo: ").append(toIndentedString(limiteMinimoEmprestimo)).append("\n");
+    sb.append("    limiteMaximoEmprestimo: ").append(toIndentedString(limiteMaximoEmprestimo)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -158,4 +153,3 @@ public class InfConsultaLimitesEmprestimoResp   {
     return o.toString().replace("\n", "\n    ");
   }
 }
-

@@ -18,11 +18,16 @@ import javax.validation.constraints.*;
  * SaldoReq
  */
 @Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2019-01-22T18:11:57.142Z")
-
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.SpringCodegen", date = "2019-03-19T14:13:24.289Z[GMT]")
 public class SaldoReq   {
+  @JsonProperty("InfTransacao")
+  private InfTransacaoReq infTransacao = null;
+
   @JsonProperty("Cartao")
   private Cartao cartao = null;
+
+  @JsonProperty("Terminal")
+  private Terminal terminal = null;
 
   @JsonProperty("Cripto")
   private Cripto cripto = null;
@@ -30,11 +35,26 @@ public class SaldoReq   {
   @JsonProperty("InfSaldo")
   private InfSaldoReq infSaldo = null;
 
-  @JsonProperty("InfTransacao")
-  private InfTransacaoReq infTransacao = null;
+  public SaldoReq infTransacao(InfTransacaoReq infTransacao) {
+    this.infTransacao = infTransacao;
+    return this;
+  }
 
-  @JsonProperty("Terminal")
-  private Terminal terminal = null;
+  /**
+   * Get infTransacao
+   * @return infTransacao
+  **/
+  @ApiModelProperty(required = true, value = "")
+  @NotNull
+
+  @Valid
+  public InfTransacaoReq getInfTransacao() {
+    return infTransacao;
+  }
+
+  public void setInfTransacao(InfTransacaoReq infTransacao) {
+    this.infTransacao = infTransacao;
+  }
 
   public SaldoReq cartao(Cartao cartao) {
     this.cartao = cartao;
@@ -48,13 +68,33 @@ public class SaldoReq   {
   @ApiModelProperty(value = "")
 
   @Valid
-
   public Cartao getCartao() {
     return cartao;
   }
 
   public void setCartao(Cartao cartao) {
     this.cartao = cartao;
+  }
+
+  public SaldoReq terminal(Terminal terminal) {
+    this.terminal = terminal;
+    return this;
+  }
+
+  /**
+   * Get terminal
+   * @return terminal
+  **/
+  @ApiModelProperty(required = true, value = "")
+  @NotNull
+
+  @Valid
+  public Terminal getTerminal() {
+    return terminal;
+  }
+
+  public void setTerminal(Terminal terminal) {
+    this.terminal = terminal;
   }
 
   public SaldoReq cripto(Cripto cripto) {
@@ -69,7 +109,6 @@ public class SaldoReq   {
   @ApiModelProperty(value = "")
 
   @Valid
-
   public Cripto getCripto() {
     return cripto;
   }
@@ -91,57 +130,12 @@ public class SaldoReq   {
   @NotNull
 
   @Valid
-
   public InfSaldoReq getInfSaldo() {
     return infSaldo;
   }
 
   public void setInfSaldo(InfSaldoReq infSaldo) {
     this.infSaldo = infSaldo;
-  }
-
-  public SaldoReq infTransacao(InfTransacaoReq infTransacao) {
-    this.infTransacao = infTransacao;
-    return this;
-  }
-
-  /**
-   * Get infTransacao
-   * @return infTransacao
-  **/
-  @ApiModelProperty(required = true, value = "")
-  @NotNull
-
-  @Valid
-
-  public InfTransacaoReq getInfTransacao() {
-    return infTransacao;
-  }
-
-  public void setInfTransacao(InfTransacaoReq infTransacao) {
-    this.infTransacao = infTransacao;
-  }
-
-  public SaldoReq terminal(Terminal terminal) {
-    this.terminal = terminal;
-    return this;
-  }
-
-  /**
-   * Get terminal
-   * @return terminal
-  **/
-  @ApiModelProperty(required = true, value = "")
-  @NotNull
-
-  @Valid
-
-  public Terminal getTerminal() {
-    return terminal;
-  }
-
-  public void setTerminal(Terminal terminal) {
-    this.terminal = terminal;
   }
 
 
@@ -154,16 +148,16 @@ public class SaldoReq   {
       return false;
     }
     SaldoReq saldoReq = (SaldoReq) o;
-    return Objects.equals(this.cartao, saldoReq.cartao) &&
+    return Objects.equals(this.infTransacao, saldoReq.infTransacao) &&
+        Objects.equals(this.cartao, saldoReq.cartao) &&
+        Objects.equals(this.terminal, saldoReq.terminal) &&
         Objects.equals(this.cripto, saldoReq.cripto) &&
-        Objects.equals(this.infSaldo, saldoReq.infSaldo) &&
-        Objects.equals(this.infTransacao, saldoReq.infTransacao) &&
-        Objects.equals(this.terminal, saldoReq.terminal);
+        Objects.equals(this.infSaldo, saldoReq.infSaldo);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(cartao, cripto, infSaldo, infTransacao, terminal);
+    return Objects.hash(infTransacao, cartao, terminal, cripto, infSaldo);
   }
 
   @Override
@@ -171,11 +165,11 @@ public class SaldoReq   {
     StringBuilder sb = new StringBuilder();
     sb.append("class SaldoReq {\n");
     
+    sb.append("    infTransacao: ").append(toIndentedString(infTransacao)).append("\n");
     sb.append("    cartao: ").append(toIndentedString(cartao)).append("\n");
+    sb.append("    terminal: ").append(toIndentedString(terminal)).append("\n");
     sb.append("    cripto: ").append(toIndentedString(cripto)).append("\n");
     sb.append("    infSaldo: ").append(toIndentedString(infSaldo)).append("\n");
-    sb.append("    infTransacao: ").append(toIndentedString(infTransacao)).append("\n");
-    sb.append("    terminal: ").append(toIndentedString(terminal)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -191,4 +185,3 @@ public class SaldoReq   {
     return o.toString().replace("\n", "\n    ");
   }
 }
-

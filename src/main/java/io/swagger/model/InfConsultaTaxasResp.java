@@ -13,12 +13,11 @@ import javax.validation.Valid;
 import javax.validation.constraints.*;
 
 /**
- * Informações da resposta de consulta de taxas dinâmicas para depósito e saque.
+ * Informações da resposta de consulta de taxas dinâmicas para depósito e saque de carteira digital.
  */
-@ApiModel(description = "Informações da resposta de consulta de taxas dinâmicas para depósito e saque.")
+@ApiModel(description = "Informações da resposta de consulta de taxas dinâmicas para depósito e saque de carteira digital.")
 @Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2019-01-22T18:11:57.142Z")
-
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.SpringCodegen", date = "2019-03-19T14:13:24.289Z[GMT]")
 public class InfConsultaTaxasResp   {
   @JsonProperty("transactions_fees")
   @Valid
@@ -40,9 +39,7 @@ public class InfConsultaTaxasResp   {
   **/
   @ApiModelProperty(required = true, value = "")
   @NotNull
-
   @Valid
-
   public List<InfConsultaTaxasRespTransactionsFees> getTransactionsFees() {
     return transactionsFees;
   }
@@ -90,4 +87,3 @@ public class InfConsultaTaxasResp   {
     return o.toString().replace("\n", "\n    ");
   }
 }
-

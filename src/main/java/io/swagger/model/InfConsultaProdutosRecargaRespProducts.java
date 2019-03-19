@@ -13,8 +13,7 @@ import javax.validation.constraints.*;
  * InfConsultaProdutosRecargaRespProducts
  */
 @Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2019-01-22T18:11:57.142Z")
-
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.SpringCodegen", date = "2019-03-19T14:13:24.289Z[GMT]")
 public class InfConsultaProdutosRecargaRespProducts   {
   @JsonProperty("id")
   private String id = null;
@@ -28,14 +27,12 @@ public class InfConsultaProdutosRecargaRespProducts   {
   }
 
   /**
-   * Identificador do produto.
+   * Identificador do produto disponível com base na lista gerada na operação /consultaValoresRecarga.
    * @return id
   **/
-  @ApiModelProperty(example = "1", required = true, value = "Identificador do produto.")
-  @NotNull
+  @ApiModelProperty(example = "1", value = "Identificador do produto disponível com base na lista gerada na operação /consultaValoresRecarga.")
 
-@Pattern(regexp="^\\d+$") 
-  public String getId() {
+@Pattern(regexp="^\\d+$")   public String getId() {
     return id;
   }
 
@@ -49,12 +46,10 @@ public class InfConsultaProdutosRecargaRespProducts   {
   }
 
   /**
-   * Nome do produto.
+   * Nome do produto disponível.
    * @return name
   **/
-  @ApiModelProperty(example = "Produto de Recarga", required = true, value = "Nome do produto.")
-  @NotNull
-
+  @ApiModelProperty(example = "Produto de Recarga", value = "Nome do produto disponível.")
 
   public String getName() {
     return name;
@@ -105,4 +100,3 @@ public class InfConsultaProdutosRecargaRespProducts   {
     return o.toString().replace("\n", "\n    ");
   }
 }
-

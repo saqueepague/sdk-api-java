@@ -14,8 +14,7 @@ import javax.validation.constraints.*;
  */
 @ApiModel(description = "Resposta do cliente à pergunta feita na identificação.")
 @Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2019-01-22T18:11:57.142Z")
-
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.SpringCodegen", date = "2019-03-19T14:13:24.289Z[GMT]")
 public class CriptoRespostaCliente   {
   @JsonProperty("id")
   private String id = null;
@@ -37,8 +36,7 @@ public class CriptoRespostaCliente   {
   **/
   @ApiModelProperty(example = "1", value = "Identificador da pergunta.")
 
-@Pattern(regexp="^\\d+$") 
-  public String getId() {
+@Pattern(regexp="^\\d+$")   public String getId() {
     return id;
   }
 
@@ -52,11 +50,10 @@ public class CriptoRespostaCliente   {
   }
 
   /**
-   * Pergunta feita ao cliente.
+   * Pergunta feita ao cliente (somente o id é prenchido)
    * @return pergunta
   **/
-  @ApiModelProperty(example = "Qual a data de aniversário do seu primeiro animal de estimação?", value = "Pergunta feita ao cliente.")
-
+  @ApiModelProperty(value = "Pergunta feita ao cliente (somente o id é prenchido)")
 
   public String getPergunta() {
     return pergunta;
@@ -72,11 +69,10 @@ public class CriptoRespostaCliente   {
   }
 
   /**
-   * Resposta da pergunta.
+   * Resposta da pergunta (dado criptografado)
    * @return resposta
   **/
-  @ApiModelProperty(example = "14", value = "Resposta da pergunta.")
-
+  @ApiModelProperty(example = "14", value = "Resposta da pergunta (dado criptografado)")
 
   public String getResposta() {
     return resposta;
@@ -129,4 +125,3 @@ public class CriptoRespostaCliente   {
     return o.toString().replace("\n", "\n    ");
   }
 }
-

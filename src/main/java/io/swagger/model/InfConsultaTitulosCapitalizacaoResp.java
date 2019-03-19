@@ -17,8 +17,7 @@ import javax.validation.constraints.*;
  */
 @ApiModel(description = "Informações da requisição de consulta de produtos de título de capitalização.")
 @Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2019-01-22T18:11:57.142Z")
-
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.SpringCodegen", date = "2019-03-19T14:13:24.289Z[GMT]")
 public class InfConsultaTitulosCapitalizacaoResp   {
   @JsonProperty("produtos")
   @Valid
@@ -42,9 +41,7 @@ public class InfConsultaTitulosCapitalizacaoResp   {
    * @return produtos
   **/
   @ApiModelProperty(value = "Produtos de título de capitalização disponíveis.")
-
   @Valid
-
   public List<InfConsultaTitulosCapitalizacaoRespProdutos> getProdutos() {
     return produtos;
   }
@@ -92,4 +89,3 @@ public class InfConsultaTitulosCapitalizacaoResp   {
     return o.toString().replace("\n", "\n    ");
   }
 }
-

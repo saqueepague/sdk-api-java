@@ -17,63 +17,19 @@ import javax.validation.constraints.*;
  * ConsultaValoresRecargaResp
  */
 @Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2019-01-22T18:11:57.142Z")
-
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.SpringCodegen", date = "2019-03-19T14:13:24.289Z[GMT]")
 public class ConsultaValoresRecargaResp   {
-  @JsonProperty("Cripto")
-  private CriptoResp cripto = null;
-
-  @JsonProperty("InfConsultaValoresRecarga")
-  private InfConsultaValoresRecargaResp infConsultaValoresRecarga = null;
-
   @JsonProperty("InfTransacao")
   private InfTransacaoResp infTransacao = null;
 
   @JsonProperty("Terminal")
   private Terminal terminal = null;
 
-  public ConsultaValoresRecargaResp cripto(CriptoResp cripto) {
-    this.cripto = cripto;
-    return this;
-  }
+  @JsonProperty("Cripto")
+  private CriptoResp cripto = null;
 
-  /**
-   * Get cripto
-   * @return cripto
-  **/
-  @ApiModelProperty(value = "")
-
-  @Valid
-
-  public CriptoResp getCripto() {
-    return cripto;
-  }
-
-  public void setCripto(CriptoResp cripto) {
-    this.cripto = cripto;
-  }
-
-  public ConsultaValoresRecargaResp infConsultaValoresRecarga(InfConsultaValoresRecargaResp infConsultaValoresRecarga) {
-    this.infConsultaValoresRecarga = infConsultaValoresRecarga;
-    return this;
-  }
-
-  /**
-   * Get infConsultaValoresRecarga
-   * @return infConsultaValoresRecarga
-  **/
-  @ApiModelProperty(required = true, value = "")
-  @NotNull
-
-  @Valid
-
-  public InfConsultaValoresRecargaResp getInfConsultaValoresRecarga() {
-    return infConsultaValoresRecarga;
-  }
-
-  public void setInfConsultaValoresRecarga(InfConsultaValoresRecargaResp infConsultaValoresRecarga) {
-    this.infConsultaValoresRecarga = infConsultaValoresRecarga;
-  }
+  @JsonProperty("InfConsultaValoresRecarga")
+  private InfConsultaValoresRecargaResp infConsultaValoresRecarga = null;
 
   public ConsultaValoresRecargaResp infTransacao(InfTransacaoResp infTransacao) {
     this.infTransacao = infTransacao;
@@ -88,7 +44,6 @@ public class ConsultaValoresRecargaResp   {
   @NotNull
 
   @Valid
-
   public InfTransacaoResp getInfTransacao() {
     return infTransacao;
   }
@@ -110,13 +65,53 @@ public class ConsultaValoresRecargaResp   {
   @NotNull
 
   @Valid
-
   public Terminal getTerminal() {
     return terminal;
   }
 
   public void setTerminal(Terminal terminal) {
     this.terminal = terminal;
+  }
+
+  public ConsultaValoresRecargaResp cripto(CriptoResp cripto) {
+    this.cripto = cripto;
+    return this;
+  }
+
+  /**
+   * Get cripto
+   * @return cripto
+  **/
+  @ApiModelProperty(value = "")
+
+  @Valid
+  public CriptoResp getCripto() {
+    return cripto;
+  }
+
+  public void setCripto(CriptoResp cripto) {
+    this.cripto = cripto;
+  }
+
+  public ConsultaValoresRecargaResp infConsultaValoresRecarga(InfConsultaValoresRecargaResp infConsultaValoresRecarga) {
+    this.infConsultaValoresRecarga = infConsultaValoresRecarga;
+    return this;
+  }
+
+  /**
+   * Get infConsultaValoresRecarga
+   * @return infConsultaValoresRecarga
+  **/
+  @ApiModelProperty(required = true, value = "")
+  @NotNull
+
+  @Valid
+  public InfConsultaValoresRecargaResp getInfConsultaValoresRecarga() {
+    return infConsultaValoresRecarga;
+  }
+
+  public void setInfConsultaValoresRecarga(InfConsultaValoresRecargaResp infConsultaValoresRecarga) {
+    this.infConsultaValoresRecarga = infConsultaValoresRecarga;
   }
 
 
@@ -129,15 +124,15 @@ public class ConsultaValoresRecargaResp   {
       return false;
     }
     ConsultaValoresRecargaResp consultaValoresRecargaResp = (ConsultaValoresRecargaResp) o;
-    return Objects.equals(this.cripto, consultaValoresRecargaResp.cripto) &&
-        Objects.equals(this.infConsultaValoresRecarga, consultaValoresRecargaResp.infConsultaValoresRecarga) &&
-        Objects.equals(this.infTransacao, consultaValoresRecargaResp.infTransacao) &&
-        Objects.equals(this.terminal, consultaValoresRecargaResp.terminal);
+    return Objects.equals(this.infTransacao, consultaValoresRecargaResp.infTransacao) &&
+        Objects.equals(this.terminal, consultaValoresRecargaResp.terminal) &&
+        Objects.equals(this.cripto, consultaValoresRecargaResp.cripto) &&
+        Objects.equals(this.infConsultaValoresRecarga, consultaValoresRecargaResp.infConsultaValoresRecarga);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(cripto, infConsultaValoresRecarga, infTransacao, terminal);
+    return Objects.hash(infTransacao, terminal, cripto, infConsultaValoresRecarga);
   }
 
   @Override
@@ -145,10 +140,10 @@ public class ConsultaValoresRecargaResp   {
     StringBuilder sb = new StringBuilder();
     sb.append("class ConsultaValoresRecargaResp {\n");
     
-    sb.append("    cripto: ").append(toIndentedString(cripto)).append("\n");
-    sb.append("    infConsultaValoresRecarga: ").append(toIndentedString(infConsultaValoresRecarga)).append("\n");
     sb.append("    infTransacao: ").append(toIndentedString(infTransacao)).append("\n");
     sb.append("    terminal: ").append(toIndentedString(terminal)).append("\n");
+    sb.append("    cripto: ").append(toIndentedString(cripto)).append("\n");
+    sb.append("    infConsultaValoresRecarga: ").append(toIndentedString(infConsultaValoresRecarga)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -164,4 +159,3 @@ public class ConsultaValoresRecargaResp   {
     return o.toString().replace("\n", "\n    ");
   }
 }
-

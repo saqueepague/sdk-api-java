@@ -10,12 +10,11 @@ import javax.validation.Valid;
 import javax.validation.constraints.*;
 
 /**
- * Informações da requisição de consulta de produtos disponíveis de recarga de um cartão.
+ * Informações da requisição de consulta de produtos disponíveis de recarga para o cartão informado pelo cliente.
  */
-@ApiModel(description = "Informações da requisição de consulta de produtos disponíveis de recarga de um cartão.")
+@ApiModel(description = "Informações da requisição de consulta de produtos disponíveis de recarga para o cartão informado pelo cliente.")
 @Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2019-01-22T18:11:57.142Z")
-
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.SpringCodegen", date = "2019-03-19T14:13:24.289Z[GMT]")
 public class InfConsultaProdutosRecargaReq   {
   @JsonProperty("idOperadora")
   private String idOperadora = null;
@@ -35,8 +34,7 @@ public class InfConsultaProdutosRecargaReq   {
   @ApiModelProperty(example = "586", required = true, value = "Operadora do cartão.")
   @NotNull
 
-@Pattern(regexp="^\\d+$") 
-  public String getIdOperadora() {
+@Pattern(regexp="^\\d+$")   public String getIdOperadora() {
     return idOperadora;
   }
 
@@ -56,8 +54,7 @@ public class InfConsultaProdutosRecargaReq   {
   @ApiModelProperty(example = "574839201659236", required = true, value = "Número do cartão.")
   @NotNull
 
-@Pattern(regexp="^\\d+$") 
-  public String getNumCartao() {
+@Pattern(regexp="^\\d+$")   public String getNumCartao() {
     return numCartao;
   }
 
@@ -106,4 +103,3 @@ public class InfConsultaProdutosRecargaReq   {
     return o.toString().replace("\n", "\n    ");
   }
 }
-

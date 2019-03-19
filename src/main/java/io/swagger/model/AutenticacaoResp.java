@@ -17,63 +17,19 @@ import javax.validation.constraints.*;
  * AutenticacaoResp
  */
 @Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2019-01-22T18:11:57.142Z")
-
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.SpringCodegen", date = "2019-03-19T14:13:24.289Z[GMT]")
 public class AutenticacaoResp   {
-  @JsonProperty("Cripto")
-  private CriptoResp cripto = null;
-
-  @JsonProperty("InfAutenticacao")
-  private InfAutenticacaoResp infAutenticacao = null;
-
   @JsonProperty("InfTransacao")
   private InfTransacaoResp infTransacao = null;
 
   @JsonProperty("Terminal")
   private Terminal terminal = null;
 
-  public AutenticacaoResp cripto(CriptoResp cripto) {
-    this.cripto = cripto;
-    return this;
-  }
+  @JsonProperty("Cripto")
+  private CriptoResp cripto = null;
 
-  /**
-   * Get cripto
-   * @return cripto
-  **/
-  @ApiModelProperty(value = "")
-
-  @Valid
-
-  public CriptoResp getCripto() {
-    return cripto;
-  }
-
-  public void setCripto(CriptoResp cripto) {
-    this.cripto = cripto;
-  }
-
-  public AutenticacaoResp infAutenticacao(InfAutenticacaoResp infAutenticacao) {
-    this.infAutenticacao = infAutenticacao;
-    return this;
-  }
-
-  /**
-   * Get infAutenticacao
-   * @return infAutenticacao
-  **/
-  @ApiModelProperty(required = true, value = "")
-  @NotNull
-
-  @Valid
-
-  public InfAutenticacaoResp getInfAutenticacao() {
-    return infAutenticacao;
-  }
-
-  public void setInfAutenticacao(InfAutenticacaoResp infAutenticacao) {
-    this.infAutenticacao = infAutenticacao;
-  }
+  @JsonProperty("InfAutenticacao")
+  private InfAutenticacaoResp infAutenticacao = null;
 
   public AutenticacaoResp infTransacao(InfTransacaoResp infTransacao) {
     this.infTransacao = infTransacao;
@@ -88,7 +44,6 @@ public class AutenticacaoResp   {
   @NotNull
 
   @Valid
-
   public InfTransacaoResp getInfTransacao() {
     return infTransacao;
   }
@@ -110,13 +65,53 @@ public class AutenticacaoResp   {
   @NotNull
 
   @Valid
-
   public Terminal getTerminal() {
     return terminal;
   }
 
   public void setTerminal(Terminal terminal) {
     this.terminal = terminal;
+  }
+
+  public AutenticacaoResp cripto(CriptoResp cripto) {
+    this.cripto = cripto;
+    return this;
+  }
+
+  /**
+   * Get cripto
+   * @return cripto
+  **/
+  @ApiModelProperty(value = "")
+
+  @Valid
+  public CriptoResp getCripto() {
+    return cripto;
+  }
+
+  public void setCripto(CriptoResp cripto) {
+    this.cripto = cripto;
+  }
+
+  public AutenticacaoResp infAutenticacao(InfAutenticacaoResp infAutenticacao) {
+    this.infAutenticacao = infAutenticacao;
+    return this;
+  }
+
+  /**
+   * Get infAutenticacao
+   * @return infAutenticacao
+  **/
+  @ApiModelProperty(required = true, value = "")
+  @NotNull
+
+  @Valid
+  public InfAutenticacaoResp getInfAutenticacao() {
+    return infAutenticacao;
+  }
+
+  public void setInfAutenticacao(InfAutenticacaoResp infAutenticacao) {
+    this.infAutenticacao = infAutenticacao;
   }
 
 
@@ -129,15 +124,15 @@ public class AutenticacaoResp   {
       return false;
     }
     AutenticacaoResp autenticacaoResp = (AutenticacaoResp) o;
-    return Objects.equals(this.cripto, autenticacaoResp.cripto) &&
-        Objects.equals(this.infAutenticacao, autenticacaoResp.infAutenticacao) &&
-        Objects.equals(this.infTransacao, autenticacaoResp.infTransacao) &&
-        Objects.equals(this.terminal, autenticacaoResp.terminal);
+    return Objects.equals(this.infTransacao, autenticacaoResp.infTransacao) &&
+        Objects.equals(this.terminal, autenticacaoResp.terminal) &&
+        Objects.equals(this.cripto, autenticacaoResp.cripto) &&
+        Objects.equals(this.infAutenticacao, autenticacaoResp.infAutenticacao);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(cripto, infAutenticacao, infTransacao, terminal);
+    return Objects.hash(infTransacao, terminal, cripto, infAutenticacao);
   }
 
   @Override
@@ -145,10 +140,10 @@ public class AutenticacaoResp   {
     StringBuilder sb = new StringBuilder();
     sb.append("class AutenticacaoResp {\n");
     
-    sb.append("    cripto: ").append(toIndentedString(cripto)).append("\n");
-    sb.append("    infAutenticacao: ").append(toIndentedString(infAutenticacao)).append("\n");
     sb.append("    infTransacao: ").append(toIndentedString(infTransacao)).append("\n");
     sb.append("    terminal: ").append(toIndentedString(terminal)).append("\n");
+    sb.append("    cripto: ").append(toIndentedString(cripto)).append("\n");
+    sb.append("    infAutenticacao: ").append(toIndentedString(infAutenticacao)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -164,4 +159,3 @@ public class AutenticacaoResp   {
     return o.toString().replace("\n", "\n    ");
   }
 }
-

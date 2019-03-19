@@ -17,63 +17,19 @@ import javax.validation.constraints.*;
  * SaldoResp
  */
 @Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2019-01-22T18:11:57.142Z")
-
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.SpringCodegen", date = "2019-03-19T14:13:24.289Z[GMT]")
 public class SaldoResp   {
-  @JsonProperty("Cripto")
-  private CriptoResp cripto = null;
-
-  @JsonProperty("InfSaldo")
-  private InfSaldoResp infSaldo = null;
-
   @JsonProperty("InfTransacao")
   private InfTransacaoResp infTransacao = null;
 
   @JsonProperty("Terminal")
   private Terminal terminal = null;
 
-  public SaldoResp cripto(CriptoResp cripto) {
-    this.cripto = cripto;
-    return this;
-  }
+  @JsonProperty("Cripto")
+  private CriptoResp cripto = null;
 
-  /**
-   * Get cripto
-   * @return cripto
-  **/
-  @ApiModelProperty(value = "")
-
-  @Valid
-
-  public CriptoResp getCripto() {
-    return cripto;
-  }
-
-  public void setCripto(CriptoResp cripto) {
-    this.cripto = cripto;
-  }
-
-  public SaldoResp infSaldo(InfSaldoResp infSaldo) {
-    this.infSaldo = infSaldo;
-    return this;
-  }
-
-  /**
-   * Get infSaldo
-   * @return infSaldo
-  **/
-  @ApiModelProperty(required = true, value = "")
-  @NotNull
-
-  @Valid
-
-  public InfSaldoResp getInfSaldo() {
-    return infSaldo;
-  }
-
-  public void setInfSaldo(InfSaldoResp infSaldo) {
-    this.infSaldo = infSaldo;
-  }
+  @JsonProperty("InfSaldo")
+  private InfSaldoResp infSaldo = null;
 
   public SaldoResp infTransacao(InfTransacaoResp infTransacao) {
     this.infTransacao = infTransacao;
@@ -88,7 +44,6 @@ public class SaldoResp   {
   @NotNull
 
   @Valid
-
   public InfTransacaoResp getInfTransacao() {
     return infTransacao;
   }
@@ -110,13 +65,53 @@ public class SaldoResp   {
   @NotNull
 
   @Valid
-
   public Terminal getTerminal() {
     return terminal;
   }
 
   public void setTerminal(Terminal terminal) {
     this.terminal = terminal;
+  }
+
+  public SaldoResp cripto(CriptoResp cripto) {
+    this.cripto = cripto;
+    return this;
+  }
+
+  /**
+   * Get cripto
+   * @return cripto
+  **/
+  @ApiModelProperty(value = "")
+
+  @Valid
+  public CriptoResp getCripto() {
+    return cripto;
+  }
+
+  public void setCripto(CriptoResp cripto) {
+    this.cripto = cripto;
+  }
+
+  public SaldoResp infSaldo(InfSaldoResp infSaldo) {
+    this.infSaldo = infSaldo;
+    return this;
+  }
+
+  /**
+   * Get infSaldo
+   * @return infSaldo
+  **/
+  @ApiModelProperty(required = true, value = "")
+  @NotNull
+
+  @Valid
+  public InfSaldoResp getInfSaldo() {
+    return infSaldo;
+  }
+
+  public void setInfSaldo(InfSaldoResp infSaldo) {
+    this.infSaldo = infSaldo;
   }
 
 
@@ -129,15 +124,15 @@ public class SaldoResp   {
       return false;
     }
     SaldoResp saldoResp = (SaldoResp) o;
-    return Objects.equals(this.cripto, saldoResp.cripto) &&
-        Objects.equals(this.infSaldo, saldoResp.infSaldo) &&
-        Objects.equals(this.infTransacao, saldoResp.infTransacao) &&
-        Objects.equals(this.terminal, saldoResp.terminal);
+    return Objects.equals(this.infTransacao, saldoResp.infTransacao) &&
+        Objects.equals(this.terminal, saldoResp.terminal) &&
+        Objects.equals(this.cripto, saldoResp.cripto) &&
+        Objects.equals(this.infSaldo, saldoResp.infSaldo);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(cripto, infSaldo, infTransacao, terminal);
+    return Objects.hash(infTransacao, terminal, cripto, infSaldo);
   }
 
   @Override
@@ -145,10 +140,10 @@ public class SaldoResp   {
     StringBuilder sb = new StringBuilder();
     sb.append("class SaldoResp {\n");
     
-    sb.append("    cripto: ").append(toIndentedString(cripto)).append("\n");
-    sb.append("    infSaldo: ").append(toIndentedString(infSaldo)).append("\n");
     sb.append("    infTransacao: ").append(toIndentedString(infTransacao)).append("\n");
     sb.append("    terminal: ").append(toIndentedString(terminal)).append("\n");
+    sb.append("    cripto: ").append(toIndentedString(cripto)).append("\n");
+    sb.append("    infSaldo: ").append(toIndentedString(infSaldo)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -164,4 +159,3 @@ public class SaldoResp   {
     return o.toString().replace("\n", "\n    ");
   }
 }
-

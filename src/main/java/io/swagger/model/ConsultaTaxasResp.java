@@ -17,63 +17,19 @@ import javax.validation.constraints.*;
  * ConsultaTaxasResp
  */
 @Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2019-01-22T18:11:57.142Z")
-
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.SpringCodegen", date = "2019-03-19T14:13:24.289Z[GMT]")
 public class ConsultaTaxasResp   {
-  @JsonProperty("Cripto")
-  private CriptoResp cripto = null;
-
-  @JsonProperty("InfConsultaTaxas")
-  private InfConsultaTaxasResp infConsultaTaxas = null;
-
   @JsonProperty("InfTransacao")
   private InfTransacaoResp infTransacao = null;
 
   @JsonProperty("Terminal")
   private Terminal terminal = null;
 
-  public ConsultaTaxasResp cripto(CriptoResp cripto) {
-    this.cripto = cripto;
-    return this;
-  }
+  @JsonProperty("Cripto")
+  private CriptoResp cripto = null;
 
-  /**
-   * Get cripto
-   * @return cripto
-  **/
-  @ApiModelProperty(value = "")
-
-  @Valid
-
-  public CriptoResp getCripto() {
-    return cripto;
-  }
-
-  public void setCripto(CriptoResp cripto) {
-    this.cripto = cripto;
-  }
-
-  public ConsultaTaxasResp infConsultaTaxas(InfConsultaTaxasResp infConsultaTaxas) {
-    this.infConsultaTaxas = infConsultaTaxas;
-    return this;
-  }
-
-  /**
-   * Get infConsultaTaxas
-   * @return infConsultaTaxas
-  **/
-  @ApiModelProperty(required = true, value = "")
-  @NotNull
-
-  @Valid
-
-  public InfConsultaTaxasResp getInfConsultaTaxas() {
-    return infConsultaTaxas;
-  }
-
-  public void setInfConsultaTaxas(InfConsultaTaxasResp infConsultaTaxas) {
-    this.infConsultaTaxas = infConsultaTaxas;
-  }
+  @JsonProperty("InfConsultaTaxas")
+  private InfConsultaTaxasResp infConsultaTaxas = null;
 
   public ConsultaTaxasResp infTransacao(InfTransacaoResp infTransacao) {
     this.infTransacao = infTransacao;
@@ -88,7 +44,6 @@ public class ConsultaTaxasResp   {
   @NotNull
 
   @Valid
-
   public InfTransacaoResp getInfTransacao() {
     return infTransacao;
   }
@@ -110,13 +65,53 @@ public class ConsultaTaxasResp   {
   @NotNull
 
   @Valid
-
   public Terminal getTerminal() {
     return terminal;
   }
 
   public void setTerminal(Terminal terminal) {
     this.terminal = terminal;
+  }
+
+  public ConsultaTaxasResp cripto(CriptoResp cripto) {
+    this.cripto = cripto;
+    return this;
+  }
+
+  /**
+   * Get cripto
+   * @return cripto
+  **/
+  @ApiModelProperty(value = "")
+
+  @Valid
+  public CriptoResp getCripto() {
+    return cripto;
+  }
+
+  public void setCripto(CriptoResp cripto) {
+    this.cripto = cripto;
+  }
+
+  public ConsultaTaxasResp infConsultaTaxas(InfConsultaTaxasResp infConsultaTaxas) {
+    this.infConsultaTaxas = infConsultaTaxas;
+    return this;
+  }
+
+  /**
+   * Get infConsultaTaxas
+   * @return infConsultaTaxas
+  **/
+  @ApiModelProperty(required = true, value = "")
+  @NotNull
+
+  @Valid
+  public InfConsultaTaxasResp getInfConsultaTaxas() {
+    return infConsultaTaxas;
+  }
+
+  public void setInfConsultaTaxas(InfConsultaTaxasResp infConsultaTaxas) {
+    this.infConsultaTaxas = infConsultaTaxas;
   }
 
 
@@ -129,15 +124,15 @@ public class ConsultaTaxasResp   {
       return false;
     }
     ConsultaTaxasResp consultaTaxasResp = (ConsultaTaxasResp) o;
-    return Objects.equals(this.cripto, consultaTaxasResp.cripto) &&
-        Objects.equals(this.infConsultaTaxas, consultaTaxasResp.infConsultaTaxas) &&
-        Objects.equals(this.infTransacao, consultaTaxasResp.infTransacao) &&
-        Objects.equals(this.terminal, consultaTaxasResp.terminal);
+    return Objects.equals(this.infTransacao, consultaTaxasResp.infTransacao) &&
+        Objects.equals(this.terminal, consultaTaxasResp.terminal) &&
+        Objects.equals(this.cripto, consultaTaxasResp.cripto) &&
+        Objects.equals(this.infConsultaTaxas, consultaTaxasResp.infConsultaTaxas);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(cripto, infConsultaTaxas, infTransacao, terminal);
+    return Objects.hash(infTransacao, terminal, cripto, infConsultaTaxas);
   }
 
   @Override
@@ -145,10 +140,10 @@ public class ConsultaTaxasResp   {
     StringBuilder sb = new StringBuilder();
     sb.append("class ConsultaTaxasResp {\n");
     
-    sb.append("    cripto: ").append(toIndentedString(cripto)).append("\n");
-    sb.append("    infConsultaTaxas: ").append(toIndentedString(infConsultaTaxas)).append("\n");
     sb.append("    infTransacao: ").append(toIndentedString(infTransacao)).append("\n");
     sb.append("    terminal: ").append(toIndentedString(terminal)).append("\n");
+    sb.append("    cripto: ").append(toIndentedString(cripto)).append("\n");
+    sb.append("    infConsultaTaxas: ").append(toIndentedString(infConsultaTaxas)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -164,4 +159,3 @@ public class ConsultaTaxasResp   {
     return o.toString().replace("\n", "\n    ");
   }
 }
-

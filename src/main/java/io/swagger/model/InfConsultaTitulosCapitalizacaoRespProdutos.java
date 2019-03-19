@@ -14,14 +14,13 @@ import javax.validation.constraints.*;
  * InfConsultaTitulosCapitalizacaoRespProdutos
  */
 @Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2019-01-22T18:11:57.142Z")
-
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.SpringCodegen", date = "2019-03-19T14:13:24.289Z[GMT]")
 public class InfConsultaTitulosCapitalizacaoRespProdutos   {
-  @JsonProperty("dataFimVigencia")
-  private String dataFimVigencia = null;
+  @JsonProperty("id")
+  private String id = null;
 
-  @JsonProperty("dataInicioVigencia")
-  private String dataInicioVigencia = null;
+  @JsonProperty("nome")
+  private String nome = null;
 
   @JsonProperty("descricao")
   private String descricao = null;
@@ -29,59 +28,57 @@ public class InfConsultaTitulosCapitalizacaoRespProdutos   {
   @JsonProperty("detalhes")
   private String detalhes = null;
 
-  @JsonProperty("id")
-  private String id = null;
+  @JsonProperty("dataInicioVigencia")
+  private String dataInicioVigencia = null;
 
-  @JsonProperty("limiteMaximoCompra")
-  private String limiteMaximoCompra = null;
-
-  @JsonProperty("nome")
-  private String nome = null;
-
-  @JsonProperty("tema")
-  private InfConsultaTitulosCapitalizacaoRespTema tema = null;
+  @JsonProperty("dataFimVigencia")
+  private String dataFimVigencia = null;
 
   @JsonProperty("valor")
   private String valor = null;
 
-  public InfConsultaTitulosCapitalizacaoRespProdutos dataFimVigencia(String dataFimVigencia) {
-    this.dataFimVigencia = dataFimVigencia;
+  @JsonProperty("limiteMaximoCompra")
+  private String limiteMaximoCompra = null;
+
+  @JsonProperty("tema")
+  private InfConsultaTitulosCapitalizacaoRespTema tema = null;
+
+  public InfConsultaTitulosCapitalizacaoRespProdutos id(String id) {
+    this.id = id;
     return this;
   }
 
   /**
-   * Data final da vigência do produto (AAAAMMDD).
-   * @return dataFimVigencia
+   * Identificador do produto.
+   * @return id
   **/
-  @ApiModelProperty(example = "20181130", value = "Data final da vigência do produto (AAAAMMDD).")
+  @ApiModelProperty(example = "7", value = "Identificador do produto.")
 
-@Pattern(regexp="^\\d{8}$") 
-  public String getDataFimVigencia() {
-    return dataFimVigencia;
+@Pattern(regexp="^\\d+$")   public String getId() {
+    return id;
   }
 
-  public void setDataFimVigencia(String dataFimVigencia) {
-    this.dataFimVigencia = dataFimVigencia;
+  public void setId(String id) {
+    this.id = id;
   }
 
-  public InfConsultaTitulosCapitalizacaoRespProdutos dataInicioVigencia(String dataInicioVigencia) {
-    this.dataInicioVigencia = dataInicioVigencia;
+  public InfConsultaTitulosCapitalizacaoRespProdutos nome(String nome) {
+    this.nome = nome;
     return this;
   }
 
   /**
-   * Data inicial da vigência do produto (AAAAMMDD).
-   * @return dataInicioVigencia
+   * Nome do produto.
+   * @return nome
   **/
-  @ApiModelProperty(example = "20181122", value = "Data inicial da vigência do produto (AAAAMMDD).")
+  @ApiModelProperty(example = "Grêmio Mais", value = "Nome do produto.")
 
-@Pattern(regexp="^\\d{8}$") 
-  public String getDataInicioVigencia() {
-    return dataInicioVigencia;
+  public String getNome() {
+    return nome;
   }
 
-  public void setDataInicioVigencia(String dataInicioVigencia) {
-    this.dataInicioVigencia = dataInicioVigencia;
+  public void setNome(String nome) {
+    this.nome = nome;
   }
 
   public InfConsultaTitulosCapitalizacaoRespProdutos descricao(String descricao) {
@@ -94,7 +91,6 @@ public class InfConsultaTitulosCapitalizacaoRespProdutos   {
    * @return descricao
   **/
   @ApiModelProperty(example = "Edição 115 Anos", value = "Descrição do produto.")
-
 
   public String getDescricao() {
     return descricao;
@@ -115,7 +111,6 @@ public class InfConsultaTitulosCapitalizacaoRespProdutos   {
   **/
   @ApiModelProperty(example = "Edição ouro de mais um produto do Grêmio Mais", value = "Informações complementares sobre o produto (até 60 caracteres).")
 
-
   public String getDetalhes() {
     return detalhes;
   }
@@ -124,24 +119,61 @@ public class InfConsultaTitulosCapitalizacaoRespProdutos   {
     this.detalhes = detalhes;
   }
 
-  public InfConsultaTitulosCapitalizacaoRespProdutos id(String id) {
-    this.id = id;
+  public InfConsultaTitulosCapitalizacaoRespProdutos dataInicioVigencia(String dataInicioVigencia) {
+    this.dataInicioVigencia = dataInicioVigencia;
     return this;
   }
 
   /**
-   * Identificador do produto.
-   * @return id
+   * Data inicial da vigência do produto (AAAAMMDD).
+   * @return dataInicioVigencia
   **/
-  @ApiModelProperty(example = "7", value = "Identificador do produto.")
+  @ApiModelProperty(example = "20181122", value = "Data inicial da vigência do produto (AAAAMMDD).")
 
-@Pattern(regexp="^\\d+$") 
-  public String getId() {
-    return id;
+@Pattern(regexp="^\\d{8}$")   public String getDataInicioVigencia() {
+    return dataInicioVigencia;
   }
 
-  public void setId(String id) {
-    this.id = id;
+  public void setDataInicioVigencia(String dataInicioVigencia) {
+    this.dataInicioVigencia = dataInicioVigencia;
+  }
+
+  public InfConsultaTitulosCapitalizacaoRespProdutos dataFimVigencia(String dataFimVigencia) {
+    this.dataFimVigencia = dataFimVigencia;
+    return this;
+  }
+
+  /**
+   * Data final da vigência do produto (AAAAMMDD).
+   * @return dataFimVigencia
+  **/
+  @ApiModelProperty(example = "20181130", value = "Data final da vigência do produto (AAAAMMDD).")
+
+@Pattern(regexp="^\\d{8}$")   public String getDataFimVigencia() {
+    return dataFimVigencia;
+  }
+
+  public void setDataFimVigencia(String dataFimVigencia) {
+    this.dataFimVigencia = dataFimVigencia;
+  }
+
+  public InfConsultaTitulosCapitalizacaoRespProdutos valor(String valor) {
+    this.valor = valor;
+    return this;
+  }
+
+  /**
+   * Valor por produto (12 dígitos, incluindo centavos).
+   * @return valor
+  **/
+  @ApiModelProperty(example = "000000000500", value = "Valor por produto (12 dígitos, incluindo centavos).")
+
+@Pattern(regexp="^\\d{12}$")   public String getValor() {
+    return valor;
+  }
+
+  public void setValor(String valor) {
+    this.valor = valor;
   }
 
   public InfConsultaTitulosCapitalizacaoRespProdutos limiteMaximoCompra(String limiteMaximoCompra) {
@@ -155,33 +187,12 @@ public class InfConsultaTitulosCapitalizacaoRespProdutos   {
   **/
   @ApiModelProperty(example = "4", value = "Limite máximo de compras por usuário.")
 
-@Pattern(regexp="^\\d+$") 
-  public String getLimiteMaximoCompra() {
+@Pattern(regexp="^\\d+$")   public String getLimiteMaximoCompra() {
     return limiteMaximoCompra;
   }
 
   public void setLimiteMaximoCompra(String limiteMaximoCompra) {
     this.limiteMaximoCompra = limiteMaximoCompra;
-  }
-
-  public InfConsultaTitulosCapitalizacaoRespProdutos nome(String nome) {
-    this.nome = nome;
-    return this;
-  }
-
-  /**
-   * Nome do produto.
-   * @return nome
-  **/
-  @ApiModelProperty(example = "Grêmio Mais", value = "Nome do produto.")
-
-
-  public String getNome() {
-    return nome;
-  }
-
-  public void setNome(String nome) {
-    this.nome = nome;
   }
 
   public InfConsultaTitulosCapitalizacaoRespProdutos tema(InfConsultaTitulosCapitalizacaoRespTema tema) {
@@ -196,33 +207,12 @@ public class InfConsultaTitulosCapitalizacaoRespProdutos   {
   @ApiModelProperty(value = "")
 
   @Valid
-
   public InfConsultaTitulosCapitalizacaoRespTema getTema() {
     return tema;
   }
 
   public void setTema(InfConsultaTitulosCapitalizacaoRespTema tema) {
     this.tema = tema;
-  }
-
-  public InfConsultaTitulosCapitalizacaoRespProdutos valor(String valor) {
-    this.valor = valor;
-    return this;
-  }
-
-  /**
-   * Valor por produto (12 dígitos, incluindo centavos).
-   * @return valor
-  **/
-  @ApiModelProperty(example = "000000000500", value = "Valor por produto (12 dígitos, incluindo centavos).")
-
-@Pattern(regexp="^\\d{12}$") 
-  public String getValor() {
-    return valor;
-  }
-
-  public void setValor(String valor) {
-    this.valor = valor;
   }
 
 
@@ -235,20 +225,20 @@ public class InfConsultaTitulosCapitalizacaoRespProdutos   {
       return false;
     }
     InfConsultaTitulosCapitalizacaoRespProdutos infConsultaTitulosCapitalizacaoRespProdutos = (InfConsultaTitulosCapitalizacaoRespProdutos) o;
-    return Objects.equals(this.dataFimVigencia, infConsultaTitulosCapitalizacaoRespProdutos.dataFimVigencia) &&
-        Objects.equals(this.dataInicioVigencia, infConsultaTitulosCapitalizacaoRespProdutos.dataInicioVigencia) &&
+    return Objects.equals(this.id, infConsultaTitulosCapitalizacaoRespProdutos.id) &&
+        Objects.equals(this.nome, infConsultaTitulosCapitalizacaoRespProdutos.nome) &&
         Objects.equals(this.descricao, infConsultaTitulosCapitalizacaoRespProdutos.descricao) &&
         Objects.equals(this.detalhes, infConsultaTitulosCapitalizacaoRespProdutos.detalhes) &&
-        Objects.equals(this.id, infConsultaTitulosCapitalizacaoRespProdutos.id) &&
+        Objects.equals(this.dataInicioVigencia, infConsultaTitulosCapitalizacaoRespProdutos.dataInicioVigencia) &&
+        Objects.equals(this.dataFimVigencia, infConsultaTitulosCapitalizacaoRespProdutos.dataFimVigencia) &&
+        Objects.equals(this.valor, infConsultaTitulosCapitalizacaoRespProdutos.valor) &&
         Objects.equals(this.limiteMaximoCompra, infConsultaTitulosCapitalizacaoRespProdutos.limiteMaximoCompra) &&
-        Objects.equals(this.nome, infConsultaTitulosCapitalizacaoRespProdutos.nome) &&
-        Objects.equals(this.tema, infConsultaTitulosCapitalizacaoRespProdutos.tema) &&
-        Objects.equals(this.valor, infConsultaTitulosCapitalizacaoRespProdutos.valor);
+        Objects.equals(this.tema, infConsultaTitulosCapitalizacaoRespProdutos.tema);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(dataFimVigencia, dataInicioVigencia, descricao, detalhes, id, limiteMaximoCompra, nome, tema, valor);
+    return Objects.hash(id, nome, descricao, detalhes, dataInicioVigencia, dataFimVigencia, valor, limiteMaximoCompra, tema);
   }
 
   @Override
@@ -256,15 +246,15 @@ public class InfConsultaTitulosCapitalizacaoRespProdutos   {
     StringBuilder sb = new StringBuilder();
     sb.append("class InfConsultaTitulosCapitalizacaoRespProdutos {\n");
     
-    sb.append("    dataFimVigencia: ").append(toIndentedString(dataFimVigencia)).append("\n");
-    sb.append("    dataInicioVigencia: ").append(toIndentedString(dataInicioVigencia)).append("\n");
+    sb.append("    id: ").append(toIndentedString(id)).append("\n");
+    sb.append("    nome: ").append(toIndentedString(nome)).append("\n");
     sb.append("    descricao: ").append(toIndentedString(descricao)).append("\n");
     sb.append("    detalhes: ").append(toIndentedString(detalhes)).append("\n");
-    sb.append("    id: ").append(toIndentedString(id)).append("\n");
-    sb.append("    limiteMaximoCompra: ").append(toIndentedString(limiteMaximoCompra)).append("\n");
-    sb.append("    nome: ").append(toIndentedString(nome)).append("\n");
-    sb.append("    tema: ").append(toIndentedString(tema)).append("\n");
+    sb.append("    dataInicioVigencia: ").append(toIndentedString(dataInicioVigencia)).append("\n");
+    sb.append("    dataFimVigencia: ").append(toIndentedString(dataFimVigencia)).append("\n");
     sb.append("    valor: ").append(toIndentedString(valor)).append("\n");
+    sb.append("    limiteMaximoCompra: ").append(toIndentedString(limiteMaximoCompra)).append("\n");
+    sb.append("    tema: ").append(toIndentedString(tema)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -280,4 +270,3 @@ public class InfConsultaTitulosCapitalizacaoRespProdutos   {
     return o.toString().replace("\n", "\n    ");
   }
 }
-

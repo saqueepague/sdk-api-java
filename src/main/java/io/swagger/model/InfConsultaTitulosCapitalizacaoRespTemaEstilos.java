@@ -13,8 +13,7 @@ import javax.validation.constraints.*;
  * InfConsultaTitulosCapitalizacaoRespTemaEstilos
  */
 @Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2019-01-22T18:11:57.142Z")
-
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.SpringCodegen", date = "2019-03-19T14:13:24.289Z[GMT]")
 public class InfConsultaTitulosCapitalizacaoRespTemaEstilos   {
   @JsonProperty("nome")
   private String nome = null;
@@ -31,9 +30,7 @@ public class InfConsultaTitulosCapitalizacaoRespTemaEstilos   {
    * Nome do Estilo.
    * @return nome
   **/
-  @ApiModelProperty(example = "cor-fundo ou cor-botao", required = true, value = "Nome do Estilo.")
-  @NotNull
-
+  @ApiModelProperty(example = "cor-fundo ou cor-botao", value = "Nome do Estilo.")
 
   public String getNome() {
     return nome;
@@ -52,11 +49,9 @@ public class InfConsultaTitulosCapitalizacaoRespTemaEstilos   {
    * Valor do estilo (no formato hexadecimal).
    * @return valor
   **/
-  @ApiModelProperty(example = "#00288C", required = true, value = "Valor do estilo (no formato hexadecimal).")
-  @NotNull
+  @ApiModelProperty(example = "#00288C", value = "Valor do estilo (no formato hexadecimal).")
 
-@Pattern(regexp="^\\#(\\d{3}|\\d{6})$") 
-  public String getValor() {
+@Pattern(regexp="^\\#(\\d{3}|\\d{6})$")   public String getValor() {
     return valor;
   }
 
@@ -105,4 +100,3 @@ public class InfConsultaTitulosCapitalizacaoRespTemaEstilos   {
     return o.toString().replace("\n", "\n    ");
   }
 }
-

@@ -16,39 +16,16 @@ import javax.validation.constraints.*;
  * ConsultaProdutosRecargaResp
  */
 @Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2019-01-22T18:11:57.142Z")
-
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.SpringCodegen", date = "2019-03-19T14:13:24.289Z[GMT]")
 public class ConsultaProdutosRecargaResp   {
-  @JsonProperty("InfConsultaProdutosRecarga")
-  private InfConsultaProdutosRecargaResp infConsultaProdutosRecarga = null;
-
   @JsonProperty("InfTransacao")
   private InfTransacaoResp infTransacao = null;
 
   @JsonProperty("Terminal")
   private Terminal terminal = null;
 
-  public ConsultaProdutosRecargaResp infConsultaProdutosRecarga(InfConsultaProdutosRecargaResp infConsultaProdutosRecarga) {
-    this.infConsultaProdutosRecarga = infConsultaProdutosRecarga;
-    return this;
-  }
-
-  /**
-   * Get infConsultaProdutosRecarga
-   * @return infConsultaProdutosRecarga
-  **/
-  @ApiModelProperty(required = true, value = "")
-  @NotNull
-
-  @Valid
-
-  public InfConsultaProdutosRecargaResp getInfConsultaProdutosRecarga() {
-    return infConsultaProdutosRecarga;
-  }
-
-  public void setInfConsultaProdutosRecarga(InfConsultaProdutosRecargaResp infConsultaProdutosRecarga) {
-    this.infConsultaProdutosRecarga = infConsultaProdutosRecarga;
-  }
+  @JsonProperty("InfConsultaProdutosRecarga")
+  private InfConsultaProdutosRecargaResp infConsultaProdutosRecarga = null;
 
   public ConsultaProdutosRecargaResp infTransacao(InfTransacaoResp infTransacao) {
     this.infTransacao = infTransacao;
@@ -63,7 +40,6 @@ public class ConsultaProdutosRecargaResp   {
   @NotNull
 
   @Valid
-
   public InfTransacaoResp getInfTransacao() {
     return infTransacao;
   }
@@ -85,13 +61,33 @@ public class ConsultaProdutosRecargaResp   {
   @NotNull
 
   @Valid
-
   public Terminal getTerminal() {
     return terminal;
   }
 
   public void setTerminal(Terminal terminal) {
     this.terminal = terminal;
+  }
+
+  public ConsultaProdutosRecargaResp infConsultaProdutosRecarga(InfConsultaProdutosRecargaResp infConsultaProdutosRecarga) {
+    this.infConsultaProdutosRecarga = infConsultaProdutosRecarga;
+    return this;
+  }
+
+  /**
+   * Get infConsultaProdutosRecarga
+   * @return infConsultaProdutosRecarga
+  **/
+  @ApiModelProperty(required = true, value = "")
+  @NotNull
+
+  @Valid
+  public InfConsultaProdutosRecargaResp getInfConsultaProdutosRecarga() {
+    return infConsultaProdutosRecarga;
+  }
+
+  public void setInfConsultaProdutosRecarga(InfConsultaProdutosRecargaResp infConsultaProdutosRecarga) {
+    this.infConsultaProdutosRecarga = infConsultaProdutosRecarga;
   }
 
 
@@ -104,14 +100,14 @@ public class ConsultaProdutosRecargaResp   {
       return false;
     }
     ConsultaProdutosRecargaResp consultaProdutosRecargaResp = (ConsultaProdutosRecargaResp) o;
-    return Objects.equals(this.infConsultaProdutosRecarga, consultaProdutosRecargaResp.infConsultaProdutosRecarga) &&
-        Objects.equals(this.infTransacao, consultaProdutosRecargaResp.infTransacao) &&
-        Objects.equals(this.terminal, consultaProdutosRecargaResp.terminal);
+    return Objects.equals(this.infTransacao, consultaProdutosRecargaResp.infTransacao) &&
+        Objects.equals(this.terminal, consultaProdutosRecargaResp.terminal) &&
+        Objects.equals(this.infConsultaProdutosRecarga, consultaProdutosRecargaResp.infConsultaProdutosRecarga);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(infConsultaProdutosRecarga, infTransacao, terminal);
+    return Objects.hash(infTransacao, terminal, infConsultaProdutosRecarga);
   }
 
   @Override
@@ -119,9 +115,9 @@ public class ConsultaProdutosRecargaResp   {
     StringBuilder sb = new StringBuilder();
     sb.append("class ConsultaProdutosRecargaResp {\n");
     
-    sb.append("    infConsultaProdutosRecarga: ").append(toIndentedString(infConsultaProdutosRecarga)).append("\n");
     sb.append("    infTransacao: ").append(toIndentedString(infTransacao)).append("\n");
     sb.append("    terminal: ").append(toIndentedString(terminal)).append("\n");
+    sb.append("    infConsultaProdutosRecarga: ").append(toIndentedString(infConsultaProdutosRecarga)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -137,4 +133,3 @@ public class ConsultaProdutosRecargaResp   {
     return o.toString().replace("\n", "\n    ");
   }
 }
-

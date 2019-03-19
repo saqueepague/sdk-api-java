@@ -16,39 +16,16 @@ import javax.validation.constraints.*;
  * ConsultaSaqueResp
  */
 @Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2019-01-22T18:11:57.142Z")
-
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.SpringCodegen", date = "2019-03-19T14:13:24.289Z[GMT]")
 public class ConsultaSaqueResp   {
-  @JsonProperty("InfConsultaSaque")
-  private InfConsultaSaqueResp infConsultaSaque = null;
-
   @JsonProperty("InfTransacao")
   private InfTransacaoResp infTransacao = null;
 
   @JsonProperty("Terminal")
   private Terminal terminal = null;
 
-  public ConsultaSaqueResp infConsultaSaque(InfConsultaSaqueResp infConsultaSaque) {
-    this.infConsultaSaque = infConsultaSaque;
-    return this;
-  }
-
-  /**
-   * Get infConsultaSaque
-   * @return infConsultaSaque
-  **/
-  @ApiModelProperty(required = true, value = "")
-  @NotNull
-
-  @Valid
-
-  public InfConsultaSaqueResp getInfConsultaSaque() {
-    return infConsultaSaque;
-  }
-
-  public void setInfConsultaSaque(InfConsultaSaqueResp infConsultaSaque) {
-    this.infConsultaSaque = infConsultaSaque;
-  }
+  @JsonProperty("InfConsultaSaque")
+  private InfConsultaSaqueResp infConsultaSaque = null;
 
   public ConsultaSaqueResp infTransacao(InfTransacaoResp infTransacao) {
     this.infTransacao = infTransacao;
@@ -62,7 +39,6 @@ public class ConsultaSaqueResp   {
   @ApiModelProperty(value = "")
 
   @Valid
-
   public InfTransacaoResp getInfTransacao() {
     return infTransacao;
   }
@@ -84,13 +60,33 @@ public class ConsultaSaqueResp   {
   @NotNull
 
   @Valid
-
   public Terminal getTerminal() {
     return terminal;
   }
 
   public void setTerminal(Terminal terminal) {
     this.terminal = terminal;
+  }
+
+  public ConsultaSaqueResp infConsultaSaque(InfConsultaSaqueResp infConsultaSaque) {
+    this.infConsultaSaque = infConsultaSaque;
+    return this;
+  }
+
+  /**
+   * Get infConsultaSaque
+   * @return infConsultaSaque
+  **/
+  @ApiModelProperty(required = true, value = "")
+  @NotNull
+
+  @Valid
+  public InfConsultaSaqueResp getInfConsultaSaque() {
+    return infConsultaSaque;
+  }
+
+  public void setInfConsultaSaque(InfConsultaSaqueResp infConsultaSaque) {
+    this.infConsultaSaque = infConsultaSaque;
   }
 
 
@@ -103,14 +99,14 @@ public class ConsultaSaqueResp   {
       return false;
     }
     ConsultaSaqueResp consultaSaqueResp = (ConsultaSaqueResp) o;
-    return Objects.equals(this.infConsultaSaque, consultaSaqueResp.infConsultaSaque) &&
-        Objects.equals(this.infTransacao, consultaSaqueResp.infTransacao) &&
-        Objects.equals(this.terminal, consultaSaqueResp.terminal);
+    return Objects.equals(this.infTransacao, consultaSaqueResp.infTransacao) &&
+        Objects.equals(this.terminal, consultaSaqueResp.terminal) &&
+        Objects.equals(this.infConsultaSaque, consultaSaqueResp.infConsultaSaque);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(infConsultaSaque, infTransacao, terminal);
+    return Objects.hash(infTransacao, terminal, infConsultaSaque);
   }
 
   @Override
@@ -118,9 +114,9 @@ public class ConsultaSaqueResp   {
     StringBuilder sb = new StringBuilder();
     sb.append("class ConsultaSaqueResp {\n");
     
-    sb.append("    infConsultaSaque: ").append(toIndentedString(infConsultaSaque)).append("\n");
     sb.append("    infTransacao: ").append(toIndentedString(infTransacao)).append("\n");
     sb.append("    terminal: ").append(toIndentedString(terminal)).append("\n");
+    sb.append("    infConsultaSaque: ").append(toIndentedString(infConsultaSaque)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -136,4 +132,3 @@ public class ConsultaSaqueResp   {
     return o.toString().replace("\n", "\n    ");
   }
 }
-

@@ -10,24 +10,62 @@ import javax.validation.Valid;
 import javax.validation.constraints.*;
 
 /**
- * Informações sobre a requisição de recarga de transporte ou pré-pago.
+ * Informações sobre a requisição de recarga de cartão pré-pago de transporte.
  */
-@ApiModel(description = "Informações sobre a requisição de recarga de transporte ou pré-pago.")
+@ApiModel(description = "Informações sobre a requisição de recarga de cartão pré-pago de transporte.")
 @Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2019-01-22T18:11:57.142Z")
-
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.SpringCodegen", date = "2019-03-19T14:13:24.289Z[GMT]")
 public class InfRecargaReq   {
+  @JsonProperty("telefone")
+  private String telefone = null;
+
+  @JsonProperty("numCartao")
+  private String numCartao = null;
+
   @JsonProperty("idOperadora")
   private String idOperadora = null;
 
   @JsonProperty("idProduto")
   private String idProduto = null;
 
-  @JsonProperty("numCartao")
-  private String numCartao = null;
+  public InfRecargaReq telefone(String telefone) {
+    this.telefone = telefone;
+    return this;
+  }
 
-  @JsonProperty("telefone")
-  private String telefone = null;
+  /**
+   * Número do telefone utilizado na operação (11 dígitos = DDD com 0 quando número tem 8 dígitos, sem 0 quando número tem 9 dígitos).
+   * @return telefone
+  **/
+  @ApiModelProperty(example = "51999999999", value = "Número do telefone utilizado na operação (11 dígitos = DDD com 0 quando número tem 8 dígitos, sem 0 quando número tem 9 dígitos).")
+
+@Pattern(regexp="^\\d{11}$")   public String getTelefone() {
+    return telefone;
+  }
+
+  public void setTelefone(String telefone) {
+    this.telefone = telefone;
+  }
+
+  public InfRecargaReq numCartao(String numCartao) {
+    this.numCartao = numCartao;
+    return this;
+  }
+
+  /**
+   * Número do cartão utilizado na operação.
+   * @return numCartao
+  **/
+  @ApiModelProperty(example = "036200001842241", required = true, value = "Número do cartão utilizado na operação.")
+  @NotNull
+
+@Pattern(regexp="^\\d+$")   public String getNumCartao() {
+    return numCartao;
+  }
+
+  public void setNumCartao(String numCartao) {
+    this.numCartao = numCartao;
+  }
 
   public InfRecargaReq idOperadora(String idOperadora) {
     this.idOperadora = idOperadora;
@@ -35,14 +73,13 @@ public class InfRecargaReq   {
   }
 
   /**
-   * Operadora utilizada na operação.
+   * Operadora de bilhetagem utilizada na operação.
    * @return idOperadora
   **/
-  @ApiModelProperty(example = "847", required = true, value = "Operadora utilizada na operação.")
+  @ApiModelProperty(example = "847", required = true, value = "Operadora de bilhetagem utilizada na operação.")
   @NotNull
 
-@Pattern(regexp="^\\d+$") 
-  public String getIdOperadora() {
+@Pattern(regexp="^\\d+$")   public String getIdOperadora() {
     return idOperadora;
   }
 
@@ -62,54 +99,12 @@ public class InfRecargaReq   {
   @ApiModelProperty(example = "87", required = true, value = "Produto utilizado na operação.")
   @NotNull
 
-@Pattern(regexp="^\\d+$") 
-  public String getIdProduto() {
+@Pattern(regexp="^\\d+$")   public String getIdProduto() {
     return idProduto;
   }
 
   public void setIdProduto(String idProduto) {
     this.idProduto = idProduto;
-  }
-
-  public InfRecargaReq numCartao(String numCartao) {
-    this.numCartao = numCartao;
-    return this;
-  }
-
-  /**
-   * Número do cartão utilizado na operação.
-   * @return numCartao
-  **/
-  @ApiModelProperty(example = "036200001842241", required = true, value = "Número do cartão utilizado na operação.")
-  @NotNull
-
-@Pattern(regexp="^\\d+$") 
-  public String getNumCartao() {
-    return numCartao;
-  }
-
-  public void setNumCartao(String numCartao) {
-    this.numCartao = numCartao;
-  }
-
-  public InfRecargaReq telefone(String telefone) {
-    this.telefone = telefone;
-    return this;
-  }
-
-  /**
-   * Número do telefone utilizado na operação (11 dígitos = DDD com 0 quando número tem 8 dígitos, sem 0 quando número tem 9 dígitos).
-   * @return telefone
-  **/
-  @ApiModelProperty(example = "51999999999", value = "Número do telefone utilizado na operação (11 dígitos = DDD com 0 quando número tem 8 dígitos, sem 0 quando número tem 9 dígitos).")
-
-@Pattern(regexp="^\\d{11}$") 
-  public String getTelefone() {
-    return telefone;
-  }
-
-  public void setTelefone(String telefone) {
-    this.telefone = telefone;
   }
 
 
@@ -122,15 +117,15 @@ public class InfRecargaReq   {
       return false;
     }
     InfRecargaReq infRecargaReq = (InfRecargaReq) o;
-    return Objects.equals(this.idOperadora, infRecargaReq.idOperadora) &&
-        Objects.equals(this.idProduto, infRecargaReq.idProduto) &&
+    return Objects.equals(this.telefone, infRecargaReq.telefone) &&
         Objects.equals(this.numCartao, infRecargaReq.numCartao) &&
-        Objects.equals(this.telefone, infRecargaReq.telefone);
+        Objects.equals(this.idOperadora, infRecargaReq.idOperadora) &&
+        Objects.equals(this.idProduto, infRecargaReq.idProduto);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(idOperadora, idProduto, numCartao, telefone);
+    return Objects.hash(telefone, numCartao, idOperadora, idProduto);
   }
 
   @Override
@@ -138,10 +133,10 @@ public class InfRecargaReq   {
     StringBuilder sb = new StringBuilder();
     sb.append("class InfRecargaReq {\n");
     
+    sb.append("    telefone: ").append(toIndentedString(telefone)).append("\n");
+    sb.append("    numCartao: ").append(toIndentedString(numCartao)).append("\n");
     sb.append("    idOperadora: ").append(toIndentedString(idOperadora)).append("\n");
     sb.append("    idProduto: ").append(toIndentedString(idProduto)).append("\n");
-    sb.append("    numCartao: ").append(toIndentedString(numCartao)).append("\n");
-    sb.append("    telefone: ").append(toIndentedString(telefone)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -157,4 +152,3 @@ public class InfRecargaReq   {
     return o.toString().replace("\n", "\n    ");
   }
 }
-

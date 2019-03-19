@@ -10,12 +10,11 @@ import javax.validation.Valid;
 import javax.validation.constraints.*;
 
 /**
- * Informações sobre a resposta de requisição de recarga de cartão de transporte ou pré-pago.
+ * Informações sobre a resposta de requisição de recarga de cartão pré-pago de transporte.
  */
-@ApiModel(description = "Informações sobre a resposta de requisição de recarga de cartão de transporte ou pré-pago.")
+@ApiModel(description = "Informações sobre a resposta de requisição de recarga de cartão pré-pago de transporte.")
 @Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2019-01-22T18:11:57.142Z")
-
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.SpringCodegen", date = "2019-03-19T14:13:24.289Z[GMT]")
 public class InfRecargaResp   {
   @JsonProperty("recibo")
   private String recibo = null;
@@ -26,14 +25,13 @@ public class InfRecargaResp   {
   }
 
   /**
-   * Recibo com informações do saldo. Linhas com 48 posições separadas por \"@\".
+   * Comprovante da operação de recarga. Linhas com 48 posições separadas por \"@\".
    * @return recibo
   **/
-  @ApiModelProperty(example = "             TEU BILHETE ANTECIPADO             @                036200005433591                @               13/10/2018  20:24               @           VALOR DA RECARGA: R$ 48,00           @                 TAXAS: R$ 2,00                 @              TOTAL PAGO: R$ 50,00              @   OS CRÉDITOS ADQUIRIDOS ESTARÃO DISPONÍVEIS   @      NOS VALIDADORES DOS ÔNIBUS DA REGIÃO      @     METROPOLITANA QUE ACEITAM O CARTÃO TEU     @ OU NAS CATRACAS DO METRÔ, NOS SEGUINTES PRAZOS @            RECARGAS ATÉ O MEIO DIA:            @ CRÉDITOS DISPONÍVEIS NO DIA SEGUINTE DA COMPRA @           RECARGAS APÓS O MEIO DIA:           @   CRÉDITOS DISPONÍVEIS EM 48H APÓS A COMPRA   ", required = true, value = "Recibo com informações do saldo. Linhas com 48 posições separadas por \"@\".")
+  @ApiModelProperty(example = "@             TEU BILHETE ANTECIPADO             @                                                @ CARTAO: 036200005433591                        @ VALOR DA RECARGA: R$ 48,00                     @ TAXAS: R$ 2,00                                 @ TOTAL PAGO: R$ 50,00                           ", required = true, value = "Comprovante da operação de recarga. Linhas com 48 posições separadas por \"@\".")
   @NotNull
 
-@Pattern(regexp="^[^@]{0,48}(\\@[^@]{0,48})*$") 
-  public String getRecibo() {
+@Pattern(regexp="^[^@]{0,48}(\\@[^@]{0,48})*$")   public String getRecibo() {
     return recibo;
   }
 
@@ -80,4 +78,3 @@ public class InfRecargaResp   {
     return o.toString().replace("\n", "\n    ");
   }
 }
-

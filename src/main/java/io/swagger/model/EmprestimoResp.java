@@ -16,38 +16,16 @@ import javax.validation.constraints.*;
  * EmprestimoResp
  */
 @Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2019-01-22T18:11:57.142Z")
-
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.SpringCodegen", date = "2019-03-19T14:13:24.289Z[GMT]")
 public class EmprestimoResp   {
-  @JsonProperty("Cripto")
-  private CriptoResp cripto = null;
-
   @JsonProperty("InfTransacao")
   private InfTransacaoResp infTransacao = null;
 
   @JsonProperty("Terminal")
   private Terminal terminal = null;
 
-  public EmprestimoResp cripto(CriptoResp cripto) {
-    this.cripto = cripto;
-    return this;
-  }
-
-  /**
-   * Get cripto
-   * @return cripto
-  **/
-  @ApiModelProperty(value = "")
-
-  @Valid
-
-  public CriptoResp getCripto() {
-    return cripto;
-  }
-
-  public void setCripto(CriptoResp cripto) {
-    this.cripto = cripto;
-  }
+  @JsonProperty("Cripto")
+  private CriptoResp cripto = null;
 
   public EmprestimoResp infTransacao(InfTransacaoResp infTransacao) {
     this.infTransacao = infTransacao;
@@ -62,7 +40,6 @@ public class EmprestimoResp   {
   @NotNull
 
   @Valid
-
   public InfTransacaoResp getInfTransacao() {
     return infTransacao;
   }
@@ -84,13 +61,32 @@ public class EmprestimoResp   {
   @NotNull
 
   @Valid
-
   public Terminal getTerminal() {
     return terminal;
   }
 
   public void setTerminal(Terminal terminal) {
     this.terminal = terminal;
+  }
+
+  public EmprestimoResp cripto(CriptoResp cripto) {
+    this.cripto = cripto;
+    return this;
+  }
+
+  /**
+   * Get cripto
+   * @return cripto
+  **/
+  @ApiModelProperty(value = "")
+
+  @Valid
+  public CriptoResp getCripto() {
+    return cripto;
+  }
+
+  public void setCripto(CriptoResp cripto) {
+    this.cripto = cripto;
   }
 
 
@@ -103,14 +99,14 @@ public class EmprestimoResp   {
       return false;
     }
     EmprestimoResp emprestimoResp = (EmprestimoResp) o;
-    return Objects.equals(this.cripto, emprestimoResp.cripto) &&
-        Objects.equals(this.infTransacao, emprestimoResp.infTransacao) &&
-        Objects.equals(this.terminal, emprestimoResp.terminal);
+    return Objects.equals(this.infTransacao, emprestimoResp.infTransacao) &&
+        Objects.equals(this.terminal, emprestimoResp.terminal) &&
+        Objects.equals(this.cripto, emprestimoResp.cripto);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(cripto, infTransacao, terminal);
+    return Objects.hash(infTransacao, terminal, cripto);
   }
 
   @Override
@@ -118,9 +114,9 @@ public class EmprestimoResp   {
     StringBuilder sb = new StringBuilder();
     sb.append("class EmprestimoResp {\n");
     
-    sb.append("    cripto: ").append(toIndentedString(cripto)).append("\n");
     sb.append("    infTransacao: ").append(toIndentedString(infTransacao)).append("\n");
     sb.append("    terminal: ").append(toIndentedString(terminal)).append("\n");
+    sb.append("    cripto: ").append(toIndentedString(cripto)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -136,4 +132,3 @@ public class EmprestimoResp   {
     return o.toString().replace("\n", "\n    ");
   }
 }
-

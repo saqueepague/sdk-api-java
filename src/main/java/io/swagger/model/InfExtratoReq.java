@@ -15,24 +15,8 @@ import javax.validation.constraints.*;
  */
 @ApiModel(description = "Informações da requisição de extrato.")
 @Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2019-01-22T18:11:57.142Z")
-
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.SpringCodegen", date = "2019-03-19T14:13:24.289Z[GMT]")
 public class InfExtratoReq   {
-  @JsonProperty("codBanco")
-  private String codBanco = null;
-
-  @JsonProperty("cpf")
-  private String cpf = null;
-
-  @JsonProperty("numAgencia")
-  private String numAgencia = null;
-
-  @JsonProperty("numConta")
-  private String numConta = null;
-
-  @JsonProperty("telefone")
-  private String telefone = null;
-
   /**
    * Tipo de conta do extrato (CC = conta corrente, CP = conta poupança, CS = conta salário).
    */
@@ -65,9 +49,43 @@ public class InfExtratoReq   {
       return null;
     }
   }
-
   @JsonProperty("tipoConta")
   private TipoContaEnum tipoConta = null;
+
+  @JsonProperty("codBanco")
+  private String codBanco = null;
+
+  @JsonProperty("numAgencia")
+  private String numAgencia = null;
+
+  @JsonProperty("numConta")
+  private String numConta = null;
+
+  @JsonProperty("cpf")
+  private String cpf = null;
+
+  @JsonProperty("telefone")
+  private String telefone = null;
+
+  public InfExtratoReq tipoConta(TipoContaEnum tipoConta) {
+    this.tipoConta = tipoConta;
+    return this;
+  }
+
+  /**
+   * Tipo de conta do extrato (CC = conta corrente, CP = conta poupança, CS = conta salário).
+   * @return tipoConta
+  **/
+  @ApiModelProperty(example = "CC", required = true, value = "Tipo de conta do extrato (CC = conta corrente, CP = conta poupança, CS = conta salário).")
+  @NotNull
+
+  public TipoContaEnum getTipoConta() {
+    return tipoConta;
+  }
+
+  public void setTipoConta(TipoContaEnum tipoConta) {
+    this.tipoConta = tipoConta;
+  }
 
   public InfExtratoReq codBanco(String codBanco) {
     this.codBanco = codBanco;
@@ -81,33 +99,12 @@ public class InfExtratoReq   {
   @ApiModelProperty(example = "237", required = true, value = "Código do banco utilizado na operação (3 dígitos).")
   @NotNull
 
-@Pattern(regexp="^\\d{3}$") 
-  public String getCodBanco() {
+@Pattern(regexp="^\\d{3}$")   public String getCodBanco() {
     return codBanco;
   }
 
   public void setCodBanco(String codBanco) {
     this.codBanco = codBanco;
-  }
-
-  public InfExtratoReq cpf(String cpf) {
-    this.cpf = cpf;
-    return this;
-  }
-
-  /**
-   * Número do CPF do cliente realizando a operação (11 dígitos).
-   * @return cpf
-  **/
-  @ApiModelProperty(example = "02358422785", value = "Número do CPF do cliente realizando a operação (11 dígitos).")
-
-@Pattern(regexp="^\\d{11}$") 
-  public String getCpf() {
-    return cpf;
-  }
-
-  public void setCpf(String cpf) {
-    this.cpf = cpf;
   }
 
   public InfExtratoReq numAgencia(String numAgencia) {
@@ -122,8 +119,7 @@ public class InfExtratoReq   {
   @ApiModelProperty(example = "4029", required = true, value = "Número da agência utilizada na operação.")
   @NotNull
 
-@Pattern(regexp="^\\d+$") 
-  public String getNumAgencia() {
+@Pattern(regexp="^\\d+$")   public String getNumAgencia() {
     return numAgencia;
   }
 
@@ -143,13 +139,31 @@ public class InfExtratoReq   {
   @ApiModelProperty(example = "0082348296", required = true, value = "Número da conta utilizada na operação.")
   @NotNull
 
-@Pattern(regexp="^\\d+$") 
-  public String getNumConta() {
+@Pattern(regexp="^\\d+$")   public String getNumConta() {
     return numConta;
   }
 
   public void setNumConta(String numConta) {
     this.numConta = numConta;
+  }
+
+  public InfExtratoReq cpf(String cpf) {
+    this.cpf = cpf;
+    return this;
+  }
+
+  /**
+   * Número do CPF do cliente realizando a operação (11 dígitos).
+   * @return cpf
+  **/
+  @ApiModelProperty(example = "02358422785", value = "Número do CPF do cliente realizando a operação (11 dígitos).")
+
+@Pattern(regexp="^\\d{11}$")   public String getCpf() {
+    return cpf;
+  }
+
+  public void setCpf(String cpf) {
+    this.cpf = cpf;
   }
 
   public InfExtratoReq telefone(String telefone) {
@@ -163,34 +177,12 @@ public class InfExtratoReq   {
   **/
   @ApiModelProperty(example = "51999999999", value = "Telefone do cliente realizando a operação (11 dígitos = DDD com 0 quando número tem 8 dígitos, sem 0 quando número tem 9 dígitos).")
 
-@Pattern(regexp="^\\d{11}$") 
-  public String getTelefone() {
+@Pattern(regexp="^\\d{11}$")   public String getTelefone() {
     return telefone;
   }
 
   public void setTelefone(String telefone) {
     this.telefone = telefone;
-  }
-
-  public InfExtratoReq tipoConta(TipoContaEnum tipoConta) {
-    this.tipoConta = tipoConta;
-    return this;
-  }
-
-  /**
-   * Tipo de conta do extrato (CC = conta corrente, CP = conta poupança, CS = conta salário).
-   * @return tipoConta
-  **/
-  @ApiModelProperty(example = "CC", required = true, value = "Tipo de conta do extrato (CC = conta corrente, CP = conta poupança, CS = conta salário).")
-  @NotNull
-
-
-  public TipoContaEnum getTipoConta() {
-    return tipoConta;
-  }
-
-  public void setTipoConta(TipoContaEnum tipoConta) {
-    this.tipoConta = tipoConta;
   }
 
 
@@ -203,17 +195,17 @@ public class InfExtratoReq   {
       return false;
     }
     InfExtratoReq infExtratoReq = (InfExtratoReq) o;
-    return Objects.equals(this.codBanco, infExtratoReq.codBanco) &&
-        Objects.equals(this.cpf, infExtratoReq.cpf) &&
+    return Objects.equals(this.tipoConta, infExtratoReq.tipoConta) &&
+        Objects.equals(this.codBanco, infExtratoReq.codBanco) &&
         Objects.equals(this.numAgencia, infExtratoReq.numAgencia) &&
         Objects.equals(this.numConta, infExtratoReq.numConta) &&
-        Objects.equals(this.telefone, infExtratoReq.telefone) &&
-        Objects.equals(this.tipoConta, infExtratoReq.tipoConta);
+        Objects.equals(this.cpf, infExtratoReq.cpf) &&
+        Objects.equals(this.telefone, infExtratoReq.telefone);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(codBanco, cpf, numAgencia, numConta, telefone, tipoConta);
+    return Objects.hash(tipoConta, codBanco, numAgencia, numConta, cpf, telefone);
   }
 
   @Override
@@ -221,12 +213,12 @@ public class InfExtratoReq   {
     StringBuilder sb = new StringBuilder();
     sb.append("class InfExtratoReq {\n");
     
+    sb.append("    tipoConta: ").append(toIndentedString(tipoConta)).append("\n");
     sb.append("    codBanco: ").append(toIndentedString(codBanco)).append("\n");
-    sb.append("    cpf: ").append(toIndentedString(cpf)).append("\n");
     sb.append("    numAgencia: ").append(toIndentedString(numAgencia)).append("\n");
     sb.append("    numConta: ").append(toIndentedString(numConta)).append("\n");
+    sb.append("    cpf: ").append(toIndentedString(cpf)).append("\n");
     sb.append("    telefone: ").append(toIndentedString(telefone)).append("\n");
-    sb.append("    tipoConta: ").append(toIndentedString(tipoConta)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -242,4 +234,3 @@ public class InfExtratoReq   {
     return o.toString().replace("\n", "\n    ");
   }
 }
-

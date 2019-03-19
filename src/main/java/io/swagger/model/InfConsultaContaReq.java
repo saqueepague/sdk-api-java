@@ -11,18 +11,20 @@ import javax.validation.Valid;
 import javax.validation.constraints.*;
 
 /**
- * Informações da requisição de consulta de conta para verificação de depósito.
+ * Informações da requisição de consulta de conta do favorecido do depósito.
  */
-@ApiModel(description = "Informações da requisição de consulta de conta para verificação de depósito.")
+@ApiModel(description = "Informações da requisição de consulta de conta do favorecido do depósito.")
 @Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2019-01-22T18:11:57.142Z")
-
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.SpringCodegen", date = "2019-03-19T14:13:24.289Z[GMT]")
 public class InfConsultaContaReq   {
   @JsonProperty("codBanco")
   private String codBanco = null;
 
-  @JsonProperty("cpfFavorecido")
-  private String cpfFavorecido = null;
+  @JsonProperty("numAgencia")
+  private String numAgencia = null;
+
+  @JsonProperty("numConta")
+  private String numConta = null;
 
   /**
    * Indica a modalidade de depósito desejada (2 dígitos, 00 = dinheiro, 01 = cheque).
@@ -54,18 +56,14 @@ public class InfConsultaContaReq   {
       return null;
     }
   }
-
   @JsonProperty("modalidadeDeposito")
   private ModalidadeDepositoEnum modalidadeDeposito = null;
 
-  @JsonProperty("numAgencia")
-  private String numAgencia = null;
-
-  @JsonProperty("numConta")
-  private String numConta = null;
-
   @JsonProperty("telefoneFavorecido")
   private String telefoneFavorecido = null;
+
+  @JsonProperty("cpfFavorecido")
+  private String cpfFavorecido = null;
 
   public InfConsultaContaReq codBanco(String codBanco) {
     this.codBanco = codBanco;
@@ -79,54 +77,12 @@ public class InfConsultaContaReq   {
   @ApiModelProperty(example = "237", required = true, value = "Código do banco utilizado na operação (3 dígitos).")
   @NotNull
 
-@Pattern(regexp="^\\d{3}$") 
-  public String getCodBanco() {
+@Pattern(regexp="^\\d{3}$")   public String getCodBanco() {
     return codBanco;
   }
 
   public void setCodBanco(String codBanco) {
     this.codBanco = codBanco;
-  }
-
-  public InfConsultaContaReq cpfFavorecido(String cpfFavorecido) {
-    this.cpfFavorecido = cpfFavorecido;
-    return this;
-  }
-
-  /**
-   * Número do CPF/CNPJ do cliente favorecido da transação (11 dígitos).
-   * @return cpfFavorecido
-  **/
-  @ApiModelProperty(example = "02358422785", value = "Número do CPF/CNPJ do cliente favorecido da transação (11 dígitos).")
-
-@Pattern(regexp="^\\d{11}$") 
-  public String getCpfFavorecido() {
-    return cpfFavorecido;
-  }
-
-  public void setCpfFavorecido(String cpfFavorecido) {
-    this.cpfFavorecido = cpfFavorecido;
-  }
-
-  public InfConsultaContaReq modalidadeDeposito(ModalidadeDepositoEnum modalidadeDeposito) {
-    this.modalidadeDeposito = modalidadeDeposito;
-    return this;
-  }
-
-  /**
-   * Indica a modalidade de depósito desejada (2 dígitos, 00 = dinheiro, 01 = cheque).
-   * @return modalidadeDeposito
-  **/
-  @ApiModelProperty(example = "00", required = true, value = "Indica a modalidade de depósito desejada (2 dígitos, 00 = dinheiro, 01 = cheque).")
-  @NotNull
-
-
-  public ModalidadeDepositoEnum getModalidadeDeposito() {
-    return modalidadeDeposito;
-  }
-
-  public void setModalidadeDeposito(ModalidadeDepositoEnum modalidadeDeposito) {
-    this.modalidadeDeposito = modalidadeDeposito;
   }
 
   public InfConsultaContaReq numAgencia(String numAgencia) {
@@ -135,14 +91,13 @@ public class InfConsultaContaReq   {
   }
 
   /**
-   * Número da agência utilizada na operação. Geralmente 4 dígitos, não necessariamente.
+   * Número da agência utilizada na operação.
    * @return numAgencia
   **/
-  @ApiModelProperty(example = "4029", required = true, value = "Número da agência utilizada na operação. Geralmente 4 dígitos, não necessariamente.")
+  @ApiModelProperty(example = "4029", required = true, value = "Número da agência utilizada na operação.")
   @NotNull
 
-@Pattern(regexp="^\\d+$") 
-  public String getNumAgencia() {
+@Pattern(regexp="^\\d+$")   public String getNumAgencia() {
     return numAgencia;
   }
 
@@ -162,13 +117,32 @@ public class InfConsultaContaReq   {
   @ApiModelProperty(example = "0082348296", required = true, value = "Número da conta utilizada na operação.")
   @NotNull
 
-@Pattern(regexp="^\\d+$") 
-  public String getNumConta() {
+@Pattern(regexp="^\\d+$")   public String getNumConta() {
     return numConta;
   }
 
   public void setNumConta(String numConta) {
     this.numConta = numConta;
+  }
+
+  public InfConsultaContaReq modalidadeDeposito(ModalidadeDepositoEnum modalidadeDeposito) {
+    this.modalidadeDeposito = modalidadeDeposito;
+    return this;
+  }
+
+  /**
+   * Indica a modalidade de depósito desejada (2 dígitos, 00 = dinheiro, 01 = cheque).
+   * @return modalidadeDeposito
+  **/
+  @ApiModelProperty(example = "00", required = true, value = "Indica a modalidade de depósito desejada (2 dígitos, 00 = dinheiro, 01 = cheque).")
+  @NotNull
+
+  public ModalidadeDepositoEnum getModalidadeDeposito() {
+    return modalidadeDeposito;
+  }
+
+  public void setModalidadeDeposito(ModalidadeDepositoEnum modalidadeDeposito) {
+    this.modalidadeDeposito = modalidadeDeposito;
   }
 
   public InfConsultaContaReq telefoneFavorecido(String telefoneFavorecido) {
@@ -182,13 +156,31 @@ public class InfConsultaContaReq   {
   **/
   @ApiModelProperty(example = "05199999999", value = "Telefone do cliente favorecido da transação (11 dígitos = DDD com 0 quando número tem 8 dígitos, sem 0 quando número tem 9 dígitos).")
 
-@Pattern(regexp="^\\d{11}$") 
-  public String getTelefoneFavorecido() {
+@Pattern(regexp="^\\d{11}$")   public String getTelefoneFavorecido() {
     return telefoneFavorecido;
   }
 
   public void setTelefoneFavorecido(String telefoneFavorecido) {
     this.telefoneFavorecido = telefoneFavorecido;
+  }
+
+  public InfConsultaContaReq cpfFavorecido(String cpfFavorecido) {
+    this.cpfFavorecido = cpfFavorecido;
+    return this;
+  }
+
+  /**
+   * Número do CPF ou CNPJ do cliente favorecido da transação (11 dígitos ou 14 dígitos respectivamente).
+   * @return cpfFavorecido
+  **/
+  @ApiModelProperty(example = "02358422785", value = "Número do CPF ou CNPJ do cliente favorecido da transação (11 dígitos ou 14 dígitos respectivamente).")
+
+@Pattern(regexp="^\\d{14}|\\d{11}$")   public String getCpfFavorecido() {
+    return cpfFavorecido;
+  }
+
+  public void setCpfFavorecido(String cpfFavorecido) {
+    this.cpfFavorecido = cpfFavorecido;
   }
 
 
@@ -202,16 +194,16 @@ public class InfConsultaContaReq   {
     }
     InfConsultaContaReq infConsultaContaReq = (InfConsultaContaReq) o;
     return Objects.equals(this.codBanco, infConsultaContaReq.codBanco) &&
-        Objects.equals(this.cpfFavorecido, infConsultaContaReq.cpfFavorecido) &&
-        Objects.equals(this.modalidadeDeposito, infConsultaContaReq.modalidadeDeposito) &&
         Objects.equals(this.numAgencia, infConsultaContaReq.numAgencia) &&
         Objects.equals(this.numConta, infConsultaContaReq.numConta) &&
-        Objects.equals(this.telefoneFavorecido, infConsultaContaReq.telefoneFavorecido);
+        Objects.equals(this.modalidadeDeposito, infConsultaContaReq.modalidadeDeposito) &&
+        Objects.equals(this.telefoneFavorecido, infConsultaContaReq.telefoneFavorecido) &&
+        Objects.equals(this.cpfFavorecido, infConsultaContaReq.cpfFavorecido);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(codBanco, cpfFavorecido, modalidadeDeposito, numAgencia, numConta, telefoneFavorecido);
+    return Objects.hash(codBanco, numAgencia, numConta, modalidadeDeposito, telefoneFavorecido, cpfFavorecido);
   }
 
   @Override
@@ -220,11 +212,11 @@ public class InfConsultaContaReq   {
     sb.append("class InfConsultaContaReq {\n");
     
     sb.append("    codBanco: ").append(toIndentedString(codBanco)).append("\n");
-    sb.append("    cpfFavorecido: ").append(toIndentedString(cpfFavorecido)).append("\n");
-    sb.append("    modalidadeDeposito: ").append(toIndentedString(modalidadeDeposito)).append("\n");
     sb.append("    numAgencia: ").append(toIndentedString(numAgencia)).append("\n");
     sb.append("    numConta: ").append(toIndentedString(numConta)).append("\n");
+    sb.append("    modalidadeDeposito: ").append(toIndentedString(modalidadeDeposito)).append("\n");
     sb.append("    telefoneFavorecido: ").append(toIndentedString(telefoneFavorecido)).append("\n");
+    sb.append("    cpfFavorecido: ").append(toIndentedString(cpfFavorecido)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -240,4 +232,3 @@ public class InfConsultaContaReq   {
     return o.toString().replace("\n", "\n    ");
   }
 }
-

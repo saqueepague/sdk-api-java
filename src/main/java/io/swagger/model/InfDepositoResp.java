@@ -14,8 +14,7 @@ import javax.validation.constraints.*;
  */
 @ApiModel(description = "Informações da resposta da requisição de depósito.")
 @Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2019-01-22T18:11:57.142Z")
-
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.SpringCodegen", date = "2019-03-19T14:13:24.289Z[GMT]")
 public class InfDepositoResp   {
   @JsonProperty("recibo")
   private String recibo = null;
@@ -26,14 +25,13 @@ public class InfDepositoResp   {
   }
 
   /**
-   * Recibo com informações do depósito. Linhas com 48 posições separadas por \"@\".
+   * Recibo com informações do depósito efetuado. Linhas com 48 posições separadas por \"@\".
    * @return recibo
   **/
-  @ApiModelProperty(example = "              DEPÓSITO EFETIVADO               @                036200005433591                @               13/10/2018  20:24               @            BANCO: BANCO FAVORECIDO            @                AGENCIA: 4029                  @              CONTA: 0082348296                @           VALOR DO DEPÓSITO: R$ 48,00         ", required = true, value = "Recibo com informações do depósito. Linhas com 48 posições separadas por \"@\".")
+  @ApiModelProperty(example = "@            COMPROVANTE DE DEPOSITO             @------------------------------------------------@ Agencia....: 0101                              @ Conta......: 74414-0                           @ Nome.......: EUGENIO SCHMITT COELHO            @@------------------------------------------------@ Favorecido: EUGENIO SCHMITT COELHO             @ Agencia Destino:                           0101@ Conta Destino:         Conta Corrente - 74414-0@@Tipo            NSU                        Valor@Dinheiro        697841472523             R$20,00@------------------------------------------------@               SAC - 0800 123 4569@      SAC - DEF. AUDITIVO - 0800 123 4568@            OUVIDORIA - 0800 123 4567@@             www.siteparceiro.com.br@", required = true, value = "Recibo com informações do depósito efetuado. Linhas com 48 posições separadas por \"@\".")
   @NotNull
 
-@Pattern(regexp="^[^@]{0,48}(\\@[^@]{0,48})*$") 
-  public String getRecibo() {
+@Pattern(regexp="^[^@]{0,48}(\\@[^@]{0,48})*$")   public String getRecibo() {
     return recibo;
   }
 
@@ -80,4 +78,3 @@ public class InfDepositoResp   {
     return o.toString().replace("\n", "\n    ");
   }
 }
-
