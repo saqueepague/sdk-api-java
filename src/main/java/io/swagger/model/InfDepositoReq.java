@@ -14,7 +14,7 @@ import javax.validation.constraints.*;
  */
 @ApiModel(description = "Informações da requisição de depósito.")
 @Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.SpringCodegen", date = "2019-03-19T14:13:24.289Z[GMT]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.SpringCodegen", date = "2019-03-26T13:22:47.638Z[GMT]")
 public class InfDepositoReq   {
   @JsonProperty("nomeDepositante")
   private String nomeDepositante = null;
@@ -169,8 +169,7 @@ public class InfDepositoReq   {
    * Código do banco utilizado na operação (3 dígitos).
    * @return codBanco
   **/
-  @ApiModelProperty(example = "237", required = true, value = "Código do banco utilizado na operação (3 dígitos).")
-  @NotNull
+  @ApiModelProperty(example = "237", value = "Código do banco utilizado na operação (3 dígitos).")
 
 @Pattern(regexp="^\\d{3}$")   public String getCodBanco() {
     return codBanco;
@@ -189,8 +188,7 @@ public class InfDepositoReq   {
    * Número da agência utilizada na operação.
    * @return numAgencia
   **/
-  @ApiModelProperty(example = "4029", required = true, value = "Número da agência utilizada na operação.")
-  @NotNull
+  @ApiModelProperty(example = "4029", value = "Número da agência utilizada na operação.")
 
 @Pattern(regexp="^\\d+$")   public String getNumAgencia() {
     return numAgencia;
@@ -209,8 +207,7 @@ public class InfDepositoReq   {
    * Número da conta utilizada na operação.
    * @return numConta
   **/
-  @ApiModelProperty(example = "0082348296", required = true, value = "Número da conta utilizada na operação.")
-  @NotNull
+  @ApiModelProperty(example = "0082348296", value = "Número da conta utilizada na operação.")
 
 @Pattern(regexp="^\\d+$")   public String getNumConta() {
     return numConta;

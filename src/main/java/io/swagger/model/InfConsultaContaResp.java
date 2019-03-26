@@ -15,7 +15,7 @@ import javax.validation.constraints.*;
  */
 @ApiModel(description = "Informações da resposta da requisição de consulta de conta do favorecido.")
 @Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.SpringCodegen", date = "2019-03-19T14:13:24.289Z[GMT]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.SpringCodegen", date = "2019-03-26T13:22:47.638Z[GMT]")
 public class InfConsultaContaResp   {
   /**
    * Igual à requisição.
@@ -181,7 +181,8 @@ public class InfConsultaContaResp   {
    * Nome do cliente titular da conta.
    * @return nomeCliente
   **/
-  @ApiModelProperty(example = "Carl Edward Sagan", value = "Nome do cliente titular da conta.")
+  @ApiModelProperty(example = "Carl Edward Sagan", required = true, value = "Nome do cliente titular da conta.")
+  @NotNull
 
   public String getNomeCliente() {
     return nomeCliente;

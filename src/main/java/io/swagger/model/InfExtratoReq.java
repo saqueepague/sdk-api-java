@@ -15,7 +15,7 @@ import javax.validation.constraints.*;
  */
 @ApiModel(description = "Informações da requisição de extrato.")
 @Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.SpringCodegen", date = "2019-03-19T14:13:24.289Z[GMT]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.SpringCodegen", date = "2019-03-26T13:22:47.638Z[GMT]")
 public class InfExtratoReq   {
   /**
    * Tipo de conta do extrato (CC = conta corrente, CP = conta poupança, CS = conta salário).
@@ -76,8 +76,7 @@ public class InfExtratoReq   {
    * Tipo de conta do extrato (CC = conta corrente, CP = conta poupança, CS = conta salário).
    * @return tipoConta
   **/
-  @ApiModelProperty(example = "CC", required = true, value = "Tipo de conta do extrato (CC = conta corrente, CP = conta poupança, CS = conta salário).")
-  @NotNull
+  @ApiModelProperty(example = "CC", value = "Tipo de conta do extrato (CC = conta corrente, CP = conta poupança, CS = conta salário).")
 
   public TipoContaEnum getTipoConta() {
     return tipoConta;
@@ -96,8 +95,7 @@ public class InfExtratoReq   {
    * Código do banco utilizado na operação (3 dígitos).
    * @return codBanco
   **/
-  @ApiModelProperty(example = "237", required = true, value = "Código do banco utilizado na operação (3 dígitos).")
-  @NotNull
+  @ApiModelProperty(example = "237", value = "Código do banco utilizado na operação (3 dígitos).")
 
 @Pattern(regexp="^\\d{3}$")   public String getCodBanco() {
     return codBanco;
@@ -116,8 +114,7 @@ public class InfExtratoReq   {
    * Número da agência utilizada na operação.
    * @return numAgencia
   **/
-  @ApiModelProperty(example = "4029", required = true, value = "Número da agência utilizada na operação.")
-  @NotNull
+  @ApiModelProperty(example = "4029", value = "Número da agência utilizada na operação.")
 
 @Pattern(regexp="^\\d+$")   public String getNumAgencia() {
     return numAgencia;
@@ -136,8 +133,7 @@ public class InfExtratoReq   {
    * Número da conta utilizada na operação.
    * @return numConta
   **/
-  @ApiModelProperty(example = "0082348296", required = true, value = "Número da conta utilizada na operação.")
-  @NotNull
+  @ApiModelProperty(example = "0082348296", value = "Número da conta utilizada na operação.")
 
 @Pattern(regexp="^\\d+$")   public String getNumConta() {
     return numConta;
