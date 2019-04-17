@@ -16,7 +16,6 @@ import javax.validation.constraints.*;
  * ConsultaProdutosRecargaReq
  */
 @Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.SpringCodegen", date = "2019-03-26T17:53:50.941Z[GMT]")
 public class ConsultaProdutosRecargaReq   {
   @JsonProperty("InfTransacao")
   private InfTransacaoReq infTransacao = null;
@@ -36,8 +35,7 @@ public class ConsultaProdutosRecargaReq   {
    * Get infTransacao
    * @return infTransacao
   **/
-  @ApiModelProperty(required = true, value = "")
-  @NotNull
+  @ApiModelProperty(value = "")
 
   @Valid
   public InfTransacaoReq getInfTransacao() {
@@ -78,8 +76,7 @@ public class ConsultaProdutosRecargaReq   {
    * Get infConsultaProdutosRecarga
    * @return infConsultaProdutosRecarga
   **/
-  @ApiModelProperty(required = true, value = "")
-  @NotNull
+  @ApiModelProperty(value = "")
 
   @Valid
   public InfConsultaProdutosRecargaReq getInfConsultaProdutosRecarga() {

@@ -19,7 +19,6 @@ import javax.validation.constraints.*;
  */
 @ApiModel(description = "Informações da resposta da requisição de identificação.")
 @Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.SpringCodegen", date = "2019-03-26T17:53:50.941Z[GMT]")
 public class InfIdentificacaoResp   {
   @JsonProperty("transacValidas")
   private String transacValidas = null;
@@ -105,10 +104,10 @@ public class InfIdentificacaoResp   {
   }
 
   /**
-   * Opções de letras/sílabas a serem mostradas para o cliente, caso ele use identificação positiva.
+   * Opções de letra/sílabas a serem mostradas para o cliente, caso ele use identificação positiva.
    * @return idPositiva
   **/
-  @ApiModelProperty(value = "Opções de letras/sílabas a serem mostradas para o cliente, caso ele use identificação positiva.")
+  @ApiModelProperty(value = "Opções de letra/sílabas a serem mostradas para o cliente, caso ele use identificação positiva.")
   @Valid
   public List<InfIdentificacaoRespIdPositiva> getIdPositiva() {
     return idPositiva;

@@ -15,7 +15,6 @@ import javax.validation.constraints.*;
  */
 @ApiModel(description = "Informações relacionadas a criptografia e senhas da requisição. Varia dependendo da necessidade de cada transação.")
 @Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.SpringCodegen", date = "2019-03-26T17:53:50.941Z[GMT]")
 public class Cripto   {
   @JsonProperty("senha")
   private String senha = null;
@@ -85,10 +84,10 @@ public class Cripto   {
   }
 
   /**
-   * Identificação positiva informada pelo usuário, caso utilizada. Corresponde às posições (botões) selecionadas pelo usuário em cada tela apresentada. Pode ser criptografada ou não.
+   * Identificação positiva informada pelo usuário, caso utilizada. Corresponde às posições da tela selecionadas pelo usuário. Pode ser criptografada ou não.
    * @return idPositiva
   **/
-  @ApiModelProperty(value = "Identificação positiva informada pelo usuário, caso utilizada. Corresponde às posições (botões) selecionadas pelo usuário em cada tela apresentada. Pode ser criptografada ou não.")
+  @ApiModelProperty(value = "Identificação positiva informada pelo usuário, caso utilizada. Corresponde às posições da tela selecionadas pelo usuário. Pode ser criptografada ou não.")
 
   public String getIdPositiva() {
     return idPositiva;

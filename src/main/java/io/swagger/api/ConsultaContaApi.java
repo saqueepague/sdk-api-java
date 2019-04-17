@@ -23,7 +23,6 @@ import javax.validation.Valid;
 import javax.validation.constraints.*;
 import java.util.List;
 import java.util.Map;
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.SpringCodegen", date = "2019-03-26T17:53:50.941Z[GMT]")
 @Api(value = "consultaConta", description = "the consultaConta API")
 public interface ConsultaContaApi {
 

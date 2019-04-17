@@ -13,7 +13,6 @@ import javax.validation.constraints.*;
  * InfConsultaSaqueRespPerguntas
  */
 @Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.SpringCodegen", date = "2019-03-26T17:53:50.941Z[GMT]")
 public class InfConsultaSaqueRespPerguntas   {
   @JsonProperty("id")
   private String id = null;

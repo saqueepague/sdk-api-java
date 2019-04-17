@@ -22,7 +22,6 @@ import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
 import java.util.List;
 import java.util.Map;
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.SpringCodegen", date = "2019-03-26T17:53:50.941Z[GMT]")
 @Controller
 public class CompraTitulosCapitalizacaoApiController implements CompraTitulosCapitalizacaoApi {
 

@@ -17,7 +17,6 @@ import javax.validation.constraints.*;
  * IdentificacaoResp
  */
 @Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.SpringCodegen", date = "2019-03-26T17:53:50.941Z[GMT]")
 public class IdentificacaoResp   {
   @JsonProperty("InfTransacao")
   private InfTransacaoResp infTransacao = null;

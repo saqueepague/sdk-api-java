@@ -18,7 +18,6 @@ import javax.validation.constraints.*;
  * ConsultaContaReq
  */
 @Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.SpringCodegen", date = "2019-03-26T17:53:50.941Z[GMT]")
 public class ConsultaContaReq   {
   @JsonProperty("InfTransacao")
   private InfTransacaoReq infTransacao = null;

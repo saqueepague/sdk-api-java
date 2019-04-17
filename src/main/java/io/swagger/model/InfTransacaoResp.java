@@ -14,7 +14,6 @@ import javax.validation.constraints.*;
  */
 @ApiModel(description = "Informações sobre a resposta da resquisição de transação.")
 @Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.SpringCodegen", date = "2019-03-26T17:53:50.941Z[GMT]")
 public class InfTransacaoResp   {
   @JsonProperty("nsuResposta")
   private String nsuResposta = null;
@@ -195,12 +194,12 @@ public class InfTransacaoResp   {
   }
 
   /**
-   * Igual à requisição com exceção da transação de consultaSaldo e consultaSaque.
+   * Igual à requisição com execeção da transação de consultaSaldo e consultaSaque.
    * @return valor
   **/
-  @ApiModelProperty(example = "5000", value = "Igual à requisição com exceção da transação de consultaSaldo e consultaSaque.")
+  @ApiModelProperty(example = "5000", value = "Igual à requisição com execeção da transação de consultaSaldo e consultaSaque.")
 
-@Pattern(regexp="^\\d+$")   public String getValor() {
+@Pattern(regexp="^\\d+")   public String getValor() {
     return valor;
   }
 
