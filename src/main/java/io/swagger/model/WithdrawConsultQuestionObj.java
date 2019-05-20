@@ -10,10 +10,11 @@ import javax.validation.Valid;
 import javax.validation.constraints.*;
 
 /**
- * InfIdentificacaoRespPerguntas
+ * Pergunta mostrada ao usuário para se identificar antes do saque. Esta pergunta é selecionada aleatoriamente através da lista mandada na requisição de identificação.
  */
+@ApiModel(description = "Pergunta mostrada ao usuário para se identificar antes do saque. Esta pergunta é selecionada aleatoriamente através da lista mandada na requisição de identificação.")
 @Validated
-public class InfIdentificacaoRespPerguntas   {
+public class WithdrawConsultQuestionObj   {
   @JsonProperty("id")
   private String id = null;
 
@@ -23,10 +24,7 @@ public class InfIdentificacaoRespPerguntas   {
   @JsonProperty("tamResposta")
   private String tamResposta = null;
 
-  @JsonProperty("resposta")
-  private String resposta = null;
-
-  public InfIdentificacaoRespPerguntas id(String id) {
+  public WithdrawConsultQuestionObj id(String id) {
     this.id = id;
     return this;
   }
@@ -35,7 +33,8 @@ public class InfIdentificacaoRespPerguntas   {
    * Identificador da pergunta.
    * @return id
   **/
-  @ApiModelProperty(example = "1", value = "Identificador da pergunta.")
+  @ApiModelProperty(example = "1", required = true, value = "Identificador da pergunta.")
+  @NotNull
 
 @Pattern(regexp="^\\d+$")   public String getId() {
     return id;
@@ -45,16 +44,17 @@ public class InfIdentificacaoRespPerguntas   {
     this.id = id;
   }
 
-  public InfIdentificacaoRespPerguntas pergunta(String pergunta) {
+  public WithdrawConsultQuestionObj pergunta(String pergunta) {
     this.pergunta = pergunta;
     return this;
   }
 
   /**
-   * Pergunta a ser exibida ao usuário.
+   * Pergunta de identificação.
    * @return pergunta
   **/
-  @ApiModelProperty(example = "Qual é o dia de seu aniversário?", value = "Pergunta a ser exibida ao usuário.")
+  @ApiModelProperty(example = "Informe os 3 primeiros dígitos do seu CPF", required = true, value = "Pergunta de identificação.")
+  @NotNull
 
   public String getPergunta() {
     return pergunta;
@@ -64,16 +64,17 @@ public class InfIdentificacaoRespPerguntas   {
     this.pergunta = pergunta;
   }
 
-  public InfIdentificacaoRespPerguntas tamResposta(String tamResposta) {
+  public WithdrawConsultQuestionObj tamResposta(String tamResposta) {
     this.tamResposta = tamResposta;
     return this;
   }
 
   /**
-   * Número de dígitos esperado para a resposta.
+   * Tamanho da resposta da pergunta.
    * @return tamResposta
   **/
-  @ApiModelProperty(example = "2", value = "Número de dígitos esperado para a resposta.")
+  @ApiModelProperty(example = "3", required = true, value = "Tamanho da resposta da pergunta.")
+  @NotNull
 
 @Pattern(regexp="^\\d+$")   public String getTamResposta() {
     return tamResposta;
@@ -81,25 +82,6 @@ public class InfIdentificacaoRespPerguntas   {
 
   public void setTamResposta(String tamResposta) {
     this.tamResposta = tamResposta;
-  }
-
-  public InfIdentificacaoRespPerguntas resposta(String resposta) {
-    this.resposta = resposta;
-    return this;
-  }
-
-  /**
-   * Resposta da pergunta (campo preenchido na requisição da transação financeira associada)
-   * @return resposta
-  **/
-  @ApiModelProperty(value = "Resposta da pergunta (campo preenchido na requisição da transação financeira associada)")
-
-  public String getResposta() {
-    return resposta;
-  }
-
-  public void setResposta(String resposta) {
-    this.resposta = resposta;
   }
 
 
@@ -111,27 +93,25 @@ public class InfIdentificacaoRespPerguntas   {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    InfIdentificacaoRespPerguntas infIdentificacaoRespPerguntas = (InfIdentificacaoRespPerguntas) o;
-    return Objects.equals(this.id, infIdentificacaoRespPerguntas.id) &&
-        Objects.equals(this.pergunta, infIdentificacaoRespPerguntas.pergunta) &&
-        Objects.equals(this.tamResposta, infIdentificacaoRespPerguntas.tamResposta) &&
-        Objects.equals(this.resposta, infIdentificacaoRespPerguntas.resposta);
+    WithdrawConsultQuestionObj withdrawConsultQuestionObj = (WithdrawConsultQuestionObj) o;
+    return Objects.equals(this.id, withdrawConsultQuestionObj.id) &&
+        Objects.equals(this.pergunta, withdrawConsultQuestionObj.pergunta) &&
+        Objects.equals(this.tamResposta, withdrawConsultQuestionObj.tamResposta);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, pergunta, tamResposta, resposta);
+    return Objects.hash(id, pergunta, tamResposta);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class InfIdentificacaoRespPerguntas {\n");
+    sb.append("class WithdrawConsultQuestionObj {\n");
     
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    pergunta: ").append(toIndentedString(pergunta)).append("\n");
     sb.append("    tamResposta: ").append(toIndentedString(tamResposta)).append("\n");
-    sb.append("    resposta: ").append(toIndentedString(resposta)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -35,7 +35,8 @@ public class ConsultaSaqueResp   {
    * Get infTransacao
    * @return infTransacao
   **/
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(required = true, value = "")
+  @NotNull
 
   @Valid
   public InfTransacaoResp getInfTransacao() {

@@ -180,7 +180,8 @@ public class InfConsultaContaResp   {
    * Nome do cliente titular da conta.
    * @return nomeCliente
   **/
-  @ApiModelProperty(example = "Carl Edward Sagan", value = "Nome do cliente titular da conta.")
+  @ApiModelProperty(example = "Carl Edward Sagan", required = true, value = "Nome do cliente titular da conta.")
+  @NotNull
 
   public String getNomeCliente() {
     return nomeCliente;

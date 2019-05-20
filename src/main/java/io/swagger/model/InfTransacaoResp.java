@@ -10,9 +10,9 @@ import javax.validation.Valid;
 import javax.validation.constraints.*;
 
 /**
- * Informações sobre a resposta da resquisição de transação.
+ * Informações sobre a resposta da requisição de transação.
  */
-@ApiModel(description = "Informações sobre a resposta da resquisição de transação.")
+@ApiModel(description = "Informações sobre a resposta da requisição de transação.")
 @Validated
 public class InfTransacaoResp   {
   @JsonProperty("nsuResposta")
@@ -180,7 +180,7 @@ public class InfTransacaoResp   {
   @ApiModelProperty(example = "00000000914", required = true, value = "Igual à requisição.")
   @NotNull
 
-@Pattern(regexp="^\\d{11}")   public String getCodOperadora() {
+@Pattern(regexp="^\\d{11}$")   public String getCodOperadora() {
     return codOperadora;
   }
 
@@ -194,12 +194,12 @@ public class InfTransacaoResp   {
   }
 
   /**
-   * Igual à requisição com execeção da transação de consultaSaldo e consultaSaque.
+   * Igual à requisição com exceção da transação de consultaSaldo e consultaSaque.
    * @return valor
   **/
-  @ApiModelProperty(example = "5000", value = "Igual à requisição com execeção da transação de consultaSaldo e consultaSaque.")
+  @ApiModelProperty(example = "5000", value = "Igual à requisição com exceção da transação de consultaSaldo e consultaSaque.")
 
-@Pattern(regexp="^\\d+")   public String getValor() {
+@Pattern(regexp="^\\d+$")   public String getValor() {
     return valor;
   }
 
@@ -218,7 +218,7 @@ public class InfTransacaoResp   {
   **/
   @ApiModelProperty(example = "986", value = "Igual à requisição com exceção da transação de consultaSaque.")
 
-@Pattern(regexp="^\\d{3}")   public String getCodMoeda() {
+@Pattern(regexp="^\\d{3}$")   public String getCodMoeda() {
     return codMoeda;
   }
 

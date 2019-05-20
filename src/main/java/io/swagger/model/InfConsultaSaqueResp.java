@@ -5,7 +5,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import io.swagger.model.InfConsultaSaqueRespPerguntas;
+import io.swagger.model.WithdrawConsultQuestionObj;
 import java.util.ArrayList;
 import java.util.List;
 import org.springframework.validation.annotation.Validated;
@@ -23,7 +23,7 @@ public class InfConsultaSaqueResp   {
 
   @JsonProperty("perguntas")
   @Valid
-  private List<InfConsultaSaqueRespPerguntas> perguntas = null;
+  private List<WithdrawConsultQuestionObj> perguntas = null;
 
   public InfConsultaSaqueResp nomeCliente(String nomeCliente) {
     this.nomeCliente = nomeCliente;
@@ -44,14 +44,14 @@ public class InfConsultaSaqueResp   {
     this.nomeCliente = nomeCliente;
   }
 
-  public InfConsultaSaqueResp perguntas(List<InfConsultaSaqueRespPerguntas> perguntas) {
+  public InfConsultaSaqueResp perguntas(List<WithdrawConsultQuestionObj> perguntas) {
     this.perguntas = perguntas;
     return this;
   }
 
-  public InfConsultaSaqueResp addPerguntasItem(InfConsultaSaqueRespPerguntas perguntasItem) {
+  public InfConsultaSaqueResp addPerguntasItem(WithdrawConsultQuestionObj perguntasItem) {
     if (this.perguntas == null) {
-      this.perguntas = new ArrayList<InfConsultaSaqueRespPerguntas>();
+      this.perguntas = new ArrayList<WithdrawConsultQuestionObj>();
     }
     this.perguntas.add(perguntasItem);
     return this;
@@ -63,11 +63,11 @@ public class InfConsultaSaqueResp   {
   **/
   @ApiModelProperty(value = "Lista de possíveis perguntas a serem mostradas para o usuário para autorizar o saque.")
   @Valid
-  public List<InfConsultaSaqueRespPerguntas> getPerguntas() {
+  public List<WithdrawConsultQuestionObj> getPerguntas() {
     return perguntas;
   }
 
-  public void setPerguntas(List<InfConsultaSaqueRespPerguntas> perguntas) {
+  public void setPerguntas(List<WithdrawConsultQuestionObj> perguntas) {
     this.perguntas = perguntas;
   }
 

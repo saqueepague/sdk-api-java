@@ -10,9 +10,9 @@ import javax.validation.Valid;
 import javax.validation.constraints.*;
 
 /**
- * Resposta do cliente à pergunta feita na identificação.
+ * Resposta do cliente à pergunta feita na identificação (somente respostas numéricas).
  */
-@ApiModel(description = "Resposta do cliente à pergunta feita na identificação.")
+@ApiModel(description = "Resposta do cliente à pergunta feita na identificação (somente respostas numéricas).")
 @Validated
 public class CriptoRespostaCliente   {
   @JsonProperty("id")
@@ -49,10 +49,10 @@ public class CriptoRespostaCliente   {
   }
 
   /**
-   * Pergunta feita ao cliente (somente o id é prenchido)
+   * Pergunta feita ao cliente (somente o id é preenchido).
    * @return pergunta
   **/
-  @ApiModelProperty(value = "Pergunta feita ao cliente (somente o id é prenchido)")
+  @ApiModelProperty(example = "Qual o dia do seu aniversário?", value = "Pergunta feita ao cliente (somente o id é preenchido).")
 
   public String getPergunta() {
     return pergunta;
@@ -68,10 +68,10 @@ public class CriptoRespostaCliente   {
   }
 
   /**
-   * Resposta da pergunta (dado criptografado)
+   * Resposta da pergunta (dado criptografado).
    * @return resposta
   **/
-  @ApiModelProperty(example = "14", value = "Resposta da pergunta (dado criptografado)")
+  @ApiModelProperty(example = "24", value = "Resposta da pergunta (dado criptografado).")
 
   public String getResposta() {
     return resposta;

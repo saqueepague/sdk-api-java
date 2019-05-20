@@ -36,8 +36,7 @@ public class InfSaqueReq   {
    * Número da agência utilizada na operação.
    * @return numAgencia
   **/
-  @ApiModelProperty(example = "4029", required = true, value = "Número da agência utilizada na operação.")
-  @NotNull
+  @ApiModelProperty(example = "4029", value = "Número da agência utilizada na operação.")
 
 @Pattern(regexp="^\\d+$")   public String getNumAgencia() {
     return numAgencia;
@@ -56,8 +55,7 @@ public class InfSaqueReq   {
    * Número da conta utilizada na operação.
    * @return numConta
   **/
-  @ApiModelProperty(example = "0082348296", required = true, value = "Número da conta utilizada na operação.")
-  @NotNull
+  @ApiModelProperty(example = "0082348296", value = "Número da conta utilizada na operação.")
 
 @Pattern(regexp="^\\d+$")   public String getNumConta() {
     return numConta;

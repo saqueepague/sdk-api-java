@@ -84,10 +84,10 @@ public class Cripto   {
   }
 
   /**
-   * Identificação positiva informada pelo usuário, caso utilizada. Corresponde às posições da tela selecionadas pelo usuário. Pode ser criptografada ou não.
+   * Identificação positiva informada pelo usuário, caso utilizada, com 8 dígitos corresponde às posições (botões) em cada tela apresentada. Caso a senha tenha menos de oito sílabas, são adicionados zeros para as telas não existentes. Pode ser criptografada ou não.
    * @return idPositiva
   **/
-  @ApiModelProperty(value = "Identificação positiva informada pelo usuário, caso utilizada. Corresponde às posições da tela selecionadas pelo usuário. Pode ser criptografada ou não.")
+  @ApiModelProperty(example = "42500000", value = "Identificação positiva informada pelo usuário, caso utilizada, com 8 dígitos corresponde às posições (botões) em cada tela apresentada. Caso a senha tenha menos de oito sílabas, são adicionados zeros para as telas não existentes. Pode ser criptografada ou não.")
 
   public String getIdPositiva() {
     return idPositiva;

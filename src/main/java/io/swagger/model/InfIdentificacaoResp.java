@@ -6,8 +6,8 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import io.swagger.model.InfIdentificacaoRespIdPositiva;
-import io.swagger.model.InfIdentificacaoRespPerguntas;
+import io.swagger.model.PositiveIdQuestionObj;
+import io.swagger.model.PositiveIdScreenObj;
 import java.util.ArrayList;
 import java.util.List;
 import org.springframework.validation.annotation.Validated;
@@ -25,7 +25,7 @@ public class InfIdentificacaoResp   {
 
   @JsonProperty("idPositiva")
   @Valid
-  private List<InfIdentificacaoRespIdPositiva> idPositiva = null;
+  private List<PositiveIdScreenObj> idPositiva = null;
 
   /**
    * Informa se o cliente deve se autenticar utilizando token (00 = não, 01 = sim).
@@ -68,7 +68,7 @@ public class InfIdentificacaoResp   {
 
   @JsonProperty("perguntas")
   @Valid
-  private List<InfIdentificacaoRespPerguntas> perguntas = null;
+  private List<PositiveIdQuestionObj> perguntas = null;
 
   public InfIdentificacaoResp transacValidas(String transacValidas) {
     this.transacValidas = transacValidas;
@@ -90,30 +90,30 @@ public class InfIdentificacaoResp   {
     this.transacValidas = transacValidas;
   }
 
-  public InfIdentificacaoResp idPositiva(List<InfIdentificacaoRespIdPositiva> idPositiva) {
+  public InfIdentificacaoResp idPositiva(List<PositiveIdScreenObj> idPositiva) {
     this.idPositiva = idPositiva;
     return this;
   }
 
-  public InfIdentificacaoResp addIdPositivaItem(InfIdentificacaoRespIdPositiva idPositivaItem) {
+  public InfIdentificacaoResp addIdPositivaItem(PositiveIdScreenObj idPositivaItem) {
     if (this.idPositiva == null) {
-      this.idPositiva = new ArrayList<InfIdentificacaoRespIdPositiva>();
+      this.idPositiva = new ArrayList<PositiveIdScreenObj>();
     }
     this.idPositiva.add(idPositivaItem);
     return this;
   }
 
   /**
-   * Opções de letra/sílabas a serem mostradas para o cliente, caso ele use identificação positiva.
+   * Opções de letras/sílabas a serem mostradas para o cliente, caso ele use identificação positiva.
    * @return idPositiva
   **/
-  @ApiModelProperty(value = "Opções de letra/sílabas a serem mostradas para o cliente, caso ele use identificação positiva.")
+  @ApiModelProperty(value = "Opções de letras/sílabas a serem mostradas para o cliente, caso ele use identificação positiva.")
   @Valid
-  public List<InfIdentificacaoRespIdPositiva> getIdPositiva() {
+  public List<PositiveIdScreenObj> getIdPositiva() {
     return idPositiva;
   }
 
-  public void setIdPositiva(List<InfIdentificacaoRespIdPositiva> idPositiva) {
+  public void setIdPositiva(List<PositiveIdScreenObj> idPositiva) {
     this.idPositiva = idPositiva;
   }
 
@@ -175,14 +175,14 @@ public class InfIdentificacaoResp   {
     this.saldo = saldo;
   }
 
-  public InfIdentificacaoResp perguntas(List<InfIdentificacaoRespPerguntas> perguntas) {
+  public InfIdentificacaoResp perguntas(List<PositiveIdQuestionObj> perguntas) {
     this.perguntas = perguntas;
     return this;
   }
 
-  public InfIdentificacaoResp addPerguntasItem(InfIdentificacaoRespPerguntas perguntasItem) {
+  public InfIdentificacaoResp addPerguntasItem(PositiveIdQuestionObj perguntasItem) {
     if (this.perguntas == null) {
-      this.perguntas = new ArrayList<InfIdentificacaoRespPerguntas>();
+      this.perguntas = new ArrayList<PositiveIdQuestionObj>();
     }
     this.perguntas.add(perguntasItem);
     return this;
@@ -194,11 +194,11 @@ public class InfIdentificacaoResp   {
   **/
   @ApiModelProperty(value = "Lista de possíveis perguntas a serem mostradas para o usuário para autenticá-lo.")
   @Valid
-  public List<InfIdentificacaoRespPerguntas> getPerguntas() {
+  public List<PositiveIdQuestionObj> getPerguntas() {
     return perguntas;
   }
 
-  public void setPerguntas(List<InfIdentificacaoRespPerguntas> perguntas) {
+  public void setPerguntas(List<PositiveIdQuestionObj> perguntas) {
     this.perguntas = perguntas;
   }
 

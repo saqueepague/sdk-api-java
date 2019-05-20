@@ -10,10 +10,11 @@ import javax.validation.Valid;
 import javax.validation.constraints.*;
 
 /**
- * InfConsultaSaqueRespPerguntas
+ * Pergunta mostrada ao usuário para se identificar antes de uma transação. Esta pergunta é selecionada aleatoriamente através da lista mandada na requisição de identificação.
  */
+@ApiModel(description = "Pergunta mostrada ao usuário para se identificar antes de uma transação. Esta pergunta é selecionada aleatoriamente através da lista mandada na requisição de identificação.")
 @Validated
-public class InfConsultaSaqueRespPerguntas   {
+public class PositiveIdQuestionObj   {
   @JsonProperty("id")
   private String id = null;
 
@@ -23,7 +24,7 @@ public class InfConsultaSaqueRespPerguntas   {
   @JsonProperty("tamResposta")
   private String tamResposta = null;
 
-  public InfConsultaSaqueRespPerguntas id(String id) {
+  public PositiveIdQuestionObj id(String id) {
     this.id = id;
     return this;
   }
@@ -32,7 +33,8 @@ public class InfConsultaSaqueRespPerguntas   {
    * Identificador da pergunta.
    * @return id
   **/
-  @ApiModelProperty(example = "1", value = "Identificador da pergunta.")
+  @ApiModelProperty(example = "1", required = true, value = "Identificador da pergunta.")
+  @NotNull
 
 @Pattern(regexp="^\\d+$")   public String getId() {
     return id;
@@ -42,16 +44,17 @@ public class InfConsultaSaqueRespPerguntas   {
     this.id = id;
   }
 
-  public InfConsultaSaqueRespPerguntas pergunta(String pergunta) {
+  public PositiveIdQuestionObj pergunta(String pergunta) {
     this.pergunta = pergunta;
     return this;
   }
 
   /**
-   * Pergunta de identificação.
+   * Pergunta a ser exibida ao usuário.
    * @return pergunta
   **/
-  @ApiModelProperty(example = "Informe os 3 primeiros dígitos do seu CPF", value = "Pergunta de identificação.")
+  @ApiModelProperty(example = "Qual é o dia de seu aniversário?", required = true, value = "Pergunta a ser exibida ao usuário.")
+  @NotNull
 
   public String getPergunta() {
     return pergunta;
@@ -61,16 +64,17 @@ public class InfConsultaSaqueRespPerguntas   {
     this.pergunta = pergunta;
   }
 
-  public InfConsultaSaqueRespPerguntas tamResposta(String tamResposta) {
+  public PositiveIdQuestionObj tamResposta(String tamResposta) {
     this.tamResposta = tamResposta;
     return this;
   }
 
   /**
-   * Tamanho da resposta da pergunta.
+   * Número de dígitos esperado para a resposta.
    * @return tamResposta
   **/
-  @ApiModelProperty(example = "3", value = "Tamanho da resposta da pergunta.")
+  @ApiModelProperty(example = "2", required = true, value = "Número de dígitos esperado para a resposta.")
+  @NotNull
 
 @Pattern(regexp="^\\d+$")   public String getTamResposta() {
     return tamResposta;
@@ -89,10 +93,10 @@ public class InfConsultaSaqueRespPerguntas   {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    InfConsultaSaqueRespPerguntas infConsultaSaqueRespPerguntas = (InfConsultaSaqueRespPerguntas) o;
-    return Objects.equals(this.id, infConsultaSaqueRespPerguntas.id) &&
-        Objects.equals(this.pergunta, infConsultaSaqueRespPerguntas.pergunta) &&
-        Objects.equals(this.tamResposta, infConsultaSaqueRespPerguntas.tamResposta);
+    PositiveIdQuestionObj positiveIdQuestionObj = (PositiveIdQuestionObj) o;
+    return Objects.equals(this.id, positiveIdQuestionObj.id) &&
+        Objects.equals(this.pergunta, positiveIdQuestionObj.pergunta) &&
+        Objects.equals(this.tamResposta, positiveIdQuestionObj.tamResposta);
   }
 
   @Override
@@ -103,7 +107,7 @@ public class InfConsultaSaqueRespPerguntas   {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class InfConsultaSaqueRespPerguntas {\n");
+    sb.append("class PositiveIdQuestionObj {\n");
     
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    pergunta: ").append(toIndentedString(pergunta)).append("\n");

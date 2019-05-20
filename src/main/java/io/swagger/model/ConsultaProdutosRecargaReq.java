@@ -35,7 +35,8 @@ public class ConsultaProdutosRecargaReq   {
    * Get infTransacao
    * @return infTransacao
   **/
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(required = true, value = "")
+  @NotNull
 
   @Valid
   public InfTransacaoReq getInfTransacao() {
@@ -76,7 +77,8 @@ public class ConsultaProdutosRecargaReq   {
    * Get infConsultaProdutosRecarga
    * @return infConsultaProdutosRecarga
   **/
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(required = true, value = "")
+  @NotNull
 
   @Valid
   public InfConsultaProdutosRecargaReq getInfConsultaProdutosRecarga() {

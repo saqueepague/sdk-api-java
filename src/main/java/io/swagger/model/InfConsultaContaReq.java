@@ -73,8 +73,7 @@ public class InfConsultaContaReq   {
    * Código do banco utilizado na operação (3 dígitos).
    * @return codBanco
   **/
-  @ApiModelProperty(example = "237", required = true, value = "Código do banco utilizado na operação (3 dígitos).")
-  @NotNull
+  @ApiModelProperty(example = "237", value = "Código do banco utilizado na operação (3 dígitos).")
 
 @Pattern(regexp="^\\d{3}$")   public String getCodBanco() {
     return codBanco;
@@ -93,8 +92,7 @@ public class InfConsultaContaReq   {
    * Número da agência utilizada na operação.
    * @return numAgencia
   **/
-  @ApiModelProperty(example = "4029", required = true, value = "Número da agência utilizada na operação.")
-  @NotNull
+  @ApiModelProperty(example = "4029", value = "Número da agência utilizada na operação.")
 
 @Pattern(regexp="^\\d+$")   public String getNumAgencia() {
     return numAgencia;
@@ -113,8 +111,7 @@ public class InfConsultaContaReq   {
    * Número da conta utilizada na operação.
    * @return numConta
   **/
-  @ApiModelProperty(example = "0082348296", required = true, value = "Número da conta utilizada na operação.")
-  @NotNull
+  @ApiModelProperty(example = "0082348296", value = "Número da conta utilizada na operação.")
 
 @Pattern(regexp="^\\d+$")   public String getNumConta() {
     return numConta;
