@@ -20,6 +20,12 @@ import javax.validation.constraints.*;
 @ApiModel(description = "Informações da resposta da requisição de identificação.")
 @Validated
 public class InfIdentificacaoResp   {
+  @JsonProperty("numAgencia")
+  private String numAgencia = null;
+
+  @JsonProperty("numConta")
+  private String numConta = null;
+
   @JsonProperty("transacValidas")
   private String transacValidas = null;
 
@@ -69,6 +75,44 @@ public class InfIdentificacaoResp   {
   @JsonProperty("perguntas")
   @Valid
   private List<PositiveIdQuestionObj> perguntas = null;
+
+  public InfIdentificacaoResp numAgencia(String numAgencia) {
+    this.numAgencia = numAgencia;
+    return this;
+  }
+
+  /**
+   * Número da agência identificada (usado em operações em própria conta para o usuário não precisar preencher os dados).
+   * @return numAgencia
+  **/
+  @ApiModelProperty(example = "4029", value = "Número da agência identificada (usado em operações em própria conta para o usuário não precisar preencher os dados).")
+
+@Pattern(regexp="^\\d+$")   public String getNumAgencia() {
+    return numAgencia;
+  }
+
+  public void setNumAgencia(String numAgencia) {
+    this.numAgencia = numAgencia;
+  }
+
+  public InfIdentificacaoResp numConta(String numConta) {
+    this.numConta = numConta;
+    return this;
+  }
+
+  /**
+   * Número da conta identificada (usado em operações em própria conta para o usuário não precisar preencher os dados).
+   * @return numConta
+  **/
+  @ApiModelProperty(example = "0082348296", value = "Número da conta identificada (usado em operações em própria conta para o usuário não precisar preencher os dados).")
+
+@Pattern(regexp="^\\d+$")   public String getNumConta() {
+    return numConta;
+  }
+
+  public void setNumConta(String numConta) {
+    this.numConta = numConta;
+  }
 
   public InfIdentificacaoResp transacValidas(String transacValidas) {
     this.transacValidas = transacValidas;
@@ -212,7 +256,9 @@ public class InfIdentificacaoResp   {
       return false;
     }
     InfIdentificacaoResp infIdentificacaoResp = (InfIdentificacaoResp) o;
-    return Objects.equals(this.transacValidas, infIdentificacaoResp.transacValidas) &&
+    return Objects.equals(this.numAgencia, infIdentificacaoResp.numAgencia) &&
+        Objects.equals(this.numConta, infIdentificacaoResp.numConta) &&
+        Objects.equals(this.transacValidas, infIdentificacaoResp.transacValidas) &&
         Objects.equals(this.idPositiva, infIdentificacaoResp.idPositiva) &&
         Objects.equals(this.pedirToken, infIdentificacaoResp.pedirToken) &&
         Objects.equals(this.frase, infIdentificacaoResp.frase) &&
@@ -222,7 +268,7 @@ public class InfIdentificacaoResp   {
 
   @Override
   public int hashCode() {
-    return Objects.hash(transacValidas, idPositiva, pedirToken, frase, saldo, perguntas);
+    return Objects.hash(numAgencia, numConta, transacValidas, idPositiva, pedirToken, frase, saldo, perguntas);
   }
 
   @Override
@@ -230,6 +276,8 @@ public class InfIdentificacaoResp   {
     StringBuilder sb = new StringBuilder();
     sb.append("class InfIdentificacaoResp {\n");
     
+    sb.append("    numAgencia: ").append(toIndentedString(numAgencia)).append("\n");
+    sb.append("    numConta: ").append(toIndentedString(numConta)).append("\n");
     sb.append("    transacValidas: ").append(toIndentedString(transacValidas)).append("\n");
     sb.append("    idPositiva: ").append(toIndentedString(idPositiva)).append("\n");
     sb.append("    pedirToken: ").append(toIndentedString(pedirToken)).append("\n");
