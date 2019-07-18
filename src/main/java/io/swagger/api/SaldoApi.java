@@ -28,7 +28,8 @@ public interface SaldoApi {
 
     @ApiOperation(value = "", nickname = "saldoPost", notes = "Operação de consulta do valor de saldo disponível em conta.", response = SaldoResp.class, tags={  })
     @ApiResponses(value = { 
-        @ApiResponse(code = 200, message = "Retorno com sucesso.", response = SaldoResp.class) })
+        @ApiResponse(code = 200, message = "Retorno com sucesso.", response = SaldoResp.class),
+        @ApiResponse(code = 401, message = "Acesso não autorizado.") })
     @RequestMapping(value = "/saldo",
         produces = { "application/json" }, 
         consumes = { "application/json" },

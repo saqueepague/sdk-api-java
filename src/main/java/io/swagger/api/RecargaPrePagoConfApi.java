@@ -5,8 +5,7 @@
  */
 package io.swagger.api;
 
-import io.swagger.model.ExtratoReq;
-import io.swagger.model.ExtratoResp;
+import io.swagger.model.TransacConf;
 import io.swagger.annotations.*;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
@@ -23,17 +22,16 @@ import javax.validation.Valid;
 import javax.validation.constraints.*;
 import java.util.List;
 import java.util.Map;
-@Api(value = "extrato", description = "the extrato API")
-public interface ExtratoApi {
+@Api(value = "recargaPrePagoConf", description = "the recargaPrePagoConf API")
+public interface RecargaPrePagoConfApi {
 
-    @ApiOperation(value = "", nickname = "extratoPost", notes = "Operação de extrato.", response = ExtratoResp.class, tags={  })
+    @ApiOperation(value = "", nickname = "recargaPrePagoConfPost", notes = "Confirmação de operação de recarga.", tags={  })
     @ApiResponses(value = { 
-        @ApiResponse(code = 200, message = "Retorno com sucesso.", response = ExtratoResp.class),
+        @ApiResponse(code = 200, message = "Retorno com sucesso."),
         @ApiResponse(code = 401, message = "Acesso não autorizado.") })
-    @RequestMapping(value = "/extrato",
-        produces = { "application/json" }, 
+    @RequestMapping(value = "/recargaPrePagoConf",
         consumes = { "application/json" },
         method = RequestMethod.POST)
-    ResponseEntity<ExtratoResp> extratoPost(@ApiParam(value = "Requisição de operação de extrato." ,required=true )  @Valid @RequestBody ExtratoReq body,@ApiParam(value = "Tipo de autenticação requerida." ,required=true) @RequestHeader(value="authenticationType", required=true) String authenticationType,@ApiParam(value = "Identificação do cliente." ,required=true) @RequestHeader(value="clientId", required=true) String clientId,@ApiParam(value = "Chave para validação do acesso ao serviço." ,required=true) @RequestHeader(value="token", required=true) String token);
+    ResponseEntity<Void> recargaPrePagoConfPost(@ApiParam(value = "Requisição de confirmação de operação de depósito." ,required=true )  @Valid @RequestBody TransacConf body,@ApiParam(value = "Tipo de autenticação requerida." ,required=true) @RequestHeader(value="authenticationType", required=true) String authenticationType,@ApiParam(value = "Identificação do cliente." ,required=true) @RequestHeader(value="clientId", required=true) String clientId,@ApiParam(value = "Chave para validação do acesso ao serviço." ,required=true) @RequestHeader(value="token", required=true) String token);
 
 }

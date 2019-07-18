@@ -28,7 +28,8 @@ public interface EmprestimoApi {
 
     @ApiOperation(value = "", nickname = "emprestimoPost", notes = "Operação de empréstimo.", response = EmprestimoResp.class, tags={  })
     @ApiResponses(value = { 
-        @ApiResponse(code = 200, message = "Retorno com sucesso.", response = EmprestimoResp.class) })
+        @ApiResponse(code = 200, message = "Retorno com sucesso.", response = EmprestimoResp.class),
+        @ApiResponse(code = 401, message = "Acesso não autorizado.") })
     @RequestMapping(value = "/emprestimo",
         produces = { "application/json" }, 
         consumes = { "application/json" },

@@ -28,7 +28,8 @@ public interface ConsultaParcelasEmprestimoApi {
 
     @ApiOperation(value = "", nickname = "consultaParcelasEmprestimoPost", notes = "Operação de consulta de condições disponíveis de parcelamento do empréstimo.", response = ConsultaParcelasEmprestimoResp.class, tags={  })
     @ApiResponses(value = { 
-        @ApiResponse(code = 200, message = "Retorno com sucesso.", response = ConsultaParcelasEmprestimoResp.class) })
+        @ApiResponse(code = 200, message = "Retorno com sucesso.", response = ConsultaParcelasEmprestimoResp.class),
+        @ApiResponse(code = 401, message = "Acesso não autorizado.") })
     @RequestMapping(value = "/consultaParcelasEmprestimo",
         produces = { "application/json" }, 
         consumes = { "application/json" },

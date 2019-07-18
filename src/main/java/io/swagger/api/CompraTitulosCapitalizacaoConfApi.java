@@ -27,7 +27,8 @@ public interface CompraTitulosCapitalizacaoConfApi {
 
     @ApiOperation(value = "", nickname = "compraTitulosCapitalizacaoConfPost", notes = "Confirmação de operação de compra de títulos de capitalização.", tags={  })
     @ApiResponses(value = { 
-        @ApiResponse(code = 200, message = "Retorno com sucesso.") })
+        @ApiResponse(code = 200, message = "Retorno com sucesso."),
+        @ApiResponse(code = 401, message = "Acesso não autorizado.") })
     @RequestMapping(value = "/compraTitulosCapitalizacaoConf",
         consumes = { "application/json" },
         method = RequestMethod.POST)

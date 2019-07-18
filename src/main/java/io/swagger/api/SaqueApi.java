@@ -28,7 +28,8 @@ public interface SaqueApi {
 
     @ApiOperation(value = "", nickname = "saquePost", notes = "Operação de saque de dinheiro em moeda local ou estrangeira.", response = SaqueResp.class, tags={  })
     @ApiResponses(value = { 
-        @ApiResponse(code = 200, message = "Retorno com sucesso.", response = SaqueResp.class) })
+        @ApiResponse(code = 200, message = "Retorno com sucesso.", response = SaqueResp.class),
+        @ApiResponse(code = 401, message = "Acesso não autorizado.") })
     @RequestMapping(value = "/saque",
         produces = { "application/json" }, 
         consumes = { "application/json" },

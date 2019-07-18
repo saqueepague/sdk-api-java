@@ -27,7 +27,8 @@ public interface EmprestimoConfApi {
 
     @ApiOperation(value = "", nickname = "emprestimoConfPost", notes = "Confirmação de operação de empréstimo.", tags={  })
     @ApiResponses(value = { 
-        @ApiResponse(code = 200, message = "Retorno com sucesso.") })
+        @ApiResponse(code = 200, message = "Retorno com sucesso."),
+        @ApiResponse(code = 401, message = "Acesso não autorizado.") })
     @RequestMapping(value = "/emprestimoConf",
         consumes = { "application/json" },
         method = RequestMethod.POST)

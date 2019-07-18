@@ -27,7 +27,8 @@ public interface DepositoConfApi {
 
     @ApiOperation(value = "", nickname = "depositoConfPost", notes = "Confirmação de operação de depósito.", tags={  })
     @ApiResponses(value = { 
-        @ApiResponse(code = 200, message = "Retorno com sucesso.") })
+        @ApiResponse(code = 200, message = "Retorno com sucesso."),
+        @ApiResponse(code = 401, message = "Acesso não autorizado.") })
     @RequestMapping(value = "/depositoConf",
         consumes = { "application/json" },
         method = RequestMethod.POST)

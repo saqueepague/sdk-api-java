@@ -28,7 +28,8 @@ public interface ConsultaTitulosCapitalizacaoApi {
 
     @ApiOperation(value = "", nickname = "consultaTitulosCapitalizacaoPost", notes = "Operação de consulta dos possíveis produtos de títulos de capitalização de uma operadora.", response = ConsultaTitulosCapitalizacaoResp.class, tags={  })
     @ApiResponses(value = { 
-        @ApiResponse(code = 200, message = "Retorno com sucesso.", response = ConsultaTitulosCapitalizacaoResp.class) })
+        @ApiResponse(code = 200, message = "Retorno com sucesso.", response = ConsultaTitulosCapitalizacaoResp.class),
+        @ApiResponse(code = 401, message = "Acesso não autorizado.") })
     @RequestMapping(value = "/consultaTitulosCapitalizacao",
         produces = { "application/json" }, 
         consumes = { "application/json" },

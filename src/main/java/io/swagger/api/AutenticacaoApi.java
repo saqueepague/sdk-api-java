@@ -26,9 +26,10 @@ import java.util.Map;
 @Api(value = "autenticacao", description = "the autenticacao API")
 public interface AutenticacaoApi {
 
-    @ApiOperation(value = "", nickname = "autenticacaoPost", notes = "Operação de autenticacao de cliente sem cartão, chamada para retornar o nome do cliente autenticado.", response = AutenticacaoResp.class, tags={  })
+    @ApiOperation(value = "", nickname = "autenticacaoPost", notes = "Operação de autenticação de cliente sem cartão, chamada para retornar o nome do cliente autenticado.", response = AutenticacaoResp.class, tags={  })
     @ApiResponses(value = { 
-        @ApiResponse(code = 200, message = "Retorno com sucesso.", response = AutenticacaoResp.class) })
+        @ApiResponse(code = 200, message = "Retorno com sucesso.", response = AutenticacaoResp.class),
+        @ApiResponse(code = 401, message = "Acesso não autorizado.") })
     @RequestMapping(value = "/autenticacao",
         produces = { "application/json" }, 
         consumes = { "application/json" },

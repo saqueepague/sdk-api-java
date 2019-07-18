@@ -28,7 +28,8 @@ public interface ConsultaSaqueApi {
 
     @ApiOperation(value = "", nickname = "consultaSaquePost", notes = "Operação de consulta para saque de moeda estrangeira (câmbio). Efetuada para autenticar cliente, retornando valorde saque, moeda e dados adicionais.", response = ConsultaSaqueResp.class, tags={  })
     @ApiResponses(value = { 
-        @ApiResponse(code = 200, message = "Retorno com sucesso.", response = ConsultaSaqueResp.class) })
+        @ApiResponse(code = 200, message = "Retorno com sucesso.", response = ConsultaSaqueResp.class),
+        @ApiResponse(code = 401, message = "Acesso não autorizado.") })
     @RequestMapping(value = "/consultaSaque",
         produces = { "application/json" }, 
         consumes = { "application/json" },

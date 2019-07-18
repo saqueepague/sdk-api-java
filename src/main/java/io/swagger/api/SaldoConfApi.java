@@ -27,7 +27,8 @@ public interface SaldoConfApi {
 
     @ApiOperation(value = "", nickname = "saldoConfPost", notes = "Confirmação de operação de consulta de saldo.", tags={  })
     @ApiResponses(value = { 
-        @ApiResponse(code = 200, message = "Retorno com sucesso.") })
+        @ApiResponse(code = 200, message = "Retorno com sucesso."),
+        @ApiResponse(code = 401, message = "Acesso não autorizado.") })
     @RequestMapping(value = "/saldoConf",
         consumes = { "application/json" },
         method = RequestMethod.POST)

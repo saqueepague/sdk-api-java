@@ -28,7 +28,8 @@ public interface ConsultaContaApi {
 
     @ApiOperation(value = "", nickname = "consultaContaPost", notes = "Operação de consulta de conta de favorecido, usada previamente ao depósito para verificar se a conta é válida e está habilitada para depósito.", response = ConsultaContaResp.class, tags={  })
     @ApiResponses(value = { 
-        @ApiResponse(code = 200, message = "Retorno com sucesso.", response = ConsultaContaResp.class) })
+        @ApiResponse(code = 200, message = "Retorno com sucesso.", response = ConsultaContaResp.class),
+        @ApiResponse(code = 401, message = "Acesso não autorizado.") })
     @RequestMapping(value = "/consultaConta",
         produces = { "application/json" }, 
         consumes = { "application/json" },

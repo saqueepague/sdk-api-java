@@ -28,7 +28,8 @@ public interface RecargaApi {
 
     @ApiOperation(value = "", nickname = "recargaPost", notes = "Operação de recarga de cartão pré-pago de transporte (bilhetagem) em dinheiro.", response = RecargaResp.class, tags={  })
     @ApiResponses(value = { 
-        @ApiResponse(code = 200, message = "Retorno com sucesso.", response = RecargaResp.class) })
+        @ApiResponse(code = 200, message = "Retorno com sucesso.", response = RecargaResp.class),
+        @ApiResponse(code = 401, message = "Acesso não autorizado.") })
     @RequestMapping(value = "/recarga",
         produces = { "application/json" }, 
         consumes = { "application/json" },

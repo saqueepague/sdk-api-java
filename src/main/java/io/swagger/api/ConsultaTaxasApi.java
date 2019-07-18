@@ -28,7 +28,8 @@ public interface ConsultaTaxasApi {
 
     @ApiOperation(value = "", nickname = "consultaTaxasPost", notes = "Operação de consulta de taxas dinâmicas, requisitado antes de depósito ou saque de carteira de digital.", response = ConsultaTaxasResp.class, tags={  })
     @ApiResponses(value = { 
-        @ApiResponse(code = 200, message = "Retorno com sucesso.", response = ConsultaTaxasResp.class) })
+        @ApiResponse(code = 200, message = "Retorno com sucesso.", response = ConsultaTaxasResp.class),
+        @ApiResponse(code = 401, message = "Acesso não autorizado.") })
     @RequestMapping(value = "/consultaTaxas",
         produces = { "application/json" }, 
         consumes = { "application/json" },
