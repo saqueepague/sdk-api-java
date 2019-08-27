@@ -49,7 +49,7 @@ public class Cripto   {
    * Senha numérica criptografada.
    * @return senha
   **/
-  @ApiModelProperty(value = "Senha numérica criptografada.")
+  @ApiModelProperty(example = "q0WKgCM+wbXjzlY=", value = "Senha numérica criptografada.")
 
   public String getSenha() {
     return senha;
@@ -84,12 +84,12 @@ public class Cripto   {
   }
 
   /**
-   * Identificação positiva informada pelo usuário, caso utilizada, com 8 dígitos corresponde às posições (botões) em cada tela apresentada. Caso a senha tenha menos de oito sílabas, são adicionados zeros para as telas não existentes. Pode ser criptografada ou não.
+   * Identificação positiva informada pelo usuário, caso utilizada, com no mínimo 8 dígitos corresponde às posições (botões) em cada tela apresentada. Caso a senha tenha menos de oito sílabas, são adicionados zeros para as telas não existentes (dados criptografados).
    * @return idPositiva
   **/
-  @ApiModelProperty(example = "42500000", value = "Identificação positiva informada pelo usuário, caso utilizada, com 8 dígitos corresponde às posições (botões) em cada tela apresentada. Caso a senha tenha menos de oito sílabas, são adicionados zeros para as telas não existentes. Pode ser criptografada ou não.")
+  @ApiModelProperty(example = "q0WKgCM+wbXjzlY=", value = "Identificação positiva informada pelo usuário, caso utilizada, com no mínimo 8 dígitos corresponde às posições (botões) em cada tela apresentada. Caso a senha tenha menos de oito sílabas, são adicionados zeros para as telas não existentes (dados criptografados).")
 
-  public String getIdPositiva() {
+@Pattern(regexp="^.{8,}$")   public String getIdPositiva() {
     return idPositiva;
   }
 

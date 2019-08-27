@@ -84,12 +84,12 @@ public class Cartao   {
   }
 
   /**
-   * PAN/Número do cartão utilizado (16 a 19 caracteres normais ou 48 criptografados).
+   * PAN/Número do cartão utilizado (dado criptografado).
    * @return pan
   **/
-  @ApiModelProperty(example = "0000955707050150", value = "PAN/Número do cartão utilizado (16 a 19 caracteres normais ou 48 criptografados).")
+  @ApiModelProperty(example = "zhXTyHl5nf2ckysYXXjAgZS5fzS7ybC5xePnWeLEP//bw==", value = "PAN/Número do cartão utilizado (dado criptografado).")
 
-@Pattern(regexp="^.{48}|.{16,19}$")   public String getPan() {
+@Pattern(regexp="^.{10,}$")   public String getPan() {
     return pan;
   }
 
@@ -103,12 +103,12 @@ public class Cartao   {
   }
 
   /**
-   * Trilha 2 do cartão utilizado (37 caracteres normais ou 80 criptografados).
+   * Trilha 2 do cartão utilizado (dado criptografado).
    * @return trilha2
   **/
-  @ApiModelProperty(example = "5076415910012119\\u003d27086060000017290360", value = "Trilha 2 do cartão utilizado (37 caracteres normais ou 80 criptografados).")
+  @ApiModelProperty(example = "mMIrkIrf2pSHccWuaROxoIS+NGcTOWcTWXUtjniTa1BRzPziiE8pWnknAxW9HIgoKdc/Fli2KZwNA==", value = "Trilha 2 do cartão utilizado (dado criptografado).")
 
-@Pattern(regexp="^.{80}|.{37}$")   public String getTrilha2() {
+@Pattern(regexp="^.{10,}$")   public String getTrilha2() {
     return trilha2;
   }
 

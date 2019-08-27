@@ -71,7 +71,7 @@ public class CriptoRespostaCliente   {
    * Resposta da pergunta (dado criptografado).
    * @return resposta
   **/
-  @ApiModelProperty(example = "24", value = "Resposta da pergunta (dado criptografado).")
+  @ApiModelProperty(example = "q0WKgCM+wbXjzlY=", value = "Resposta da pergunta (dado criptografado).")
 
   public String getResposta() {
     return resposta;
