@@ -67,8 +67,7 @@ public class Cartao   {
    * Modo de entrada de leitura do cartão. (000 = sem cartão, 050 = chip, 800 = chip, se falhar realiza leitura da trilha, 900 = trilha completa).
    * @return modoEntrada
   **/
-  @ApiModelProperty(required = true, value = "Modo de entrada de leitura do cartão. (000 = sem cartão, 050 = chip, 800 = chip, se falhar realiza leitura da trilha, 900 = trilha completa).")
-  @NotNull
+  @ApiModelProperty(value = "Modo de entrada de leitura do cartão. (000 = sem cartão, 050 = chip, 800 = chip, se falhar realiza leitura da trilha, 900 = trilha completa).")
 
   public ModoEntradaEnum getModoEntrada() {
     return modoEntrada;

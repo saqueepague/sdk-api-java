@@ -211,8 +211,7 @@ public class InfTransacaoConf   {
    * Igual à requisição e à resposta.
    * @return codMoeda
   **/
-  @ApiModelProperty(example = "986", required = true, value = "Igual à requisição e à resposta.")
-  @NotNull
+  @ApiModelProperty(example = "986", value = "Igual à requisição e à resposta.")
 
 @Pattern(regexp="^\\d{3}$")   public String getCodMoeda() {
     return codMoeda;

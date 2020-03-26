@@ -82,10 +82,10 @@ public class InfIdentificacaoResp   {
   }
 
   /**
-   * Número da agência identificada (usado em operações em própria conta para o usuário não precisar preencher os dados).
+   * Número da agência identificada (usado em operações em própria conta para o usuário não precisar preencher os dados). *Este campo é obrigatório apenas para bancos.
    * @return numAgencia
   **/
-  @ApiModelProperty(example = "4029", value = "Número da agência identificada (usado em operações em própria conta para o usuário não precisar preencher os dados).")
+  @ApiModelProperty(example = "4029", value = "Número da agência identificada (usado em operações em própria conta para o usuário não precisar preencher os dados). *Este campo é obrigatório apenas para bancos.")
 
 @Pattern(regexp="^\\d+$")   public String getNumAgencia() {
     return numAgencia;
@@ -101,10 +101,10 @@ public class InfIdentificacaoResp   {
   }
 
   /**
-   * Número da conta identificada (usado em operações em própria conta para o usuário não precisar preencher os dados).
+   * Número da conta identificada (usado em operações em própria conta para o usuário não precisar preencher os dados). *Este campo é obrigatório apenas para bancos.
    * @return numConta
   **/
-  @ApiModelProperty(example = "0082348296", value = "Número da conta identificada (usado em operações em própria conta para o usuário não precisar preencher os dados).")
+  @ApiModelProperty(example = "0082348296", value = "Número da conta identificada (usado em operações em própria conta para o usuário não precisar preencher os dados). *Este campo é obrigatório apenas para bancos.")
 
 @Pattern(regexp="^\\d+$")   public String getNumConta() {
     return numConta;
@@ -187,10 +187,10 @@ public class InfIdentificacaoResp   {
   }
 
   /**
-   * Frase a ser mostrada para o cliente na tela de coleta do token ou identificacao positiva.
+   * Frase a ser mostrada para o cliente na tela de coleta do token ou identificacao positiva.(máximo 28 caracteres)
    * @return frase
   **/
-  @ApiModelProperty(example = "Informe o token gerado em seu app:", value = "Frase a ser mostrada para o cliente na tela de coleta do token ou identificacao positiva.")
+  @ApiModelProperty(example = "Informe o token gerado em seu app:", value = "Frase a ser mostrada para o cliente na tela de coleta do token ou identificacao positiva.(máximo 28 caracteres)")
 
   public String getFrase() {
     return frase;

@@ -18,6 +18,9 @@ public class InfExtratoResp   {
   @JsonProperty("recibo")
   private String recibo = null;
 
+  @JsonProperty("qtdPaginas")
+  private String qtdPaginas = null;
+
   public InfExtratoResp recibo(String recibo) {
     this.recibo = recibo;
     return this;
@@ -38,6 +41,26 @@ public class InfExtratoResp   {
     this.recibo = recibo;
   }
 
+  public InfExtratoResp qtdPaginas(String qtdPaginas) {
+    this.qtdPaginas = qtdPaginas;
+    return this;
+  }
+
+  /**
+   * Enviar a quantiade de páginas do extrato, caso tenha apenas uma página, enviar 999999
+   * @return qtdPaginas
+  **/
+  @ApiModelProperty(example = "000010", required = true, value = "Enviar a quantiade de páginas do extrato, caso tenha apenas uma página, enviar 999999")
+  @NotNull
+
+@Pattern(regexp="^\\d{6}$")   public String getQtdPaginas() {
+    return qtdPaginas;
+  }
+
+  public void setQtdPaginas(String qtdPaginas) {
+    this.qtdPaginas = qtdPaginas;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -48,12 +71,13 @@ public class InfExtratoResp   {
       return false;
     }
     InfExtratoResp infExtratoResp = (InfExtratoResp) o;
-    return Objects.equals(this.recibo, infExtratoResp.recibo);
+    return Objects.equals(this.recibo, infExtratoResp.recibo) &&
+        Objects.equals(this.qtdPaginas, infExtratoResp.qtdPaginas);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(recibo);
+    return Objects.hash(recibo, qtdPaginas);
   }
 
   @Override
@@ -62,6 +86,7 @@ public class InfExtratoResp   {
     sb.append("class InfExtratoResp {\n");
     
     sb.append("    recibo: ").append(toIndentedString(recibo)).append("\n");
+    sb.append("    qtdPaginas: ").append(toIndentedString(qtdPaginas)).append("\n");
     sb.append("}");
     return sb.toString();
   }

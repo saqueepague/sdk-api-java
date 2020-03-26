@@ -48,10 +48,10 @@ public class InfTransacaoReq   {
   }
 
   /**
-   * Identificador da transação gerado pela Saque e Pague (12 dígitos).
+   * Identificador da transação gerado pela Saque e Pague (de 9 dígitos a 12 dígitos).
    * @return nsu
   **/
-  @ApiModelProperty(example = "000080247206", required = true, value = "Identificador da transação gerado pela Saque e Pague (12 dígitos).")
+  @ApiModelProperty(example = "000080247206", required = true, value = "Identificador da transação gerado pela Saque e Pague (de 9 dígitos a 12 dígitos).")
   @NotNull
 
 @Pattern(regexp="^\\d{12}$")   public String getNsu() {
@@ -206,10 +206,10 @@ public class InfTransacaoReq   {
   }
 
   /**
-   * Código na tabela de moedas do Banco Central (986 = real, 3 dígitos).
+   * Código na tabela de moedas d da ISO-4217 (986 = real, 3 dígitos).
    * @return codMoeda
   **/
-  @ApiModelProperty(example = "986", value = "Código na tabela de moedas do Banco Central (986 = real, 3 dígitos).")
+  @ApiModelProperty(example = "986", value = "Código na tabela de moedas d da ISO-4217 (986 = real, 3 dígitos).")
 
 @Pattern(regexp="^\\d{3}$")   public String getCodMoeda() {
     return codMoeda;
