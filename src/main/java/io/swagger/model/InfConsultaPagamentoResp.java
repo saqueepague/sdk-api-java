@@ -7,6 +7,7 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import io.swagger.model.InfConsultaPagamentoRespCip;
+import io.swagger.model.InfConsultaPagamentoRespCodBarras;
 import org.springframework.validation.annotation.Validated;
 import javax.validation.Valid;
 import javax.validation.constraints.*;
@@ -31,6 +32,9 @@ public class InfConsultaPagamentoResp   {
 
   @JsonProperty("desconto")
   private String desconto = null;
+
+  @JsonProperty("codBarras")
+  private InfConsultaPagamentoRespCodBarras codBarras = null;
 
   @JsonProperty("cip")
   private InfConsultaPagamentoRespCip cip = null;
@@ -170,6 +174,26 @@ public class InfConsultaPagamentoResp   {
     this.desconto = desconto;
   }
 
+  public InfConsultaPagamentoResp codBarras(InfConsultaPagamentoRespCodBarras codBarras) {
+    this.codBarras = codBarras;
+    return this;
+  }
+
+  /**
+   * Get codBarras
+   * @return codBarras
+  **/
+  @ApiModelProperty(value = "")
+
+  @Valid
+  public InfConsultaPagamentoRespCodBarras getCodBarras() {
+    return codBarras;
+  }
+
+  public void setCodBarras(InfConsultaPagamentoRespCodBarras codBarras) {
+    this.codBarras = codBarras;
+  }
+
   public InfConsultaPagamentoResp cip(InfConsultaPagamentoRespCip cip) {
     this.cip = cip;
     return this;
@@ -243,6 +267,7 @@ public class InfConsultaPagamentoResp   {
         Objects.equals(this.dataPagamento, infConsultaPagamentoResp.dataPagamento) &&
         Objects.equals(this.mensagem, infConsultaPagamentoResp.mensagem) &&
         Objects.equals(this.desconto, infConsultaPagamentoResp.desconto) &&
+        Objects.equals(this.codBarras, infConsultaPagamentoResp.codBarras) &&
         Objects.equals(this.cip, infConsultaPagamentoResp.cip) &&
         Objects.equals(this.aceitaPagamentoParcial, infConsultaPagamentoResp.aceitaPagamentoParcial) &&
         Objects.equals(this.valorMinimo, infConsultaPagamentoResp.valorMinimo);
@@ -250,7 +275,7 @@ public class InfConsultaPagamentoResp   {
 
   @Override
   public int hashCode() {
-    return Objects.hash(valor, cedente, dataPagamento, mensagem, desconto, cip, aceitaPagamentoParcial, valorMinimo);
+    return Objects.hash(valor, cedente, dataPagamento, mensagem, desconto, codBarras, cip, aceitaPagamentoParcial, valorMinimo);
   }
 
   @Override
@@ -263,6 +288,7 @@ public class InfConsultaPagamentoResp   {
     sb.append("    dataPagamento: ").append(toIndentedString(dataPagamento)).append("\n");
     sb.append("    mensagem: ").append(toIndentedString(mensagem)).append("\n");
     sb.append("    desconto: ").append(toIndentedString(desconto)).append("\n");
+    sb.append("    codBarras: ").append(toIndentedString(codBarras)).append("\n");
     sb.append("    cip: ").append(toIndentedString(cip)).append("\n");
     sb.append("    aceitaPagamentoParcial: ").append(toIndentedString(aceitaPagamentoParcial)).append("\n");
     sb.append("    valorMinimo: ").append(toIndentedString(valorMinimo)).append("\n");
