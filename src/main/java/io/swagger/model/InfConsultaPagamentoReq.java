@@ -49,8 +49,7 @@ public class InfConsultaPagamentoReq   {
    * Get codBarras
    * @return codBarras
   **/
-  @ApiModelProperty(required = true, value = "")
-  @NotNull
+  @ApiModelProperty(value = "")
 
   @Valid
   public InfConsultaPagamentoReqCodBarras getCodBarras() {
