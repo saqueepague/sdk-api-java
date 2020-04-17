@@ -28,7 +28,8 @@ public interface ConsultaPrePagoApi {
 
     @ApiOperation(value = "", nickname = "consultaPrePagoPost", notes = "Operação de consulta dos possíveis produtos de recarga de cartão pré-pago. Operação relacionada a transação consultaPrePago.", response = ConsultaPrePagoResp.class, tags={  })
     @ApiResponses(value = { 
-        @ApiResponse(code = 200, message = "Retorno com sucesso.", response = ConsultaPrePagoResp.class),
+        @ApiResponse(code = 200, message = "Retorno com sucesso ou com Erro de negócio.", response = ConsultaPrePagoResp.class),
+        @ApiResponse(code = 400, message = "Bad Request ou Erro interno ao qual inviabilizou uma resposta."),
         @ApiResponse(code = 401, message = "Acesso não autorizado.") })
     @RequestMapping(value = "/consultaPrePago",
         produces = { "application/json" }, 

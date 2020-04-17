@@ -72,7 +72,7 @@ public class InfPagamentoReqCodBarras   {
    * Código de barras do pagamento.
    * @return codigo
   **/
-  @ApiModelProperty(value = "Código de barras do pagamento.")
+  @ApiModelProperty(example = "12345678912346579812345678912345678913456789123456789", value = "Código de barras do pagamento.")
 
 @Pattern(regexp="^\\d+$")   public String getCodigo() {
     return codigo;

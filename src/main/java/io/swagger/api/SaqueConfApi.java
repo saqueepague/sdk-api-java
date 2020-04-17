@@ -27,7 +27,8 @@ public interface SaqueConfApi {
 
     @ApiOperation(value = "", nickname = "saqueConfPost", notes = "Confirmação de operação de saque.", tags={  })
     @ApiResponses(value = { 
-        @ApiResponse(code = 200, message = "Retorno com sucesso."),
+        @ApiResponse(code = 200, message = "Retorno com sucesso ou com Erro de negócio."),
+        @ApiResponse(code = 400, message = "Bad Request ou Erro interno ao qual inviabilizou uma resposta."),
         @ApiResponse(code = 401, message = "Acesso não autorizado.") })
     @RequestMapping(value = "/saqueConf",
         consumes = { "application/json" },

@@ -28,7 +28,8 @@ public interface IdentificacaoApi {
 
     @ApiOperation(value = "", nickname = "identificacaoPost", notes = "Operação de identificação do cliente e informações adicionais de sua conta.", response = IdentificacaoResp.class, tags={  })
     @ApiResponses(value = { 
-        @ApiResponse(code = 200, message = "Retorno com sucesso.", response = IdentificacaoResp.class),
+        @ApiResponse(code = 200, message = "Retorno com sucesso ou com Erro de negócio.", response = IdentificacaoResp.class),
+        @ApiResponse(code = 400, message = "Bad Request ou Erro interno ao qual inviabilizou uma resposta."),
         @ApiResponse(code = 401, message = "Acesso não autorizado.") })
     @RequestMapping(value = "/identificacao",
         produces = { "application/json" }, 

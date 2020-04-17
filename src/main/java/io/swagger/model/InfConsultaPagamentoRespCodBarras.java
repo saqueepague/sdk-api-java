@@ -17,6 +17,9 @@ public class InfConsultaPagamentoRespCodBarras   {
   @JsonProperty("codigo")
   private String codigo = null;
 
+  @JsonProperty("dataVencimento")
+  private String dataVencimento = null;
+
   public InfConsultaPagamentoRespCodBarras codigo(String codigo) {
     this.codigo = codigo;
     return this;
@@ -26,7 +29,7 @@ public class InfConsultaPagamentoRespCodBarras   {
    * Código de barras do documento.Necessário caso no ConsultaPagamento o objeto infConsultaPagamento tenha sido apenas com CPF.
    * @return codigo
   **/
-  @ApiModelProperty(value = "Código de barras do documento.Necessário caso no ConsultaPagamento o objeto infConsultaPagamento tenha sido apenas com CPF.")
+  @ApiModelProperty(example = "12345678912346579812345678912345678913456789123456789", value = "Código de barras do documento.Necessário caso no ConsultaPagamento o objeto infConsultaPagamento tenha sido apenas com CPF.")
 
 @Pattern(regexp="^\\d+$")   public String getCodigo() {
     return codigo;
@@ -34,6 +37,25 @@ public class InfConsultaPagamentoRespCodBarras   {
 
   public void setCodigo(String codigo) {
     this.codigo = codigo;
+  }
+
+  public InfConsultaPagamentoRespCodBarras dataVencimento(String dataVencimento) {
+    this.dataVencimento = dataVencimento;
+    return this;
+  }
+
+  /**
+   * Data de vencimento (AAAAMMDD).
+   * @return dataVencimento
+  **/
+  @ApiModelProperty(example = "20181122", value = "Data de vencimento (AAAAMMDD).")
+
+@Pattern(regexp="^\\d{8}$")   public String getDataVencimento() {
+    return dataVencimento;
+  }
+
+  public void setDataVencimento(String dataVencimento) {
+    this.dataVencimento = dataVencimento;
   }
 
 
@@ -46,12 +68,13 @@ public class InfConsultaPagamentoRespCodBarras   {
       return false;
     }
     InfConsultaPagamentoRespCodBarras infConsultaPagamentoRespCodBarras = (InfConsultaPagamentoRespCodBarras) o;
-    return Objects.equals(this.codigo, infConsultaPagamentoRespCodBarras.codigo);
+    return Objects.equals(this.codigo, infConsultaPagamentoRespCodBarras.codigo) &&
+        Objects.equals(this.dataVencimento, infConsultaPagamentoRespCodBarras.dataVencimento);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(codigo);
+    return Objects.hash(codigo, dataVencimento);
   }
 
   @Override
@@ -60,6 +83,7 @@ public class InfConsultaPagamentoRespCodBarras   {
     sb.append("class InfConsultaPagamentoRespCodBarras {\n");
     
     sb.append("    codigo: ").append(toIndentedString(codigo)).append("\n");
+    sb.append("    dataVencimento: ").append(toIndentedString(dataVencimento)).append("\n");
     sb.append("}");
     return sb.toString();
   }

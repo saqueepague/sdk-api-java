@@ -28,7 +28,8 @@ public interface TransferenciaApi {
 
     @ApiOperation(value = "", nickname = "transferenciaPost", notes = "Operação de transferência entre contas.", response = TransferenciaResp.class, tags={  })
     @ApiResponses(value = { 
-        @ApiResponse(code = 200, message = "Retorno com sucesso.", response = TransferenciaResp.class),
+        @ApiResponse(code = 200, message = "Retorno com sucesso ou com Erro de negócio.", response = TransferenciaResp.class),
+        @ApiResponse(code = 400, message = "Bad Request ou Erro interno ao qual inviabilizou uma resposta."),
         @ApiResponse(code = 401, message = "Acesso não autorizado.") })
     @RequestMapping(value = "/transferencia",
         produces = { "application/json" }, 

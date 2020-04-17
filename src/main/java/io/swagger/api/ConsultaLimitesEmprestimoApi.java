@@ -28,7 +28,8 @@ public interface ConsultaLimitesEmprestimoApi {
 
     @ApiOperation(value = "", nickname = "consultaLimitesEmprestimoPost", notes = "Operação de consulta dos limites disponíveis para empréstimo. Esta operação é válida somente com os dados do cartão.", response = ConsultaLimitesEmprestimoResp.class, tags={  })
     @ApiResponses(value = { 
-        @ApiResponse(code = 200, message = "Retorno com sucesso.", response = ConsultaLimitesEmprestimoResp.class),
+        @ApiResponse(code = 200, message = "Retorno com sucesso ou com Erro de negócio.", response = ConsultaLimitesEmprestimoResp.class),
+        @ApiResponse(code = 400, message = "Bad Request ou Erro interno ao qual inviabilizou uma resposta."),
         @ApiResponse(code = 401, message = "Acesso não autorizado.") })
     @RequestMapping(value = "/consultaLimitesEmprestimo",
         produces = { "application/json" }, 

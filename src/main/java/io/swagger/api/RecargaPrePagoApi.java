@@ -28,8 +28,8 @@ public interface RecargaPrePagoApi {
 
     @ApiOperation(value = "", nickname = "recargaPrePagoPost", notes = "Operação de recarga de celular pré-pago.", response = RecargaPrePagoResp.class, tags={  })
     @ApiResponses(value = { 
-        @ApiResponse(code = 200, message = "Retorno com sucesso.", response = RecargaPrePagoResp.class),
-        @ApiResponse(code = 400, message = "Operação de recarga não foi efetuada com sucesso.", response = RecargaPrePagoResp.class),
+        @ApiResponse(code = 200, message = "Retorno com sucesso ou com Erro de negócio.", response = RecargaPrePagoResp.class),
+        @ApiResponse(code = 400, message = "Bad Request ou Erro interno ao qual inviabilizou uma resposta."),
         @ApiResponse(code = 401, message = "Acesso não autorizado.") })
     @RequestMapping(value = "/recargaPrePago",
         produces = { "application/json" }, 

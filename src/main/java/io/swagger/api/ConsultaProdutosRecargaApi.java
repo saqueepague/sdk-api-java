@@ -28,7 +28,8 @@ public interface ConsultaProdutosRecargaApi {
 
     @ApiOperation(value = "", nickname = "consultaProdutosRecargaPost", notes = "Operação de consulta dos possíveis produtos de recarga de transporte para o cartão informado pelo cliente. Operação relacionada a transação consultaProdutosRecarga.", response = ConsultaProdutosRecargaResp.class, tags={  })
     @ApiResponses(value = { 
-        @ApiResponse(code = 200, message = "Retorno com sucesso.", response = ConsultaProdutosRecargaResp.class),
+        @ApiResponse(code = 200, message = "Retorno com sucesso ou com Erro de negócio.", response = ConsultaProdutosRecargaResp.class),
+        @ApiResponse(code = 400, message = "Bad Request ou Erro interno ao qual inviabilizou uma resposta."),
         @ApiResponse(code = 401, message = "Acesso não autorizado.") })
     @RequestMapping(value = "/consultaProdutosRecarga",
         produces = { "application/json" }, 

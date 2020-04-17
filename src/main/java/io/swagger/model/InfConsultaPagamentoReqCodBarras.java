@@ -60,7 +60,7 @@ public class InfConsultaPagamentoReqCodBarras   {
    * Código de barras do documento.
    * @return codigo
   **/
-  @ApiModelProperty(value = "Código de barras do documento.")
+  @ApiModelProperty(example = "12345678912346579812345678912345678913456789123456789", value = "Código de barras do documento.")
 
 @Pattern(regexp="^\\d+$")   public String getCodigo() {
     return codigo;

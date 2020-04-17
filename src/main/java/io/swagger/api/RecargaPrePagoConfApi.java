@@ -27,7 +27,8 @@ public interface RecargaPrePagoConfApi {
 
     @ApiOperation(value = "", nickname = "recargaPrePagoConfPost", notes = "Confirmação de operação de recarga.", tags={  })
     @ApiResponses(value = { 
-        @ApiResponse(code = 200, message = "Retorno com sucesso."),
+        @ApiResponse(code = 200, message = "Retorno com sucesso ou com Erro de negócio."),
+        @ApiResponse(code = 400, message = "Bad Request ou Erro interno ao qual inviabilizou uma resposta."),
         @ApiResponse(code = 401, message = "Acesso não autorizado.") })
     @RequestMapping(value = "/recargaPrePagoConf",
         consumes = { "application/json" },
