@@ -235,7 +235,7 @@ public class InfTransacaoResp   {
    * Mensagem para ser mostrada na tela para o cliente, em caso de erro (objeto errorMessage deve estar preenchido para identificação de um erro)
    * @return mensagemCliente
   **/
-  @ApiModelProperty(value = "Mensagem para ser mostrada na tela para o cliente, em caso de erro (objeto errorMessage deve estar preenchido para identificação de um erro)")
+  @ApiModelProperty(example = "Esta &eacute; uma mensagem para exibi&ccedil;&atilde;o em tela.", value = "Mensagem para ser mostrada na tela para o cliente, em caso de erro (objeto errorMessage deve estar preenchido para identificação de um erro)")
 
   public String getMensagemCliente() {
     return mensagemCliente;
