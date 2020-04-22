@@ -33,8 +33,7 @@ public class Terminal   {
    * Tipo de terminal o qual a operação é gerada (3 dígitos, 008 = ATM).
    * @return tipo
   **/
-  @ApiModelProperty(example = "008", required = true, value = "Tipo de terminal o qual a operação é gerada (3 dígitos, 008 = ATM).")
-  @NotNull
+  @ApiModelProperty(example = "008", value = "Tipo de terminal o qual a operação é gerada (3 dígitos, 008 = ATM).")
 
 @Pattern(regexp="^\\d{3}$")   public String getTipo() {
     return tipo;
