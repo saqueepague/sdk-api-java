@@ -18,6 +18,9 @@ public class InfConsultaPagamentoReq   {
   @JsonProperty("cpf")
   private String cpf = null;
 
+  @JsonProperty("cnpj")
+  private String cnpj = null;
+
   @JsonProperty("codBarras")
   private InfConsultaPagamentoReqCodBarras codBarras = null;
 
@@ -27,17 +30,36 @@ public class InfConsultaPagamentoReq   {
   }
 
   /**
-   * Número do CPF ou CNPJ (11 dígitos ou 14 dígitos respectivamente).
+   * Número do CPF (11 dígitos).
    * @return cpf
   **/
-  @ApiModelProperty(example = "01234567890", value = "Número do CPF ou CNPJ (11 dígitos ou 14 dígitos respectivamente).")
+  @ApiModelProperty(example = "01234567890", value = "Número do CPF (11 dígitos).")
 
-@Pattern(regexp="^\\d{14}|\\d{11}$")   public String getCpf() {
+@Pattern(regexp="^\\d{11}$")   public String getCpf() {
     return cpf;
   }
 
   public void setCpf(String cpf) {
     this.cpf = cpf;
+  }
+
+  public InfConsultaPagamentoReq cnpj(String cnpj) {
+    this.cnpj = cnpj;
+    return this;
+  }
+
+  /**
+   * Número do CNPJ (14 dígitos).
+   * @return cnpj
+  **/
+  @ApiModelProperty(example = "01234567890123", value = "Número do CNPJ (14 dígitos).")
+
+@Pattern(regexp="^\\d{14}$")   public String getCnpj() {
+    return cnpj;
+  }
+
+  public void setCnpj(String cnpj) {
+    this.cnpj = cnpj;
   }
 
   public InfConsultaPagamentoReq codBarras(InfConsultaPagamentoReqCodBarras codBarras) {
@@ -71,12 +93,13 @@ public class InfConsultaPagamentoReq   {
     }
     InfConsultaPagamentoReq infConsultaPagamentoReq = (InfConsultaPagamentoReq) o;
     return Objects.equals(this.cpf, infConsultaPagamentoReq.cpf) &&
+        Objects.equals(this.cnpj, infConsultaPagamentoReq.cnpj) &&
         Objects.equals(this.codBarras, infConsultaPagamentoReq.codBarras);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(cpf, codBarras);
+    return Objects.hash(cpf, cnpj, codBarras);
   }
 
   @Override
@@ -85,6 +108,7 @@ public class InfConsultaPagamentoReq   {
     sb.append("class InfConsultaPagamentoReq {\n");
     
     sb.append("    cpf: ").append(toIndentedString(cpf)).append("\n");
+    sb.append("    cnpj: ").append(toIndentedString(cnpj)).append("\n");
     sb.append("    codBarras: ").append(toIndentedString(codBarras)).append("\n");
     sb.append("}");
     return sb.toString();
