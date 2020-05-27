@@ -151,6 +151,39 @@ public class InfConsultaContaResp   {
   @JsonProperty("depositoIdentificado")
   private DepositoIdentificadoEnum depositoIdentificado = null;
 
+  /**
+   * Indica se a conta em questão permite Depósito Varejista  (00 = Não / 01 = Sim).
+   */
+  public enum DepositoVarejistaEnum {
+    _00("00"),
+    
+    _01("01");
+
+    private String value;
+
+    DepositoVarejistaEnum(String value) {
+      this.value = value;
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+
+    @JsonCreator
+    public static DepositoVarejistaEnum fromValue(String text) {
+      for (DepositoVarejistaEnum b : DepositoVarejistaEnum.values()) {
+        if (String.valueOf(b.value).equals(text)) {
+          return b;
+        }
+      }
+      return null;
+    }
+  }
+  @JsonProperty("depositoVarejista")
+  private DepositoVarejistaEnum depositoVarejista = null;
+
   public InfConsultaContaResp modalidadeDeposito(ModalidadeDepositoEnum modalidadeDeposito) {
     this.modalidadeDeposito = modalidadeDeposito;
     return this;
@@ -251,6 +284,25 @@ public class InfConsultaContaResp   {
     this.depositoIdentificado = depositoIdentificado;
   }
 
+  public InfConsultaContaResp depositoVarejista(DepositoVarejistaEnum depositoVarejista) {
+    this.depositoVarejista = depositoVarejista;
+    return this;
+  }
+
+  /**
+   * Indica se a conta em questão permite Depósito Varejista  (00 = Não / 01 = Sim).
+   * @return depositoVarejista
+  **/
+  @ApiModelProperty(example = "01", value = "Indica se a conta em questão permite Depósito Varejista  (00 = Não / 01 = Sim).")
+
+  public DepositoVarejistaEnum getDepositoVarejista() {
+    return depositoVarejista;
+  }
+
+  public void setDepositoVarejista(DepositoVarejistaEnum depositoVarejista) {
+    this.depositoVarejista = depositoVarejista;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -265,12 +317,13 @@ public class InfConsultaContaResp   {
         Objects.equals(this.nomeCliente, infConsultaContaResp.nomeCliente) &&
         Objects.equals(this.solicDoc, infConsultaContaResp.solicDoc) &&
         Objects.equals(this.habilitaDeposito, infConsultaContaResp.habilitaDeposito) &&
-        Objects.equals(this.depositoIdentificado, infConsultaContaResp.depositoIdentificado);
+        Objects.equals(this.depositoIdentificado, infConsultaContaResp.depositoIdentificado) &&
+        Objects.equals(this.depositoVarejista, infConsultaContaResp.depositoVarejista);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(modalidadeDeposito, nomeCliente, solicDoc, habilitaDeposito, depositoIdentificado);
+    return Objects.hash(modalidadeDeposito, nomeCliente, solicDoc, habilitaDeposito, depositoIdentificado, depositoVarejista);
   }
 
   @Override
@@ -283,6 +336,7 @@ public class InfConsultaContaResp   {
     sb.append("    solicDoc: ").append(toIndentedString(solicDoc)).append("\n");
     sb.append("    habilitaDeposito: ").append(toIndentedString(habilitaDeposito)).append("\n");
     sb.append("    depositoIdentificado: ").append(toIndentedString(depositoIdentificado)).append("\n");
+    sb.append("    depositoVarejista: ").append(toIndentedString(depositoVarejista)).append("\n");
     sb.append("}");
     return sb.toString();
   }
