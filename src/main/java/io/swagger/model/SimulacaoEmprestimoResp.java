@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import io.swagger.model.CriptoResp;
-import io.swagger.model.InfEmprestimoResp;
+import io.swagger.model.InfSimulacaoEmprestimoResp;
 import io.swagger.model.InfTransacaoResp;
 import io.swagger.model.Terminal;
 import org.springframework.validation.annotation.Validated;
@@ -14,10 +14,10 @@ import javax.validation.Valid;
 import javax.validation.constraints.*;
 
 /**
- * EmprestimoResp
+ * SimulacaoEmprestimoResp
  */
 @Validated
-public class EmprestimoResp   {
+public class SimulacaoEmprestimoResp   {
   @JsonProperty("InfTransacao")
   private InfTransacaoResp infTransacao = null;
 
@@ -27,10 +27,10 @@ public class EmprestimoResp   {
   @JsonProperty("Cripto")
   private CriptoResp cripto = null;
 
-  @JsonProperty("InfEmprestimo")
-  private InfEmprestimoResp infEmprestimo = null;
+  @JsonProperty("InfSimulacaoEmprestimo")
+  private InfSimulacaoEmprestimoResp infSimulacaoEmprestimo = null;
 
-  public EmprestimoResp infTransacao(InfTransacaoResp infTransacao) {
+  public SimulacaoEmprestimoResp infTransacao(InfTransacaoResp infTransacao) {
     this.infTransacao = infTransacao;
     return this;
   }
@@ -51,7 +51,7 @@ public class EmprestimoResp   {
     this.infTransacao = infTransacao;
   }
 
-  public EmprestimoResp terminal(Terminal terminal) {
+  public SimulacaoEmprestimoResp terminal(Terminal terminal) {
     this.terminal = terminal;
     return this;
   }
@@ -72,7 +72,7 @@ public class EmprestimoResp   {
     this.terminal = terminal;
   }
 
-  public EmprestimoResp cripto(CriptoResp cripto) {
+  public SimulacaoEmprestimoResp cripto(CriptoResp cripto) {
     this.cripto = cripto;
     return this;
   }
@@ -92,25 +92,24 @@ public class EmprestimoResp   {
     this.cripto = cripto;
   }
 
-  public EmprestimoResp infEmprestimo(InfEmprestimoResp infEmprestimo) {
-    this.infEmprestimo = infEmprestimo;
+  public SimulacaoEmprestimoResp infSimulacaoEmprestimo(InfSimulacaoEmprestimoResp infSimulacaoEmprestimo) {
+    this.infSimulacaoEmprestimo = infSimulacaoEmprestimo;
     return this;
   }
 
   /**
-   * Get infEmprestimo
-   * @return infEmprestimo
+   * Get infSimulacaoEmprestimo
+   * @return infSimulacaoEmprestimo
   **/
-  @ApiModelProperty(required = true, value = "")
-  @NotNull
+  @ApiModelProperty(value = "")
 
   @Valid
-  public InfEmprestimoResp getInfEmprestimo() {
-    return infEmprestimo;
+  public InfSimulacaoEmprestimoResp getInfSimulacaoEmprestimo() {
+    return infSimulacaoEmprestimo;
   }
 
-  public void setInfEmprestimo(InfEmprestimoResp infEmprestimo) {
-    this.infEmprestimo = infEmprestimo;
+  public void setInfSimulacaoEmprestimo(InfSimulacaoEmprestimoResp infSimulacaoEmprestimo) {
+    this.infSimulacaoEmprestimo = infSimulacaoEmprestimo;
   }
 
 
@@ -122,27 +121,27 @@ public class EmprestimoResp   {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    EmprestimoResp emprestimoResp = (EmprestimoResp) o;
-    return Objects.equals(this.infTransacao, emprestimoResp.infTransacao) &&
-        Objects.equals(this.terminal, emprestimoResp.terminal) &&
-        Objects.equals(this.cripto, emprestimoResp.cripto) &&
-        Objects.equals(this.infEmprestimo, emprestimoResp.infEmprestimo);
+    SimulacaoEmprestimoResp simulacaoEmprestimoResp = (SimulacaoEmprestimoResp) o;
+    return Objects.equals(this.infTransacao, simulacaoEmprestimoResp.infTransacao) &&
+        Objects.equals(this.terminal, simulacaoEmprestimoResp.terminal) &&
+        Objects.equals(this.cripto, simulacaoEmprestimoResp.cripto) &&
+        Objects.equals(this.infSimulacaoEmprestimo, simulacaoEmprestimoResp.infSimulacaoEmprestimo);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(infTransacao, terminal, cripto, infEmprestimo);
+    return Objects.hash(infTransacao, terminal, cripto, infSimulacaoEmprestimo);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class EmprestimoResp {\n");
+    sb.append("class SimulacaoEmprestimoResp {\n");
     
     sb.append("    infTransacao: ").append(toIndentedString(infTransacao)).append("\n");
     sb.append("    terminal: ").append(toIndentedString(terminal)).append("\n");
     sb.append("    cripto: ").append(toIndentedString(cripto)).append("\n");
-    sb.append("    infEmprestimo: ").append(toIndentedString(infEmprestimo)).append("\n");
+    sb.append("    infSimulacaoEmprestimo: ").append(toIndentedString(infSimulacaoEmprestimo)).append("\n");
     sb.append("}");
     return sb.toString();
   }
