@@ -6,6 +6,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import io.swagger.model.Cartao;
+import io.swagger.model.InfConsultaParcelasEmprestimoReq;
 import io.swagger.model.InfTransacaoReq;
 import io.swagger.model.Terminal;
 import org.springframework.validation.annotation.Validated;
@@ -25,6 +26,9 @@ public class ConsultaParcelasEmprestimoReq   {
 
   @JsonProperty("Terminal")
   private Terminal terminal = null;
+
+  @JsonProperty("InfConsultaParcelasEmprestimo")
+  private InfConsultaParcelasEmprestimoReq infConsultaParcelasEmprestimo = null;
 
   public ConsultaParcelasEmprestimoReq infTransacao(InfTransacaoReq infTransacao) {
     this.infTransacao = infTransacao;
@@ -89,6 +93,26 @@ public class ConsultaParcelasEmprestimoReq   {
     this.terminal = terminal;
   }
 
+  public ConsultaParcelasEmprestimoReq infConsultaParcelasEmprestimo(InfConsultaParcelasEmprestimoReq infConsultaParcelasEmprestimo) {
+    this.infConsultaParcelasEmprestimo = infConsultaParcelasEmprestimo;
+    return this;
+  }
+
+  /**
+   * Get infConsultaParcelasEmprestimo
+   * @return infConsultaParcelasEmprestimo
+  **/
+  @ApiModelProperty(value = "")
+
+  @Valid
+  public InfConsultaParcelasEmprestimoReq getInfConsultaParcelasEmprestimo() {
+    return infConsultaParcelasEmprestimo;
+  }
+
+  public void setInfConsultaParcelasEmprestimo(InfConsultaParcelasEmprestimoReq infConsultaParcelasEmprestimo) {
+    this.infConsultaParcelasEmprestimo = infConsultaParcelasEmprestimo;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -101,12 +125,13 @@ public class ConsultaParcelasEmprestimoReq   {
     ConsultaParcelasEmprestimoReq consultaParcelasEmprestimoReq = (ConsultaParcelasEmprestimoReq) o;
     return Objects.equals(this.infTransacao, consultaParcelasEmprestimoReq.infTransacao) &&
         Objects.equals(this.cartao, consultaParcelasEmprestimoReq.cartao) &&
-        Objects.equals(this.terminal, consultaParcelasEmprestimoReq.terminal);
+        Objects.equals(this.terminal, consultaParcelasEmprestimoReq.terminal) &&
+        Objects.equals(this.infConsultaParcelasEmprestimo, consultaParcelasEmprestimoReq.infConsultaParcelasEmprestimo);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(infTransacao, cartao, terminal);
+    return Objects.hash(infTransacao, cartao, terminal, infConsultaParcelasEmprestimo);
   }
 
   @Override
@@ -117,6 +142,7 @@ public class ConsultaParcelasEmprestimoReq   {
     sb.append("    infTransacao: ").append(toIndentedString(infTransacao)).append("\n");
     sb.append("    cartao: ").append(toIndentedString(cartao)).append("\n");
     sb.append("    terminal: ").append(toIndentedString(terminal)).append("\n");
+    sb.append("    infConsultaParcelasEmprestimo: ").append(toIndentedString(infConsultaParcelasEmprestimo)).append("\n");
     sb.append("}");
     return sb.toString();
   }
