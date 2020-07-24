@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import io.swagger.model.InfConsultaParcelasEmprestimoRespOpcoesParcelas;
 import java.util.ArrayList;
 import java.util.List;
 import org.springframework.validation.annotation.Validated;
@@ -31,7 +32,7 @@ public class InfConsultaParcelasEmprestimoResp   {
 
   @JsonProperty("opcoesParcelas")
   @Valid
-  private List<Object> opcoesParcelas = new ArrayList<Object>();
+  private List<InfConsultaParcelasEmprestimoRespOpcoesParcelas> opcoesParcelas = new ArrayList<InfConsultaParcelasEmprestimoRespOpcoesParcelas>();
 
   public InfConsultaParcelasEmprestimoResp nomeTitularConta(String nomeTitularConta) {
     this.nomeTitularConta = nomeTitularConta;
@@ -113,12 +114,12 @@ public class InfConsultaParcelasEmprestimoResp   {
     this.limiteMaximoEmprestimo = limiteMaximoEmprestimo;
   }
 
-  public InfConsultaParcelasEmprestimoResp opcoesParcelas(List<Object> opcoesParcelas) {
+  public InfConsultaParcelasEmprestimoResp opcoesParcelas(List<InfConsultaParcelasEmprestimoRespOpcoesParcelas> opcoesParcelas) {
     this.opcoesParcelas = opcoesParcelas;
     return this;
   }
 
-  public InfConsultaParcelasEmprestimoResp addOpcoesParcelasItem(Object opcoesParcelasItem) {
+  public InfConsultaParcelasEmprestimoResp addOpcoesParcelasItem(InfConsultaParcelasEmprestimoRespOpcoesParcelas opcoesParcelasItem) {
     this.opcoesParcelas.add(opcoesParcelasItem);
     return this;
   }
@@ -129,12 +130,12 @@ public class InfConsultaParcelasEmprestimoResp   {
   **/
   @ApiModelProperty(required = true, value = "")
   @NotNull
-
-  public List<Object> getOpcoesParcelas() {
+  @Valid
+  public List<InfConsultaParcelasEmprestimoRespOpcoesParcelas> getOpcoesParcelas() {
     return opcoesParcelas;
   }
 
-  public void setOpcoesParcelas(List<Object> opcoesParcelas) {
+  public void setOpcoesParcelas(List<InfConsultaParcelasEmprestimoRespOpcoesParcelas> opcoesParcelas) {
     this.opcoesParcelas = opcoesParcelas;
   }
 
