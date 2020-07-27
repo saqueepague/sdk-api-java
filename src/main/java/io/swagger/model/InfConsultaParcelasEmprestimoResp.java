@@ -18,6 +18,9 @@ import javax.validation.constraints.*;
 @ApiModel(description = "Informações da resposta da requisição de consulta de condições de parcelamento de empréstimo.")
 @Validated
 public class InfConsultaParcelasEmprestimoResp   {
+  @JsonProperty("dataPrimeiraParcela")
+  private String dataPrimeiraParcela = null;
+
   @JsonProperty("nomeTitularConta")
   private String nomeTitularConta = null;
 
@@ -33,6 +36,25 @@ public class InfConsultaParcelasEmprestimoResp   {
   @JsonProperty("opcoesParcelas")
   @Valid
   private List<InfConsultaParcelasEmprestimoRespOpcoesParcelas> opcoesParcelas = new ArrayList<InfConsultaParcelasEmprestimoRespOpcoesParcelas>();
+
+  public InfConsultaParcelasEmprestimoResp dataPrimeiraParcela(String dataPrimeiraParcela) {
+    this.dataPrimeiraParcela = dataPrimeiraParcela;
+    return this;
+  }
+
+  /**
+   * Data da primeira parcela do empréstimo (AAAAMMDD).
+   * @return dataPrimeiraParcela
+  **/
+  @ApiModelProperty(example = "20181122", value = "Data da primeira parcela do empréstimo (AAAAMMDD).")
+
+@Pattern(regexp="^\\d{8}$")   public String getDataPrimeiraParcela() {
+    return dataPrimeiraParcela;
+  }
+
+  public void setDataPrimeiraParcela(String dataPrimeiraParcela) {
+    this.dataPrimeiraParcela = dataPrimeiraParcela;
+  }
 
   public InfConsultaParcelasEmprestimoResp nomeTitularConta(String nomeTitularConta) {
     this.nomeTitularConta = nomeTitularConta;
@@ -149,7 +171,8 @@ public class InfConsultaParcelasEmprestimoResp   {
       return false;
     }
     InfConsultaParcelasEmprestimoResp infConsultaParcelasEmprestimoResp = (InfConsultaParcelasEmprestimoResp) o;
-    return Objects.equals(this.nomeTitularConta, infConsultaParcelasEmprestimoResp.nomeTitularConta) &&
+    return Objects.equals(this.dataPrimeiraParcela, infConsultaParcelasEmprestimoResp.dataPrimeiraParcela) &&
+        Objects.equals(this.nomeTitularConta, infConsultaParcelasEmprestimoResp.nomeTitularConta) &&
         Objects.equals(this.nomeAgenciaBancaria, infConsultaParcelasEmprestimoResp.nomeAgenciaBancaria) &&
         Objects.equals(this.limiteMinimoEmprestimo, infConsultaParcelasEmprestimoResp.limiteMinimoEmprestimo) &&
         Objects.equals(this.limiteMaximoEmprestimo, infConsultaParcelasEmprestimoResp.limiteMaximoEmprestimo) &&
@@ -158,7 +181,7 @@ public class InfConsultaParcelasEmprestimoResp   {
 
   @Override
   public int hashCode() {
-    return Objects.hash(nomeTitularConta, nomeAgenciaBancaria, limiteMinimoEmprestimo, limiteMaximoEmprestimo, opcoesParcelas);
+    return Objects.hash(dataPrimeiraParcela, nomeTitularConta, nomeAgenciaBancaria, limiteMinimoEmprestimo, limiteMaximoEmprestimo, opcoesParcelas);
   }
 
   @Override
@@ -166,6 +189,7 @@ public class InfConsultaParcelasEmprestimoResp   {
     StringBuilder sb = new StringBuilder();
     sb.append("class InfConsultaParcelasEmprestimoResp {\n");
     
+    sb.append("    dataPrimeiraParcela: ").append(toIndentedString(dataPrimeiraParcela)).append("\n");
     sb.append("    nomeTitularConta: ").append(toIndentedString(nomeTitularConta)).append("\n");
     sb.append("    nomeAgenciaBancaria: ").append(toIndentedString(nomeAgenciaBancaria)).append("\n");
     sb.append("    limiteMinimoEmprestimo: ").append(toIndentedString(limiteMinimoEmprestimo)).append("\n");
