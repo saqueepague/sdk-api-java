@@ -27,6 +27,9 @@ public class InfConsultaParcelasEmprestimoResp   {
   @JsonProperty("nomeAgenciaBancaria")
   private String nomeAgenciaBancaria = null;
 
+  @JsonProperty("valorTotalDisponivel")
+  private String valorTotalDisponivel = null;
+
   @JsonProperty("limiteMinimoEmprestimo")
   private String limiteMinimoEmprestimo = null;
 
@@ -94,6 +97,26 @@ public class InfConsultaParcelasEmprestimoResp   {
 
   public void setNomeAgenciaBancaria(String nomeAgenciaBancaria) {
     this.nomeAgenciaBancaria = nomeAgenciaBancaria;
+  }
+
+  public InfConsultaParcelasEmprestimoResp valorTotalDisponivel(String valorTotalDisponivel) {
+    this.valorTotalDisponivel = valorTotalDisponivel;
+    return this;
+  }
+
+  /**
+   * Valor total disponível para empréstimo (12 caracteres, incluindo centavos).
+   * @return valorTotalDisponivel
+  **/
+  @ApiModelProperty(example = "000000700000", required = true, value = "Valor total disponível para empréstimo (12 caracteres, incluindo centavos).")
+  @NotNull
+
+@Pattern(regexp="^\\d{12}$")   public String getValorTotalDisponivel() {
+    return valorTotalDisponivel;
+  }
+
+  public void setValorTotalDisponivel(String valorTotalDisponivel) {
+    this.valorTotalDisponivel = valorTotalDisponivel;
   }
 
   public InfConsultaParcelasEmprestimoResp limiteMinimoEmprestimo(String limiteMinimoEmprestimo) {
@@ -174,6 +197,7 @@ public class InfConsultaParcelasEmprestimoResp   {
     return Objects.equals(this.dataPrimeiraParcela, infConsultaParcelasEmprestimoResp.dataPrimeiraParcela) &&
         Objects.equals(this.nomeTitularConta, infConsultaParcelasEmprestimoResp.nomeTitularConta) &&
         Objects.equals(this.nomeAgenciaBancaria, infConsultaParcelasEmprestimoResp.nomeAgenciaBancaria) &&
+        Objects.equals(this.valorTotalDisponivel, infConsultaParcelasEmprestimoResp.valorTotalDisponivel) &&
         Objects.equals(this.limiteMinimoEmprestimo, infConsultaParcelasEmprestimoResp.limiteMinimoEmprestimo) &&
         Objects.equals(this.limiteMaximoEmprestimo, infConsultaParcelasEmprestimoResp.limiteMaximoEmprestimo) &&
         Objects.equals(this.opcoesParcelas, infConsultaParcelasEmprestimoResp.opcoesParcelas);
@@ -181,7 +205,7 @@ public class InfConsultaParcelasEmprestimoResp   {
 
   @Override
   public int hashCode() {
-    return Objects.hash(dataPrimeiraParcela, nomeTitularConta, nomeAgenciaBancaria, limiteMinimoEmprestimo, limiteMaximoEmprestimo, opcoesParcelas);
+    return Objects.hash(dataPrimeiraParcela, nomeTitularConta, nomeAgenciaBancaria, valorTotalDisponivel, limiteMinimoEmprestimo, limiteMaximoEmprestimo, opcoesParcelas);
   }
 
   @Override
@@ -192,6 +216,7 @@ public class InfConsultaParcelasEmprestimoResp   {
     sb.append("    dataPrimeiraParcela: ").append(toIndentedString(dataPrimeiraParcela)).append("\n");
     sb.append("    nomeTitularConta: ").append(toIndentedString(nomeTitularConta)).append("\n");
     sb.append("    nomeAgenciaBancaria: ").append(toIndentedString(nomeAgenciaBancaria)).append("\n");
+    sb.append("    valorTotalDisponivel: ").append(toIndentedString(valorTotalDisponivel)).append("\n");
     sb.append("    limiteMinimoEmprestimo: ").append(toIndentedString(limiteMinimoEmprestimo)).append("\n");
     sb.append("    limiteMaximoEmprestimo: ").append(toIndentedString(limiteMaximoEmprestimo)).append("\n");
     sb.append("    opcoesParcelas: ").append(toIndentedString(opcoesParcelas)).append("\n");
