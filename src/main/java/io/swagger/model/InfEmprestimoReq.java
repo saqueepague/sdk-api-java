@@ -18,12 +18,6 @@ public class InfEmprestimoReq   {
   @JsonProperty("qntParcelas")
   private String qntParcelas = null;
 
-  @JsonProperty("numAgencia")
-  private String numAgencia = null;
-
-  @JsonProperty("numConta")
-  private String numConta = null;
-
   public InfEmprestimoReq qntParcelas(String qntParcelas) {
     this.qntParcelas = qntParcelas;
     return this;
@@ -44,44 +38,6 @@ public class InfEmprestimoReq   {
     this.qntParcelas = qntParcelas;
   }
 
-  public InfEmprestimoReq numAgencia(String numAgencia) {
-    this.numAgencia = numAgencia;
-    return this;
-  }
-
-  /**
-   * Número da agência utilizada na operação.
-   * @return numAgencia
-  **/
-  @ApiModelProperty(example = "4029", value = "Número da agência utilizada na operação.")
-
-@Pattern(regexp="^\\d+$")   public String getNumAgencia() {
-    return numAgencia;
-  }
-
-  public void setNumAgencia(String numAgencia) {
-    this.numAgencia = numAgencia;
-  }
-
-  public InfEmprestimoReq numConta(String numConta) {
-    this.numConta = numConta;
-    return this;
-  }
-
-  /**
-   * Número da conta utilizada na operação.
-   * @return numConta
-  **/
-  @ApiModelProperty(example = "0082348296", value = "Número da conta utilizada na operação.")
-
-@Pattern(regexp="^\\d+$")   public String getNumConta() {
-    return numConta;
-  }
-
-  public void setNumConta(String numConta) {
-    this.numConta = numConta;
-  }
-
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -92,14 +48,12 @@ public class InfEmprestimoReq   {
       return false;
     }
     InfEmprestimoReq infEmprestimoReq = (InfEmprestimoReq) o;
-    return Objects.equals(this.qntParcelas, infEmprestimoReq.qntParcelas) &&
-        Objects.equals(this.numAgencia, infEmprestimoReq.numAgencia) &&
-        Objects.equals(this.numConta, infEmprestimoReq.numConta);
+    return Objects.equals(this.qntParcelas, infEmprestimoReq.qntParcelas);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(qntParcelas, numAgencia, numConta);
+    return Objects.hash(qntParcelas);
   }
 
   @Override
@@ -108,8 +62,6 @@ public class InfEmprestimoReq   {
     sb.append("class InfEmprestimoReq {\n");
     
     sb.append("    qntParcelas: ").append(toIndentedString(qntParcelas)).append("\n");
-    sb.append("    numAgencia: ").append(toIndentedString(numAgencia)).append("\n");
-    sb.append("    numConta: ").append(toIndentedString(numConta)).append("\n");
     sb.append("}");
     return sb.toString();
   }
