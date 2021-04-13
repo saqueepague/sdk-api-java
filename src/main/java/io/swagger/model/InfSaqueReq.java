@@ -27,9 +27,6 @@ public class InfSaqueReq   {
   @JsonProperty("telefone")
   private String telefone = null;
 
-  @JsonProperty("txId")
-  private String txId = null;
-
   public InfSaqueReq numAgencia(String numAgencia) {
     this.numAgencia = numAgencia;
     return this;
@@ -106,25 +103,6 @@ public class InfSaqueReq   {
     this.telefone = telefone;
   }
 
-  public InfSaqueReq txId(String txId) {
-    this.txId = txId;
-    return this;
-  }
-
-  /**
-   * No caso de um saque usando QR Code, enviar nesse campo o id pix da transação, gerado na consulta saque. Caso não seja usada a infraestrutura do pix para a geração do QR Code, o campo é opcional.
-   * @return txId
-  **/
-  @ApiModelProperty(example = "abcd1234", value = "No caso de um saque usando QR Code, enviar nesse campo o id pix da transação, gerado na consulta saque. Caso não seja usada a infraestrutura do pix para a geração do QR Code, o campo é opcional.")
-
-  public String getTxId() {
-    return txId;
-  }
-
-  public void setTxId(String txId) {
-    this.txId = txId;
-  }
-
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -138,13 +116,12 @@ public class InfSaqueReq   {
     return Objects.equals(this.numAgencia, infSaqueReq.numAgencia) &&
         Objects.equals(this.numConta, infSaqueReq.numConta) &&
         Objects.equals(this.cpf, infSaqueReq.cpf) &&
-        Objects.equals(this.telefone, infSaqueReq.telefone) &&
-        Objects.equals(this.txId, infSaqueReq.txId);
+        Objects.equals(this.telefone, infSaqueReq.telefone);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(numAgencia, numConta, cpf, telefone, txId);
+    return Objects.hash(numAgencia, numConta, cpf, telefone);
   }
 
   @Override
@@ -156,7 +133,6 @@ public class InfSaqueReq   {
     sb.append("    numConta: ").append(toIndentedString(numConta)).append("\n");
     sb.append("    cpf: ").append(toIndentedString(cpf)).append("\n");
     sb.append("    telefone: ").append(toIndentedString(telefone)).append("\n");
-    sb.append("    txId: ").append(toIndentedString(txId)).append("\n");
     sb.append("}");
     return sb.toString();
   }

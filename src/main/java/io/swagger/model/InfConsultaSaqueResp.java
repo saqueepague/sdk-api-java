@@ -25,12 +25,6 @@ public class InfConsultaSaqueResp   {
   @Valid
   private List<WithdrawConsultQuestionObj> perguntas = null;
 
-  @JsonProperty("qrCode")
-  private String qrCode = null;
-
-  @JsonProperty("txId")
-  private String txId = null;
-
   public InfConsultaSaqueResp nomeCliente(String nomeCliente) {
     this.nomeCliente = nomeCliente;
     return this;
@@ -77,44 +71,6 @@ public class InfConsultaSaqueResp   {
     this.perguntas = perguntas;
   }
 
-  public InfConsultaSaqueResp qrCode(String qrCode) {
-    this.qrCode = qrCode;
-    return this;
-  }
-
-  /**
-   * Em caso de uma solicitação de saque usando QR Code, retornar nesse campo o seu base64.
-   * @return qrCode
-  **/
-  @ApiModelProperty(example = "eyAidmFsb3IiOiIxMDAwIn0=", value = "Em caso de uma solicitação de saque usando QR Code, retornar nesse campo o seu base64.")
-
-  public String getQrCode() {
-    return qrCode;
-  }
-
-  public void setQrCode(String qrCode) {
-    this.qrCode = qrCode;
-  }
-
-  public InfConsultaSaqueResp txId(String txId) {
-    this.txId = txId;
-    return this;
-  }
-
-  /**
-   * Em caso de uma solicitação de saque usando QR Code, retornar nesse campo o id pix da transação. Caso não seja usada a infraestrutura do pix para a geração do QR Code, o campo é opcional.
-   * @return txId
-  **/
-  @ApiModelProperty(example = "abcd1234", value = "Em caso de uma solicitação de saque usando QR Code, retornar nesse campo o id pix da transação. Caso não seja usada a infraestrutura do pix para a geração do QR Code, o campo é opcional.")
-
-  public String getTxId() {
-    return txId;
-  }
-
-  public void setTxId(String txId) {
-    this.txId = txId;
-  }
-
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -126,14 +82,12 @@ public class InfConsultaSaqueResp   {
     }
     InfConsultaSaqueResp infConsultaSaqueResp = (InfConsultaSaqueResp) o;
     return Objects.equals(this.nomeCliente, infConsultaSaqueResp.nomeCliente) &&
-        Objects.equals(this.perguntas, infConsultaSaqueResp.perguntas) &&
-        Objects.equals(this.qrCode, infConsultaSaqueResp.qrCode) &&
-        Objects.equals(this.txId, infConsultaSaqueResp.txId);
+        Objects.equals(this.perguntas, infConsultaSaqueResp.perguntas);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(nomeCliente, perguntas, qrCode, txId);
+    return Objects.hash(nomeCliente, perguntas);
   }
 
   @Override
@@ -143,8 +97,6 @@ public class InfConsultaSaqueResp   {
     
     sb.append("    nomeCliente: ").append(toIndentedString(nomeCliente)).append("\n");
     sb.append("    perguntas: ").append(toIndentedString(perguntas)).append("\n");
-    sb.append("    qrCode: ").append(toIndentedString(qrCode)).append("\n");
-    sb.append("    txId: ").append(toIndentedString(txId)).append("\n");
     sb.append("}");
     return sb.toString();
   }

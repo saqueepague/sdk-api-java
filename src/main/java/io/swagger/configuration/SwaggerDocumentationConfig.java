@@ -20,7 +20,7 @@ public class SwaggerDocumentationConfig {
             .license("")
             .licenseUrl("http://unlicense.org")
             .termsOfServiceUrl("http://www.saqueepague.com.br")
-            .version("1.20.0")
+            .version("1.22.0")
             .contact(new Contact("","", ""))
             .build();
     }
