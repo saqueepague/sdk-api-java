@@ -11,11 +11,10 @@ import javax.validation.Valid;
 import javax.validation.constraints.*;
 
 /**
- * Informações sobre cada favorecido. (Manter o campo VAZIO, por compatibilidade, caso não exista informação).
+ * InfConsultaFavorecidoRespFavorecidos
  */
-@ApiModel(description = "Informações sobre cada favorecido. (Manter o campo VAZIO, por compatibilidade, caso não exista informação).")
 @Validated
-public class InfConsultaFavorecidoRespFavorecido   {
+public class InfConsultaFavorecidoRespFavorecidos   {
   @JsonProperty("codBanco")
   private String codBanco = null;
 
@@ -67,7 +66,7 @@ public class InfConsultaFavorecidoRespFavorecido   {
   @JsonProperty("cpf")
   private String cpf = null;
 
-  public InfConsultaFavorecidoRespFavorecido codBanco(String codBanco) {
+  public InfConsultaFavorecidoRespFavorecidos codBanco(String codBanco) {
     this.codBanco = codBanco;
     return this;
   }
@@ -86,7 +85,7 @@ public class InfConsultaFavorecidoRespFavorecido   {
     this.codBanco = codBanco;
   }
 
-  public InfConsultaFavorecidoRespFavorecido nomeBanco(String nomeBanco) {
+  public InfConsultaFavorecidoRespFavorecidos nomeBanco(String nomeBanco) {
     this.nomeBanco = nomeBanco;
     return this;
   }
@@ -105,7 +104,7 @@ public class InfConsultaFavorecidoRespFavorecido   {
     this.nomeBanco = nomeBanco;
   }
 
-  public InfConsultaFavorecidoRespFavorecido numAgencia(String numAgencia) {
+  public InfConsultaFavorecidoRespFavorecidos numAgencia(String numAgencia) {
     this.numAgencia = numAgencia;
     return this;
   }
@@ -124,7 +123,7 @@ public class InfConsultaFavorecidoRespFavorecido   {
     this.numAgencia = numAgencia;
   }
 
-  public InfConsultaFavorecidoRespFavorecido numConta(String numConta) {
+  public InfConsultaFavorecidoRespFavorecidos numConta(String numConta) {
     this.numConta = numConta;
     return this;
   }
@@ -143,7 +142,7 @@ public class InfConsultaFavorecidoRespFavorecido   {
     this.numConta = numConta;
   }
 
-  public InfConsultaFavorecidoRespFavorecido tipoConta(TipoContaEnum tipoConta) {
+  public InfConsultaFavorecidoRespFavorecidos tipoConta(TipoContaEnum tipoConta) {
     this.tipoConta = tipoConta;
     return this;
   }
@@ -162,7 +161,7 @@ public class InfConsultaFavorecidoRespFavorecido   {
     this.tipoConta = tipoConta;
   }
 
-  public InfConsultaFavorecidoRespFavorecido nomeTitularConta(String nomeTitularConta) {
+  public InfConsultaFavorecidoRespFavorecidos nomeTitularConta(String nomeTitularConta) {
     this.nomeTitularConta = nomeTitularConta;
     return this;
   }
@@ -181,7 +180,7 @@ public class InfConsultaFavorecidoRespFavorecido   {
     this.nomeTitularConta = nomeTitularConta;
   }
 
-  public InfConsultaFavorecidoRespFavorecido cpf(String cpf) {
+  public InfConsultaFavorecidoRespFavorecidos cpf(String cpf) {
     this.cpf = cpf;
     return this;
   }
@@ -209,14 +208,14 @@ public class InfConsultaFavorecidoRespFavorecido   {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    InfConsultaFavorecidoRespFavorecido infConsultaFavorecidoRespFavorecido = (InfConsultaFavorecidoRespFavorecido) o;
-    return Objects.equals(this.codBanco, infConsultaFavorecidoRespFavorecido.codBanco) &&
-        Objects.equals(this.nomeBanco, infConsultaFavorecidoRespFavorecido.nomeBanco) &&
-        Objects.equals(this.numAgencia, infConsultaFavorecidoRespFavorecido.numAgencia) &&
-        Objects.equals(this.numConta, infConsultaFavorecidoRespFavorecido.numConta) &&
-        Objects.equals(this.tipoConta, infConsultaFavorecidoRespFavorecido.tipoConta) &&
-        Objects.equals(this.nomeTitularConta, infConsultaFavorecidoRespFavorecido.nomeTitularConta) &&
-        Objects.equals(this.cpf, infConsultaFavorecidoRespFavorecido.cpf);
+    InfConsultaFavorecidoRespFavorecidos infConsultaFavorecidoRespFavorecidos = (InfConsultaFavorecidoRespFavorecidos) o;
+    return Objects.equals(this.codBanco, infConsultaFavorecidoRespFavorecidos.codBanco) &&
+        Objects.equals(this.nomeBanco, infConsultaFavorecidoRespFavorecidos.nomeBanco) &&
+        Objects.equals(this.numAgencia, infConsultaFavorecidoRespFavorecidos.numAgencia) &&
+        Objects.equals(this.numConta, infConsultaFavorecidoRespFavorecidos.numConta) &&
+        Objects.equals(this.tipoConta, infConsultaFavorecidoRespFavorecidos.tipoConta) &&
+        Objects.equals(this.nomeTitularConta, infConsultaFavorecidoRespFavorecidos.nomeTitularConta) &&
+        Objects.equals(this.cpf, infConsultaFavorecidoRespFavorecidos.cpf);
   }
 
   @Override
@@ -227,7 +226,7 @@ public class InfConsultaFavorecidoRespFavorecido   {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class InfConsultaFavorecidoRespFavorecido {\n");
+    sb.append("class InfConsultaFavorecidoRespFavorecidos {\n");
     
     sb.append("    codBanco: ").append(toIndentedString(codBanco)).append("\n");
     sb.append("    nomeBanco: ").append(toIndentedString(nomeBanco)).append("\n");

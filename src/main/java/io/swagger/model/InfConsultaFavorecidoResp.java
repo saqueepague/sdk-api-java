@@ -5,7 +5,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import io.swagger.model.InfConsultaFavorecidoRespListaFavorecidos;
+import io.swagger.model.InfConsultaFavorecidoRespFavorecidos;
 import java.util.ArrayList;
 import java.util.List;
 import org.springframework.validation.annotation.Validated;
@@ -18,35 +18,33 @@ import javax.validation.constraints.*;
 @ApiModel(description = "Informações da resposta da requisição de consulta de favorecidos para TED.")
 @Validated
 public class InfConsultaFavorecidoResp   {
-  @JsonProperty("listaFavorecidos")
+  @JsonProperty("favorecidos")
   @Valid
-  private List<InfConsultaFavorecidoRespListaFavorecidos> listaFavorecidos = null;
+  private List<InfConsultaFavorecidoRespFavorecidos> favorecidos = new ArrayList<InfConsultaFavorecidoRespFavorecidos>();
 
-  public InfConsultaFavorecidoResp listaFavorecidos(List<InfConsultaFavorecidoRespListaFavorecidos> listaFavorecidos) {
-    this.listaFavorecidos = listaFavorecidos;
+  public InfConsultaFavorecidoResp favorecidos(List<InfConsultaFavorecidoRespFavorecidos> favorecidos) {
+    this.favorecidos = favorecidos;
     return this;
   }
 
-  public InfConsultaFavorecidoResp addListaFavorecidosItem(InfConsultaFavorecidoRespListaFavorecidos listaFavorecidosItem) {
-    if (this.listaFavorecidos == null) {
-      this.listaFavorecidos = new ArrayList<InfConsultaFavorecidoRespListaFavorecidos>();
-    }
-    this.listaFavorecidos.add(listaFavorecidosItem);
+  public InfConsultaFavorecidoResp addFavorecidosItem(InfConsultaFavorecidoRespFavorecidos favorecidosItem) {
+    this.favorecidos.add(favorecidosItem);
     return this;
   }
 
   /**
-   * Get listaFavorecidos
-   * @return listaFavorecidos
+   * Lista de favorecidos cadastrados no parceiro.
+   * @return favorecidos
   **/
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(required = true, value = "Lista de favorecidos cadastrados no parceiro.")
+  @NotNull
   @Valid
-  public List<InfConsultaFavorecidoRespListaFavorecidos> getListaFavorecidos() {
-    return listaFavorecidos;
+  public List<InfConsultaFavorecidoRespFavorecidos> getFavorecidos() {
+    return favorecidos;
   }
 
-  public void setListaFavorecidos(List<InfConsultaFavorecidoRespListaFavorecidos> listaFavorecidos) {
-    this.listaFavorecidos = listaFavorecidos;
+  public void setFavorecidos(List<InfConsultaFavorecidoRespFavorecidos> favorecidos) {
+    this.favorecidos = favorecidos;
   }
 
 
@@ -59,12 +57,12 @@ public class InfConsultaFavorecidoResp   {
       return false;
     }
     InfConsultaFavorecidoResp infConsultaFavorecidoResp = (InfConsultaFavorecidoResp) o;
-    return Objects.equals(this.listaFavorecidos, infConsultaFavorecidoResp.listaFavorecidos);
+    return Objects.equals(this.favorecidos, infConsultaFavorecidoResp.favorecidos);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(listaFavorecidos);
+    return Objects.hash(favorecidos);
   }
 
   @Override
@@ -72,7 +70,7 @@ public class InfConsultaFavorecidoResp   {
     StringBuilder sb = new StringBuilder();
     sb.append("class InfConsultaFavorecidoResp {\n");
     
-    sb.append("    listaFavorecidos: ").append(toIndentedString(listaFavorecidos)).append("\n");
+    sb.append("    favorecidos: ").append(toIndentedString(favorecidos)).append("\n");
     sb.append("}");
     return sb.toString();
   }
