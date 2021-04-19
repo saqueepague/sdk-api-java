@@ -18,9 +18,31 @@ import javax.validation.constraints.*;
 @ApiModel(description = "Informações da resposta da requisição de consulta de favorecidos para TED.")
 @Validated
 public class InfConsultaFavorecidoResp   {
+  @JsonProperty("nomeCliente")
+  private String nomeCliente = null;
+
   @JsonProperty("favorecidos")
   @Valid
   private List<InfConsultaFavorecidoRespFavorecidos> favorecidos = new ArrayList<InfConsultaFavorecidoRespFavorecidos>();
+
+  public InfConsultaFavorecidoResp nomeCliente(String nomeCliente) {
+    this.nomeCliente = nomeCliente;
+    return this;
+  }
+
+  /**
+   * Nome do cliente titular da conta.
+   * @return nomeCliente
+  **/
+  @ApiModelProperty(example = "Carl Edward Sagan", value = "Nome do cliente titular da conta.")
+
+  public String getNomeCliente() {
+    return nomeCliente;
+  }
+
+  public void setNomeCliente(String nomeCliente) {
+    this.nomeCliente = nomeCliente;
+  }
 
   public InfConsultaFavorecidoResp favorecidos(List<InfConsultaFavorecidoRespFavorecidos> favorecidos) {
     this.favorecidos = favorecidos;
@@ -57,12 +79,13 @@ public class InfConsultaFavorecidoResp   {
       return false;
     }
     InfConsultaFavorecidoResp infConsultaFavorecidoResp = (InfConsultaFavorecidoResp) o;
-    return Objects.equals(this.favorecidos, infConsultaFavorecidoResp.favorecidos);
+    return Objects.equals(this.nomeCliente, infConsultaFavorecidoResp.nomeCliente) &&
+        Objects.equals(this.favorecidos, infConsultaFavorecidoResp.favorecidos);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(favorecidos);
+    return Objects.hash(nomeCliente, favorecidos);
   }
 
   @Override
@@ -70,6 +93,7 @@ public class InfConsultaFavorecidoResp   {
     StringBuilder sb = new StringBuilder();
     sb.append("class InfConsultaFavorecidoResp {\n");
     
+    sb.append("    nomeCliente: ").append(toIndentedString(nomeCliente)).append("\n");
     sb.append("    favorecidos: ").append(toIndentedString(favorecidos)).append("\n");
     sb.append("}");
     return sb.toString();
