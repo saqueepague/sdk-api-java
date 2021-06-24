@@ -76,9 +76,6 @@ public class InfIdentificacaoResp   {
   @Valid
   private List<PositiveIdQuestionObj> perguntas = null;
 
-  @JsonProperty("valorLimiteFavorecido")
-  private String valorLimiteFavorecido = null;
-
   public InfIdentificacaoResp numAgencia(String numAgencia) {
     this.numAgencia = numAgencia;
     return this;
@@ -249,25 +246,6 @@ public class InfIdentificacaoResp   {
     this.perguntas = perguntas;
   }
 
-  public InfIdentificacaoResp valorLimiteFavorecido(String valorLimiteFavorecido) {
-    this.valorLimiteFavorecido = valorLimiteFavorecido;
-    return this;
-  }
-
-  /**
-   * Valor de limite para a TED (12 dígitos, incluindo centavos). Quando ultrapassar esse valor retornado pelo parceiro, devemos enviar a transação /consultaFavorecido.
-   * @return valorLimiteFavorecido
-  **/
-  @ApiModelProperty(example = "000000030000", value = "Valor de limite para a TED (12 dígitos, incluindo centavos). Quando ultrapassar esse valor retornado pelo parceiro, devemos enviar a transação /consultaFavorecido.")
-
-@Pattern(regexp="^\\d{12}$")   public String getValorLimiteFavorecido() {
-    return valorLimiteFavorecido;
-  }
-
-  public void setValorLimiteFavorecido(String valorLimiteFavorecido) {
-    this.valorLimiteFavorecido = valorLimiteFavorecido;
-  }
-
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -285,13 +263,12 @@ public class InfIdentificacaoResp   {
         Objects.equals(this.pedirToken, infIdentificacaoResp.pedirToken) &&
         Objects.equals(this.frase, infIdentificacaoResp.frase) &&
         Objects.equals(this.saldo, infIdentificacaoResp.saldo) &&
-        Objects.equals(this.perguntas, infIdentificacaoResp.perguntas) &&
-        Objects.equals(this.valorLimiteFavorecido, infIdentificacaoResp.valorLimiteFavorecido);
+        Objects.equals(this.perguntas, infIdentificacaoResp.perguntas);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(numAgencia, numConta, transacValidas, idPositiva, pedirToken, frase, saldo, perguntas, valorLimiteFavorecido);
+    return Objects.hash(numAgencia, numConta, transacValidas, idPositiva, pedirToken, frase, saldo, perguntas);
   }
 
   @Override
@@ -307,7 +284,6 @@ public class InfIdentificacaoResp   {
     sb.append("    frase: ").append(toIndentedString(frase)).append("\n");
     sb.append("    saldo: ").append(toIndentedString(saldo)).append("\n");
     sb.append("    perguntas: ").append(toIndentedString(perguntas)).append("\n");
-    sb.append("    valorLimiteFavorecido: ").append(toIndentedString(valorLimiteFavorecido)).append("\n");
     sb.append("}");
     return sb.toString();
   }
