@@ -26,7 +26,7 @@ import java.util.Map;
 @Api(value = "consultaSaque", description = "the consultaSaque API")
 public interface ConsultaSaqueApi {
 
-    @ApiOperation(value = "", nickname = "consultaSaquePost", notes = "Operação de consulta para saque de moeda estrangeira (câmbio). Efetuada para autenticar cliente, retornando valorde saque, moeda e dados adicionais.", response = ConsultaSaqueResp.class, tags={  })
+    @ApiOperation(value = "", nickname = "consultaSaquePost", notes = "Operação de consulta para saque. Efetuada para autenticar cliente, retornando valor de saque, moeda e dados adicionais.", response = ConsultaSaqueResp.class, tags={  })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "Retorno com sucesso ou com Erro de negócio.", response = ConsultaSaqueResp.class),
         @ApiResponse(code = 400, message = "Bad Request ou Erro interno ao qual inviabilizou uma resposta."),

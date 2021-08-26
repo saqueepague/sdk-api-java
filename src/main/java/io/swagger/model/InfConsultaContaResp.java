@@ -184,15 +184,6 @@ public class InfConsultaContaResp   {
   @JsonProperty("depositoVarejista")
   private DepositoVarejistaEnum depositoVarejista = null;
 
-  @JsonProperty("codBanco")
-  private String codBanco = null;
-
-  @JsonProperty("numAgencia")
-  private String numAgencia = null;
-
-  @JsonProperty("numConta")
-  private String numConta = null;
-
   public InfConsultaContaResp modalidadeDeposito(ModalidadeDepositoEnum modalidadeDeposito) {
     this.modalidadeDeposito = modalidadeDeposito;
     return this;
@@ -312,63 +303,6 @@ public class InfConsultaContaResp   {
     this.depositoVarejista = depositoVarejista;
   }
 
-  public InfConsultaContaResp codBanco(String codBanco) {
-    this.codBanco = codBanco;
-    return this;
-  }
-
-  /**
-   * Código do banco utilizado na operação (3 dígitos).
-   * @return codBanco
-  **/
-  @ApiModelProperty(example = "237", value = "Código do banco utilizado na operação (3 dígitos).")
-
-@Pattern(regexp="^\\d{3}$")   public String getCodBanco() {
-    return codBanco;
-  }
-
-  public void setCodBanco(String codBanco) {
-    this.codBanco = codBanco;
-  }
-
-  public InfConsultaContaResp numAgencia(String numAgencia) {
-    this.numAgencia = numAgencia;
-    return this;
-  }
-
-  /**
-   * Número da agência utilizada na operação.
-   * @return numAgencia
-  **/
-  @ApiModelProperty(example = "4029", value = "Número da agência utilizada na operação.")
-
-@Pattern(regexp="^\\d+$")   public String getNumAgencia() {
-    return numAgencia;
-  }
-
-  public void setNumAgencia(String numAgencia) {
-    this.numAgencia = numAgencia;
-  }
-
-  public InfConsultaContaResp numConta(String numConta) {
-    this.numConta = numConta;
-    return this;
-  }
-
-  /**
-   * Número da conta utilizada na operação.
-   * @return numConta
-  **/
-  @ApiModelProperty(example = "0082348296", value = "Número da conta utilizada na operação.")
-
-@Pattern(regexp="^\\d+$")   public String getNumConta() {
-    return numConta;
-  }
-
-  public void setNumConta(String numConta) {
-    this.numConta = numConta;
-  }
-
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -384,15 +318,12 @@ public class InfConsultaContaResp   {
         Objects.equals(this.solicDoc, infConsultaContaResp.solicDoc) &&
         Objects.equals(this.habilitaDeposito, infConsultaContaResp.habilitaDeposito) &&
         Objects.equals(this.depositoIdentificado, infConsultaContaResp.depositoIdentificado) &&
-        Objects.equals(this.depositoVarejista, infConsultaContaResp.depositoVarejista) &&
-        Objects.equals(this.codBanco, infConsultaContaResp.codBanco) &&
-        Objects.equals(this.numAgencia, infConsultaContaResp.numAgencia) &&
-        Objects.equals(this.numConta, infConsultaContaResp.numConta);
+        Objects.equals(this.depositoVarejista, infConsultaContaResp.depositoVarejista);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(modalidadeDeposito, nomeCliente, solicDoc, habilitaDeposito, depositoIdentificado, depositoVarejista, codBanco, numAgencia, numConta);
+    return Objects.hash(modalidadeDeposito, nomeCliente, solicDoc, habilitaDeposito, depositoIdentificado, depositoVarejista);
   }
 
   @Override
@@ -406,9 +337,6 @@ public class InfConsultaContaResp   {
     sb.append("    habilitaDeposito: ").append(toIndentedString(habilitaDeposito)).append("\n");
     sb.append("    depositoIdentificado: ").append(toIndentedString(depositoIdentificado)).append("\n");
     sb.append("    depositoVarejista: ").append(toIndentedString(depositoVarejista)).append("\n");
-    sb.append("    codBanco: ").append(toIndentedString(codBanco)).append("\n");
-    sb.append("    numAgencia: ").append(toIndentedString(numAgencia)).append("\n");
-    sb.append("    numConta: ").append(toIndentedString(numConta)).append("\n");
     sb.append("}");
     return sb.toString();
   }

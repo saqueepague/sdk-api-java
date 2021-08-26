@@ -48,6 +48,9 @@ public class InfConsultaParcelasEmprestimoRespTributos   {
   @JsonProperty("cetMensal")
   private String cetMensal = null;
 
+  @JsonProperty("valorTotalParcelas")
+  private String valorTotalParcelas = null;
+
   public InfConsultaParcelasEmprestimoRespTributos valorSolicitado(String valorSolicitado) {
     this.valorSolicitado = valorSolicitado;
     return this;
@@ -73,10 +76,10 @@ public class InfConsultaParcelasEmprestimoRespTributos   {
   }
 
   /**
-   * Informações do imposto sobre operações financeiras (07 dígitos, valor total = 80,9445%).
+   * Informações do imposto sobre operações financeiras (07 dígitos, valor total = 80,94%).
    * @return iof
   **/
-  @ApiModelProperty(example = "0809445", value = "Informações do imposto sobre operações financeiras (07 dígitos, valor total = 80,9445%).")
+  @ApiModelProperty(example = "0008094", value = "Informações do imposto sobre operações financeiras (07 dígitos, valor total = 80,94%).")
 
 @Pattern(regexp="^\\d{07}$")   public String getIof() {
     return iof;
@@ -92,10 +95,10 @@ public class InfConsultaParcelasEmprestimoRespTributos   {
   }
 
   /**
-   * Informações do imposto sobre operações financeiras adicional (07 dígitos, valor total = 80,9445%).
+   * Informações do imposto sobre operações financeiras adicional (07 dígitos, valor total = 80,94%).
    * @return iofAdicional
   **/
-  @ApiModelProperty(example = "0809445", value = "Informações do imposto sobre operações financeiras adicional (07 dígitos, valor total = 80,9445%).")
+  @ApiModelProperty(example = "0008094", value = "Informações do imposto sobre operações financeiras adicional (07 dígitos, valor total = 80,94%).")
 
 @Pattern(regexp="^\\d{07}$")   public String getIofAdicional() {
     return iofAdicional;
@@ -111,10 +114,10 @@ public class InfConsultaParcelasEmprestimoRespTributos   {
   }
 
   /**
-   * Valor dos juros calculado (07 dígitos, valor total = 80,9445%).
+   * Valor dos juros calculado em reais (12 dígitos, incluindo centavos).
    * @return valorJuros
   **/
-  @ApiModelProperty(example = "0002422", value = "Valor dos juros calculado (07 dígitos, valor total = 80,9445%).")
+  @ApiModelProperty(example = "000000001099", value = "Valor dos juros calculado em reais (12 dígitos, incluindo centavos).")
 
 @Pattern(regexp="^\\d{07}$")   public String getValorJuros() {
     return valorJuros;
@@ -130,10 +133,10 @@ public class InfConsultaParcelasEmprestimoRespTributos   {
   }
 
   /**
-   * Informações sobre taxas de juros anual (07 dígitos, valor total = 80,9445%).
+   * Informações sobre taxas de juros anual (07 dígitos, valor total = 80,94%).
    * @return taxaJurosAnual
   **/
-  @ApiModelProperty(example = "0809445", value = "Informações sobre taxas de juros anual (07 dígitos, valor total = 80,9445%).")
+  @ApiModelProperty(example = "0008094", value = "Informações sobre taxas de juros anual (07 dígitos, valor total = 80,94%).")
 
 @Pattern(regexp="^\\d{07}$")   public String getTaxaJurosAnual() {
     return taxaJurosAnual;
@@ -149,10 +152,10 @@ public class InfConsultaParcelasEmprestimoRespTributos   {
   }
 
   /**
-   * Informações sobre taxas de juros mensal (07 dígitos, valor total = 80,9445%).
+   * Informações sobre taxas de juros mensal (07 dígitos, valor total = 80,94%).
    * @return taxaJurosMensal
   **/
-  @ApiModelProperty(example = "0809445", value = "Informações sobre taxas de juros mensal (07 dígitos, valor total = 80,9445%).")
+  @ApiModelProperty(example = "0008094", value = "Informações sobre taxas de juros mensal (07 dígitos, valor total = 80,94%).")
 
 @Pattern(regexp="^\\d{07}$")   public String getTaxaJurosMensal() {
     return taxaJurosMensal;
@@ -225,10 +228,10 @@ public class InfConsultaParcelasEmprestimoRespTributos   {
   }
 
   /**
-   * Informações sobre a soma de taxas de juros anual (07 dígitos, valor total = 80,9445%).
+   * Informações sobre a soma de taxas de juros anual (07 dígitos, valor total = 80,94%).
    * @return cetAnual
   **/
-  @ApiModelProperty(example = "0809445", value = "Informações sobre a soma de taxas de juros anual (07 dígitos, valor total = 80,9445%).")
+  @ApiModelProperty(example = "0008094", value = "Informações sobre a soma de taxas de juros anual (07 dígitos, valor total = 80,94%).")
 
 @Pattern(regexp="^\\d{07}$")   public String getCetAnual() {
     return cetAnual;
@@ -244,10 +247,10 @@ public class InfConsultaParcelasEmprestimoRespTributos   {
   }
 
   /**
-   * Informações sobre a soma de taxas de juros mensal(07 dígitos, valor total = 80,9445%).
+   * Informações sobre a soma de taxas de juros mensal(07 dígitos, valor total = 80,94%).
    * @return cetMensal
   **/
-  @ApiModelProperty(example = "0809445", value = "Informações sobre a soma de taxas de juros mensal(07 dígitos, valor total = 80,9445%).")
+  @ApiModelProperty(example = "0008094", value = "Informações sobre a soma de taxas de juros mensal(07 dígitos, valor total = 80,94%).")
 
 @Pattern(regexp="^\\d{07}$")   public String getCetMensal() {
     return cetMensal;
@@ -255,6 +258,25 @@ public class InfConsultaParcelasEmprestimoRespTributos   {
 
   public void setCetMensal(String cetMensal) {
     this.cetMensal = cetMensal;
+  }
+
+  public InfConsultaParcelasEmprestimoRespTributos valorTotalParcelas(String valorTotalParcelas) {
+    this.valorTotalParcelas = valorTotalParcelas;
+    return this;
+  }
+
+  /**
+   * Informações sobre o valor total da soma de todas parcelas (12 dígitos, incluindo centavos).
+   * @return valorTotalParcelas
+  **/
+  @ApiModelProperty(example = "000000500010", value = "Informações sobre o valor total da soma de todas parcelas (12 dígitos, incluindo centavos).")
+
+@Pattern(regexp="^\\d{12}$")   public String getValorTotalParcelas() {
+    return valorTotalParcelas;
+  }
+
+  public void setValorTotalParcelas(String valorTotalParcelas) {
+    this.valorTotalParcelas = valorTotalParcelas;
   }
 
 
@@ -277,12 +299,13 @@ public class InfConsultaParcelasEmprestimoRespTributos   {
         Objects.equals(this.primeiroVencimento, infConsultaParcelasEmprestimoRespTributos.primeiroVencimento) &&
         Objects.equals(this.ultimoVencimento, infConsultaParcelasEmprestimoRespTributos.ultimoVencimento) &&
         Objects.equals(this.cetAnual, infConsultaParcelasEmprestimoRespTributos.cetAnual) &&
-        Objects.equals(this.cetMensal, infConsultaParcelasEmprestimoRespTributos.cetMensal);
+        Objects.equals(this.cetMensal, infConsultaParcelasEmprestimoRespTributos.cetMensal) &&
+        Objects.equals(this.valorTotalParcelas, infConsultaParcelasEmprestimoRespTributos.valorTotalParcelas);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(valorSolicitado, iof, iofAdicional, valorJuros, taxaJurosAnual, taxaJurosMensal, dataContratacao, primeiroVencimento, ultimoVencimento, cetAnual, cetMensal);
+    return Objects.hash(valorSolicitado, iof, iofAdicional, valorJuros, taxaJurosAnual, taxaJurosMensal, dataContratacao, primeiroVencimento, ultimoVencimento, cetAnual, cetMensal, valorTotalParcelas);
   }
 
   @Override
@@ -301,6 +324,7 @@ public class InfConsultaParcelasEmprestimoRespTributos   {
     sb.append("    ultimoVencimento: ").append(toIndentedString(ultimoVencimento)).append("\n");
     sb.append("    cetAnual: ").append(toIndentedString(cetAnual)).append("\n");
     sb.append("    cetMensal: ").append(toIndentedString(cetMensal)).append("\n");
+    sb.append("    valorTotalParcelas: ").append(toIndentedString(valorTotalParcelas)).append("\n");
     sb.append("}");
     return sb.toString();
   }

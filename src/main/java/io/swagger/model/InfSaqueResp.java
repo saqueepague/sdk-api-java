@@ -18,6 +18,9 @@ public class InfSaqueResp   {
   @JsonProperty("recibo")
   private String recibo = null;
 
+  @JsonProperty("ispb")
+  private String ispb = null;
+
   public InfSaqueResp recibo(String recibo) {
     this.recibo = recibo;
     return this;
@@ -38,6 +41,25 @@ public class InfSaqueResp   {
     this.recibo = recibo;
   }
 
+  public InfSaqueResp ispb(String ispb) {
+    this.ispb = ispb;
+    return this;
+  }
+
+  /**
+   * Código da Intituição registrada no Sistema Brasileiro de Pagamentos. Campo obrigatório, para transações de Saque QR Code, afim de identificar a instituição parceira da transação.
+   * @return ispb
+  **/
+  @ApiModelProperty(example = "01234567", value = "Código da Intituição registrada no Sistema Brasileiro de Pagamentos. Campo obrigatório, para transações de Saque QR Code, afim de identificar a instituição parceira da transação.")
+
+@Pattern(regexp="^\\d{8}$")   public String getIspb() {
+    return ispb;
+  }
+
+  public void setIspb(String ispb) {
+    this.ispb = ispb;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -48,12 +70,13 @@ public class InfSaqueResp   {
       return false;
     }
     InfSaqueResp infSaqueResp = (InfSaqueResp) o;
-    return Objects.equals(this.recibo, infSaqueResp.recibo);
+    return Objects.equals(this.recibo, infSaqueResp.recibo) &&
+        Objects.equals(this.ispb, infSaqueResp.ispb);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(recibo);
+    return Objects.hash(recibo, ispb);
   }
 
   @Override
@@ -62,6 +85,7 @@ public class InfSaqueResp   {
     sb.append("class InfSaqueResp {\n");
     
     sb.append("    recibo: ").append(toIndentedString(recibo)).append("\n");
+    sb.append("    ispb: ").append(toIndentedString(ispb)).append("\n");
     sb.append("}");
     return sb.toString();
   }
