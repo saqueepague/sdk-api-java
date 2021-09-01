@@ -51,6 +51,12 @@ public class InfConsultaParcelasEmprestimoRespTributos   {
   @JsonProperty("valorTotalParcelas")
   private String valorTotalParcelas = null;
 
+  @JsonProperty("taxaValorSolicitado")
+  private String taxaValorSolicitado = null;
+
+  @JsonProperty("taxaValorIof")
+  private String taxaValorIof = null;
+
   public InfConsultaParcelasEmprestimoRespTributos valorSolicitado(String valorSolicitado) {
     this.valorSolicitado = valorSolicitado;
     return this;
@@ -279,6 +285,44 @@ public class InfConsultaParcelasEmprestimoRespTributos   {
     this.valorTotalParcelas = valorTotalParcelas;
   }
 
+  public InfConsultaParcelasEmprestimoRespTributos taxaValorSolicitado(String taxaValorSolicitado) {
+    this.taxaValorSolicitado = taxaValorSolicitado;
+    return this;
+  }
+
+  /**
+   * Representa o quanto o valor solicitado representa sobre o valor financiado. (07 digitos, valor total = 70,00%)
+   * @return taxaValorSolicitado
+  **/
+  @ApiModelProperty(example = "0000700", value = "Representa o quanto o valor solicitado representa sobre o valor financiado. (07 digitos, valor total = 70,00%)")
+
+@Pattern(regexp="^\\d{07}$")   public String getTaxaValorSolicitado() {
+    return taxaValorSolicitado;
+  }
+
+  public void setTaxaValorSolicitado(String taxaValorSolicitado) {
+    this.taxaValorSolicitado = taxaValorSolicitado;
+  }
+
+  public InfConsultaParcelasEmprestimoRespTributos taxaValorIof(String taxaValorIof) {
+    this.taxaValorIof = taxaValorIof;
+    return this;
+  }
+
+  /**
+   * Representa o quanto o valor do iof representa sobre o valor financiado. (07 digitos, valor total = 50,12%)
+   * @return taxaValorIof
+  **/
+  @ApiModelProperty(example = "0005012", value = "Representa o quanto o valor do iof representa sobre o valor financiado. (07 digitos, valor total = 50,12%)")
+
+@Pattern(regexp="^\\d{07}$")   public String getTaxaValorIof() {
+    return taxaValorIof;
+  }
+
+  public void setTaxaValorIof(String taxaValorIof) {
+    this.taxaValorIof = taxaValorIof;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -300,12 +344,14 @@ public class InfConsultaParcelasEmprestimoRespTributos   {
         Objects.equals(this.ultimoVencimento, infConsultaParcelasEmprestimoRespTributos.ultimoVencimento) &&
         Objects.equals(this.cetAnual, infConsultaParcelasEmprestimoRespTributos.cetAnual) &&
         Objects.equals(this.cetMensal, infConsultaParcelasEmprestimoRespTributos.cetMensal) &&
-        Objects.equals(this.valorTotalParcelas, infConsultaParcelasEmprestimoRespTributos.valorTotalParcelas);
+        Objects.equals(this.valorTotalParcelas, infConsultaParcelasEmprestimoRespTributos.valorTotalParcelas) &&
+        Objects.equals(this.taxaValorSolicitado, infConsultaParcelasEmprestimoRespTributos.taxaValorSolicitado) &&
+        Objects.equals(this.taxaValorIof, infConsultaParcelasEmprestimoRespTributos.taxaValorIof);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(valorSolicitado, iof, iofAdicional, valorJuros, taxaJurosAnual, taxaJurosMensal, dataContratacao, primeiroVencimento, ultimoVencimento, cetAnual, cetMensal, valorTotalParcelas);
+    return Objects.hash(valorSolicitado, iof, iofAdicional, valorJuros, taxaJurosAnual, taxaJurosMensal, dataContratacao, primeiroVencimento, ultimoVencimento, cetAnual, cetMensal, valorTotalParcelas, taxaValorSolicitado, taxaValorIof);
   }
 
   @Override
@@ -325,6 +371,8 @@ public class InfConsultaParcelasEmprestimoRespTributos   {
     sb.append("    cetAnual: ").append(toIndentedString(cetAnual)).append("\n");
     sb.append("    cetMensal: ").append(toIndentedString(cetMensal)).append("\n");
     sb.append("    valorTotalParcelas: ").append(toIndentedString(valorTotalParcelas)).append("\n");
+    sb.append("    taxaValorSolicitado: ").append(toIndentedString(taxaValorSolicitado)).append("\n");
+    sb.append("    taxaValorIof: ").append(toIndentedString(taxaValorIof)).append("\n");
     sb.append("}");
     return sb.toString();
   }
