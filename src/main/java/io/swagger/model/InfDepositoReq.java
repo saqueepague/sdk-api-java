@@ -45,6 +45,9 @@ public class InfDepositoReq   {
   @JsonProperty("identificacao")
   private String identificacao = null;
 
+  @JsonProperty("tipoConta")
+  private String tipoConta = null;
+
   public InfDepositoReq nomeDepositante(String nomeDepositante) {
     this.nomeDepositante = nomeDepositante;
     return this;
@@ -235,6 +238,25 @@ public class InfDepositoReq   {
     this.identificacao = identificacao;
   }
 
+  public InfDepositoReq tipoConta(String tipoConta) {
+    this.tipoConta = tipoConta;
+    return this;
+  }
+
+  /**
+   * Tipo de conta do extrato (CC = conta corrente, CP = conta poupança, CS = conta salário).
+   * @return tipoConta
+  **/
+  @ApiModelProperty(example = "CC", value = "Tipo de conta do extrato (CC = conta corrente, CP = conta poupança, CS = conta salário).")
+
+  public String getTipoConta() {
+    return tipoConta;
+  }
+
+  public void setTipoConta(String tipoConta) {
+    this.tipoConta = tipoConta;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -254,12 +276,13 @@ public class InfDepositoReq   {
         Objects.equals(this.codBanco, infDepositoReq.codBanco) &&
         Objects.equals(this.numAgencia, infDepositoReq.numAgencia) &&
         Objects.equals(this.numConta, infDepositoReq.numConta) &&
-        Objects.equals(this.identificacao, infDepositoReq.identificacao);
+        Objects.equals(this.identificacao, infDepositoReq.identificacao) &&
+        Objects.equals(this.tipoConta, infDepositoReq.tipoConta);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(nomeDepositante, telefoneDepositante, cpfDepositante, nomeFavorecido, telefoneFavorecido, cpfFavorecido, codBanco, numAgencia, numConta, identificacao);
+    return Objects.hash(nomeDepositante, telefoneDepositante, cpfDepositante, nomeFavorecido, telefoneFavorecido, cpfFavorecido, codBanco, numAgencia, numConta, identificacao, tipoConta);
   }
 
   @Override
@@ -277,6 +300,7 @@ public class InfDepositoReq   {
     sb.append("    numAgencia: ").append(toIndentedString(numAgencia)).append("\n");
     sb.append("    numConta: ").append(toIndentedString(numConta)).append("\n");
     sb.append("    identificacao: ").append(toIndentedString(identificacao)).append("\n");
+    sb.append("    tipoConta: ").append(toIndentedString(tipoConta)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -64,6 +64,9 @@ public class InfConsultaContaReq   {
   @JsonProperty("cpfFavorecido")
   private String cpfFavorecido = null;
 
+  @JsonProperty("ispb")
+  private String ispb = null;
+
   public InfConsultaContaReq codBanco(String codBanco) {
     this.codBanco = codBanco;
     return this;
@@ -179,6 +182,25 @@ public class InfConsultaContaReq   {
     this.cpfFavorecido = cpfFavorecido;
   }
 
+  public InfConsultaContaReq ispb(String ispb) {
+    this.ispb = ispb;
+    return this;
+  }
+
+  /**
+   * Código da Intituição registrada no Sistema Brasileiro de Pagamentos. Campo obrigatório, para transações de Saque QR Code, afim de identificar a instituição parceira da transação.
+   * @return ispb
+  **/
+  @ApiModelProperty(example = "01234567", value = "Código da Intituição registrada no Sistema Brasileiro de Pagamentos. Campo obrigatório, para transações de Saque QR Code, afim de identificar a instituição parceira da transação.")
+
+@Pattern(regexp="^\\d{8}$")   public String getIspb() {
+    return ispb;
+  }
+
+  public void setIspb(String ispb) {
+    this.ispb = ispb;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -194,12 +216,13 @@ public class InfConsultaContaReq   {
         Objects.equals(this.numConta, infConsultaContaReq.numConta) &&
         Objects.equals(this.modalidadeDeposito, infConsultaContaReq.modalidadeDeposito) &&
         Objects.equals(this.telefoneFavorecido, infConsultaContaReq.telefoneFavorecido) &&
-        Objects.equals(this.cpfFavorecido, infConsultaContaReq.cpfFavorecido);
+        Objects.equals(this.cpfFavorecido, infConsultaContaReq.cpfFavorecido) &&
+        Objects.equals(this.ispb, infConsultaContaReq.ispb);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(codBanco, numAgencia, numConta, modalidadeDeposito, telefoneFavorecido, cpfFavorecido);
+    return Objects.hash(codBanco, numAgencia, numConta, modalidadeDeposito, telefoneFavorecido, cpfFavorecido, ispb);
   }
 
   @Override
@@ -213,6 +236,7 @@ public class InfConsultaContaReq   {
     sb.append("    modalidadeDeposito: ").append(toIndentedString(modalidadeDeposito)).append("\n");
     sb.append("    telefoneFavorecido: ").append(toIndentedString(telefoneFavorecido)).append("\n");
     sb.append("    cpfFavorecido: ").append(toIndentedString(cpfFavorecido)).append("\n");
+    sb.append("    ispb: ").append(toIndentedString(ispb)).append("\n");
     sb.append("}");
     return sb.toString();
   }
