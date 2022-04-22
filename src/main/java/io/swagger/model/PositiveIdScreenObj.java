@@ -10,9 +10,9 @@ import javax.validation.Valid;
 import javax.validation.constraints.*;
 
 /**
- * Lista de conjuntos de letras/sílabas para o usuário selecionar, antes de uma transação. Cada posição é análoga a um botão mostrado, em posição aleatória, nesta tela. Contudo a resposta mandada na transação manterá a posição original retornada por este objeto.
+ * Lista de conjuntos de letras/sílabas para o usuário selecionar, antes de uma transação. Cada posição é análoga a um botão mostrado, em posição aleatéria, nesta tela. Contudo a resposta mandada na transação manterá a posição original retornada por este objeto.
  */
-@ApiModel(description = "Lista de conjuntos de letras/sílabas para o usuário selecionar, antes de uma transação. Cada posição é análoga a um botão mostrado, em posição aleatória, nesta tela. Contudo a resposta mandada na transação manterá a posição original retornada por este objeto.")
+@ApiModel(description = "Lista de conjuntos de letras/sílabas para o usuário selecionar, antes de uma transação. Cada posição é análoga a um botão mostrado, em posição aleatéria, nesta tela. Contudo a resposta mandada na transação manterá a posição original retornada por este objeto.")
 @Validated
 public class PositiveIdScreenObj   {
   @JsonProperty("idTela")

@@ -10,9 +10,9 @@ import javax.validation.Valid;
 import javax.validation.constraints.*;
 
 /**
- * Informações sobre a requisição de confirmação de transação.
+ * Informações sobre a requisição de Confirmação de transação.
  */
-@ApiModel(description = "Informações sobre a requisição de confirmação de transação.")
+@ApiModel(description = "Informações sobre a requisição de Confirmação de transação.")
 @Validated
 public class InfTransacaoConf   {
   @JsonProperty("nsuResposta")
@@ -48,10 +48,10 @@ public class InfTransacaoConf   {
   }
 
   /**
-   * Igual à resposta.
+   * Igual é resposta.
    * @return nsuResposta
   **/
-  @ApiModelProperty(example = "820", required = true, value = "Igual à resposta.")
+  @ApiModelProperty(example = "820", required = true, value = "Igual é resposta.")
   @NotNull
 
 @Pattern(regexp="^\\d+$")   public String getNsuResposta() {
@@ -68,10 +68,10 @@ public class InfTransacaoConf   {
   }
 
   /**
-   * Igual à requisição e à resposta.
+   * Igual é requisição e é resposta.
    * @return nsu
   **/
-  @ApiModelProperty(example = "000080247206", required = true, value = "Igual à requisição e à resposta.")
+  @ApiModelProperty(example = "000080247206", required = true, value = "Igual é requisição e é resposta.")
   @NotNull
 
 @Pattern(regexp="^\\d{12}$")   public String getNsu() {
@@ -88,10 +88,10 @@ public class InfTransacaoConf   {
   }
 
   /**
-   * Igual à requisição e à resposta.
+   * Igual é requisição e é resposta.
    * @return cdProc
   **/
-  @ApiModelProperty(example = "029100", required = true, value = "Igual à requisição e à resposta.")
+  @ApiModelProperty(example = "029100", required = true, value = "Igual é requisição e é resposta.")
   @NotNull
 
 @Pattern(regexp="^\\d{6}$")   public String getCdProc() {
@@ -128,10 +128,10 @@ public class InfTransacaoConf   {
   }
 
   /**
-   * Igual à requisição e à resposta.
+   * Igual é requisição e é resposta.
    * @return horaLocal
   **/
-  @ApiModelProperty(example = "151032", required = true, value = "Igual à requisição e à resposta.")
+  @ApiModelProperty(example = "151032", required = true, value = "Igual é requisição e é resposta.")
   @NotNull
 
 @Pattern(regexp="^\\d{6}$")   public String getHoraLocal() {
@@ -148,10 +148,10 @@ public class InfTransacaoConf   {
   }
 
   /**
-   * Igual à requisição e à resposta.
+   * Igual é requisição e é resposta.
    * @return dataLocal
   **/
-  @ApiModelProperty(example = "1122", required = true, value = "Igual à requisição e à resposta.")
+  @ApiModelProperty(example = "1122", required = true, value = "Igual é requisição e é resposta.")
   @NotNull
 
 @Pattern(regexp="^\\d{4}$")   public String getDataLocal() {
@@ -168,10 +168,10 @@ public class InfTransacaoConf   {
   }
 
   /**
-   * Igual à requisição e à resposta.
+   * Igual é requisição e é resposta.
    * @return codOperadora
   **/
-  @ApiModelProperty(example = "00000000914", required = true, value = "Igual à requisição e à resposta.")
+  @ApiModelProperty(example = "00000000914", required = true, value = "Igual é requisição e é resposta.")
   @NotNull
 
 @Pattern(regexp="^\\d{11}$")   public String getCodOperadora() {
@@ -208,10 +208,10 @@ public class InfTransacaoConf   {
   }
 
   /**
-   * Igual à requisição e à resposta.
+   * Igual é requisição e é resposta.
    * @return codMoeda
   **/
-  @ApiModelProperty(example = "986", value = "Igual à requisição e à resposta.")
+  @ApiModelProperty(example = "986", value = "Igual é requisição e é resposta.")
 
 @Pattern(regexp="^\\d{3}$")   public String getCodMoeda() {
     return codMoeda;

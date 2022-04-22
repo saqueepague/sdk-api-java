@@ -25,7 +25,7 @@ import java.util.Map;
 @Api(value = "emprestimoConf", description = "the emprestimoConf API")
 public interface EmprestimoConfApi {
 
-    @ApiOperation(value = "", nickname = "emprestimoConfPost", notes = "Confirmação de operação de empréstimo.", tags={  })
+    @ApiOperation(value = "", nickname = "emprestimoConfPost", notes = "Confirmação de operação de Empréstimo.", tags={  })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "Retorno com sucesso ou com Erro de negócio."),
         @ApiResponse(code = 400, message = "Bad Request ou Erro interno ao qual inviabilizou uma resposta."),
@@ -33,6 +33,6 @@ public interface EmprestimoConfApi {
     @RequestMapping(value = "/emprestimoConf",
         consumes = { "application/json" },
         method = RequestMethod.POST)
-    ResponseEntity<Void> emprestimoConfPost(@ApiParam(value = "Requisição de confirmação de operação de empréstimo." ,required=true )  @Valid @RequestBody TransacConf body,@ApiParam(value = "Tipo de autenticação requerida." ,required=true) @RequestHeader(value="authenticationType", required=true) String authenticationType,@ApiParam(value = "Identificação do cliente." ,required=true) @RequestHeader(value="clientId", required=true) String clientId,@ApiParam(value = "Chave para validação do acesso ao serviço." ,required=true) @RequestHeader(value="token", required=true) String token);
+    ResponseEntity<Void> emprestimoConfPost(@ApiParam(value = "requisição de Confirmação de operação de Empréstimo." ,required=true )  @Valid @RequestBody TransacConf body,@ApiParam(value = "Tipo de autenticação requerida." ,required=true) @RequestHeader(value="authenticationType", required=true) String authenticationType,@ApiParam(value = "identificação do cliente." ,required=true) @RequestHeader(value="clientId", required=true) String clientId,@ApiParam(value = "Chave para validação do acesso ao serviço." ,required=true) @RequestHeader(value="token", required=true) String token);
 
 }

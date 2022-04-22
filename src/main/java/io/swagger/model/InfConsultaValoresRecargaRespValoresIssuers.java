@@ -77,10 +77,10 @@ public class InfConsultaValoresRecargaRespValoresIssuers   {
   }
 
   /**
-   * Quantidade de caracteres do cartão esperado para cartões da operadora.
+   * Quantidade de caracteres do Cartão esperado para Cartões da operadora.
    * @return cardNumberLength
   **/
-  @ApiModelProperty(example = "15", value = "Quantidade de caracteres do cartão esperado para cartões da operadora.")
+  @ApiModelProperty(example = "15", value = "Quantidade de caracteres do Cartão esperado para Cartões da operadora.")
 
   public Integer getCardNumberLength() {
     return cardNumberLength;
@@ -96,10 +96,10 @@ public class InfConsultaValoresRecargaRespValoresIssuers   {
   }
 
   /**
-   * Máscara de números do cartão.
+   * Máscara de números do Cartão.
    * @return cardNumberMask
   **/
-  @ApiModelProperty(example = "XXXXXXXXXXXXXX-X", value = "Máscara de números do cartão.")
+  @ApiModelProperty(example = "XXXXXXXXXXXXXX-X", value = "Máscara de números do Cartão.")
 
   public String getCardNumberMask() {
     return cardNumberMask;

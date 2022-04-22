@@ -17,7 +17,7 @@ import javax.validation.constraints.*;
 @Validated
 public class InfConsultaContaResp   {
   /**
-   * Igual à requisição.
+   * Igual é requisição.
    */
   public enum ModalidadeDepositoEnum {
     _00("00"),
@@ -53,7 +53,7 @@ public class InfConsultaContaResp   {
   private String nomeCliente = null;
 
   /**
-   * Indica se deve ser solicitado o CPF/CNPJ do depositante (00 = Não / 01 = Sim).
+   * Indica se deve ser solicitado o CPF/CNPJ do depositante (00 = não / 01 = Sim).
    */
   public enum SolicDocEnum {
     _00("00"),
@@ -86,7 +86,7 @@ public class InfConsultaContaResp   {
   private SolicDocEnum solicDoc = null;
 
   /**
-   * Indica é permitido fazer depósito nessa conta (00 = Não / 01 = Sim).
+   * Indica é permitido fazer Depósito nessa conta (00 = não / 01 = Sim).
    */
   public enum HabilitaDepositoEnum {
     _00("00"),
@@ -119,7 +119,7 @@ public class InfConsultaContaResp   {
   private HabilitaDepositoEnum habilitaDeposito = null;
 
   /**
-   * Indica a operação de depósito deve ser identificada (00 = Não / 01 = Sim).
+   * Indica a operação de Depósito deve ser identificada (00 = não / 01 = Sim).
    */
   public enum DepositoIdentificadoEnum {
     _00("00"),
@@ -152,7 +152,7 @@ public class InfConsultaContaResp   {
   private DepositoIdentificadoEnum depositoIdentificado = null;
 
   /**
-   * Indica se a conta em questão permite Depósito Varejista  (00 = Não / 01 = Sim).
+   * Indica se a conta em questáo permite Depósito Varejista  (00 = não / 01 = Sim).
    */
   public enum DepositoVarejistaEnum {
     _00("00"),
@@ -184,31 +184,16 @@ public class InfConsultaContaResp   {
   @JsonProperty("depositoVarejista")
   private DepositoVarejistaEnum depositoVarejista = null;
 
-  @JsonProperty("codBanco")
-  private String codBanco = null;
-
-  @JsonProperty("numAgencia")
-  private String numAgencia = null;
-
-  @JsonProperty("numConta")
-  private String numConta = null;
-
-  @JsonProperty("cpfFavorecido")
-  private String cpfFavorecido = null;
-
-  @JsonProperty("ispb")
-  private String ispb = null;
-
   public InfConsultaContaResp modalidadeDeposito(ModalidadeDepositoEnum modalidadeDeposito) {
     this.modalidadeDeposito = modalidadeDeposito;
     return this;
   }
 
   /**
-   * Igual à requisição.
+   * Igual é requisição.
    * @return modalidadeDeposito
   **/
-  @ApiModelProperty(example = "00", required = true, value = "Igual à requisição.")
+  @ApiModelProperty(example = "00", required = true, value = "Igual é requisição.")
   @NotNull
 
   public ModalidadeDepositoEnum getModalidadeDeposito() {
@@ -245,10 +230,10 @@ public class InfConsultaContaResp   {
   }
 
   /**
-   * Indica se deve ser solicitado o CPF/CNPJ do depositante (00 = Não / 01 = Sim).
+   * Indica se deve ser solicitado o CPF/CNPJ do depositante (00 = não / 01 = Sim).
    * @return solicDoc
   **/
-  @ApiModelProperty(example = "00", required = true, value = "Indica se deve ser solicitado o CPF/CNPJ do depositante (00 = Não / 01 = Sim).")
+  @ApiModelProperty(example = "00", required = true, value = "Indica se deve ser solicitado o CPF/CNPJ do depositante (00 = não / 01 = Sim).")
   @NotNull
 
   public SolicDocEnum getSolicDoc() {
@@ -265,10 +250,10 @@ public class InfConsultaContaResp   {
   }
 
   /**
-   * Indica é permitido fazer depósito nessa conta (00 = Não / 01 = Sim).
+   * Indica é permitido fazer Depósito nessa conta (00 = não / 01 = Sim).
    * @return habilitaDeposito
   **/
-  @ApiModelProperty(example = "01", required = true, value = "Indica é permitido fazer depósito nessa conta (00 = Não / 01 = Sim).")
+  @ApiModelProperty(example = "01", required = true, value = "Indica é permitido fazer Depósito nessa conta (00 = não / 01 = Sim).")
   @NotNull
 
   public HabilitaDepositoEnum getHabilitaDeposito() {
@@ -285,10 +270,10 @@ public class InfConsultaContaResp   {
   }
 
   /**
-   * Indica a operação de depósito deve ser identificada (00 = Não / 01 = Sim).
+   * Indica a operação de Depósito deve ser identificada (00 = não / 01 = Sim).
    * @return depositoIdentificado
   **/
-  @ApiModelProperty(example = "00", required = true, value = "Indica a operação de depósito deve ser identificada (00 = Não / 01 = Sim).")
+  @ApiModelProperty(example = "00", required = true, value = "Indica a operação de Depósito deve ser identificada (00 = não / 01 = Sim).")
   @NotNull
 
   public DepositoIdentificadoEnum getDepositoIdentificado() {
@@ -305,10 +290,10 @@ public class InfConsultaContaResp   {
   }
 
   /**
-   * Indica se a conta em questão permite Depósito Varejista  (00 = Não / 01 = Sim).
+   * Indica se a conta em questáo permite Depósito Varejista  (00 = não / 01 = Sim).
    * @return depositoVarejista
   **/
-  @ApiModelProperty(example = "01", value = "Indica se a conta em questão permite Depósito Varejista  (00 = Não / 01 = Sim).")
+  @ApiModelProperty(example = "01", value = "Indica se a conta em questáo permite Depósito Varejista  (00 = não / 01 = Sim).")
 
   public DepositoVarejistaEnum getDepositoVarejista() {
     return depositoVarejista;
@@ -316,101 +301,6 @@ public class InfConsultaContaResp   {
 
   public void setDepositoVarejista(DepositoVarejistaEnum depositoVarejista) {
     this.depositoVarejista = depositoVarejista;
-  }
-
-  public InfConsultaContaResp codBanco(String codBanco) {
-    this.codBanco = codBanco;
-    return this;
-  }
-
-  /**
-   * Código do banco utilizado na operação (3 dígitos).
-   * @return codBanco
-  **/
-  @ApiModelProperty(example = "237", value = "Código do banco utilizado na operação (3 dígitos).")
-
-@Pattern(regexp="^\\d{3}$")   public String getCodBanco() {
-    return codBanco;
-  }
-
-  public void setCodBanco(String codBanco) {
-    this.codBanco = codBanco;
-  }
-
-  public InfConsultaContaResp numAgencia(String numAgencia) {
-    this.numAgencia = numAgencia;
-    return this;
-  }
-
-  /**
-   * Número da agência utilizada na operação.
-   * @return numAgencia
-  **/
-  @ApiModelProperty(example = "4029", value = "Número da agência utilizada na operação.")
-
-@Pattern(regexp="^\\d+$")   public String getNumAgencia() {
-    return numAgencia;
-  }
-
-  public void setNumAgencia(String numAgencia) {
-    this.numAgencia = numAgencia;
-  }
-
-  public InfConsultaContaResp numConta(String numConta) {
-    this.numConta = numConta;
-    return this;
-  }
-
-  /**
-   * Número da conta utilizada na operação.
-   * @return numConta
-  **/
-  @ApiModelProperty(example = "0082348296", value = "Número da conta utilizada na operação.")
-
-@Pattern(regexp="^\\d+$")   public String getNumConta() {
-    return numConta;
-  }
-
-  public void setNumConta(String numConta) {
-    this.numConta = numConta;
-  }
-
-  public InfConsultaContaResp cpfFavorecido(String cpfFavorecido) {
-    this.cpfFavorecido = cpfFavorecido;
-    return this;
-  }
-
-  /**
-   * Número do CPF ou CNPJ do cliente favorecido da transação (11 dígitos ou 14 dígitos respectivamente).
-   * @return cpfFavorecido
-  **/
-  @ApiModelProperty(example = "02358422785", value = "Número do CPF ou CNPJ do cliente favorecido da transação (11 dígitos ou 14 dígitos respectivamente).")
-
-@Pattern(regexp="^\\d{14}|\\d{11}$")   public String getCpfFavorecido() {
-    return cpfFavorecido;
-  }
-
-  public void setCpfFavorecido(String cpfFavorecido) {
-    this.cpfFavorecido = cpfFavorecido;
-  }
-
-  public InfConsultaContaResp ispb(String ispb) {
-    this.ispb = ispb;
-    return this;
-  }
-
-  /**
-   * Código da Intituição registrada no Sistema Brasileiro de Pagamentos. Campo obrigatório, para transações de Saque QR Code, afim de identificar a instituição parceira da transação.
-   * @return ispb
-  **/
-  @ApiModelProperty(example = "01234567", value = "Código da Intituição registrada no Sistema Brasileiro de Pagamentos. Campo obrigatório, para transações de Saque QR Code, afim de identificar a instituição parceira da transação.")
-
-@Pattern(regexp="^\\d{8}$")   public String getIspb() {
-    return ispb;
-  }
-
-  public void setIspb(String ispb) {
-    this.ispb = ispb;
   }
 
 
@@ -428,17 +318,12 @@ public class InfConsultaContaResp   {
         Objects.equals(this.solicDoc, infConsultaContaResp.solicDoc) &&
         Objects.equals(this.habilitaDeposito, infConsultaContaResp.habilitaDeposito) &&
         Objects.equals(this.depositoIdentificado, infConsultaContaResp.depositoIdentificado) &&
-        Objects.equals(this.depositoVarejista, infConsultaContaResp.depositoVarejista) &&
-        Objects.equals(this.codBanco, infConsultaContaResp.codBanco) &&
-        Objects.equals(this.numAgencia, infConsultaContaResp.numAgencia) &&
-        Objects.equals(this.numConta, infConsultaContaResp.numConta) &&
-        Objects.equals(this.cpfFavorecido, infConsultaContaResp.cpfFavorecido) &&
-        Objects.equals(this.ispb, infConsultaContaResp.ispb);
+        Objects.equals(this.depositoVarejista, infConsultaContaResp.depositoVarejista);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(modalidadeDeposito, nomeCliente, solicDoc, habilitaDeposito, depositoIdentificado, depositoVarejista, codBanco, numAgencia, numConta, cpfFavorecido, ispb);
+    return Objects.hash(modalidadeDeposito, nomeCliente, solicDoc, habilitaDeposito, depositoIdentificado, depositoVarejista);
   }
 
   @Override
@@ -452,11 +337,6 @@ public class InfConsultaContaResp   {
     sb.append("    habilitaDeposito: ").append(toIndentedString(habilitaDeposito)).append("\n");
     sb.append("    depositoIdentificado: ").append(toIndentedString(depositoIdentificado)).append("\n");
     sb.append("    depositoVarejista: ").append(toIndentedString(depositoVarejista)).append("\n");
-    sb.append("    codBanco: ").append(toIndentedString(codBanco)).append("\n");
-    sb.append("    numAgencia: ").append(toIndentedString(numAgencia)).append("\n");
-    sb.append("    numConta: ").append(toIndentedString(numConta)).append("\n");
-    sb.append("    cpfFavorecido: ").append(toIndentedString(cpfFavorecido)).append("\n");
-    sb.append("    ispb: ").append(toIndentedString(ispb)).append("\n");
     sb.append("}");
     return sb.toString();
   }

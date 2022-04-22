@@ -37,7 +37,7 @@ public class DemonstrativoINSSApiController implements DemonstrativoINSSApi {
         this.request = request;
     }
 
-    public ResponseEntity<DemonstrativoINSSResp> demonstrativoINSSPost(@ApiParam(value = "Requisição de operação de demonstrativo INSS." ,required=true )  @Valid @RequestBody DemonstrativoINSSReq body,@ApiParam(value = "Tipo de autenticação requerida." ,required=true) @RequestHeader(value="authenticationType", required=true) String authenticationType,@ApiParam(value = "Identificação do cliente." ,required=true) @RequestHeader(value="clientId", required=true) String clientId,@ApiParam(value = "Chave para validação do acesso ao serviço." ,required=true) @RequestHeader(value="token", required=true) String token) {
+    public ResponseEntity<DemonstrativoINSSResp> demonstrativoINSSPost(@ApiParam(value = "requisição de operação de demonstrativo INSS." ,required=true )  @Valid @RequestBody DemonstrativoINSSReq body,@ApiParam(value = "Tipo de autenticação requerida." ,required=true) @RequestHeader(value="authenticationType", required=true) String authenticationType,@ApiParam(value = "identificação do cliente." ,required=true) @RequestHeader(value="clientId", required=true) String clientId,@ApiParam(value = "Chave para validação do acesso ao serviço." ,required=true) @RequestHeader(value="token", required=true) String token) {
         String accept = request.getHeader("Accept");
         return new ResponseEntity<DemonstrativoINSSResp>(HttpStatus.NOT_IMPLEMENTED);
     }

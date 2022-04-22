@@ -37,7 +37,7 @@ public class ConsultaParcelasEmprestimoApiController implements ConsultaParcelas
         this.request = request;
     }
 
-    public ResponseEntity<ConsultaParcelasEmprestimoResp> consultaParcelasEmprestimoPost(@ApiParam(value = "Requisição de consulta parcelas de empréstimo." ,required=true )  @Valid @RequestBody ConsultaParcelasEmprestimoReq body,@ApiParam(value = "Tipo de autenticação requerida." ,required=true) @RequestHeader(value="authenticationType", required=true) String authenticationType,@ApiParam(value = "Identificação do cliente." ,required=true) @RequestHeader(value="clientId", required=true) String clientId,@ApiParam(value = "Chave para validação do acesso ao serviço." ,required=true) @RequestHeader(value="token", required=true) String token) {
+    public ResponseEntity<ConsultaParcelasEmprestimoResp> consultaParcelasEmprestimoPost(@ApiParam(value = "requisição de consulta parcelas de Empréstimo." ,required=true )  @Valid @RequestBody ConsultaParcelasEmprestimoReq body,@ApiParam(value = "Tipo de autenticação requerida." ,required=true) @RequestHeader(value="authenticationType", required=true) String authenticationType,@ApiParam(value = "identificação do cliente." ,required=true) @RequestHeader(value="clientId", required=true) String clientId,@ApiParam(value = "Chave para validação do acesso ao serviço." ,required=true) @RequestHeader(value="token", required=true) String token) {
         String accept = request.getHeader("Accept");
         return new ResponseEntity<ConsultaParcelasEmprestimoResp>(HttpStatus.NOT_IMPLEMENTED);
     }

@@ -37,7 +37,7 @@ public class RecargaPrePagoApiController implements RecargaPrePagoApi {
         this.request = request;
     }
 
-    public ResponseEntity<RecargaPrePagoResp> recargaPrePagoPost(@ApiParam(value = "Requisição para recarga de celular pré-pago." ,required=true )  @Valid @RequestBody RecargaPrePagoReq body,@ApiParam(value = "Tipo de autenticação requerida." ,required=true) @RequestHeader(value="authenticationType", required=true) String authenticationType,@ApiParam(value = "Identificação do cliente." ,required=true) @RequestHeader(value="clientId", required=true) String clientId,@ApiParam(value = "Chave para validação do acesso ao serviço." ,required=true) @RequestHeader(value="token", required=true) String token) {
+    public ResponseEntity<RecargaPrePagoResp> recargaPrePagoPost(@ApiParam(value = "requisição para recarga de celular Pré-Pago." ,required=true )  @Valid @RequestBody RecargaPrePagoReq body,@ApiParam(value = "Tipo de autenticação requerida." ,required=true) @RequestHeader(value="authenticationType", required=true) String authenticationType,@ApiParam(value = "identificação do cliente." ,required=true) @RequestHeader(value="clientId", required=true) String clientId,@ApiParam(value = "Chave para validação do acesso ao serviço." ,required=true) @RequestHeader(value="token", required=true) String token) {
         String accept = request.getHeader("Accept");
         return new ResponseEntity<RecargaPrePagoResp>(HttpStatus.NOT_IMPLEMENTED);
     }

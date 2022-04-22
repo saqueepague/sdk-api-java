@@ -25,12 +25,12 @@ import java.util.Map;
 @Api(value = "token", description = "the token API")
 public interface TokenApi {
 
-    @ApiOperation(value = "", nickname = "tokenPost", notes = "Transação para Token do Cliente.", response = InfTokenResp.class, tags={  })
+    @ApiOperation(value = "", nickname = "tokenPost", notes = "transação para Token do Cliente.", response = InfTokenResp.class, tags={  })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "Retorno com sucesso ou com Erro de negócio.", response = InfTokenResp.class) })
     @RequestMapping(value = "/token",
         produces = { "application/json" }, 
         method = RequestMethod.POST)
-    ResponseEntity<InfTokenResp> tokenPost(@ApiParam(value = "Tipo de autenticação requerida." ,required=true) @RequestHeader(value="authenticationType", required=true) String authenticationType,@ApiParam(value = "Identificação do cliente." ,required=true) @RequestHeader(value="clientId", required=true) String clientId,@ApiParam(value = "Cliente Secret." ,required=true) @RequestHeader(value="clientSecret", required=true) String clientSecret);
+    ResponseEntity<InfTokenResp> tokenPost(@ApiParam(value = "Tipo de autenticação requerida." ,required=true) @RequestHeader(value="authenticationType", required=true) String authenticationType,@ApiParam(value = "identificação do cliente." ,required=true) @RequestHeader(value="clientId", required=true) String clientId,@ApiParam(value = "Cliente Secret." ,required=true) @RequestHeader(value="clientSecret", required=true) String clientSecret);
 
 }

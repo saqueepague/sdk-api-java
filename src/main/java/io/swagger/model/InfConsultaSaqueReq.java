@@ -33,10 +33,10 @@ public class InfConsultaSaqueReq   {
   }
 
   /**
-   * Número da agência utilizada na operação.
+   * número da Agência utilizada na operação.
    * @return numAgencia
   **/
-  @ApiModelProperty(example = "4029", value = "Número da agência utilizada na operação.")
+  @ApiModelProperty(example = "4029", value = "número da Agência utilizada na operação.")
 
 @Pattern(regexp="^\\d+$")   public String getNumAgencia() {
     return numAgencia;
@@ -52,10 +52,10 @@ public class InfConsultaSaqueReq   {
   }
 
   /**
-   * Número da conta utilizada na operação.
+   * número da conta utilizada na operação.
    * @return numConta
   **/
-  @ApiModelProperty(example = "0082348296", value = "Número da conta utilizada na operação.")
+  @ApiModelProperty(example = "0082348296", value = "número da conta utilizada na operação.")
 
 @Pattern(regexp="^\\d+$")   public String getNumConta() {
     return numConta;
@@ -90,10 +90,10 @@ public class InfConsultaSaqueReq   {
   }
 
   /**
-   * Número do CPF do cliente (11 dígitos).
+   * número do CPF do cliente (11 dígitos).
    * @return cpfFavorecido
   **/
-  @ApiModelProperty(example = "02358422785", value = "Número do CPF do cliente (11 dígitos).")
+  @ApiModelProperty(example = "02358422785", value = "número do CPF do cliente (11 dígitos).")
 
 @Pattern(regexp="^\\d{11}$")   public String getCpfFavorecido() {
     return cpfFavorecido;

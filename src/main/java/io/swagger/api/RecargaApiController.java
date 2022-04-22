@@ -37,7 +37,7 @@ public class RecargaApiController implements RecargaApi {
         this.request = request;
     }
 
-    public ResponseEntity<RecargaResp> recargaPost(@ApiParam(value = "Requisição de operação de recarga de um cartão." ,required=true )  @Valid @RequestBody RecargaReq body,@ApiParam(value = "Tipo de autenticação requerida." ,required=true) @RequestHeader(value="authenticationType", required=true) String authenticationType,@ApiParam(value = "Identificação do cliente." ,required=true) @RequestHeader(value="clientId", required=true) String clientId,@ApiParam(value = "Chave para validação do acesso ao serviço." ,required=true) @RequestHeader(value="token", required=true) String token) {
+    public ResponseEntity<RecargaResp> recargaPost(@ApiParam(value = "requisição de operação de recarga de um Cartão." ,required=true )  @Valid @RequestBody RecargaReq body,@ApiParam(value = "Tipo de autenticação requerida." ,required=true) @RequestHeader(value="authenticationType", required=true) String authenticationType,@ApiParam(value = "identificação do cliente." ,required=true) @RequestHeader(value="clientId", required=true) String clientId,@ApiParam(value = "Chave para validação do acesso ao serviço." ,required=true) @RequestHeader(value="token", required=true) String token) {
         String accept = request.getHeader("Accept");
         return new ResponseEntity<RecargaResp>(HttpStatus.NOT_IMPLEMENTED);
     }

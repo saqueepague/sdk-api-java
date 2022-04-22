@@ -42,6 +42,9 @@ public class InfTransacaoReq   {
   @JsonProperty("codMoeda")
   private String codMoeda = null;
 
+  @JsonProperty("fintechCode")
+  private String fintechCode = null;
+
   public InfTransacaoReq nsu(String nsu) {
     this.nsu = nsu;
     return this;
@@ -68,10 +71,10 @@ public class InfTransacaoReq   {
   }
 
   /**
-   * Código de processamento da transação, gerado pela Saque e Pague. Verificar código específico de cada transação com a Saque e Pague (6 dígitos).
+   * Código de processamento da transação, gerado pela Saque e Pague. Verificar Código específico de cada transação com a Saque e Pague (6 dígitos).
    * @return cdProc
   **/
-  @ApiModelProperty(example = "029100", required = true, value = "Código de processamento da transação, gerado pela Saque e Pague. Verificar código específico de cada transação com a Saque e Pague (6 dígitos).")
+  @ApiModelProperty(example = "029100", required = true, value = "Código de processamento da transação, gerado pela Saque e Pague. Verificar Código específico de cada transação com a Saque e Pague (6 dígitos).")
   @NotNull
 
 @Pattern(regexp="^\\d{6}$")   public String getCdProc() {
@@ -206,10 +209,10 @@ public class InfTransacaoReq   {
   }
 
   /**
-   * Código na tabela de moedas d da ISO-4217 (986 = real, 3 dígitos).
+   * Código na tabela de moedas da ISO-4217 (986 = real, 3 dígitos).
    * @return codMoeda
   **/
-  @ApiModelProperty(example = "986", value = "Código na tabela de moedas d da ISO-4217 (986 = real, 3 dígitos).")
+  @ApiModelProperty(example = "986", value = "Código na tabela de moedas da ISO-4217 (986 = real, 3 dígitos).")
 
 @Pattern(regexp="^\\d{3}$")   public String getCodMoeda() {
     return codMoeda;
@@ -217,6 +220,25 @@ public class InfTransacaoReq   {
 
   public void setCodMoeda(String codMoeda) {
     this.codMoeda = codMoeda;
+  }
+
+  public InfTransacaoReq fintechCode(String fintechCode) {
+    this.fintechCode = fintechCode;
+    return this;
+  }
+
+  /**
+   * Código fornecido pelo parceiro que identifica a Fintech (máximo 20 dígitos). Campo utilizado somente para parceiros que operam no modelo HUB.
+   * @return fintechCode
+  **/
+  @ApiModelProperty(example = "123", value = "Código fornecido pelo parceiro que identifica a Fintech (máximo 20 dígitos). Campo utilizado somente para parceiros que operam no modelo HUB.")
+
+@Size(max=20)   public String getFintechCode() {
+    return fintechCode;
+  }
+
+  public void setFintechCode(String fintechCode) {
+    this.fintechCode = fintechCode;
   }
 
 
@@ -237,12 +259,13 @@ public class InfTransacaoReq   {
         Objects.equals(this.codOperadora, infTransacaoReq.codOperadora) &&
         Objects.equals(this.dataContabil, infTransacaoReq.dataContabil) &&
         Objects.equals(this.valor, infTransacaoReq.valor) &&
-        Objects.equals(this.codMoeda, infTransacaoReq.codMoeda);
+        Objects.equals(this.codMoeda, infTransacaoReq.codMoeda) &&
+        Objects.equals(this.fintechCode, infTransacaoReq.fintechCode);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(nsu, cdProc, dataHora, horaLocal, dataLocal, codOperadora, dataContabil, valor, codMoeda);
+    return Objects.hash(nsu, cdProc, dataHora, horaLocal, dataLocal, codOperadora, dataContabil, valor, codMoeda, fintechCode);
   }
 
   @Override
@@ -259,6 +282,7 @@ public class InfTransacaoReq   {
     sb.append("    dataContabil: ").append(toIndentedString(dataContabil)).append("\n");
     sb.append("    valor: ").append(toIndentedString(valor)).append("\n");
     sb.append("    codMoeda: ").append(toIndentedString(codMoeda)).append("\n");
+    sb.append("    fintechCode: ").append(toIndentedString(fintechCode)).append("\n");
     sb.append("}");
     return sb.toString();
   }

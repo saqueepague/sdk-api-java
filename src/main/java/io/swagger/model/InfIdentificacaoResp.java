@@ -85,10 +85,10 @@ public class InfIdentificacaoResp   {
   }
 
   /**
-   * Número da agência identificada (usado em operações em própria conta para o usuário não precisar preencher os dados). *Este campo é obrigatório apenas para bancos.
+   * número da Agência identificada (usado em operações em própria conta para o usuário não precisar preencher os dados). *Este campo é obrigatério apenas para bancos.
    * @return numAgencia
   **/
-  @ApiModelProperty(example = "4029", value = "Número da agência identificada (usado em operações em própria conta para o usuário não precisar preencher os dados). *Este campo é obrigatório apenas para bancos.")
+  @ApiModelProperty(example = "4029", value = "número da Agência identificada (usado em operações em própria conta para o usuário não precisar preencher os dados). *Este campo é obrigatério apenas para bancos.")
 
 @Pattern(regexp="^\\d+$")   public String getNumAgencia() {
     return numAgencia;
@@ -104,10 +104,10 @@ public class InfIdentificacaoResp   {
   }
 
   /**
-   * Número da conta identificada (usado em operações em própria conta para o usuário não precisar preencher os dados). *Este campo é obrigatório apenas para bancos.
+   * número da conta identificada (usado em operações em própria conta para o usuário não precisar preencher os dados). *Este campo é obrigatério apenas para bancos.
    * @return numConta
   **/
-  @ApiModelProperty(example = "0082348296", value = "Número da conta identificada (usado em operações em própria conta para o usuário não precisar preencher os dados). *Este campo é obrigatório apenas para bancos.")
+  @ApiModelProperty(example = "0082348296", value = "número da conta identificada (usado em operações em própria conta para o usuário não precisar preencher os dados). *Este campo é obrigatério apenas para bancos.")
 
 @Pattern(regexp="^\\d+$")   public String getNumConta() {
     return numConta;
@@ -123,10 +123,10 @@ public class InfIdentificacaoResp   {
   }
 
   /**
-   * Códigos de processamento das transações habilitadas para o cliente concatenados (6 dígitos cada código).
+   * Códigos de processamento das transações habilitadas para o cliente concatenados (6 dígitos cada Código).
    * @return transacValidas
   **/
-  @ApiModelProperty(example = "068101068010", required = true, value = "Códigos de processamento das transações habilitadas para o cliente concatenados (6 dígitos cada código).")
+  @ApiModelProperty(example = "068101068010", required = true, value = "Códigos de processamento das transações habilitadas para o cliente concatenados (6 dígitos cada Código).")
   @NotNull
 
 @Pattern(regexp="^(?:\\d{6})*$")   public String getTransacValidas() {

@@ -26,7 +26,7 @@ import java.util.Map;
 @Api(value = "consultaProdutosRecarga", description = "the consultaProdutosRecarga API")
 public interface ConsultaProdutosRecargaApi {
 
-    @ApiOperation(value = "", nickname = "consultaProdutosRecargaPost", notes = "Operação de consulta dos possíveis produtos de recarga de transporte para o cartão informado pelo cliente. Operação relacionada a transação consultaProdutosRecarga.", response = ConsultaProdutosRecargaResp.class, tags={  })
+    @ApiOperation(value = "", nickname = "consultaProdutosRecargaPost", notes = "operação de consulta dos possíveis produtos de recarga de transporte para o Cartão informado pelo cliente. operação relacionada a transação consultaProdutosRecarga.", response = ConsultaProdutosRecargaResp.class, tags={  })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "Retorno com sucesso ou com Erro de negócio.", response = ConsultaProdutosRecargaResp.class),
         @ApiResponse(code = 400, message = "Bad Request ou Erro interno ao qual inviabilizou uma resposta."),
@@ -35,6 +35,6 @@ public interface ConsultaProdutosRecargaApi {
         produces = { "application/json" }, 
         consumes = { "application/json" },
         method = RequestMethod.POST)
-    ResponseEntity<ConsultaProdutosRecargaResp> consultaProdutosRecargaPost(@ApiParam(value = "Requisição de consulta produtos de recarga disponíveis para um cartão." ,required=true )  @Valid @RequestBody ConsultaProdutosRecargaReq body,@ApiParam(value = "Tipo de autenticação requerida." ,required=true) @RequestHeader(value="authenticationType", required=true) String authenticationType,@ApiParam(value = "Identificação do cliente." ,required=true) @RequestHeader(value="clientId", required=true) String clientId,@ApiParam(value = "Chave para validação do acesso ao serviço." ,required=true) @RequestHeader(value="token", required=true) String token);
+    ResponseEntity<ConsultaProdutosRecargaResp> consultaProdutosRecargaPost(@ApiParam(value = "requisição de consulta produtos de recarga disponíveis para um Cartão." ,required=true )  @Valid @RequestBody ConsultaProdutosRecargaReq body,@ApiParam(value = "Tipo de autenticação requerida." ,required=true) @RequestHeader(value="authenticationType", required=true) String authenticationType,@ApiParam(value = "identificação do cliente." ,required=true) @RequestHeader(value="clientId", required=true) String clientId,@ApiParam(value = "Chave para validação do acesso ao serviço." ,required=true) @RequestHeader(value="token", required=true) String token);
 
 }

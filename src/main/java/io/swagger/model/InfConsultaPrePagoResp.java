@@ -13,9 +13,9 @@ import javax.validation.Valid;
 import javax.validation.constraints.*;
 
 /**
- * Informações de retorno da consulta de produtos para recarga de pré-pago.
+ * Informações de retorno da consulta de produtos para recarga de Pré-Pago.
  */
-@ApiModel(description = "Informações de retorno da consulta de produtos para recarga de pré-pago.")
+@ApiModel(description = "Informações de retorno da consulta de produtos para recarga de Pré-Pago.")
 @Validated
 public class InfConsultaPrePagoResp   {
   @JsonProperty("produtos")
@@ -33,10 +33,10 @@ public class InfConsultaPrePagoResp   {
   }
 
   /**
-   * Lista de produtos de recarga pré-pago disponíveis para a área/DDD.
+   * Lista de produtos de recarga Pré-Pago disponíveis para a área/DDD.
    * @return produtos
   **/
-  @ApiModelProperty(required = true, value = "Lista de produtos de recarga pré-pago disponíveis para a área/DDD.")
+  @ApiModelProperty(required = true, value = "Lista de produtos de recarga Pré-Pago disponíveis para a área/DDD.")
   @NotNull
   @Valid
   public List<InfConsultaPrePagoRespProdutos> getProdutos() {

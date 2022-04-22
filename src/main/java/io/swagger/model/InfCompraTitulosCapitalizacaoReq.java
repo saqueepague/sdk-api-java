@@ -10,9 +10,9 @@ import javax.validation.Valid;
 import javax.validation.constraints.*;
 
 /**
- * Informações da requisição de compra de títulos de capitalização.
+ * Informações da requisição de compra de Títulos de capitalização.
  */
-@ApiModel(description = "Informações da requisição de compra de títulos de capitalização.")
+@ApiModel(description = "Informações da requisição de compra de Títulos de capitalização.")
 @Validated
 public class InfCompraTitulosCapitalizacaoReq   {
   @JsonProperty("idProduto")
@@ -53,10 +53,10 @@ public class InfCompraTitulosCapitalizacaoReq   {
   }
 
   /**
-   * Número do CPF do cliente favorecido da transação (11 dígitos).
+   * número do CPF do cliente favorecido da transação (11 dígitos).
    * @return cpf
   **/
-  @ApiModelProperty(example = "02358422785", required = true, value = "Número do CPF do cliente favorecido da transação (11 dígitos).")
+  @ApiModelProperty(example = "02358422785", required = true, value = "número do CPF do cliente favorecido da transação (11 dígitos).")
   @NotNull
 
 @Pattern(regexp="^\\d{11}$")   public String getCpf() {

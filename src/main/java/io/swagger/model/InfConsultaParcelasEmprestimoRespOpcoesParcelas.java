@@ -30,10 +30,10 @@ public class InfConsultaParcelasEmprestimoRespOpcoesParcelas   {
   }
 
   /**
-   * Quantidade de parcelas do empréstimo.
+   * Quantidade de parcelas do Empréstimo.
    * @return qntParcelas
   **/
-  @ApiModelProperty(example = "5", value = "Quantidade de parcelas do empréstimo.")
+  @ApiModelProperty(example = "5", value = "Quantidade de parcelas do Empréstimo.")
 
 @Pattern(regexp="^\\d+$")   public String getQntParcelas() {
     return qntParcelas;
@@ -49,10 +49,10 @@ public class InfConsultaParcelasEmprestimoRespOpcoesParcelas   {
   }
 
   /**
-   * Valor de cada parcela do empréstimo (12 dígitos).
+   * Valor de cada parcela do Empréstimo (12 dígitos).
    * @return valorParcela
   **/
-  @ApiModelProperty(example = "000000005000", value = "Valor de cada parcela do empréstimo (12 dígitos).")
+  @ApiModelProperty(example = "000000005000", value = "Valor de cada parcela do Empréstimo (12 dígitos).")
 
 @Pattern(regexp="^\\d{12}$")   public String getValorParcela() {
     return valorParcela;

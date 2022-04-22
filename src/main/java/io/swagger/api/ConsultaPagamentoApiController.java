@@ -37,7 +37,7 @@ public class ConsultaPagamentoApiController implements ConsultaPagamentoApi {
         this.request = request;
     }
 
-    public ResponseEntity<ConsultaPagamentoResp> consultaPagamentoPost(@ApiParam(value = "Requisição de consulta de pagamentos." ,required=true )  @Valid @RequestBody ConsultaPagamentoReq body,@ApiParam(value = "Tipo de autenticação requerida." ,required=true) @RequestHeader(value="authenticationType", required=true) String authenticationType,@ApiParam(value = "Identificação do cliente." ,required=true) @RequestHeader(value="clientId", required=true) String clientId,@ApiParam(value = "Chave para validação do acesso ao serviço." ,required=true) @RequestHeader(value="token", required=true) String token) {
+    public ResponseEntity<ConsultaPagamentoResp> consultaPagamentoPost(@ApiParam(value = "requisição de consulta de pagamentos." ,required=true )  @Valid @RequestBody ConsultaPagamentoReq body,@ApiParam(value = "Tipo de autenticação requerida." ,required=true) @RequestHeader(value="authenticationType", required=true) String authenticationType,@ApiParam(value = "identificação do cliente." ,required=true) @RequestHeader(value="clientId", required=true) String clientId,@ApiParam(value = "Chave para validação do acesso ao serviço." ,required=true) @RequestHeader(value="token", required=true) String token) {
         String accept = request.getHeader("Accept");
         return new ResponseEntity<ConsultaPagamentoResp>(HttpStatus.NOT_IMPLEMENTED);
     }

@@ -70,10 +70,10 @@ public class PositiveIdQuestionObj   {
   }
 
   /**
-   * Número de dígitos esperado para a resposta.
+   * número de dígitos esperado para a resposta.
    * @return tamResposta
   **/
-  @ApiModelProperty(example = "2", required = true, value = "Número de dígitos esperado para a resposta.")
+  @ApiModelProperty(example = "2", required = true, value = "número de dígitos esperado para a resposta.")
   @NotNull
 
 @Pattern(regexp="^\\d+$")   public String getTamResposta() {

@@ -33,6 +33,6 @@ public interface DemonstrativoINSSConfApi {
     @RequestMapping(value = "/demonstrativoINSSConf",
         consumes = { "application/json" },
         method = RequestMethod.POST)
-    ResponseEntity<Void> demonstrativoINSSConfPost(@ApiParam(value = "Requisição de confirmação de operação de demonstrativo INSS." ,required=true )  @Valid @RequestBody TransacConf body,@ApiParam(value = "Tipo de autenticação requerida." ,required=true) @RequestHeader(value="authenticationType", required=true) String authenticationType,@ApiParam(value = "Identificação do cliente." ,required=true) @RequestHeader(value="clientId", required=true) String clientId,@ApiParam(value = "Chave para validação do acesso ao serviço." ,required=true) @RequestHeader(value="token", required=true) String token);
+    ResponseEntity<Void> demonstrativoINSSConfPost(@ApiParam(value = "requisição de Confirmação de operação de demonstrativo INSS." ,required=true )  @Valid @RequestBody TransacConf body,@ApiParam(value = "Tipo de autenticação requerida." ,required=true) @RequestHeader(value="authenticationType", required=true) String authenticationType,@ApiParam(value = "identificação do cliente." ,required=true) @RequestHeader(value="clientId", required=true) String clientId,@ApiParam(value = "Chave para validação do acesso ao serviço." ,required=true) @RequestHeader(value="token", required=true) String token);
 
 }

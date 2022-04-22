@@ -13,9 +13,9 @@ import javax.validation.Valid;
 import javax.validation.constraints.*;
 
 /**
- * Tema que sará utilizado para montar o layout do usuário.
+ * Tema que será utilizado para montar o layout do usuário.
  */
-@ApiModel(description = "Tema que sará utilizado para montar o layout do usuário.")
+@ApiModel(description = "Tema que será utilizado para montar o layout do usuário.")
 @Validated
 public class InfConsultaTitulosCapitalizacaoRespTema   {
   @JsonProperty("estilos")

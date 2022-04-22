@@ -26,7 +26,7 @@ import java.util.Map;
 @Api(value = "extrato", description = "the extrato API")
 public interface ExtratoApi {
 
-    @ApiOperation(value = "", nickname = "extratoPost", notes = "Operação de extrato.", response = ExtratoResp.class, tags={  })
+    @ApiOperation(value = "", nickname = "extratoPost", notes = "operação de extrato.", response = ExtratoResp.class, tags={  })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "Retorno com sucesso ou com Erro de negócio.", response = ExtratoResp.class),
         @ApiResponse(code = 400, message = "Bad Request ou Erro interno ao qual inviabilizou uma resposta."),
@@ -35,6 +35,6 @@ public interface ExtratoApi {
         produces = { "application/json" }, 
         consumes = { "application/json" },
         method = RequestMethod.POST)
-    ResponseEntity<ExtratoResp> extratoPost(@ApiParam(value = "Requisição de operação de extrato." ,required=true )  @Valid @RequestBody ExtratoReq body,@ApiParam(value = "Tipo de autenticação requerida." ,required=true) @RequestHeader(value="authenticationType", required=true) String authenticationType,@ApiParam(value = "Identificação do cliente." ,required=true) @RequestHeader(value="clientId", required=true) String clientId,@ApiParam(value = "Chave para validação do acesso ao serviço." ,required=true) @RequestHeader(value="token", required=true) String token);
+    ResponseEntity<ExtratoResp> extratoPost(@ApiParam(value = "requisição de operação de extrato." ,required=true )  @Valid @RequestBody ExtratoReq body,@ApiParam(value = "Tipo de autenticação requerida." ,required=true) @RequestHeader(value="authenticationType", required=true) String authenticationType,@ApiParam(value = "identificação do cliente." ,required=true) @RequestHeader(value="clientId", required=true) String clientId,@ApiParam(value = "Chave para validação do acesso ao serviço." ,required=true) @RequestHeader(value="token", required=true) String token);
 
 }

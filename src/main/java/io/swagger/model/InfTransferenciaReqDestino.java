@@ -11,13 +11,13 @@ import javax.validation.Valid;
 import javax.validation.constraints.*;
 
 /**
- * Informações sobre a destino da transferência.
+ * Informações sobre a destino da Transferência.
  */
-@ApiModel(description = "Informações sobre a destino da transferência.")
+@ApiModel(description = "Informações sobre a destino da Transferência.")
 @Validated
 public class InfTransferenciaReqDestino   {
   /**
-   * Tipo de conta de destino (CC– Conta Corrente, CP-Conta Poupança, CS-Conta Salário)
+   * Tipo de conta de destino (CC-Conta Corrente, CP-Conta poupança, CS-Conta Salário)
    */
   public enum TipoContaEnum {
     CC("CC"),
@@ -72,10 +72,10 @@ public class InfTransferenciaReqDestino   {
   }
 
   /**
-   * Tipo de conta de destino (CC– Conta Corrente, CP-Conta Poupança, CS-Conta Salário)
+   * Tipo de conta de destino (CC-Conta Corrente, CP-Conta poupança, CS-Conta Salário)
    * @return tipoConta
   **/
-  @ApiModelProperty(example = "CC", value = "Tipo de conta de destino (CC– Conta Corrente, CP-Conta Poupança, CS-Conta Salário)")
+  @ApiModelProperty(example = "CC", value = "Tipo de conta de destino (CC-Conta Corrente, CP-Conta poupança, CS-Conta Salário)")
 
   public TipoContaEnum getTipoConta() {
     return tipoConta;
@@ -110,10 +110,10 @@ public class InfTransferenciaReqDestino   {
   }
 
   /**
-   * Número da agência de destino.
+   * número da Agência de destino.
    * @return numAgencia
   **/
-  @ApiModelProperty(example = "4030", value = "Número da agência de destino.")
+  @ApiModelProperty(example = "4030", value = "número da Agência de destino.")
 
 @Pattern(regexp="^\\d+$")   public String getNumAgencia() {
     return numAgencia;
@@ -129,10 +129,10 @@ public class InfTransferenciaReqDestino   {
   }
 
   /**
-   * Número da conta de destino.
+   * número da conta de destino.
    * @return numConta
   **/
-  @ApiModelProperty(example = "1234567890", value = "Número da conta de destino.")
+  @ApiModelProperty(example = "1234567890", value = "número da conta de destino.")
 
 @Pattern(regexp="^\\d+$")   public String getNumConta() {
     return numConta;
@@ -148,10 +148,10 @@ public class InfTransferenciaReqDestino   {
   }
 
   /**
-   * Número do CPF ou CNPJ de detino da transferência (11 dígitos ou 14 dígitos respectivamente).
+   * número do CPF ou CNPJ de detino da Transferência (11 dígitos ou 14 dígitos respectivamente).
    * @return cpfcnpj
   **/
-  @ApiModelProperty(example = "02358422785", value = "Número do CPF ou CNPJ de detino da transferência (11 dígitos ou 14 dígitos respectivamente).")
+  @ApiModelProperty(example = "02358422785", value = "número do CPF ou CNPJ de detino da Transferência (11 dígitos ou 14 dígitos respectivamente).")
 
 @Pattern(regexp="^\\d{14}|\\d{11}$")   public String getCpfcnpj() {
     return cpfcnpj;

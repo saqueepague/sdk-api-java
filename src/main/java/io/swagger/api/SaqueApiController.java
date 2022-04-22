@@ -37,7 +37,7 @@ public class SaqueApiController implements SaqueApi {
         this.request = request;
     }
 
-    public ResponseEntity<SaqueResp> saquePost(@ApiParam(value = "Requisição de operação de saque." ,required=true )  @Valid @RequestBody SaqueReq body,@ApiParam(value = "Tipo de autenticação requerida." ,required=true) @RequestHeader(value="authenticationType", required=true) String authenticationType,@ApiParam(value = "Identificação do cliente." ,required=true) @RequestHeader(value="clientId", required=true) String clientId,@ApiParam(value = "Chave para validação do acesso ao serviço." ,required=true) @RequestHeader(value="token", required=true) String token) {
+    public ResponseEntity<SaqueResp> saquePost(@ApiParam(value = "requisição de operação de saque." ,required=true )  @Valid @RequestBody SaqueReq body,@ApiParam(value = "Tipo de autenticação requerida." ,required=true) @RequestHeader(value="authenticationType", required=true) String authenticationType,@ApiParam(value = "identificação do cliente." ,required=true) @RequestHeader(value="clientId", required=true) String clientId,@ApiParam(value = "Chave para validação do acesso ao serviço." ,required=true) @RequestHeader(value="token", required=true) String token) {
         String accept = request.getHeader("Accept");
         return new ResponseEntity<SaqueResp>(HttpStatus.NOT_IMPLEMENTED);
     }

@@ -30,10 +30,10 @@ public class InfConsultaPagamentoReq   {
   }
 
   /**
-   * Número do CPF (11 dígitos).
+   * número do CPF (11 dígitos).
    * @return cpf
   **/
-  @ApiModelProperty(example = "01234567890", value = "Número do CPF (11 dígitos).")
+  @ApiModelProperty(example = "01234567890", value = "número do CPF (11 dígitos).")
 
 @Pattern(regexp="^\\d{11}$")   public String getCpf() {
     return cpf;
@@ -49,10 +49,10 @@ public class InfConsultaPagamentoReq   {
   }
 
   /**
-   * Número do CNPJ (14 dígitos).
+   * número do CNPJ (14 dígitos).
    * @return cnpj
   **/
-  @ApiModelProperty(example = "01234567890123", value = "Número do CNPJ (14 dígitos).")
+  @ApiModelProperty(example = "01234567890123", value = "número do CNPJ (14 dígitos).")
 
 @Pattern(regexp="^\\d{14}$")   public String getCnpj() {
     return cnpj;

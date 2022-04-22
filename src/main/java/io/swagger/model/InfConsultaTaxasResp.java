@@ -13,9 +13,9 @@ import javax.validation.Valid;
 import javax.validation.constraints.*;
 
 /**
- * Informações da resposta de consulta de taxas dinâmicas para depósito e saque de carteira digital.
+ * Informações da resposta de consulta de taxas dinâmicas para Depósito e saque de carteira digital.
  */
-@ApiModel(description = "Informações da resposta de consulta de taxas dinâmicas para depósito e saque de carteira digital.")
+@ApiModel(description = "Informações da resposta de consulta de taxas dinâmicas para Depósito e saque de carteira digital.")
 @Validated
 public class InfConsultaTaxasResp   {
   @JsonProperty("transactions_fees")

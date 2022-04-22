@@ -26,7 +26,7 @@ import java.util.Map;
 @Api(value = "emprestimo", description = "the emprestimo API")
 public interface EmprestimoApi {
 
-    @ApiOperation(value = "", nickname = "emprestimoPost", notes = "Operação de empréstimo.", response = EmprestimoResp.class, tags={  })
+    @ApiOperation(value = "", nickname = "emprestimoPost", notes = "operação de Empréstimo.", response = EmprestimoResp.class, tags={  })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "Retorno com sucesso ou com Erro de negócio.", response = EmprestimoResp.class),
         @ApiResponse(code = 400, message = "Bad Request ou Erro interno ao qual inviabilizou uma resposta."),
@@ -35,6 +35,6 @@ public interface EmprestimoApi {
         produces = { "application/json" }, 
         consumes = { "application/json" },
         method = RequestMethod.POST)
-    ResponseEntity<EmprestimoResp> emprestimoPost(@ApiParam(value = "Requisição de empréstimo." ,required=true )  @Valid @RequestBody EmprestimoReq body,@ApiParam(value = "Tipo de autenticação requerida." ,required=true) @RequestHeader(value="authenticationType", required=true) String authenticationType,@ApiParam(value = "Identificação do cliente." ,required=true) @RequestHeader(value="clientId", required=true) String clientId,@ApiParam(value = "Chave para validação do acesso ao serviço." ,required=true) @RequestHeader(value="token", required=true) String token);
+    ResponseEntity<EmprestimoResp> emprestimoPost(@ApiParam(value = "requisição de Empréstimo." ,required=true )  @Valid @RequestBody EmprestimoReq body,@ApiParam(value = "Tipo de autenticação requerida." ,required=true) @RequestHeader(value="authenticationType", required=true) String authenticationType,@ApiParam(value = "identificação do cliente." ,required=true) @RequestHeader(value="clientId", required=true) String clientId,@ApiParam(value = "Chave para validação do acesso ao serviço." ,required=true) @RequestHeader(value="token", required=true) String token);
 
 }

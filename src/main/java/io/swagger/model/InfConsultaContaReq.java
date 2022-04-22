@@ -11,9 +11,9 @@ import javax.validation.Valid;
 import javax.validation.constraints.*;
 
 /**
- * Informações da requisição de consulta de conta do favorecido do depósito.
+ * Informações da requisição de consulta de conta do favorecido do Depósito.
  */
-@ApiModel(description = "Informações da requisição de consulta de conta do favorecido do depósito.")
+@ApiModel(description = "Informações da requisição de consulta de conta do favorecido do Depósito.")
 @Validated
 public class InfConsultaContaReq   {
   @JsonProperty("codBanco")
@@ -26,7 +26,7 @@ public class InfConsultaContaReq   {
   private String numConta = null;
 
   /**
-   * Indica a modalidade de depósito desejada (2 dígitos, 00 = dinheiro, 01 = cheque).
+   * Indica a modalidade de Depósito desejada (2 dígitos, 00 = dinheiro, 01 = cheque).
    */
   public enum ModalidadeDepositoEnum {
     _00("00"),
@@ -64,9 +64,6 @@ public class InfConsultaContaReq   {
   @JsonProperty("cpfFavorecido")
   private String cpfFavorecido = null;
 
-  @JsonProperty("ispb")
-  private String ispb = null;
-
   public InfConsultaContaReq codBanco(String codBanco) {
     this.codBanco = codBanco;
     return this;
@@ -92,10 +89,10 @@ public class InfConsultaContaReq   {
   }
 
   /**
-   * Número da agência utilizada na operação.
+   * número da Agência utilizada na operação.
    * @return numAgencia
   **/
-  @ApiModelProperty(example = "4029", value = "Número da agência utilizada na operação.")
+  @ApiModelProperty(example = "4029", value = "número da Agência utilizada na operação.")
 
 @Pattern(regexp="^\\d+$")   public String getNumAgencia() {
     return numAgencia;
@@ -111,10 +108,10 @@ public class InfConsultaContaReq   {
   }
 
   /**
-   * Número da conta utilizada na operação.
+   * número da conta utilizada na operação.
    * @return numConta
   **/
-  @ApiModelProperty(example = "0082348296", value = "Número da conta utilizada na operação.")
+  @ApiModelProperty(example = "0082348296", value = "número da conta utilizada na operação.")
 
 @Pattern(regexp="^\\d+$")   public String getNumConta() {
     return numConta;
@@ -130,10 +127,10 @@ public class InfConsultaContaReq   {
   }
 
   /**
-   * Indica a modalidade de depósito desejada (2 dígitos, 00 = dinheiro, 01 = cheque).
+   * Indica a modalidade de Depósito desejada (2 dígitos, 00 = dinheiro, 01 = cheque).
    * @return modalidadeDeposito
   **/
-  @ApiModelProperty(example = "00", required = true, value = "Indica a modalidade de depósito desejada (2 dígitos, 00 = dinheiro, 01 = cheque).")
+  @ApiModelProperty(example = "00", required = true, value = "Indica a modalidade de Depósito desejada (2 dígitos, 00 = dinheiro, 01 = cheque).")
   @NotNull
 
   public ModalidadeDepositoEnum getModalidadeDeposito() {
@@ -169,10 +166,10 @@ public class InfConsultaContaReq   {
   }
 
   /**
-   * Número do CPF ou CNPJ do cliente favorecido da transação (11 dígitos ou 14 dígitos respectivamente).
+   * número do CPF ou CNPJ do cliente favorecido da transação (11 dígitos ou 14 dígitos respectivamente).
    * @return cpfFavorecido
   **/
-  @ApiModelProperty(example = "02358422785", value = "Número do CPF ou CNPJ do cliente favorecido da transação (11 dígitos ou 14 dígitos respectivamente).")
+  @ApiModelProperty(example = "02358422785", value = "número do CPF ou CNPJ do cliente favorecido da transação (11 dígitos ou 14 dígitos respectivamente).")
 
 @Pattern(regexp="^\\d{14}|\\d{11}$")   public String getCpfFavorecido() {
     return cpfFavorecido;
@@ -180,25 +177,6 @@ public class InfConsultaContaReq   {
 
   public void setCpfFavorecido(String cpfFavorecido) {
     this.cpfFavorecido = cpfFavorecido;
-  }
-
-  public InfConsultaContaReq ispb(String ispb) {
-    this.ispb = ispb;
-    return this;
-  }
-
-  /**
-   * Código da Intituição registrada no Sistema Brasileiro de Pagamentos. Campo obrigatório, para transações de Saque QR Code, afim de identificar a instituição parceira da transação.
-   * @return ispb
-  **/
-  @ApiModelProperty(example = "01234567", value = "Código da Intituição registrada no Sistema Brasileiro de Pagamentos. Campo obrigatório, para transações de Saque QR Code, afim de identificar a instituição parceira da transação.")
-
-@Pattern(regexp="^\\d{8}$")   public String getIspb() {
-    return ispb;
-  }
-
-  public void setIspb(String ispb) {
-    this.ispb = ispb;
   }
 
 
@@ -216,13 +194,12 @@ public class InfConsultaContaReq   {
         Objects.equals(this.numConta, infConsultaContaReq.numConta) &&
         Objects.equals(this.modalidadeDeposito, infConsultaContaReq.modalidadeDeposito) &&
         Objects.equals(this.telefoneFavorecido, infConsultaContaReq.telefoneFavorecido) &&
-        Objects.equals(this.cpfFavorecido, infConsultaContaReq.cpfFavorecido) &&
-        Objects.equals(this.ispb, infConsultaContaReq.ispb);
+        Objects.equals(this.cpfFavorecido, infConsultaContaReq.cpfFavorecido);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(codBanco, numAgencia, numConta, modalidadeDeposito, telefoneFavorecido, cpfFavorecido, ispb);
+    return Objects.hash(codBanco, numAgencia, numConta, modalidadeDeposito, telefoneFavorecido, cpfFavorecido);
   }
 
   @Override
@@ -236,7 +213,6 @@ public class InfConsultaContaReq   {
     sb.append("    modalidadeDeposito: ").append(toIndentedString(modalidadeDeposito)).append("\n");
     sb.append("    telefoneFavorecido: ").append(toIndentedString(telefoneFavorecido)).append("\n");
     sb.append("    cpfFavorecido: ").append(toIndentedString(cpfFavorecido)).append("\n");
-    sb.append("    ispb: ").append(toIndentedString(ispb)).append("\n");
     sb.append("}");
     return sb.toString();
   }

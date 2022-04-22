@@ -13,9 +13,9 @@ import javax.validation.Valid;
 import javax.validation.constraints.*;
 
 /**
- * Informações da resposta da requisição de consulta de produtos disponíveis de recarga para o cartão informado pelo cliente.
+ * Informações da resposta da requisição de consulta de produtos disponíveis de recarga para o Cartão informado pelo cliente.
  */
-@ApiModel(description = "Informações da resposta da requisição de consulta de produtos disponíveis de recarga para o cartão informado pelo cliente.")
+@ApiModel(description = "Informações da resposta da requisição de consulta de produtos disponíveis de recarga para o Cartão informado pelo cliente.")
 @Validated
 public class InfConsultaProdutosRecargaResp   {
   @JsonProperty("products")
@@ -33,10 +33,10 @@ public class InfConsultaProdutosRecargaResp   {
   }
 
   /**
-   * Identificador e nomes dos produtos disponíveis para o cartão.
+   * Identificador e nomes dos produtos disponíveis para o Cartão.
    * @return products
   **/
-  @ApiModelProperty(required = true, value = "Identificador e nomes dos produtos disponíveis para o cartão.")
+  @ApiModelProperty(required = true, value = "Identificador e nomes dos produtos disponíveis para o Cartão.")
   @NotNull
   @Valid
   public List<InfConsultaProdutosRecargaRespProducts> getProducts() {
