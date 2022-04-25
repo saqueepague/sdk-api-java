@@ -15,14 +15,14 @@ import javax.validation.constraints.*;
 @ApiModel(description = "Informações da requisição de compra de Cartão presente.")
 @Validated
 public class InfEfetuarCompraCartaoPresenteReq   {
-  @JsonProperty("cpf")
-  private String cpf = null;
+  @JsonProperty("cpfCliente")
+  private String cpfCliente = null;
 
-  @JsonProperty("id")
-  private String id = null;
+  @JsonProperty("idCartaoPresente")
+  private String idCartaoPresente = null;
 
-  @JsonProperty("valor")
-  private String valor = null;
+  @JsonProperty("valorCartaoPresente")
+  private String valorCartaoPresente = null;
 
   @JsonProperty("ddd")
   private String ddd = null;
@@ -30,64 +30,61 @@ public class InfEfetuarCompraCartaoPresenteReq   {
   @JsonProperty("telefone")
   private String telefone = null;
 
-  public InfEfetuarCompraCartaoPresenteReq cpf(String cpf) {
-    this.cpf = cpf;
+  public InfEfetuarCompraCartaoPresenteReq cpfCliente(String cpfCliente) {
+    this.cpfCliente = cpfCliente;
     return this;
   }
 
   /**
    * CPF do cliente para a compra de Cartão presente.
-   * @return cpf
+   * @return cpfCliente
   **/
-  @ApiModelProperty(example = "12345678901", required = true, value = "CPF do cliente para a compra de Cartão presente.")
-  @NotNull
+  @ApiModelProperty(example = "12345678901", value = "CPF do cliente para a compra de Cartão presente.")
 
-@Pattern(regexp="^\\d{11}$")   public String getCpf() {
-    return cpf;
+@Pattern(regexp="^\\d{11}$")   public String getCpfCliente() {
+    return cpfCliente;
   }
 
-  public void setCpf(String cpf) {
-    this.cpf = cpf;
+  public void setCpfCliente(String cpfCliente) {
+    this.cpfCliente = cpfCliente;
   }
 
-  public InfEfetuarCompraCartaoPresenteReq id(String id) {
-    this.id = id;
+  public InfEfetuarCompraCartaoPresenteReq idCartaoPresente(String idCartaoPresente) {
+    this.idCartaoPresente = idCartaoPresente;
     return this;
   }
 
   /**
    * ID do produto para a compra de Cartão presente.
-   * @return id
+   * @return idCartaoPresente
   **/
-  @ApiModelProperty(example = "113183", required = true, value = "ID do produto para a compra de Cartão presente.")
-  @NotNull
+  @ApiModelProperty(example = "113183", value = "ID do produto para a compra de Cartão presente.")
 
-@Pattern(regexp="^.*$")   public String getId() {
-    return id;
+@Pattern(regexp="^.*$")   public String getIdCartaoPresente() {
+    return idCartaoPresente;
   }
 
-  public void setId(String id) {
-    this.id = id;
+  public void setIdCartaoPresente(String idCartaoPresente) {
+    this.idCartaoPresente = idCartaoPresente;
   }
 
-  public InfEfetuarCompraCartaoPresenteReq valor(String valor) {
-    this.valor = valor;
+  public InfEfetuarCompraCartaoPresenteReq valorCartaoPresente(String valorCartaoPresente) {
+    this.valorCartaoPresente = valorCartaoPresente;
     return this;
   }
 
   /**
    * Valor do Cartão presente.
-   * @return valor
+   * @return valorCartaoPresente
   **/
-  @ApiModelProperty(example = "000000005000", required = true, value = "Valor do Cartão presente.")
-  @NotNull
+  @ApiModelProperty(example = "000000005000", value = "Valor do Cartão presente.")
 
-@Pattern(regexp="^\\d{12}$")   public String getValor() {
-    return valor;
+@Pattern(regexp="^\\d{12}$")   public String getValorCartaoPresente() {
+    return valorCartaoPresente;
   }
 
-  public void setValor(String valor) {
-    this.valor = valor;
+  public void setValorCartaoPresente(String valorCartaoPresente) {
+    this.valorCartaoPresente = valorCartaoPresente;
   }
 
   public InfEfetuarCompraCartaoPresenteReq ddd(String ddd) {
@@ -140,16 +137,16 @@ public class InfEfetuarCompraCartaoPresenteReq   {
       return false;
     }
     InfEfetuarCompraCartaoPresenteReq infEfetuarCompraCartaoPresenteReq = (InfEfetuarCompraCartaoPresenteReq) o;
-    return Objects.equals(this.cpf, infEfetuarCompraCartaoPresenteReq.cpf) &&
-        Objects.equals(this.id, infEfetuarCompraCartaoPresenteReq.id) &&
-        Objects.equals(this.valor, infEfetuarCompraCartaoPresenteReq.valor) &&
+    return Objects.equals(this.cpfCliente, infEfetuarCompraCartaoPresenteReq.cpfCliente) &&
+        Objects.equals(this.idCartaoPresente, infEfetuarCompraCartaoPresenteReq.idCartaoPresente) &&
+        Objects.equals(this.valorCartaoPresente, infEfetuarCompraCartaoPresenteReq.valorCartaoPresente) &&
         Objects.equals(this.ddd, infEfetuarCompraCartaoPresenteReq.ddd) &&
         Objects.equals(this.telefone, infEfetuarCompraCartaoPresenteReq.telefone);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(cpf, id, valor, ddd, telefone);
+    return Objects.hash(cpfCliente, idCartaoPresente, valorCartaoPresente, ddd, telefone);
   }
 
   @Override
@@ -157,9 +154,9 @@ public class InfEfetuarCompraCartaoPresenteReq   {
     StringBuilder sb = new StringBuilder();
     sb.append("class InfEfetuarCompraCartaoPresenteReq {\n");
     
-    sb.append("    cpf: ").append(toIndentedString(cpf)).append("\n");
-    sb.append("    id: ").append(toIndentedString(id)).append("\n");
-    sb.append("    valor: ").append(toIndentedString(valor)).append("\n");
+    sb.append("    cpfCliente: ").append(toIndentedString(cpfCliente)).append("\n");
+    sb.append("    idCartaoPresente: ").append(toIndentedString(idCartaoPresente)).append("\n");
+    sb.append("    valorCartaoPresente: ").append(toIndentedString(valorCartaoPresente)).append("\n");
     sb.append("    ddd: ").append(toIndentedString(ddd)).append("\n");
     sb.append("    telefone: ").append(toIndentedString(telefone)).append("\n");
     sb.append("}");
