@@ -10,9 +10,9 @@ import javax.validation.Valid;
 import javax.validation.constraints.*;
 
 /**
- * Informações da requisição de Empréstimo.
+ * Informações da requisição de empréstimo.
  */
-@ApiModel(description = "Informações da requisição de Empréstimo.")
+@ApiModel(description = "Informações da requisição de empréstimo.")
 @Validated
 public class InfEmprestimoReq   {
   @JsonProperty("qntParcelas")
@@ -50,10 +50,10 @@ public class InfEmprestimoReq   {
   }
 
   /**
-   * número da Agência utilizada na operação.
+   * Número da agência utilizada na operação.
    * @return numAgencia
   **/
-  @ApiModelProperty(example = "4029", value = "número da Agência utilizada na operação.")
+  @ApiModelProperty(example = "4029", value = "Número da agência utilizada na operação.")
 
 @Pattern(regexp="^\\d+$")   public String getNumAgencia() {
     return numAgencia;
@@ -69,10 +69,10 @@ public class InfEmprestimoReq   {
   }
 
   /**
-   * número da conta utilizada na operação.
+   * Número da conta utilizada na operação.
    * @return numConta
   **/
-  @ApiModelProperty(example = "0082348296", value = "número da conta utilizada na operação.")
+  @ApiModelProperty(example = "0082348296", value = "Número da conta utilizada na operação.")
 
 @Pattern(regexp="^\\d+$")   public String getNumConta() {
     return numConta;

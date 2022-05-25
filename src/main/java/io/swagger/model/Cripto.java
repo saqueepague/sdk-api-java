@@ -84,10 +84,10 @@ public class Cripto   {
   }
 
   /**
-   * identificação positiva informada pelo usuário, caso utilizada, com no mínimo 8 dígitos corresponde às posições (botões) em cada tela apresentada. Caso a senha tenha menos de oito sílabas, são adicionados zeros para as telas não existentes (dados criptografados).
+   * Identificação positiva informada pelo usuário, caso utilizada, com no mínimo 8 dígitos corresponde às posições (botões) em cada tela apresentada. Caso a senha tenha menos de oito sílabas, são adicionados zeros para as telas não existentes (dados criptografados).
    * @return idPositiva
   **/
-  @ApiModelProperty(example = "q0WKgCM+wbXjzlY=", value = "identificação positiva informada pelo usuário, caso utilizada, com no mínimo 8 dígitos corresponde às posições (botões) em cada tela apresentada. Caso a senha tenha menos de oito sílabas, são adicionados zeros para as telas não existentes (dados criptografados).")
+  @ApiModelProperty(example = "q0WKgCM+wbXjzlY=", value = "Identificação positiva informada pelo usuário, caso utilizada, com no mínimo 8 dígitos corresponde às posições (botões) em cada tela apresentada. Caso a senha tenha menos de oito sílabas, são adicionados zeros para as telas não existentes (dados criptografados).")
 
 @Pattern(regexp="^.{8,}$")   public String getIdPositiva() {
     return idPositiva;
@@ -103,10 +103,10 @@ public class Cripto   {
   }
 
   /**
-   * Em caso de utilização de token para autenticação, contêm o token informado pelo usuário.
+   * Em caso de utilização de token para autenticação, contém o token informado pelo usuário.
    * @return token
   **/
-  @ApiModelProperty(example = "02C47DF604EB43B1", value = "Em caso de utilização de token para autenticação, contêm o token informado pelo usuário.")
+  @ApiModelProperty(example = "02C47DF604EB43B1", value = "Em caso de utilização de token para autenticação, contém o token informado pelo usuário.")
 
   public String getToken() {
     return token;
@@ -122,10 +122,10 @@ public class Cripto   {
   }
 
   /**
-   * Em caso de biometria, contêm o template gerado.
+   * Em caso de biometria, contém o template gerado.
    * @return templateBiometria
   **/
-  @ApiModelProperty(value = "Em caso de biometria, contêm o template gerado.")
+  @ApiModelProperty(value = "Em caso de biometria, contém o template gerado.")
 
   public String getTemplateBiometria() {
     return templateBiometria;
@@ -141,10 +141,10 @@ public class Cripto   {
   }
 
   /**
-   * Em caso de Cartão com chip, contêm o criptograma dele.
+   * Em caso de cartão com chip, contém o criptograma dele.
    * @return criptogramaChip
   **/
-  @ApiModelProperty(value = "Em caso de Cartão com chip, contêm o criptograma dele.")
+  @ApiModelProperty(value = "Em caso de cartão com chip, contém o criptograma dele.")
 
   public String getCriptogramaChip() {
     return criptogramaChip;

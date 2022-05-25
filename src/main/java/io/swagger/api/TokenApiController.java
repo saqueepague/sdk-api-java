@@ -36,7 +36,7 @@ public class TokenApiController implements TokenApi {
         this.request = request;
     }
 
-    public ResponseEntity<InfTokenResp> tokenPost(@ApiParam(value = "Tipo de autenticação requerida." ,required=true) @RequestHeader(value="authenticationType", required=true) String authenticationType,@ApiParam(value = "identificação do cliente." ,required=true) @RequestHeader(value="clientId", required=true) String clientId,@ApiParam(value = "Cliente Secret." ,required=true) @RequestHeader(value="clientSecret", required=true) String clientSecret) {
+    public ResponseEntity<InfTokenResp> tokenPost(@ApiParam(value = "Tipo de autenticação requerida." ,required=true) @RequestHeader(value="authenticationType", required=true) String authenticationType,@ApiParam(value = "Identificação do cliente." ,required=true) @RequestHeader(value="clientId", required=true) String clientId,@ApiParam(value = "Cliente Secret." ,required=true) @RequestHeader(value="clientSecret", required=true) String clientSecret) {
         String accept = request.getHeader("Accept");
         return new ResponseEntity<InfTokenResp>(HttpStatus.NOT_IMPLEMENTED);
     }

@@ -10,9 +10,9 @@ import javax.validation.Valid;
 import javax.validation.constraints.*;
 
 /**
- * Informações da requisição de consulta de condições de parcelamento de Empréstimo.
+ * Informações da requisição de consulta de condições de parcelamento de empréstimo.
  */
-@ApiModel(description = "Informações da requisição de consulta de condições de parcelamento de Empréstimo.")
+@ApiModel(description = "Informações da requisição de consulta de condições de parcelamento de empréstimo.")
 @Validated
 public class InfConsultaParcelasEmprestimoReq   {
   @JsonProperty("qtdParcelas")
@@ -52,10 +52,10 @@ public class InfConsultaParcelasEmprestimoReq   {
   }
 
   /**
-   * número da Agência utilizada na operação.
+   * Número da agência utilizada na operação.
    * @return numAgencia
   **/
-  @ApiModelProperty(example = "4029", value = "número da Agência utilizada na operação.")
+  @ApiModelProperty(example = "4029", value = "Número da agência utilizada na operação.")
 
 @Pattern(regexp="^\\d+$")   public String getNumAgencia() {
     return numAgencia;
@@ -71,10 +71,10 @@ public class InfConsultaParcelasEmprestimoReq   {
   }
 
   /**
-   * número da conta utilizada na operação.
+   * Número da conta utilizada na operação.
    * @return numConta
   **/
-  @ApiModelProperty(example = "0082348296", value = "número da conta utilizada na operação.")
+  @ApiModelProperty(example = "0082348296", value = "Número da conta utilizada na operação.")
 
 @Pattern(regexp="^\\d+$")   public String getNumConta() {
     return numConta;
@@ -90,10 +90,10 @@ public class InfConsultaParcelasEmprestimoReq   {
   }
 
   /**
-   * número do CPF do cliente (11 dígitos).
+   * Número do CPF do cliente (11 dígitos).
    * @return cpfFavorecido
   **/
-  @ApiModelProperty(example = "02358422785", value = "número do CPF do cliente (11 dígitos).")
+  @ApiModelProperty(example = "02358422785", value = "Número do CPF do cliente (11 dígitos).")
 
 @Pattern(regexp="^\\d{11}$")   public String getCpfFavorecido() {
     return cpfFavorecido;

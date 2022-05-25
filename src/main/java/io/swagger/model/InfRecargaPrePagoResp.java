@@ -10,9 +10,9 @@ import javax.validation.Valid;
 import javax.validation.constraints.*;
 
 /**
- * Informações de retorno da recarga de celular Pré-Pago.
+ * Informações de retorno da recarga de celular pré-pago.
  */
-@ApiModel(description = "Informações de retorno da recarga de celular Pré-Pago.")
+@ApiModel(description = "Informações de retorno da recarga de celular pré-pago.")
 @Validated
 public class InfRecargaPrePagoResp   {
   @JsonProperty("idRecarga")
@@ -49,10 +49,10 @@ public class InfRecargaPrePagoResp   {
   }
 
   /**
-   * Bônus adicional recebido na recarga Pré-Pago.
+   * Bônus adicional recebido na recarga pré-pago.
    * @return bonus
   **/
-  @ApiModelProperty(example = "000000000400", value = "Bônus adicional recebido na recarga Pré-Pago.")
+  @ApiModelProperty(example = "000000000400", value = "Bônus adicional recebido na recarga pré-pago.")
 
 @Pattern(regexp="^\\d{12}$")   public String getBonus() {
     return bonus;

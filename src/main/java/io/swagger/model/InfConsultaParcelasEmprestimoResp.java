@@ -13,9 +13,9 @@ import javax.validation.Valid;
 import javax.validation.constraints.*;
 
 /**
- * Informações da resposta da requisição de consulta de condições de parcelamento de Empréstimo.
+ * Informações da resposta da requisição de consulta de condições de parcelamento de empréstimo.
  */
-@ApiModel(description = "Informações da resposta da requisição de consulta de condições de parcelamento de Empréstimo.")
+@ApiModel(description = "Informações da resposta da requisição de consulta de condições de parcelamento de empréstimo.")
 @Validated
 public class InfConsultaParcelasEmprestimoResp   {
   @JsonProperty("dataPrimeiraParcela")
@@ -46,10 +46,10 @@ public class InfConsultaParcelasEmprestimoResp   {
   }
 
   /**
-   * Data da primeira parcela do Empréstimo (AAAAMMDD).
+   * Data da primeira parcela do empréstimo (AAAAMMDD).
    * @return dataPrimeiraParcela
   **/
-  @ApiModelProperty(example = "20181122", value = "Data da primeira parcela do Empréstimo (AAAAMMDD).")
+  @ApiModelProperty(example = "20181122", value = "Data da primeira parcela do empréstimo (AAAAMMDD).")
 
 @Pattern(regexp="^\\d{8}$")   public String getDataPrimeiraParcela() {
     return dataPrimeiraParcela;
@@ -105,10 +105,10 @@ public class InfConsultaParcelasEmprestimoResp   {
   }
 
   /**
-   * Valor total disponível para Empréstimo (12 caracteres, incluindo centavos).
+   * Valor total disponível para empréstimo (12 caracteres, incluindo centavos).
    * @return valorTotalDisponivel
   **/
-  @ApiModelProperty(example = "000000700000", required = true, value = "Valor total disponível para Empréstimo (12 caracteres, incluindo centavos).")
+  @ApiModelProperty(example = "000000700000", required = true, value = "Valor total disponível para empréstimo (12 caracteres, incluindo centavos).")
   @NotNull
 
 @Pattern(regexp="^\\d{12}$")   public String getValorTotalDisponivel() {
@@ -125,10 +125,10 @@ public class InfConsultaParcelasEmprestimoResp   {
   }
 
   /**
-   * Valor mínimo permitido de Empréstimo (12 caracteres, incluindo centavos).
+   * Valor mínimo permitido de empréstimo (12 caracteres, incluindo centavos).
    * @return limiteMinimoEmprestimo
   **/
-  @ApiModelProperty(example = "000000500000", required = true, value = "Valor mínimo permitido de Empréstimo (12 caracteres, incluindo centavos).")
+  @ApiModelProperty(example = "000000500000", required = true, value = "Valor mínimo permitido de empréstimo (12 caracteres, incluindo centavos).")
   @NotNull
 
 @Pattern(regexp="^\\d{12}$")   public String getLimiteMinimoEmprestimo() {
@@ -145,10 +145,10 @@ public class InfConsultaParcelasEmprestimoResp   {
   }
 
   /**
-   * Valor máximo permitido de Empréstimo (12 caracteres, incluindo centavos).
+   * Valor máximo permitido de empréstimo (12 caracteres, incluindo centavos).
    * @return limiteMaximoEmprestimo
   **/
-  @ApiModelProperty(example = "000005000000", required = true, value = "Valor máximo permitido de Empréstimo (12 caracteres, incluindo centavos).")
+  @ApiModelProperty(example = "000005000000", required = true, value = "Valor máximo permitido de empréstimo (12 caracteres, incluindo centavos).")
   @NotNull
 
 @Pattern(regexp="^\\d{12}$")   public String getLimiteMaximoEmprestimo() {

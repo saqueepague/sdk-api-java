@@ -26,7 +26,7 @@ import java.util.Map;
 @Api(value = "saque", description = "the saque API")
 public interface SaqueApi {
 
-    @ApiOperation(value = "", nickname = "saquePost", notes = "operação de saque de dinheiro em moeda local ou estrangeira.", response = SaqueResp.class, tags={  })
+    @ApiOperation(value = "", nickname = "saquePost", notes = "Operação de saque de dinheiro em moeda local ou estrangeira.", response = SaqueResp.class, tags={  })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "Retorno com sucesso ou com Erro de negócio.", response = SaqueResp.class),
         @ApiResponse(code = 400, message = "Bad Request ou Erro interno ao qual inviabilizou uma resposta."),
@@ -35,6 +35,6 @@ public interface SaqueApi {
         produces = { "application/json" }, 
         consumes = { "application/json" },
         method = RequestMethod.POST)
-    ResponseEntity<SaqueResp> saquePost(@ApiParam(value = "requisição de operação de saque." ,required=true )  @Valid @RequestBody SaqueReq body,@ApiParam(value = "Tipo de autenticação requerida." ,required=true) @RequestHeader(value="authenticationType", required=true) String authenticationType,@ApiParam(value = "identificação do cliente." ,required=true) @RequestHeader(value="clientId", required=true) String clientId,@ApiParam(value = "Chave para validação do acesso ao serviço." ,required=true) @RequestHeader(value="token", required=true) String token);
+    ResponseEntity<SaqueResp> saquePost(@ApiParam(value = "Requisição de operação de saque." ,required=true )  @Valid @RequestBody SaqueReq body,@ApiParam(value = "Tipo de autenticação requerida." ,required=true) @RequestHeader(value="authenticationType", required=true) String authenticationType,@ApiParam(value = "Identificação do cliente." ,required=true) @RequestHeader(value="clientId", required=true) String clientId,@ApiParam(value = "Chave para validação do acesso ao serviço." ,required=true) @RequestHeader(value="token", required=true) String token);
 
 }

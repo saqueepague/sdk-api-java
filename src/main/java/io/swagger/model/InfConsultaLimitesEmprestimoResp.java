@@ -10,9 +10,9 @@ import javax.validation.Valid;
 import javax.validation.constraints.*;
 
 /**
- * Informações da resposta da requisição de consulta de limite de Empréstimos.
+ * Informações da resposta da requisição de consulta de limite de empréstimos.
  */
-@ApiModel(description = "Informações da resposta da requisição de consulta de limite de Empréstimos.")
+@ApiModel(description = "Informações da resposta da requisição de consulta de limite de empréstimos.")
 @Validated
 public class InfConsultaLimitesEmprestimoResp   {
   @JsonProperty("nomeAgenciaBancaria")
@@ -73,10 +73,10 @@ public class InfConsultaLimitesEmprestimoResp   {
   }
 
   /**
-   * Valor mínimo permitido de Empréstimo (12 caracteres, incluindo centavos).
+   * Valor mínimo permitido de empréstimo (12 caracteres, incluindo centavos).
    * @return limiteMinimoEmprestimo
   **/
-  @ApiModelProperty(example = "000000500000", required = true, value = "Valor mínimo permitido de Empréstimo (12 caracteres, incluindo centavos).")
+  @ApiModelProperty(example = "000000500000", required = true, value = "Valor mínimo permitido de empréstimo (12 caracteres, incluindo centavos).")
   @NotNull
 
 @Pattern(regexp="^\\d{12}$")   public String getLimiteMinimoEmprestimo() {
@@ -93,10 +93,10 @@ public class InfConsultaLimitesEmprestimoResp   {
   }
 
   /**
-   * Valor máximo permitido de Empréstimo (12 caracteres, incluindo centavos).
+   * Valor máximo permitido de empréstimo (12 caracteres, incluindo centavos).
    * @return limiteMaximoEmprestimo
   **/
-  @ApiModelProperty(example = "000005000000", required = true, value = "Valor máximo permitido de Empréstimo (12 caracteres, incluindo centavos).")
+  @ApiModelProperty(example = "000005000000", required = true, value = "Valor máximo permitido de empréstimo (12 caracteres, incluindo centavos).")
   @NotNull
 
 @Pattern(regexp="^\\d{12}$")   public String getLimiteMaximoEmprestimo() {

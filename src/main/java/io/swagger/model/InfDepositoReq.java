@@ -10,9 +10,9 @@ import javax.validation.Valid;
 import javax.validation.constraints.*;
 
 /**
- * Informações da requisição de Depósito.
+ * Informações da requisição de depósito.
  */
-@ApiModel(description = "Informações da requisição de Depósito.")
+@ApiModel(description = "Informações da requisição de depósito.")
 @Validated
 public class InfDepositoReq   {
   @JsonProperty("nomeDepositante")
@@ -45,16 +45,19 @@ public class InfDepositoReq   {
   @JsonProperty("identificacao")
   private String identificacao = null;
 
+  @JsonProperty("tipoConta")
+  private String tipoConta = null;
+
   public InfDepositoReq nomeDepositante(String nomeDepositante) {
     this.nomeDepositante = nomeDepositante;
     return this;
   }
 
   /**
-   * Nome do cliente realizando o Depósito.
+   * Nome do cliente realizando o depósito.
    * @return nomeDepositante
   **/
-  @ApiModelProperty(example = "Carl Edward Sagan", value = "Nome do cliente realizando o Depósito.")
+  @ApiModelProperty(example = "Carl Edward Sagan", value = "Nome do cliente realizando o depósito.")
 
   public String getNomeDepositante() {
     return nomeDepositante;
@@ -70,10 +73,10 @@ public class InfDepositoReq   {
   }
 
   /**
-   * Telefone do cliente realizando o Depósito (11 dígitos = DDD com 0 quando número tem 8 dígitos, sem 0 quando número tem 9 dígitos).
+   * Telefone do cliente realizando o depósito (11 dígitos = DDD com 0 quando número tem 8 dígitos, sem 0 quando número tem 9 dígitos).
    * @return telefoneDepositante
   **/
-  @ApiModelProperty(example = "51999999999", value = "Telefone do cliente realizando o Depósito (11 dígitos = DDD com 0 quando número tem 8 dígitos, sem 0 quando número tem 9 dígitos).")
+  @ApiModelProperty(example = "51999999999", value = "Telefone do cliente realizando o depósito (11 dígitos = DDD com 0 quando número tem 8 dígitos, sem 0 quando número tem 9 dígitos).")
 
 @Pattern(regexp="^\\d{11}$")   public String getTelefoneDepositante() {
     return telefoneDepositante;
@@ -89,10 +92,10 @@ public class InfDepositoReq   {
   }
 
   /**
-   * número do CPF ou CNPJ do cliente realizando o Depósito (11 dígitos ou 14 dígitos respectivamente).
+   * Número do CPF ou CNPJ do cliente realizando o depósito (11 dígitos ou 14 dígitos respectivamente).
    * @return cpfDepositante
   **/
-  @ApiModelProperty(example = "02358422785", value = "número do CPF ou CNPJ do cliente realizando o Depósito (11 dígitos ou 14 dígitos respectivamente).")
+  @ApiModelProperty(example = "02358422785", value = "Número do CPF ou CNPJ do cliente realizando o depósito (11 dígitos ou 14 dígitos respectivamente).")
 
 @Pattern(regexp="^\\d{14}|\\d{11}$")   public String getCpfDepositante() {
     return cpfDepositante;
@@ -108,10 +111,10 @@ public class InfDepositoReq   {
   }
 
   /**
-   * Nome do cliente que receberá o Depósito.
+   * Nome do cliente que receberá o depósito.
    * @return nomeFavorecido
   **/
-  @ApiModelProperty(example = "Carl Edward Sagan", value = "Nome do cliente que receberá o Depósito.")
+  @ApiModelProperty(example = "Carl Edward Sagan", value = "Nome do cliente que receberá o depósito.")
 
   public String getNomeFavorecido() {
     return nomeFavorecido;
@@ -127,10 +130,10 @@ public class InfDepositoReq   {
   }
 
   /**
-   * Telefone do cliente que receberá o Depósito (11 dígitos = DDD com 0 quando número tem 8 dígitos, sem 0 quando número tem 9 dígitos).
+   * Telefone do cliente que receberá o depósito (11 dígitos = DDD com 0 quando número tem 8 dígitos, sem 0 quando número tem 9 dígitos).
    * @return telefoneFavorecido
   **/
-  @ApiModelProperty(example = "05199999999", value = "Telefone do cliente que receberá o Depósito (11 dígitos = DDD com 0 quando número tem 8 dígitos, sem 0 quando número tem 9 dígitos).")
+  @ApiModelProperty(example = "05199999999", value = "Telefone do cliente que receberá o depósito (11 dígitos = DDD com 0 quando número tem 8 dígitos, sem 0 quando número tem 9 dígitos).")
 
 @Pattern(regexp="^\\d{11}$")   public String getTelefoneFavorecido() {
     return telefoneFavorecido;
@@ -146,10 +149,10 @@ public class InfDepositoReq   {
   }
 
   /**
-   * número do CPF ou CNPJ do cliente que receberá o Depósito (11 dígitos ou 14 dígitos respectivamente).
+   * Número do CPF ou CNPJ do cliente que receberá o depósito (11 dígitos ou 14 dígitos respectivamente).
    * @return cpfFavorecido
   **/
-  @ApiModelProperty(example = "02358422785", value = "número do CPF ou CNPJ do cliente que receberá o Depósito (11 dígitos ou 14 dígitos respectivamente).")
+  @ApiModelProperty(example = "02358422785", value = "Número do CPF ou CNPJ do cliente que receberá o depósito (11 dígitos ou 14 dígitos respectivamente).")
 
 @Pattern(regexp="^\\d{14}|\\d{11}$")   public String getCpfFavorecido() {
     return cpfFavorecido;
@@ -184,10 +187,10 @@ public class InfDepositoReq   {
   }
 
   /**
-   * número da Agência utilizada na operação.
+   * Número da agência utilizada na operação.
    * @return numAgencia
   **/
-  @ApiModelProperty(example = "4029", value = "número da Agência utilizada na operação.")
+  @ApiModelProperty(example = "4029", value = "Número da agência utilizada na operação.")
 
 @Pattern(regexp="^\\d+$")   public String getNumAgencia() {
     return numAgencia;
@@ -203,10 +206,10 @@ public class InfDepositoReq   {
   }
 
   /**
-   * número da conta utilizada na operação.
+   * Número da conta utilizada na operação.
    * @return numConta
   **/
-  @ApiModelProperty(example = "0082348296", value = "número da conta utilizada na operação.")
+  @ApiModelProperty(example = "0082348296", value = "Número da conta utilizada na operação.")
 
 @Pattern(regexp="^\\d+$")   public String getNumConta() {
     return numConta;
@@ -222,10 +225,10 @@ public class InfDepositoReq   {
   }
 
   /**
-   * número identificador do Depósito (Depósito identificado), caso seja informada necessidade na consulta de conta.
+   * Número identificador do depósito (depósito identificado), caso seja informada necessidade na consulta de conta.
    * @return identificacao
   **/
-  @ApiModelProperty(example = "0223489", value = "número identificador do Depósito (Depósito identificado), caso seja informada necessidade na consulta de conta.")
+  @ApiModelProperty(example = "0223489", value = "Número identificador do depósito (depósito identificado), caso seja informada necessidade na consulta de conta.")
 
 @Pattern(regexp="^\\d{7}")   public String getIdentificacao() {
     return identificacao;
@@ -233,6 +236,25 @@ public class InfDepositoReq   {
 
   public void setIdentificacao(String identificacao) {
     this.identificacao = identificacao;
+  }
+
+  public InfDepositoReq tipoConta(String tipoConta) {
+    this.tipoConta = tipoConta;
+    return this;
+  }
+
+  /**
+   * Tipo de conta do extrato (CC = conta corrente, CP = conta poupança, CS = conta salário).
+   * @return tipoConta
+  **/
+  @ApiModelProperty(example = "CC", value = "Tipo de conta do extrato (CC = conta corrente, CP = conta poupança, CS = conta salário).")
+
+  public String getTipoConta() {
+    return tipoConta;
+  }
+
+  public void setTipoConta(String tipoConta) {
+    this.tipoConta = tipoConta;
   }
 
 
@@ -254,12 +276,13 @@ public class InfDepositoReq   {
         Objects.equals(this.codBanco, infDepositoReq.codBanco) &&
         Objects.equals(this.numAgencia, infDepositoReq.numAgencia) &&
         Objects.equals(this.numConta, infDepositoReq.numConta) &&
-        Objects.equals(this.identificacao, infDepositoReq.identificacao);
+        Objects.equals(this.identificacao, infDepositoReq.identificacao) &&
+        Objects.equals(this.tipoConta, infDepositoReq.tipoConta);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(nomeDepositante, telefoneDepositante, cpfDepositante, nomeFavorecido, telefoneFavorecido, cpfFavorecido, codBanco, numAgencia, numConta, identificacao);
+    return Objects.hash(nomeDepositante, telefoneDepositante, cpfDepositante, nomeFavorecido, telefoneFavorecido, cpfFavorecido, codBanco, numAgencia, numConta, identificacao, tipoConta);
   }
 
   @Override
@@ -277,6 +300,7 @@ public class InfDepositoReq   {
     sb.append("    numAgencia: ").append(toIndentedString(numAgencia)).append("\n");
     sb.append("    numConta: ").append(toIndentedString(numConta)).append("\n");
     sb.append("    identificacao: ").append(toIndentedString(identificacao)).append("\n");
+    sb.append("    tipoConta: ").append(toIndentedString(tipoConta)).append("\n");
     sb.append("}");
     return sb.toString();
   }

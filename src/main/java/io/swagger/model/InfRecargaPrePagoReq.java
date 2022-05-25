@@ -10,9 +10,9 @@ import javax.validation.Valid;
 import javax.validation.constraints.*;
 
 /**
- * Informações da requisição de recarga de celular Pré-Pago.
+ * Informações da requisição de recarga de celular pré-pago.
  */
-@ApiModel(description = "Informações da requisição de recarga de celular Pré-Pago.")
+@ApiModel(description = "Informações da requisição de recarga de celular pré-pago.")
 @Validated
 public class InfRecargaPrePagoReq   {
   @JsonProperty("nomeOperadora")
@@ -93,10 +93,10 @@ public class InfRecargaPrePagoReq   {
   }
 
   /**
-   * número do telefone, sem DDD, favorecido da operação de recarga.
+   * Número do telefone, sem DDD, favorecido da operação de recarga.
    * @return telefone
   **/
-  @ApiModelProperty(example = "982041311", required = true, value = "número do telefone, sem DDD, favorecido da operação de recarga.")
+  @ApiModelProperty(example = "982041311", required = true, value = "Número do telefone, sem DDD, favorecido da operação de recarga.")
   @NotNull
 
 @Pattern(regexp="^\\d+$")   public String getTelefone() {

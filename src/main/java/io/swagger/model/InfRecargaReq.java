@@ -10,9 +10,9 @@ import javax.validation.Valid;
 import javax.validation.constraints.*;
 
 /**
- * Informações sobre a requisição de recarga de Cartão Pré-Pago de transporte.
+ * Informações sobre a requisição de recarga de cartão pré-pago de transporte.
  */
-@ApiModel(description = "Informações sobre a requisição de recarga de Cartão Pré-Pago de transporte.")
+@ApiModel(description = "Informações sobre a requisição de recarga de cartão pré-pago de transporte.")
 @Validated
 public class InfRecargaReq   {
   @JsonProperty("telefone")
@@ -33,10 +33,10 @@ public class InfRecargaReq   {
   }
 
   /**
-   * número do telefone utilizado na operação (11 dígitos = DDD com 0 quando número tem 8 dígitos, sem 0 quando número tem 9 dígitos).
+   * Número do telefone utilizado na operação (11 dígitos = DDD com 0 quando número tem 8 dígitos, sem 0 quando número tem 9 dígitos).
    * @return telefone
   **/
-  @ApiModelProperty(example = "51999999999", value = "número do telefone utilizado na operação (11 dígitos = DDD com 0 quando número tem 8 dígitos, sem 0 quando número tem 9 dígitos).")
+  @ApiModelProperty(example = "51999999999", value = "Número do telefone utilizado na operação (11 dígitos = DDD com 0 quando número tem 8 dígitos, sem 0 quando número tem 9 dígitos).")
 
 @Pattern(regexp="^\\d{11}$")   public String getTelefone() {
     return telefone;
@@ -52,10 +52,10 @@ public class InfRecargaReq   {
   }
 
   /**
-   * número do Cartão utilizado na operação.
+   * Número do cartão utilizado na operação.
    * @return numCartao
   **/
-  @ApiModelProperty(example = "036200001842241", required = true, value = "número do Cartão utilizado na operação.")
+  @ApiModelProperty(example = "036200001842241", required = true, value = "Número do cartão utilizado na operação.")
   @NotNull
 
 @Pattern(regexp="^\\d+$")   public String getNumCartao() {

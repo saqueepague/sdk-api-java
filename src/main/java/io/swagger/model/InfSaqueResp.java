@@ -47,10 +47,10 @@ public class InfSaqueResp   {
   }
 
   /**
-   * Código da Intituição registrada no Sistema Brasileiro de Pagamentos. Campo obrigatério, para transações de Saque QR Code, afim de identificar a instituição parceira da transação.
+   * Código da Intituição registrada no Sistema Brasileiro de Pagamentos. Campo obrigatório, para transações de Saque QR Code, afim de identificar a instituição parceira da transação.
    * @return ispb
   **/
-  @ApiModelProperty(example = "01234567", value = "Código da Intituição registrada no Sistema Brasileiro de Pagamentos. Campo obrigatério, para transações de Saque QR Code, afim de identificar a instituição parceira da transação.")
+  @ApiModelProperty(example = "01234567", value = "Código da Intituição registrada no Sistema Brasileiro de Pagamentos. Campo obrigatório, para transações de Saque QR Code, afim de identificar a instituição parceira da transação.")
 
 @Pattern(regexp="^\\d{8}$")   public String getIspb() {
     return ispb;

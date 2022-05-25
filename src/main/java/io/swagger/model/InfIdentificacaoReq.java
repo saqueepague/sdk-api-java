@@ -10,9 +10,9 @@ import javax.validation.Valid;
 import javax.validation.constraints.*;
 
 /**
- * Informações da requisição de identificação do cliente quando transação sem Cartão.
+ * Informações da requisição de identificação do cliente quando transação sem cartão.
  */
-@ApiModel(description = "Informações da requisição de identificação do cliente quando transação sem Cartão.")
+@ApiModel(description = "Informações da requisição de identificação do cliente quando transação sem cartão.")
 @Validated
 public class InfIdentificacaoReq   {
   @JsonProperty("numAgencia")
@@ -33,10 +33,10 @@ public class InfIdentificacaoReq   {
   }
 
   /**
-   * número da Agência utilizada na operação.
+   * Número da agência utilizada na operação.
    * @return numAgencia
   **/
-  @ApiModelProperty(example = "4029", value = "número da Agência utilizada na operação.")
+  @ApiModelProperty(example = "4029", value = "Número da agência utilizada na operação.")
 
 @Pattern(regexp="^\\d+$")   public String getNumAgencia() {
     return numAgencia;
@@ -52,10 +52,10 @@ public class InfIdentificacaoReq   {
   }
 
   /**
-   * número da conta utilizada na operação.
+   * Número da conta utilizada na operação.
    * @return numConta
   **/
-  @ApiModelProperty(example = "0082348296", value = "número da conta utilizada na operação.")
+  @ApiModelProperty(example = "0082348296", value = "Número da conta utilizada na operação.")
 
 @Pattern(regexp="^\\d+$")   public String getNumConta() {
     return numConta;
@@ -71,10 +71,10 @@ public class InfIdentificacaoReq   {
   }
 
   /**
-   * número do CPF do cliente realizando a operação (11 dígitos).
+   * Número do CPF do cliente realizando a operação (11 dígitos).
    * @return cpf
   **/
-  @ApiModelProperty(example = "02358422785", value = "número do CPF do cliente realizando a operação (11 dígitos).")
+  @ApiModelProperty(example = "02358422785", value = "Número do CPF do cliente realizando a operação (11 dígitos).")
 
 @Pattern(regexp="^\\d{11}$")   public String getCpf() {
     return cpf;

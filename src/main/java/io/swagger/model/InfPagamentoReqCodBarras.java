@@ -19,7 +19,7 @@ public class InfPagamentoReqCodBarras   {
   private String codigo = null;
 
   /**
-   * Forma de entrada do Código de barras (0 = escaneado, 1 = digitado).
+   * Forma de entrada do código de barras (0 = escaneado, 1 = digitado).
    */
   public enum ModoEntradaEnum {
     _0("0"),
@@ -88,10 +88,10 @@ public class InfPagamentoReqCodBarras   {
   }
 
   /**
-   * Forma de entrada do Código de barras (0 = escaneado, 1 = digitado).
+   * Forma de entrada do código de barras (0 = escaneado, 1 = digitado).
    * @return modoEntrada
   **/
-  @ApiModelProperty(example = "0", value = "Forma de entrada do Código de barras (0 = escaneado, 1 = digitado).")
+  @ApiModelProperty(example = "0", value = "Forma de entrada do código de barras (0 = escaneado, 1 = digitado).")
 
   public ModoEntradaEnum getModoEntrada() {
     return modoEntrada;
@@ -164,10 +164,10 @@ public class InfPagamentoReqCodBarras   {
   }
 
   /**
-   * número do Titular.
+   * Número do Titular.
    * @return numTitular
   **/
-  @ApiModelProperty(value = "número do Titular.")
+  @ApiModelProperty(value = "Número do Titular.")
 
 @Pattern(regexp="^\\d+$")   public String getNumTitular() {
     return numTitular;

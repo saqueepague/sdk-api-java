@@ -74,10 +74,10 @@ public class InfTransacaoResp   {
   }
 
   /**
-   * Igual é requisição.
+   * Igual à requisição.
    * @return nsu
   **/
-  @ApiModelProperty(example = "000080247206", required = true, value = "Igual é requisição.")
+  @ApiModelProperty(example = "000080247206", required = true, value = "Igual à requisição.")
   @NotNull
 
 @Pattern(regexp="^\\d{12}$")   public String getNsu() {
@@ -94,10 +94,10 @@ public class InfTransacaoResp   {
   }
 
   /**
-   * Igual é requisição.
+   * Igual à requisição.
    * @return cdProc
   **/
-  @ApiModelProperty(example = "029100", required = true, value = "Igual é requisição.")
+  @ApiModelProperty(example = "029100", required = true, value = "Igual à requisição.")
   @NotNull
 
 @Pattern(regexp="^\\d{6}$")   public String getCdProc() {
@@ -134,10 +134,10 @@ public class InfTransacaoResp   {
   }
 
   /**
-   * Igual é requisição.
+   * Igual à requisição.
    * @return horaLocal
   **/
-  @ApiModelProperty(example = "151032", required = true, value = "Igual é requisição.")
+  @ApiModelProperty(example = "151032", required = true, value = "Igual à requisição.")
   @NotNull
 
 @Pattern(regexp="^\\d{6}$")   public String getHoraLocal() {
@@ -154,10 +154,10 @@ public class InfTransacaoResp   {
   }
 
   /**
-   * Igual é requisição.
+   * Igual à requisição.
    * @return dataLocal
   **/
-  @ApiModelProperty(example = "1122", required = true, value = "Igual é requisição.")
+  @ApiModelProperty(example = "1122", required = true, value = "Igual à requisição.")
   @NotNull
 
 @Pattern(regexp="^\\d{4}$")   public String getDataLocal() {
@@ -174,10 +174,10 @@ public class InfTransacaoResp   {
   }
 
   /**
-   * Igual é requisição.
+   * Igual à requisição.
    * @return codOperadora
   **/
-  @ApiModelProperty(example = "00000000914", required = true, value = "Igual é requisição.")
+  @ApiModelProperty(example = "00000000914", required = true, value = "Igual à requisição.")
   @NotNull
 
 @Pattern(regexp="^\\d{11}$")   public String getCodOperadora() {
@@ -194,10 +194,10 @@ public class InfTransacaoResp   {
   }
 
   /**
-   * Igual é requisição com exceção da transação de consultaSaldo e consultaSaque.
+   * Igual à requisição com exceção da transação de consultaSaldo e consultaSaque.
    * @return valor
   **/
-  @ApiModelProperty(example = "5000", value = "Igual é requisição com exceção da transação de consultaSaldo e consultaSaque.")
+  @ApiModelProperty(example = "5000", value = "Igual à requisição com exceção da transação de consultaSaldo e consultaSaque.")
 
 @Pattern(regexp="^\\d+$")   public String getValor() {
     return valor;
@@ -213,10 +213,10 @@ public class InfTransacaoResp   {
   }
 
   /**
-   * Igual é requisição com exceção da transação de consultaSaque.
+   * Igual à requisição com exceção da transação de consultaSaque.
    * @return codMoeda
   **/
-  @ApiModelProperty(example = "986", value = "Igual é requisição com exceção da transação de consultaSaque.")
+  @ApiModelProperty(example = "986", value = "Igual à requisição com exceção da transação de consultaSaque.")
 
 @Pattern(regexp="^\\d{3}$")   public String getCodMoeda() {
     return codMoeda;

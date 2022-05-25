@@ -10,9 +10,9 @@ import javax.validation.Valid;
 import javax.validation.constraints.*;
 
 /**
- * Informações da resposta da requisição de compra de Títulos de capitalização.
+ * Informações da resposta da requisição de compra de títulos de capitalização.
  */
-@ApiModel(description = "Informações da resposta da requisição de compra de Títulos de capitalização.")
+@ApiModel(description = "Informações da resposta da requisição de compra de títulos de capitalização.")
 @Validated
 public class InfCompraTitulosCapitalizacaoResp   {
   @JsonProperty("recibo")

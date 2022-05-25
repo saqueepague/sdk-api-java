@@ -10,9 +10,9 @@ import javax.validation.Valid;
 import javax.validation.constraints.*;
 
 /**
- * Informações da requisição de consulta de produtos disponíveis de recarga para o Cartão informado pelo cliente.
+ * Informações da requisição de consulta de produtos disponíveis de recarga para o cartão informado pelo cliente.
  */
-@ApiModel(description = "Informações da requisição de consulta de produtos disponíveis de recarga para o Cartão informado pelo cliente.")
+@ApiModel(description = "Informações da requisição de consulta de produtos disponíveis de recarga para o cartão informado pelo cliente.")
 @Validated
 public class InfConsultaProdutosRecargaReq   {
   @JsonProperty("idOperadora")
@@ -27,10 +27,10 @@ public class InfConsultaProdutosRecargaReq   {
   }
 
   /**
-   * Operadora do Cartão.
+   * Operadora do cartão.
    * @return idOperadora
   **/
-  @ApiModelProperty(example = "586", required = true, value = "Operadora do Cartão.")
+  @ApiModelProperty(example = "586", required = true, value = "Operadora do cartão.")
   @NotNull
 
 @Pattern(regexp="^\\d+$")   public String getIdOperadora() {
@@ -47,10 +47,10 @@ public class InfConsultaProdutosRecargaReq   {
   }
 
   /**
-   * número do Cartão.
+   * Número do cartão.
    * @return numCartao
   **/
-  @ApiModelProperty(example = "574839201659236", required = true, value = "número do Cartão.")
+  @ApiModelProperty(example = "574839201659236", required = true, value = "Número do cartão.")
   @NotNull
 
 @Pattern(regexp="^\\d+$")   public String getNumCartao() {

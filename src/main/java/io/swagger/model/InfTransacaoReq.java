@@ -71,10 +71,10 @@ public class InfTransacaoReq   {
   }
 
   /**
-   * Código de processamento da transação, gerado pela Saque e Pague. Verificar Código específico de cada transação com a Saque e Pague (6 dígitos).
+   * Código de processamento da transação, gerado pela Saque e Pague. Verificar código específico de cada transação com a Saque e Pague (6 dígitos).
    * @return cdProc
   **/
-  @ApiModelProperty(example = "029100", required = true, value = "Código de processamento da transação, gerado pela Saque e Pague. Verificar Código específico de cada transação com a Saque e Pague (6 dígitos).")
+  @ApiModelProperty(example = "029100", required = true, value = "Código de processamento da transação, gerado pela Saque e Pague. Verificar código específico de cada transação com a Saque e Pague (6 dígitos).")
   @NotNull
 
 @Pattern(regexp="^\\d{6}$")   public String getCdProc() {
@@ -209,10 +209,10 @@ public class InfTransacaoReq   {
   }
 
   /**
-   * Código na tabela de moedas da ISO-4217 (986 = real, 3 dígitos).
+   * Código na tabela de moedas d da ISO-4217 (986 = real, 3 dígitos).
    * @return codMoeda
   **/
-  @ApiModelProperty(example = "986", value = "Código na tabela de moedas da ISO-4217 (986 = real, 3 dígitos).")
+  @ApiModelProperty(example = "986", value = "Código na tabela de moedas d da ISO-4217 (986 = real, 3 dígitos).")
 
 @Pattern(regexp="^\\d{3}$")   public String getCodMoeda() {
     return codMoeda;

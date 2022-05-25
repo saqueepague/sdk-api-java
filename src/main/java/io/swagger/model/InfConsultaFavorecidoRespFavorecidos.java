@@ -110,10 +110,10 @@ public class InfConsultaFavorecidoRespFavorecidos   {
   }
 
   /**
-   * número da Agência do Favorecido Cadastrado.
+   * Número da agência do Favorecido Cadastrado.
    * @return numAgencia
   **/
-  @ApiModelProperty(example = "4029", value = "número da Agência do Favorecido Cadastrado.")
+  @ApiModelProperty(example = "4029", value = "Número da agência do Favorecido Cadastrado.")
 
 @Pattern(regexp="^\\d+$")   public String getNumAgencia() {
     return numAgencia;
@@ -129,10 +129,10 @@ public class InfConsultaFavorecidoRespFavorecidos   {
   }
 
   /**
-   * número da conta do Favorecido Cadastrado.
+   * Número da conta do Favorecido Cadastrado.
    * @return numConta
   **/
-  @ApiModelProperty(example = "0082348296", value = "número da conta do Favorecido Cadastrado.")
+  @ApiModelProperty(example = "0082348296", value = "Número da conta do Favorecido Cadastrado.")
 
 @Pattern(regexp="^\\d+$")   public String getNumConta() {
     return numConta;
@@ -186,10 +186,10 @@ public class InfConsultaFavorecidoRespFavorecidos   {
   }
 
   /**
-   * número do CPF ou CNPJ do Favorecido Cadastrado (11 dígitos ou 14 dígitos, respectivamente).
+   * Número do CPF ou CNPJ do Favorecido Cadastrado (11 dígitos ou 14 dígitos, respectivamente).
    * @return cpf
   **/
-  @ApiModelProperty(example = "02358422785", value = "número do CPF ou CNPJ do Favorecido Cadastrado (11 dígitos ou 14 dígitos, respectivamente).")
+  @ApiModelProperty(example = "02358422785", value = "Número do CPF ou CNPJ do Favorecido Cadastrado (11 dígitos ou 14 dígitos, respectivamente).")
 
 @Pattern(regexp="^\\d{14}|\\d{11}$")   public String getCpf() {
     return cpf;

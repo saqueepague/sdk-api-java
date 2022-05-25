@@ -26,7 +26,7 @@ import java.util.Map;
 @Api(value = "saldo", description = "the saldo API")
 public interface SaldoApi {
 
-    @ApiOperation(value = "", nickname = "saldoPost", notes = "operação de consulta do valor de saldo disponível em conta.", response = SaldoResp.class, tags={  })
+    @ApiOperation(value = "", nickname = "saldoPost", notes = "Operação de consulta do valor de saldo disponível em conta.", response = SaldoResp.class, tags={  })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "Retorno com sucesso ou com Erro de negócio.", response = SaldoResp.class),
         @ApiResponse(code = 400, message = "Bad Request ou Erro interno ao qual inviabilizou uma resposta."),
@@ -35,6 +35,6 @@ public interface SaldoApi {
         produces = { "application/json" }, 
         consumes = { "application/json" },
         method = RequestMethod.POST)
-    ResponseEntity<SaldoResp> saldoPost(@ApiParam(value = "requisição de operação de consulta de saldo." ,required=true )  @Valid @RequestBody SaldoReq body,@ApiParam(value = "Tipo de autenticação requerida." ,required=true) @RequestHeader(value="authenticationType", required=true) String authenticationType,@ApiParam(value = "identificação do cliente." ,required=true) @RequestHeader(value="clientId", required=true) String clientId,@ApiParam(value = "Chave para validação do acesso ao serviço." ,required=true) @RequestHeader(value="token", required=true) String token);
+    ResponseEntity<SaldoResp> saldoPost(@ApiParam(value = "Requisição de operação de consulta de saldo." ,required=true )  @Valid @RequestBody SaldoReq body,@ApiParam(value = "Tipo de autenticação requerida." ,required=true) @RequestHeader(value="authenticationType", required=true) String authenticationType,@ApiParam(value = "Identificação do cliente." ,required=true) @RequestHeader(value="clientId", required=true) String clientId,@ApiParam(value = "Chave para validação do acesso ao serviço." ,required=true) @RequestHeader(value="token", required=true) String token);
 
 }

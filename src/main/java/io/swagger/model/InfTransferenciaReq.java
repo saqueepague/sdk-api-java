@@ -12,9 +12,9 @@ import javax.validation.Valid;
 import javax.validation.constraints.*;
 
 /**
- * Informações sobre a requisição de Transferência.
+ * Informações sobre a requisição de transferência.
  */
-@ApiModel(description = "Informações sobre a requisição de Transferência.")
+@ApiModel(description = "Informações sobre a requisição de transferência.")
 @Validated
 public class InfTransferenciaReq   {
   @JsonProperty("origem")

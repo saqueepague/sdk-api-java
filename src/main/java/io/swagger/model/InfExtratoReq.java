@@ -17,7 +17,7 @@ import javax.validation.constraints.*;
 @Validated
 public class InfExtratoReq   {
   /**
-   * Tipo de conta do extrato (CC = conta corrente, CP = conta poupança, CS = conta Salário).
+   * Tipo de conta do extrato (CC = conta corrente, CP = conta poupança, CS = conta salário).
    */
   public enum TipoContaEnum {
     CC("CC"),
@@ -72,10 +72,10 @@ public class InfExtratoReq   {
   }
 
   /**
-   * Tipo de conta do extrato (CC = conta corrente, CP = conta poupança, CS = conta Salário).
+   * Tipo de conta do extrato (CC = conta corrente, CP = conta poupança, CS = conta salário).
    * @return tipoConta
   **/
-  @ApiModelProperty(example = "CC", value = "Tipo de conta do extrato (CC = conta corrente, CP = conta poupança, CS = conta Salário).")
+  @ApiModelProperty(example = "CC", value = "Tipo de conta do extrato (CC = conta corrente, CP = conta poupança, CS = conta salário).")
 
   public TipoContaEnum getTipoConta() {
     return tipoConta;
@@ -110,10 +110,10 @@ public class InfExtratoReq   {
   }
 
   /**
-   * número da Agência utilizada na operação.
+   * Número da agência utilizada na operação.
    * @return numAgencia
   **/
-  @ApiModelProperty(example = "4029", value = "número da Agência utilizada na operação.")
+  @ApiModelProperty(example = "4029", value = "Número da agência utilizada na operação.")
 
 @Pattern(regexp="^\\d+$")   public String getNumAgencia() {
     return numAgencia;
@@ -129,10 +129,10 @@ public class InfExtratoReq   {
   }
 
   /**
-   * número da conta utilizada na operação.
+   * Número da conta utilizada na operação.
    * @return numConta
   **/
-  @ApiModelProperty(example = "0082348296", value = "número da conta utilizada na operação.")
+  @ApiModelProperty(example = "0082348296", value = "Número da conta utilizada na operação.")
 
 @Pattern(regexp="^\\d+$")   public String getNumConta() {
     return numConta;
@@ -148,10 +148,10 @@ public class InfExtratoReq   {
   }
 
   /**
-   * número do CPF do cliente realizando a operação (11 dígitos).
+   * Número do CPF do cliente realizando a operação (11 dígitos).
    * @return cpf
   **/
-  @ApiModelProperty(example = "02358422785", value = "número do CPF do cliente realizando a operação (11 dígitos).")
+  @ApiModelProperty(example = "02358422785", value = "Número do CPF do cliente realizando a operação (11 dígitos).")
 
 @Pattern(regexp="^\\d{11}$")   public String getCpf() {
     return cpf;

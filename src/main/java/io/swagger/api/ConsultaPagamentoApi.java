@@ -26,7 +26,7 @@ import java.util.Map;
 @Api(value = "consultaPagamento", description = "the consultaPagamento API")
 public interface ConsultaPagamentoApi {
 
-    @ApiOperation(value = "", nickname = "consultaPagamentoPost", notes = "operação de consulta de informações do boleto a ser pago em dinheiro ou débito em conta.", response = ConsultaPagamentoResp.class, tags={  })
+    @ApiOperation(value = "", nickname = "consultaPagamentoPost", notes = "Operação de consulta de informações do boleto a ser pago em dinheiro ou débito em conta.", response = ConsultaPagamentoResp.class, tags={  })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "Retorno com sucesso ou com Erro de negócio.", response = ConsultaPagamentoResp.class),
         @ApiResponse(code = 400, message = "Bad Request ou Erro interno ao qual inviabilizou uma resposta."),
@@ -35,6 +35,6 @@ public interface ConsultaPagamentoApi {
         produces = { "application/json" }, 
         consumes = { "application/json" },
         method = RequestMethod.POST)
-    ResponseEntity<ConsultaPagamentoResp> consultaPagamentoPost(@ApiParam(value = "requisição de consulta de pagamentos." ,required=true )  @Valid @RequestBody ConsultaPagamentoReq body,@ApiParam(value = "Tipo de autenticação requerida." ,required=true) @RequestHeader(value="authenticationType", required=true) String authenticationType,@ApiParam(value = "identificação do cliente." ,required=true) @RequestHeader(value="clientId", required=true) String clientId,@ApiParam(value = "Chave para validação do acesso ao serviço." ,required=true) @RequestHeader(value="token", required=true) String token);
+    ResponseEntity<ConsultaPagamentoResp> consultaPagamentoPost(@ApiParam(value = "Requisição de consulta de pagamentos." ,required=true )  @Valid @RequestBody ConsultaPagamentoReq body,@ApiParam(value = "Tipo de autenticação requerida." ,required=true) @RequestHeader(value="authenticationType", required=true) String authenticationType,@ApiParam(value = "Identificação do cliente." ,required=true) @RequestHeader(value="clientId", required=true) String clientId,@ApiParam(value = "Chave para validação do acesso ao serviço." ,required=true) @RequestHeader(value="token", required=true) String token);
 
 }

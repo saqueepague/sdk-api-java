@@ -26,7 +26,7 @@ import java.util.Map;
 @Api(value = "consultaTitulosCapitalizacao", description = "the consultaTitulosCapitalizacao API")
 public interface ConsultaTitulosCapitalizacaoApi {
 
-    @ApiOperation(value = "", nickname = "consultaTitulosCapitalizacaoPost", notes = "operação de consulta dos possíveis produtos de Títulos de capitalização de uma operadora.", response = ConsultaTitulosCapitalizacaoResp.class, tags={  })
+    @ApiOperation(value = "", nickname = "consultaTitulosCapitalizacaoPost", notes = "Operação de consulta dos possíveis produtos de títulos de capitalização de uma operadora.", response = ConsultaTitulosCapitalizacaoResp.class, tags={  })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "Retorno com sucesso ou com Erro de negócio.", response = ConsultaTitulosCapitalizacaoResp.class),
         @ApiResponse(code = 400, message = "Bad Request ou Erro interno ao qual inviabilizou uma resposta."),
@@ -35,6 +35,6 @@ public interface ConsultaTitulosCapitalizacaoApi {
         produces = { "application/json" }, 
         consumes = { "application/json" },
         method = RequestMethod.POST)
-    ResponseEntity<ConsultaTitulosCapitalizacaoResp> consultaTitulosCapitalizacaoPost(@ApiParam(value = "requisição de consulta produtos de Títulos de capitalização." ,required=true )  @Valid @RequestBody ConsultaTitulosCapitalizacaoReq body,@ApiParam(value = "Tipo de autenticação requerida." ,required=true) @RequestHeader(value="authenticationType", required=true) String authenticationType,@ApiParam(value = "identificação do cliente." ,required=true) @RequestHeader(value="clientId", required=true) String clientId,@ApiParam(value = "Chave para validação do acesso ao serviço." ,required=true) @RequestHeader(value="token", required=true) String token);
+    ResponseEntity<ConsultaTitulosCapitalizacaoResp> consultaTitulosCapitalizacaoPost(@ApiParam(value = "Requisição de consulta produtos de títulos de capitalização." ,required=true )  @Valid @RequestBody ConsultaTitulosCapitalizacaoReq body,@ApiParam(value = "Tipo de autenticação requerida." ,required=true) @RequestHeader(value="authenticationType", required=true) String authenticationType,@ApiParam(value = "Identificação do cliente." ,required=true) @RequestHeader(value="clientId", required=true) String clientId,@ApiParam(value = "Chave para validação do acesso ao serviço." ,required=true) @RequestHeader(value="token", required=true) String token);
 
 }

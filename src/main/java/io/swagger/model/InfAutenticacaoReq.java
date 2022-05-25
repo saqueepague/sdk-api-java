@@ -27,10 +27,10 @@ public class InfAutenticacaoReq   {
   }
 
   /**
-   * número do CPF do cliente a autenticar (11 dígitos).
+   * Número do CPF do cliente a autenticar (11 dígitos).
    * @return cpf
   **/
-  @ApiModelProperty(example = "02358422785", required = true, value = "número do CPF do cliente a autenticar (11 dígitos).")
+  @ApiModelProperty(example = "02358422785", required = true, value = "Número do CPF do cliente a autenticar (11 dígitos).")
   @NotNull
 
 @Pattern(regexp="^\\d{11}$")   public String getCpf() {

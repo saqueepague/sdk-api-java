@@ -25,7 +25,7 @@ import java.util.Map;
 @Api(value = "depositoConf", description = "the depositoConf API")
 public interface DepositoConfApi {
 
-    @ApiOperation(value = "", nickname = "depositoConfPost", notes = "Confirmação de operação de Depósito.", tags={  })
+    @ApiOperation(value = "", nickname = "depositoConfPost", notes = "Confirmação de operação de depósito.", tags={  })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "Retorno com sucesso ou com Erro de negócio."),
         @ApiResponse(code = 400, message = "Bad Request ou Erro interno ao qual inviabilizou uma resposta."),
@@ -33,6 +33,6 @@ public interface DepositoConfApi {
     @RequestMapping(value = "/depositoConf",
         consumes = { "application/json" },
         method = RequestMethod.POST)
-    ResponseEntity<Void> depositoConfPost(@ApiParam(value = "requisição de Confirmação de operação de Depósito." ,required=true )  @Valid @RequestBody TransacConf body,@ApiParam(value = "Tipo de autenticação requerida." ,required=true) @RequestHeader(value="authenticationType", required=true) String authenticationType,@ApiParam(value = "identificação do cliente." ,required=true) @RequestHeader(value="clientId", required=true) String clientId,@ApiParam(value = "Chave para validação do acesso ao serviço." ,required=true) @RequestHeader(value="token", required=true) String token);
+    ResponseEntity<Void> depositoConfPost(@ApiParam(value = "Requisição de confirmação de operação de depósito." ,required=true )  @Valid @RequestBody TransacConf body,@ApiParam(value = "Tipo de autenticação requerida." ,required=true) @RequestHeader(value="authenticationType", required=true) String authenticationType,@ApiParam(value = "Identificação do cliente." ,required=true) @RequestHeader(value="clientId", required=true) String clientId,@ApiParam(value = "Chave para validação do acesso ao serviço." ,required=true) @RequestHeader(value="token", required=true) String token);
 
 }

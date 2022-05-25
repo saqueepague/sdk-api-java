@@ -10,9 +10,9 @@ import javax.validation.Valid;
 import javax.validation.constraints.*;
 
 /**
- * Resposta do cliente é pergunta feita na identificação (somente respostas numéricas).
+ * Resposta do cliente à pergunta feita na identificação (somente respostas numéricas).
  */
-@ApiModel(description = "Resposta do cliente é pergunta feita na identificação (somente respostas numéricas).")
+@ApiModel(description = "Resposta do cliente à pergunta feita na identificação (somente respostas numéricas).")
 @Validated
 public class CriptoRespostaCliente   {
   @JsonProperty("id")

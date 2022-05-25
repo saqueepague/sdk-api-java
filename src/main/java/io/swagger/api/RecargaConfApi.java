@@ -25,7 +25,7 @@ import java.util.Map;
 @Api(value = "recargaConf", description = "the recargaConf API")
 public interface RecargaConfApi {
 
-    @ApiOperation(value = "", nickname = "recargaConfPost", notes = "operação de Confirmação de recarga de Cartão Pré-Pago de transporte (bilhetagem).", tags={  })
+    @ApiOperation(value = "", nickname = "recargaConfPost", notes = "Operação de confirmação de recarga de cartão pré-pago de transporte (bilhetagem).", tags={  })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "Retorno com sucesso ou com Erro de negócio."),
         @ApiResponse(code = 400, message = "Bad Request ou Erro interno ao qual inviabilizou uma resposta."),
@@ -33,6 +33,6 @@ public interface RecargaConfApi {
     @RequestMapping(value = "/recargaConf",
         consumes = { "application/json" },
         method = RequestMethod.POST)
-    ResponseEntity<Void> recargaConfPost(@ApiParam(value = "requisição de Confirmação de operação de recarga." ,required=true )  @Valid @RequestBody TransacConf body,@ApiParam(value = "Tipo de autenticação requerida." ,required=true) @RequestHeader(value="authenticationType", required=true) String authenticationType,@ApiParam(value = "identificação do cliente." ,required=true) @RequestHeader(value="clientId", required=true) String clientId,@ApiParam(value = "Chave para validação do acesso ao serviço." ,required=true) @RequestHeader(value="token", required=true) String token);
+    ResponseEntity<Void> recargaConfPost(@ApiParam(value = "Requisição de confirmação de operação de recarga." ,required=true )  @Valid @RequestBody TransacConf body,@ApiParam(value = "Tipo de autenticação requerida." ,required=true) @RequestHeader(value="authenticationType", required=true) String authenticationType,@ApiParam(value = "Identificação do cliente." ,required=true) @RequestHeader(value="clientId", required=true) String clientId,@ApiParam(value = "Chave para validação do acesso ao serviço." ,required=true) @RequestHeader(value="token", required=true) String token);
 
 }

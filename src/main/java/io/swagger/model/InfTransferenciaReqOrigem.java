@@ -11,13 +11,13 @@ import javax.validation.Valid;
 import javax.validation.constraints.*;
 
 /**
- * Informações sobre a origem da Transferência.
+ * Informações sobre a origem da transferência.
  */
-@ApiModel(description = "Informações sobre a origem da Transferência.")
+@ApiModel(description = "Informações sobre a origem da transferência.")
 @Validated
 public class InfTransferenciaReqOrigem   {
   /**
-   * Tipo de conta de origem (CC-Conta Corrente, CP-Conta poupança, CS-Conta Salário)
+   * Tipo de conta de origem (CC– Conta Corrente, CP-Conta Poupança, CS-Conta Salário)
    */
   public enum TipoContaEnum {
     CC("CC"),
@@ -72,10 +72,10 @@ public class InfTransferenciaReqOrigem   {
   }
 
   /**
-   * Tipo de conta de origem (CC-Conta Corrente, CP-Conta poupança, CS-Conta Salário)
+   * Tipo de conta de origem (CC– Conta Corrente, CP-Conta Poupança, CS-Conta Salário)
    * @return tipoConta
   **/
-  @ApiModelProperty(example = "CC", value = "Tipo de conta de origem (CC-Conta Corrente, CP-Conta poupança, CS-Conta Salário)")
+  @ApiModelProperty(example = "CC", value = "Tipo de conta de origem (CC– Conta Corrente, CP-Conta Poupança, CS-Conta Salário)")
 
   public TipoContaEnum getTipoConta() {
     return tipoConta;
@@ -110,10 +110,10 @@ public class InfTransferenciaReqOrigem   {
   }
 
   /**
-   * número da Agência de origem.
+   * Número da agência de origem.
    * @return numAgencia
   **/
-  @ApiModelProperty(example = "4029", value = "número da Agência de origem.")
+  @ApiModelProperty(example = "4029", value = "Número da agência de origem.")
 
 @Pattern(regexp="^\\d+$")   public String getNumAgencia() {
     return numAgencia;
@@ -129,10 +129,10 @@ public class InfTransferenciaReqOrigem   {
   }
 
   /**
-   * número da conta de origem.
+   * Número da conta de origem.
    * @return numConta
   **/
-  @ApiModelProperty(example = "0082348296", value = "número da conta de origem.")
+  @ApiModelProperty(example = "0082348296", value = "Número da conta de origem.")
 
 @Pattern(regexp="^\\d+$")   public String getNumConta() {
     return numConta;
@@ -148,10 +148,10 @@ public class InfTransferenciaReqOrigem   {
   }
 
   /**
-   * número do CPF ou CNPJ de origem da Transferência (11 dígitos ou 14 dígitos respectivamente).
+   * Número do CPF ou CNPJ de origem da transferência (11 dígitos ou 14 dígitos respectivamente).
    * @return cpfcnpj
   **/
-  @ApiModelProperty(example = "02358422785", value = "número do CPF ou CNPJ de origem da Transferência (11 dígitos ou 14 dígitos respectivamente).")
+  @ApiModelProperty(example = "02358422785", value = "Número do CPF ou CNPJ de origem da transferência (11 dígitos ou 14 dígitos respectivamente).")
 
 @Pattern(regexp="^\\d{14}|\\d{11}$")   public String getCpfcnpj() {
     return cpfcnpj;

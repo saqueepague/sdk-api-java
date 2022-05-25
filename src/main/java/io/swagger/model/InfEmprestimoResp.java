@@ -10,9 +10,9 @@ import javax.validation.Valid;
 import javax.validation.constraints.*;
 
 /**
- * Informações sobre a resposta de requisição de Empréstimo.
+ * Informações sobre a resposta de requisição de empréstimo.
  */
-@ApiModel(description = "Informações sobre a resposta de requisição de Empréstimo.")
+@ApiModel(description = "Informações sobre a resposta de requisição de empréstimo.")
 @Validated
 public class InfEmprestimoResp   {
   @JsonProperty("recibo")
@@ -24,10 +24,10 @@ public class InfEmprestimoResp   {
   }
 
   /**
-   * Recibo com informações do Depósito efetuado. Linhas com 48 posições separadas por \"@\".
+   * Recibo com informações do depósito efetuado. Linhas com 48 posições separadas por \"@\".
    * @return recibo
   **/
-  @ApiModelProperty(example = "@           COMPROVANTE DE EMPRESTIMO            @------------------------------------------------@ Agencia....: 0101                              @ Conta......: 74414-0                           @ Nome.......: EUGENIO SCHMITT COELHO            @@------------------------------------------------@ Favorecido: EUGENIO SCHMITT COELHO             @ Agencia Destino:                           0101@ Conta Destino:         Conta Corrente - 74414-0@@Tipo            NSU                        Valor@Dinheiro        697841472523             R$20,00@------------------------------------------------@               SAC - 0800 123 4569@      SAC - DEF. AUDITIVO - 0800 123 4568@            OUVIDORIA - 0800 123 4567@@             www.siteparceiro.com.br@", required = true, value = "Recibo com informações do Depósito efetuado. Linhas com 48 posições separadas por \"@\".")
+  @ApiModelProperty(example = "@           COMPROVANTE DE EMPRESTIMO            @------------------------------------------------@ Agencia....: 0101                              @ Conta......: 74414-0                           @ Nome.......: EUGENIO SCHMITT COELHO            @@------------------------------------------------@ Favorecido: EUGENIO SCHMITT COELHO             @ Agencia Destino:                           0101@ Conta Destino:         Conta Corrente - 74414-0@@Tipo            NSU                        Valor@Dinheiro        697841472523             R$20,00@------------------------------------------------@               SAC - 0800 123 4569@      SAC - DEF. AUDITIVO - 0800 123 4568@            OUVIDORIA - 0800 123 4567@@             www.siteparceiro.com.br@", required = true, value = "Recibo com informações do depósito efetuado. Linhas com 48 posições separadas por \"@\".")
   @NotNull
 
 @Pattern(regexp="^[^@]{0,48}(\\@[^@]{0,48})*$")   public String getRecibo() {

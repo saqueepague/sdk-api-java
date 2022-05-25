@@ -33,10 +33,10 @@ public class InfConsultaTaxasRespTransactionsFees   {
   }
 
   /**
-   * número identificador produto.
+   * Número identificador produto.
    * @return id
   **/
-  @ApiModelProperty(example = "01", value = "número identificador produto.")
+  @ApiModelProperty(example = "01", value = "Número identificador produto.")
 
 @Pattern(regexp="^\\d+$")   public String getId() {
     return id;

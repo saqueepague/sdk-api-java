@@ -141,10 +141,10 @@ public class InfConsultaPagamentoResp   {
   }
 
   /**
-   * Mensagem informativa quanto é alteração de valores e/ou data de pagamento pelo paceiro.
+   * Mensagem informativa quanto à alteração de valores e/ou data de pagamento pelo paceiro.
    * @return mensagem
   **/
-  @ApiModelProperty(example = "Esta &eacute; uma mensagem para exibi&ccedil;&atilde;o em tela.", value = "Mensagem informativa quanto é alteração de valores e/ou data de pagamento pelo paceiro.")
+  @ApiModelProperty(example = "Esta &eacute; uma mensagem para exibi&ccedil;&atilde;o em tela.", value = "Mensagem informativa quanto à alteração de valores e/ou data de pagamento pelo paceiro.")
 
   public String getMensagem() {
     return mensagem;

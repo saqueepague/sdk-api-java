@@ -11,9 +11,9 @@ import javax.validation.Valid;
 import javax.validation.constraints.*;
 
 /**
- * Informações da resposta de consulta dos produtos de recarga de Cartão Pré-Pago de transporte disponíveis.
+ * Informações da resposta de consulta dos produtos de recarga de cartão pré-pago de transporte disponíveis.
  */
-@ApiModel(description = "Informações da resposta de consulta dos produtos de recarga de Cartão Pré-Pago de transporte disponíveis.")
+@ApiModel(description = "Informações da resposta de consulta dos produtos de recarga de cartão pré-pago de transporte disponíveis.")
 @Validated
 public class InfConsultaValoresRecargaResp   {
   @JsonProperty("valores")

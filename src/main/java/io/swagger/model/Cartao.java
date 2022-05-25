@@ -16,7 +16,7 @@ import javax.validation.constraints.*;
 @Validated
 public class Cartao   {
   /**
-   * Modo de entrada de leitura do Cartão. (000 = sem Cartão, 050 = chip, 800 = chip, se falhar realiza leitura da trilha, 900 = trilha completa).
+   * Modo de entrada de leitura do cartão. (000 = sem cartão, 050 = chip, 800 = chip, se falhar realiza leitura da trilha, 900 = trilha completa).
    */
   public enum ModoEntradaEnum {
     _000("000"),
@@ -64,10 +64,10 @@ public class Cartao   {
   }
 
   /**
-   * Modo de entrada de leitura do Cartão. (000 = sem Cartão, 050 = chip, 800 = chip, se falhar realiza leitura da trilha, 900 = trilha completa).
+   * Modo de entrada de leitura do cartão. (000 = sem cartão, 050 = chip, 800 = chip, se falhar realiza leitura da trilha, 900 = trilha completa).
    * @return modoEntrada
   **/
-  @ApiModelProperty(value = "Modo de entrada de leitura do Cartão. (000 = sem Cartão, 050 = chip, 800 = chip, se falhar realiza leitura da trilha, 900 = trilha completa).")
+  @ApiModelProperty(value = "Modo de entrada de leitura do cartão. (000 = sem cartão, 050 = chip, 800 = chip, se falhar realiza leitura da trilha, 900 = trilha completa).")
 
   public ModoEntradaEnum getModoEntrada() {
     return modoEntrada;
@@ -83,10 +83,10 @@ public class Cartao   {
   }
 
   /**
-   * PAN/número do Cartão utilizado (dado criptografado).
+   * PAN/Número do cartão utilizado (dado criptografado).
    * @return pan
   **/
-  @ApiModelProperty(example = "zhXTyHl5nf2ckysYXXjAgZS5fzS7ybC5xePnWeLEP//bw==", value = "PAN/número do Cartão utilizado (dado criptografado).")
+  @ApiModelProperty(example = "zhXTyHl5nf2ckysYXXjAgZS5fzS7ybC5xePnWeLEP//bw==", value = "PAN/Número do cartão utilizado (dado criptografado).")
 
 @Pattern(regexp="^.{10,}$")   public String getPan() {
     return pan;
@@ -102,10 +102,10 @@ public class Cartao   {
   }
 
   /**
-   * Trilha 2 do Cartão utilizado (dado criptografado).
+   * Trilha 2 do cartão utilizado (dado criptografado).
    * @return trilha2
   **/
-  @ApiModelProperty(example = "mMIrkIrf2pSHccWuaROxoIS+NGcTOWcTWXUtjniTa1BRzPziiE8pWnknAxW9HIgoKdc/Fli2KZwNA==", value = "Trilha 2 do Cartão utilizado (dado criptografado).")
+  @ApiModelProperty(example = "mMIrkIrf2pSHccWuaROxoIS+NGcTOWcTWXUtjniTa1BRzPziiE8pWnknAxW9HIgoKdc/Fli2KZwNA==", value = "Trilha 2 do cartão utilizado (dado criptografado).")
 
 @Pattern(regexp="^.{10,}$")   public String getTrilha2() {
     return trilha2;

@@ -26,7 +26,7 @@ import java.util.Map;
 @Api(value = "deposito", description = "the deposito API")
 public interface DepositoApi {
 
-    @ApiOperation(value = "", nickname = "depositoPost", notes = "operação de Depósito em dinheiro, Cartão é opcional nesta operação.", response = DepositoResp.class, tags={  })
+    @ApiOperation(value = "", nickname = "depositoPost", notes = "Operação de depósito em dinheiro, cartão é opcional nesta operação.", response = DepositoResp.class, tags={  })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "Retorno com sucesso ou com Erro de negócio.", response = DepositoResp.class),
         @ApiResponse(code = 400, message = "Bad Request ou Erro interno ao qual inviabilizou uma resposta."),
@@ -35,6 +35,6 @@ public interface DepositoApi {
         produces = { "application/json" }, 
         consumes = { "application/json" },
         method = RequestMethod.POST)
-    ResponseEntity<DepositoResp> depositoPost(@ApiParam(value = "Objeto da requisição de Depósito, Cartão é opcional." ,required=true )  @Valid @RequestBody DepositoReq body,@ApiParam(value = "Tipo de autenticação requerida." ,required=true) @RequestHeader(value="authenticationType", required=true) String authenticationType,@ApiParam(value = "identificação do cliente." ,required=true) @RequestHeader(value="clientId", required=true) String clientId,@ApiParam(value = "Chave para validação do acesso ao serviço." ,required=true) @RequestHeader(value="token", required=true) String token);
+    ResponseEntity<DepositoResp> depositoPost(@ApiParam(value = "Objeto da requisição de depósito, cartão é opcional." ,required=true )  @Valid @RequestBody DepositoReq body,@ApiParam(value = "Tipo de autenticação requerida." ,required=true) @RequestHeader(value="authenticationType", required=true) String authenticationType,@ApiParam(value = "Identificação do cliente." ,required=true) @RequestHeader(value="clientId", required=true) String clientId,@ApiParam(value = "Chave para validação do acesso ao serviço." ,required=true) @RequestHeader(value="token", required=true) String token);
 
 }

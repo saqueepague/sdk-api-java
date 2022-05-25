@@ -29,7 +29,7 @@ public class InfPagamentoReq   {
   private String numConta = null;
 
   /**
-   * Tipo de conta do extrato (CC = conta corrente, CP = conta poupança, CS = conta Salário).
+   * Tipo de conta do extrato (CC = conta corrente, CP = conta poupança, CS = conta salário).
    */
   public enum TipoContaEnum {
     CC("CC"),
@@ -81,10 +81,10 @@ public class InfPagamentoReq   {
   }
 
   /**
-   * número do CPF ou CNPJ (11 dígitos ou 14 dígitos respectivamente).
+   * Número do CPF ou CNPJ (11 dígitos ou 14 dígitos respectivamente).
    * @return cpf
   **/
-  @ApiModelProperty(example = "01234567890", value = "número do CPF ou CNPJ (11 dígitos ou 14 dígitos respectivamente).")
+  @ApiModelProperty(example = "01234567890", value = "Número do CPF ou CNPJ (11 dígitos ou 14 dígitos respectivamente).")
 
 @Pattern(regexp="^\\d{14}|\\d{11}$")   public String getCpf() {
     return cpf;
@@ -119,10 +119,10 @@ public class InfPagamentoReq   {
   }
 
   /**
-   * número da Agência utilizada na operação.
+   * Número da agência utilizada na operação.
    * @return numAgencia
   **/
-  @ApiModelProperty(example = "4029", value = "número da Agência utilizada na operação.")
+  @ApiModelProperty(example = "4029", value = "Número da agência utilizada na operação.")
 
 @Pattern(regexp="^\\d+$")   public String getNumAgencia() {
     return numAgencia;
@@ -138,10 +138,10 @@ public class InfPagamentoReq   {
   }
 
   /**
-   * número da conta utilizada na operação.
+   * Número da conta utilizada na operação.
    * @return numConta
   **/
-  @ApiModelProperty(example = "0082348296", value = "número da conta utilizada na operação.")
+  @ApiModelProperty(example = "0082348296", value = "Número da conta utilizada na operação.")
 
 @Pattern(regexp="^\\d+$")   public String getNumConta() {
     return numConta;
@@ -157,10 +157,10 @@ public class InfPagamentoReq   {
   }
 
   /**
-   * Tipo de conta do extrato (CC = conta corrente, CP = conta poupança, CS = conta Salário).
+   * Tipo de conta do extrato (CC = conta corrente, CP = conta poupança, CS = conta salário).
    * @return tipoConta
   **/
-  @ApiModelProperty(example = "CC", value = "Tipo de conta do extrato (CC = conta corrente, CP = conta poupança, CS = conta Salário).")
+  @ApiModelProperty(example = "CC", value = "Tipo de conta do extrato (CC = conta corrente, CP = conta poupança, CS = conta salário).")
 
   public TipoContaEnum getTipoConta() {
     return tipoConta;

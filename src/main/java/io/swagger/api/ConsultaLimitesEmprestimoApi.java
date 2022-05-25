@@ -26,7 +26,7 @@ import java.util.Map;
 @Api(value = "consultaLimitesEmprestimo", description = "the consultaLimitesEmprestimo API")
 public interface ConsultaLimitesEmprestimoApi {
 
-    @ApiOperation(value = "", nickname = "consultaLimitesEmprestimoPost", notes = "operação de consulta dos limites disponíveis para Empréstimo. Esta operação é válida somente com os dados do Cartão.", response = ConsultaLimitesEmprestimoResp.class, tags={  })
+    @ApiOperation(value = "", nickname = "consultaLimitesEmprestimoPost", notes = "Operação de consulta dos limites disponíveis para empréstimo. Esta operação é válida somente com os dados do cartão.", response = ConsultaLimitesEmprestimoResp.class, tags={  })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "Retorno com sucesso ou com Erro de negócio.", response = ConsultaLimitesEmprestimoResp.class),
         @ApiResponse(code = 400, message = "Bad Request ou Erro interno ao qual inviabilizou uma resposta."),
@@ -35,6 +35,6 @@ public interface ConsultaLimitesEmprestimoApi {
         produces = { "application/json" }, 
         consumes = { "application/json" },
         method = RequestMethod.POST)
-    ResponseEntity<ConsultaLimitesEmprestimoResp> consultaLimitesEmprestimoPost(@ApiParam(value = "requisição de consulta limites de Empréstimo, usando dados do Cartão." ,required=true )  @Valid @RequestBody ConsultaLimitesEmprestimoReq body,@ApiParam(value = "Tipo de autenticação requerida." ,required=true) @RequestHeader(value="authenticationType", required=true) String authenticationType,@ApiParam(value = "identificação do cliente." ,required=true) @RequestHeader(value="clientId", required=true) String clientId,@ApiParam(value = "Chave para validação do acesso ao serviço." ,required=true) @RequestHeader(value="token", required=true) String token);
+    ResponseEntity<ConsultaLimitesEmprestimoResp> consultaLimitesEmprestimoPost(@ApiParam(value = "Requisição de consulta limites de empréstimo, usando dados do cartão." ,required=true )  @Valid @RequestBody ConsultaLimitesEmprestimoReq body,@ApiParam(value = "Tipo de autenticação requerida." ,required=true) @RequestHeader(value="authenticationType", required=true) String authenticationType,@ApiParam(value = "Identificação do cliente." ,required=true) @RequestHeader(value="clientId", required=true) String clientId,@ApiParam(value = "Chave para validação do acesso ao serviço." ,required=true) @RequestHeader(value="token", required=true) String token);
 
 }
