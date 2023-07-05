@@ -48,6 +48,12 @@ public class InfDepositoReq   {
   @JsonProperty("tipoConta")
   private String tipoConta = null;
 
+  @JsonProperty("cpfPortador")
+  private String cpfPortador = null;
+
+  @JsonProperty("dataNascPortador")
+  private String dataNascPortador = null;
+
   public InfDepositoReq nomeDepositante(String nomeDepositante) {
     this.nomeDepositante = nomeDepositante;
     return this;
@@ -257,6 +263,44 @@ public class InfDepositoReq   {
     this.tipoConta = tipoConta;
   }
 
+  public InfDepositoReq cpfPortador(String cpfPortador) {
+    this.cpfPortador = cpfPortador;
+    return this;
+  }
+
+  /**
+   * Número do CPF do portador (11 dígitos).
+   * @return cpfPortador
+  **/
+  @ApiModelProperty(example = "02358422785", value = "Número do CPF do portador (11 dígitos).")
+
+@Pattern(regexp="^\\\\d{11}$")   public String getCpfPortador() {
+    return cpfPortador;
+  }
+
+  public void setCpfPortador(String cpfPortador) {
+    this.cpfPortador = cpfPortador;
+  }
+
+  public InfDepositoReq dataNascPortador(String dataNascPortador) {
+    this.dataNascPortador = dataNascPortador;
+    return this;
+  }
+
+  /**
+   * Data de nascimento do portador (AAAA-MM-DD).
+   * @return dataNascPortador
+  **/
+  @ApiModelProperty(example = "2018-11-22", value = "Data de nascimento do portador (AAAA-MM-DD).")
+
+@Pattern(regexp="^\\d{4}-\\d{2}-\\d{2}*$")   public String getDataNascPortador() {
+    return dataNascPortador;
+  }
+
+  public void setDataNascPortador(String dataNascPortador) {
+    this.dataNascPortador = dataNascPortador;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -277,12 +321,14 @@ public class InfDepositoReq   {
         Objects.equals(this.numAgencia, infDepositoReq.numAgencia) &&
         Objects.equals(this.numConta, infDepositoReq.numConta) &&
         Objects.equals(this.identificacao, infDepositoReq.identificacao) &&
-        Objects.equals(this.tipoConta, infDepositoReq.tipoConta);
+        Objects.equals(this.tipoConta, infDepositoReq.tipoConta) &&
+        Objects.equals(this.cpfPortador, infDepositoReq.cpfPortador) &&
+        Objects.equals(this.dataNascPortador, infDepositoReq.dataNascPortador);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(nomeDepositante, telefoneDepositante, cpfDepositante, nomeFavorecido, telefoneFavorecido, cpfFavorecido, codBanco, numAgencia, numConta, identificacao, tipoConta);
+    return Objects.hash(nomeDepositante, telefoneDepositante, cpfDepositante, nomeFavorecido, telefoneFavorecido, cpfFavorecido, codBanco, numAgencia, numConta, identificacao, tipoConta, cpfPortador, dataNascPortador);
   }
 
   @Override
@@ -301,6 +347,8 @@ public class InfDepositoReq   {
     sb.append("    numConta: ").append(toIndentedString(numConta)).append("\n");
     sb.append("    identificacao: ").append(toIndentedString(identificacao)).append("\n");
     sb.append("    tipoConta: ").append(toIndentedString(tipoConta)).append("\n");
+    sb.append("    cpfPortador: ").append(toIndentedString(cpfPortador)).append("\n");
+    sb.append("    dataNascPortador: ").append(toIndentedString(dataNascPortador)).append("\n");
     sb.append("}");
     return sb.toString();
   }

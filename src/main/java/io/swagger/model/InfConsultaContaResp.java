@@ -199,6 +199,72 @@ public class InfConsultaContaResp   {
   @JsonProperty("ispb")
   private String ispb = null;
 
+  /**
+   * Indica se deve ser informado CPF do portador (00 = Não / 01 = Sim).
+   */
+  public enum InformarCpfPortadorEnum {
+    _00("00"),
+    
+    _01("01");
+
+    private String value;
+
+    InformarCpfPortadorEnum(String value) {
+      this.value = value;
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+
+    @JsonCreator
+    public static InformarCpfPortadorEnum fromValue(String text) {
+      for (InformarCpfPortadorEnum b : InformarCpfPortadorEnum.values()) {
+        if (String.valueOf(b.value).equals(text)) {
+          return b;
+        }
+      }
+      return null;
+    }
+  }
+  @JsonProperty("informarCpfPortador")
+  private InformarCpfPortadorEnum informarCpfPortador = null;
+
+  /**
+   * Indica se deve ser informado a data de nasc do portador (00 = Não / 01 = Sim).
+   */
+  public enum InformarDataNascPortadorEnum {
+    _00("00"),
+    
+    _01("01");
+
+    private String value;
+
+    InformarDataNascPortadorEnum(String value) {
+      this.value = value;
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+
+    @JsonCreator
+    public static InformarDataNascPortadorEnum fromValue(String text) {
+      for (InformarDataNascPortadorEnum b : InformarDataNascPortadorEnum.values()) {
+        if (String.valueOf(b.value).equals(text)) {
+          return b;
+        }
+      }
+      return null;
+    }
+  }
+  @JsonProperty("informarDataNascPortador")
+  private InformarDataNascPortadorEnum informarDataNascPortador = null;
+
   public InfConsultaContaResp modalidadeDeposito(ModalidadeDepositoEnum modalidadeDeposito) {
     this.modalidadeDeposito = modalidadeDeposito;
     return this;
@@ -413,6 +479,44 @@ public class InfConsultaContaResp   {
     this.ispb = ispb;
   }
 
+  public InfConsultaContaResp informarCpfPortador(InformarCpfPortadorEnum informarCpfPortador) {
+    this.informarCpfPortador = informarCpfPortador;
+    return this;
+  }
+
+  /**
+   * Indica se deve ser informado CPF do portador (00 = Não / 01 = Sim).
+   * @return informarCpfPortador
+  **/
+  @ApiModelProperty(example = "00", value = "Indica se deve ser informado CPF do portador (00 = Não / 01 = Sim).")
+
+  public InformarCpfPortadorEnum getInformarCpfPortador() {
+    return informarCpfPortador;
+  }
+
+  public void setInformarCpfPortador(InformarCpfPortadorEnum informarCpfPortador) {
+    this.informarCpfPortador = informarCpfPortador;
+  }
+
+  public InfConsultaContaResp informarDataNascPortador(InformarDataNascPortadorEnum informarDataNascPortador) {
+    this.informarDataNascPortador = informarDataNascPortador;
+    return this;
+  }
+
+  /**
+   * Indica se deve ser informado a data de nasc do portador (00 = Não / 01 = Sim).
+   * @return informarDataNascPortador
+  **/
+  @ApiModelProperty(example = "00", value = "Indica se deve ser informado a data de nasc do portador (00 = Não / 01 = Sim).")
+
+  public InformarDataNascPortadorEnum getInformarDataNascPortador() {
+    return informarDataNascPortador;
+  }
+
+  public void setInformarDataNascPortador(InformarDataNascPortadorEnum informarDataNascPortador) {
+    this.informarDataNascPortador = informarDataNascPortador;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -433,12 +537,14 @@ public class InfConsultaContaResp   {
         Objects.equals(this.numAgencia, infConsultaContaResp.numAgencia) &&
         Objects.equals(this.numConta, infConsultaContaResp.numConta) &&
         Objects.equals(this.cpfFavorecido, infConsultaContaResp.cpfFavorecido) &&
-        Objects.equals(this.ispb, infConsultaContaResp.ispb);
+        Objects.equals(this.ispb, infConsultaContaResp.ispb) &&
+        Objects.equals(this.informarCpfPortador, infConsultaContaResp.informarCpfPortador) &&
+        Objects.equals(this.informarDataNascPortador, infConsultaContaResp.informarDataNascPortador);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(modalidadeDeposito, nomeCliente, solicDoc, habilitaDeposito, depositoIdentificado, depositoVarejista, codBanco, numAgencia, numConta, cpfFavorecido, ispb);
+    return Objects.hash(modalidadeDeposito, nomeCliente, solicDoc, habilitaDeposito, depositoIdentificado, depositoVarejista, codBanco, numAgencia, numConta, cpfFavorecido, ispb, informarCpfPortador, informarDataNascPortador);
   }
 
   @Override
@@ -457,6 +563,8 @@ public class InfConsultaContaResp   {
     sb.append("    numConta: ").append(toIndentedString(numConta)).append("\n");
     sb.append("    cpfFavorecido: ").append(toIndentedString(cpfFavorecido)).append("\n");
     sb.append("    ispb: ").append(toIndentedString(ispb)).append("\n");
+    sb.append("    informarCpfPortador: ").append(toIndentedString(informarCpfPortador)).append("\n");
+    sb.append("    informarDataNascPortador: ").append(toIndentedString(informarDataNascPortador)).append("\n");
     sb.append("}");
     return sb.toString();
   }
